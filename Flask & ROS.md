@@ -54,21 +54,8 @@ However, to actually serve the app, they call `Flask.run()`:
             app.run(host=os.environ['ROS_IP'], port=5000,
                     ssl_context=(cert_file, pkey_file))
 
-See the next section for discussion of why this may not be desirable.
 
-We're trying to confirm this solution.
-
-
-
----
-
-## Next Steps & Questions
-
-What are the different ways to run and serve a Flask app? 
-
-See Flask's [development server documentation](http://flask.pocoo.org/docs/1.0/server/). 
-
-[__Flask.run()__](http://flask.pocoo.org/docs/0.12/api/)
+Flask's documentation on [__Flask.run()__](http://flask.pocoo.org/docs/0.12/api/) advises against using it in a production environment:
 
         "Do not use run() in a production setting. It is not intended to meet security and performance requirements for a production server. Instead, see Deployment Options for WSGI server recommendations."
 
@@ -76,9 +63,9 @@ See Flask's [development server documentation](http://flask.pocoo.org/docs/1.0/s
     
         "The alternative way to start the application is through the Flask.run() method. This will immediately launch a local server exactly the same way the flask script does. This works well for the common case but it does not work well for development which is why from Flask 0.11 onwards the flask method is recommended. The reason for this is that due to how the reload mechanism works there are some bizarre side-effects (like executing certain code twice, sometimes crashing without message or dying when a syntax or import error happens). It is however still a perfectly valid method for invoking a non automatic reloading application."
 
+**Solution**
+Instead of using `Flask.run()` within a Flask app's main method/script, we've had success with using the following via Flask's command line interface:
 
+        flask run --no-reload
 
-If ROS nodes can only be initialized by running Flask in ways meant for development environments (e.g. calling `Flask.run()`, or using `Python3 __init__.py` instead of `flask run`): 
-1. What are the trade-offs?
-2. What are the trade-offs compared to using roslibjs and rosbridge?
-
+Without the `--no-reload` argument, the lines in which your ROS node is initialized will be executed _twice_, resulting in a ROS error stating that the node was shut down because another with the same name was initialized.
