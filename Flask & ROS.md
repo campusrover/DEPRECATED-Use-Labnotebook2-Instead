@@ -64,6 +64,7 @@ Flask's documentation on [__Flask.run()__](http://flask.pocoo.org/docs/0.12/api/
         "The alternative way to start the application is through the Flask.run() method. This will immediately launch a local server exactly the same way the flask script does. This works well for the common case but it does not work well for development which is why from Flask 0.11 onwards the flask method is recommended. The reason for this is that due to how the reload mechanism works there are some bizarre side-effects (like executing certain code twice, sometimes crashing without message or dying when a syntax or import error happens). It is however still a perfectly valid method for invoking a non automatic reloading application."
 
 **Solution**
+
 Instead of using `Flask.run()` within a Flask app's main method/script, we've had success with using the following via Flask's command line interface:
 
         flask run --no-reload
