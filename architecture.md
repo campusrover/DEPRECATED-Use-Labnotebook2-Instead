@@ -1,3 +1,5 @@
+@Alexander Feldman, feldmanay@gmail.com
+
 # Campus Rover Mark 1 Design
 
 [Architecture diagram here](https://docs.google.com/drawings/d/1K8Bq4vd7oYqD6yXStrwqmTUtPrRfLSoVaKmgR9WnArc/edit?usp=sharing)
