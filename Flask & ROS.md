@@ -57,11 +57,11 @@ However, to actually serve the app, they call `Flask.run()`:
 
 Flask's documentation on [__Flask.run()__](http://flask.pocoo.org/docs/0.12/api/) advises against using it in a production environment:
 
-        "Do not use run() in a production setting. It is not intended to meet security and performance requirements for a production server. Instead, see Deployment Options for WSGI server recommendations."
-
-        "It is not recommended to use this function for development with automatic reloading as this is badly supported. Instead you should be using the flask command line script’s run support."
-    
-        "The alternative way to start the application is through the Flask.run() method. This will immediately launch a local server exactly the same way the flask script does. This works well for the common case but it does not work well for development which is why from Flask 0.11 onwards the flask method is recommended. The reason for this is that due to how the reload mechanism works there are some bizarre side-effects (like executing certain code twice, sometimes crashing without message or dying when a syntax or import error happens). It is however still a perfectly valid method for invoking a non automatic reloading application."
+> "Do not use run() in a production setting. It is not intended to meet security and performance requirements for a production > server. Instead, see Deployment Options for WSGI server recommendations."
+>
+> "It is not recommended to use this function for development with automatic reloading as this is badly supported. Instead you >should be using the flask command line script’s run support."
+>    
+> "The alternative way to start the application is through the Flask.run() method. This will immediately launch a local >server exactly the same way the flask script does. This works well for the common case but it does not work well for >development which is why from Flask 0.11 onwards the flask method is recommended. The reason for this is that due to how the >reload mechanism works there are some bizarre side-effects (like executing certain code twice, sometimes crashing without >message or dying when a syntax or import error happens). It is however still a perfectly valid method for invoking a non >automatic reloading application."
 
 **Solution**
 
