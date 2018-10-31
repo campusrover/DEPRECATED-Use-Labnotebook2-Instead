@@ -1,0 +1,30 @@
+# Logging in `ROS`
+
+### What are `ROS` logs?
+- Two different things called logs, data logs and normal (`rosout`) logs
+- Data logs are collected with `rosbag` and are used to replay or simulate all messages which were sent.
+- This is about the other kind of logs, which are primarily used for sending warnings, errors and debugging.
+- Solves the problem of distributed information. Many nodes have information to share, which requires a robust logging infrastructure
+
+### What do logs do?
+1. Get printed to `stdout` or `stderr` (screen of terminal window running node)
+1. Get sent to `rosout` which acts as unified log record
+1. Get written a file on the computer running `roscore`. The logs are stored at `~/.ros/logs/`. The subdirectory `latest` can be used, or the command `$ roscd log` will point to the current log directory.
+
+### Log implementation
+
+`std_msgs/Log` type:
+![log_msg](https://i.imgur.com/VQQogKf.png)
+
+No publisher needs to be made to log in `rospy`. Instead, use the following functions:
+![rospy tooling](https://i.imgur.com/H0ltU0e.png)
+
+what goes where?
+![table](https://i.imgur.com/9Bn53Oy.png)
+
+A well formatted GUI exists to show all log messages and can be accessed with `$ rqt_console`:
+![rqt_console](https://i.imgur.com/zzeorjS.png)
+
+### More resources
+- [`rospy` logging overview](http://wiki.ros.org/rospy/Overview/Logging)
+- Programming Robots with ROS ch 21, Quigley, Gerkey, Smart
