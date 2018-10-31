@@ -26,5 +26,6 @@ A well formatted GUI exists to show all log messages and can be accessed with `$
 ![rqt_console](https://i.imgur.com/zzeorjS.png)
 
 ### More resources
+- [My slides](https://docs.google.com/presentation/d/1WL0vn4XhEuDa36pvibgytF7ya8XHCRVbPJDk5l2LIhQ/edit?usp=sharing)
 - [`rospy` logging overview](http://wiki.ros.org/rospy/Overview/Logging)
 - Programming Robots with ROS ch 21, Quigley, Gerkey, Smart
