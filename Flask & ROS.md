@@ -25,7 +25,7 @@ It's important to note that this differs from a more common approach to Web-ROS 
 
 This has the advantage of providing a standard way for any web client to interface with ROS via JSON. However, this not only makes running rosbridge a necessity, but it also requires ROS developers to implement ROS-like programming _in JavaScript_. Flask, on the other hand, seems to offer a way to __implement ROS patterns purely in Python on _both_ client _and_ server, _without_ rosbridge and roslibjs as dependencies.__
 
-There is an apparent obstacle to implementing ROS within Flask, though. We're currently trying to define the nature and cause of this issue more precisely. In the meantime, it seems to involve the way Flask serves an app and the way ROS nodes need to be initialized. More specifically, the issue might arise from initializing a ROS node in a thread _other than_ the main thread, which seems to be the case for some of the ways Flask apps can be run/served. Others in the ROS community seem to have encountered this issue:
+There is an apparent obstacle to implementing ROS within Flask, though. It seems to involve the way Flask serves an app and the way ROS nodes need to be initialized. More specifically, the issue might arise from initializing a ROS node in a thread _other than_ the main thread, which seems to be the case for some of the ways Flask apps can be run/served. Others in the ROS community seem to have encountered this issue:
 
 * [Example 1](https://answers.ros.org/question/234418/easiest-way-to-implement-http-server-that-can-send-ros-messages/)
 * [Example 2](https://amp.reddit.com/r/ROS/comments/42w04t/running_a_web_server_in_ros/)
