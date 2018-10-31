@@ -1,7 +1,7 @@
 ###### _Brad Nesbitt & Huaigu Lin 10/31/2018_
 
 ---
-# Flask & ROS Issues
+# Flask & ROS Implementation
 ---
 
 Our objective is to initialize ROS nodes _within_ a Flask app, enabling publishing and subscribing to ROS topics via API calls or UI interactions. 
