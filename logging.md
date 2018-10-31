@@ -1,3 +1,5 @@
+@Alexander Feldman, feldmanay@gmail.com
+
 # Logging in `ROS`
 
 ### What are `ROS` logs?
