@@ -40,16 +40,5 @@ A well formatted GUI exists to show all log messages and can be accessed with `$
 * User who wants to use Message Node only needs to put its name and what operations he needs to do inside the 
   callback function. In the example, if user wants to subscribe to the /talker_demo_node, he can just find it by 
   `msg.name == "/talker_demo_node"`.  Then, he can do some operation in it. 
+  ![callback function](https://imgur.com/sAgGQjL)
   
-  `def callback(msg):
-	  #print msg.name
-	  if msg.name =="/talker_demo_node":
-          #example to publish the message of /talker_demo_node to
-          #a node called '/things_to_say'
-          pub = rospy.Publisher('/things_to_say', String, queue_size = 10)
-          pub.publish(msg.msg)
-
-   rospy.init_node('message_switch')
-   sub = rospy.Subscriber('/rosout', Log, callback)
-   rospy.spin()`
-   
