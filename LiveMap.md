@@ -14,7 +14,7 @@ The objective is to implement a 2D map in the CR_Web application that depicts:
 
 ### First Iteration
 
-Our first implementation was based a [tutorial](http://wiki.ros.org/ros2djs/Tutorials/VisualizingAMap) that relied on a websocket connection between the robot and web client, and had the following dependencies on 3rd party libraries:
+Our first implementation was based on a [tutorial](http://wiki.ros.org/ros2djs/Tutorials/VisualizingAMap) that relied on a websocket connection between the robot and web client, and had the following dependencies on 3rd party libraries:
 
 * [RosBridge](http://wiki.ros.org/rosbridge_suite)
 * [2Djs](https://www.npmjs.com/package/2djs)
