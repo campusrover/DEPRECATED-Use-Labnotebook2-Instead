@@ -24,7 +24,7 @@ Our first implementation was based on a [tutorial](http://wiki.ros.org/ros2djs/T
 
 This initial implementation ([repo here](https://github.com/campusrover/Campus-Rover-Web-Tools/tree/master/CR%20Live%20Map)) was successful, but presented several issues: 
 
-* Building upon 3rd party dependencies risks future breaks and maintenance.
+* Building upon 3rd party dependencies risked future breaks and maintenance.
 
 * As discussed [here](https://github.com/campusrover/labnotebook/blob/master/Flask%20%26%20ROS.md), it entailed "ROS-like" programming in _JavaScript_  instead of Python.
 
