@@ -1,6 +1,6 @@
 ###### Brad Nesbitt & Huaigu Lin 11/10/2018
 
---
+---
 
 # Campus Rover Live Map
 
@@ -10,7 +10,7 @@ The objective is to implement a 2D map in the CR_Web application that depicts:
 * Campus Rover's "real-time" location as it navigates
 * The goal destination, toward which Campus Rover is navigating
 
---
+---
 
 ### First Iteration
 
@@ -32,7 +32,7 @@ This initial implementation ([repo here](https://github.com/campusrover/Campus-R
 
 * Generating the map and loading the 4 JavaScript libraries mentioned above on every page load created noticeable performance issues, limiting any additional page content.
 
---
+---
 
 ### Current Iteration
 
@@ -49,7 +49,7 @@ The current iteration resolves the issues identified through the first iteration
 * The current iteration now displays the robot's goal location, too.
 
 
---
+---
 
 ### Next Steps
 
