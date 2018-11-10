@@ -55,5 +55,6 @@ The current iteration resolves the issues identified through the first iteration
 
 Support for:
 
+* Multiple floorplans/maps
 * Switching between different floorplans
 * Adjusting the size and scale of a map (for zooming in/out, resizing, etc.)
