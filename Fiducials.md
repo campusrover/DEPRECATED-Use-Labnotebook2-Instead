@@ -13,14 +13,14 @@ Aruco is a standard for fiducial tags. There are many variants but generally loo
 ![tag](https://docs.opencv.org/3.1.0/marker23.jpg)
 
 #### Tag detection
-Ubiquity Robotic's `aruco_detect` [module](http://wiki.ros.org/aruco_detect) accurately finds aruco tags in camera images. It relies on a compressed image stream from the robot camera and the camera's specs published as well. `aruco_detect` publishes a number of outputs, but crucially it sends a `geometry_msgs`
+Ubiquity Robotic's [`aruco_detect`](http://wiki.ros.org/aruco_detect) module accurately finds aruco tags in camera images. It relies on a compressed image stream from the robot camera and the camera's specs published as well. `aruco_detect` publishes a number of outputs, but crucially it sends a `geometry_msgs`
  transform relating the fiducial to the camera on the topic `/fiducial_transforms`. This needs to be inverted to get the transform from camera to tag.
 
 #### `TF` publishing
 The transform from camera to fiducial can be combined with a transform between the map and fiducial to find the pose of the camera. This is best done using `ROS`'s extensive `tf` tooling. Each fiducial location can be published as a static transform and a `TransformListener` can find the total transform from map to camera.
 
 ## Usage
-`aruco_detect` is brought up as part of the `cr_ros` `bringup.launch` file, but can be independently launched with `roslaunch aruco_detect aruco_detect.launch` if the proper topics are supplied in the launch file. `process_fid_transforms.py` takes the output of `aruco_detect` and publishes pose messages. It in `cr_ros` and also in the bringup file.
+`aruco_detect` is brought up as part of the `cr_ros` `bringup.launch` file, but can be independently launched with `roslaunch aruco_detect aruco_detect.launch` if the proper topics are supplied in the launch file. [`process_fid_transforms.py`](https://github.com/campusrover/cr_ros/blob/master/src/process_fid_transforms.py) takes the output of `aruco_detect` and publishes pose messages. It in `cr_ros` and also in the bringup file.
 
 #### Locating tag on map
 New tags can be placed on the map and published as static transforms from within the `bringup.launch` file. To find the `x`, `y`, and `z` position, use a tape measure. 
