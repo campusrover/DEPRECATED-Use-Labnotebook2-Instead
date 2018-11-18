@@ -43,16 +43,19 @@ The `campus_rover.launch` file includes another launch file `move_base.launch.xm
 What we found out was that in `turtlebot_navigation/param/move_base_params.yaml`, all the parameters for recovery behaviors were commented out. According to [**ros documentation on expected robot behaviors**](http://wiki.ros.org/move_base#Expected_Robot_Behavior), recovery behaviors are an essential part of robot's navigation. When the robot perceive itself as stuck (unable to find a valid path to its goal), it should perform recovery behaviors to clear its costmap and then replan a path.
 
 Therefore, we brought back an recovery behavior with the code:
-recovery_behaviors: - name: 'aggressive_reset2'
-type: 'clear_costmap_recovery/ClearCostmapRecovery'
-aggressive_reset2:
-reset_distance: 0.0
+
+    recovery_behaviors: - name: 'aggressive_reset2'
+    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+
+    aggressive_reset2:
+    reset_distance: 0.0
 
 `reset_distance: 0.0` means Turtlebot clears its costmap outside of 0.0 radius, so it will clear all the costmaps when it perceive itself as stuck. Based on our experiments and previous experience, Turtlebot was pretty good at dodging obstacles that were not on its costmap, so this "aggressive" reset is safe for most occasions, unless Turtlebot is physically surrounded by obstacles that are very close to it, but in this extreme circumstance, "conservative" costmap clearing would also be useless because clearing costmaps several meters away would not be enough to unstuck it.
 
 We also specified the costmap layer name since `obstacle layer` is the one contains all the marks of dynamic obstacles:
-layer_names: ["obstacle_layer"]
-  
+
+    layer_names: ["obstacle_layer"]
+
 These changes would ensure the clearing of costmap when Turtlebot perceive itself as stuck, and it will no longer get stuck by marks of long-gone obstacles.
 
 ---
