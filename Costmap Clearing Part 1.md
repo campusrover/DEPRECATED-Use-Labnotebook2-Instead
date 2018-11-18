@@ -44,8 +44,9 @@ What we found out was that in `turtlebot_navigation/param/move_base_params.yaml`
 
 Therefore, we brought back an recovery behavior with the code:
 
-    recovery_behaviors: - name: 'aggressive_reset2'
-    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+    recovery_behaviors:
+    - name: 'aggressive_reset2'
+      type: 'clear_costmap_recovery/ClearCostmapRecovery'
 
     aggressive_reset2:
     reset_distance: 0.0
