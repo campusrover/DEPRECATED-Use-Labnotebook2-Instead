@@ -58,3 +58,91 @@ Support for:
 * Multiple floorplans/maps
 * Switching between different floorplans
 * Adjusting the size and scale of a map (for zooming in/out, resizing, etc.)
+
+---
+# Follow-up Iteration
+---
+
+> Brad Nesbitt 11/18/2018
+
+### Overview of the LiveMap class
+
+After several preceding iterations of "live" 2D maps, it became clear that a single abstraction for such mapping would be appropriate. An instance of the `LiveMap` class maps waypoints, the robot's current pose, and its goal poses onto 2D floorplan for display within a web application.
+
+The `static` directory in `rover_app` now contains `map_files`, which contains the local files needed to generate a given map, including a JSON file with parameters specific to each map. For example:
+
+--
+
+#### `all_maps.json`
+
+    "Gerstenzang Basement": {
+        "files": {
+            "path": "rover_app/static/map_files/basement/",
+            "png_file": {
+                "file_name": "basement.png",
+                "cm_per_pixel": 1
+            },
+            "waypoint_file": "basement_waypoints.json"
+        },
+        "yaml_parameters": {
+            "resolution":  0.01,
+            "origin": [0.0, 0.0, 0.0]
+        }
+
+The JSON object for a map includes references to local files comprising the map's floorplan `.png` file, a JSON file of the map's waypoint data, and a copy of the yaml parameters used for amcl navigation of the `.png`-based map.
+ 
+--
+
+#### `live_map.py`
+
+Initializing a LiveMap object requires 2 parameters:  
+
+1. The name/String corresponding to a map in `all_maps.json`, such as "Gerstenzang Basement"
+
+2. The desired centimeters per pixel ratio to be used when displaying the map.
+
+* An optional parameter is the centimeter diameter of the robot, which is the Turtlebot2's spec of 35.4 by default.
+
+For example, `live_map = LiveMap("Gerstenzang Basement", 2)` initializes a LiveMap object of the Gerstenzang Basement floorplan with a 2cm/pixel scale. The object maintains the following abstraction representing the state of the map, including the robot's current place within it and it's goal destination:
+
+		self.map_state = {
+            "map_parameters": {
+                "map_name": map_name_string,
+                "files": {
+                    "path": path,
+                    "png": {
+                        "file_name": map_json["files"]["png_file"]["file_name"],
+                        "cm_per_pixel": map_json["files"]["png_file"]["cm_per_pixel"],
+                        "pixel_width": png_height,
+                        "pixel_height": png_width,
+                    },
+                    "yaml": map_json["yaml_parameters"]
+                },
+                "bot_radius": bot_cm_diameter/2,
+                "cm_per_pixel": scale_cm_per_pixel, # Desired scale
+                "waypoints": waypoints,
+                "current_pose": {},
+                "goal_pose": {}
+            },
+            "scaled_pixel_values": {
+                "bot_radius": (bot_cm_diameter / 2) * png_cm_per_pixel / scale_cm_per_pixel,
+                "cm_per_pixel": scale_cm_per_pixel,
+                "png_pixel_width": png_width * png_cm_per_pixel / scale_cm_per_pixel,
+                "png_pixel_height": png_height * png_cm_per_pixel / scale_cm_per_pixel,
+                "current_pose": {},
+                "goal_pose": {}
+            },
+            "subscribers": {
+                "current_pose_sub": rospy.Subscriber('/amcl_pose', PoseWithCovarianceStamped, self.update_current_pose),
+                "goal_pose_sub": rospy.Subscriber('/move_base/current_goal', PoseStamped, self.update_goal_pose),
+                "rviz_goal_pose_sub": rospy.Subscriber('/move_base_simple/goal', PoseStamped, self.update_goal_pose)
+            }
+    }
+    
+Note that a nested dictionary of ROS subscribers continually updates the scaled pixel value equivalents of the current and goal poses.
+
+Implementing 2D mapping in this way aims to achieve two main advantages:
+
+1. The LiveMap class allows the initialization of multiple, differing maps, with custom scales in the web application. For instance, a small, "thumbnail" map could be implemented on one page, while large map could be displayed somewhere else. This also makes switching between maps is also possible.
+
+2. Representing a `map_state` as a Python dictionary (shown above) makes it easy to send the data needed to work with a live 2D map as JSON. For instance, a map route or endpoint could be implemented to return a `map_state` JSON object which could, in turn, be used to render or update a map in the UI.
