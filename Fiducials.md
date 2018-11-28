@@ -25,11 +25,14 @@ The transform from camera to fiducial can be combined with a transform between t
 #### Locating tag on map
 New tags can be placed on the map and published as static transforms from within the `bringup.launch` file. To find the `x`, `y`, and `z` position, use a tape measure. 
 
-The yaw, pitch, and roll describing the angle of the tag are more difficult to determine. To find yaw, the first rotation parameter, open `rviz` and display the map and `TF`s. Publish a guess of the fiducial's pose and check the location visually in `rviz`. The red axis represents yaw and should be pointed out of the right side of the fiducial, if facing towards it. 
-If placed on a wall, the angle may be at 90°, otherwise measure as best as possible. The pitch component should always be set to π which is approximately 3. The roll component should be 0. 
+The three euler angles describing the angle of the tag are more difficult to determine. 
+To find the first rotation parameter, x, consider the orientation of the fiducial relative to the map. If the fiducial faces north x = 0, if west x = π/2, if north x = π, if east x = 3π/2.
+The second (y) component accounts for leaning left or right of fiducial on the verical wall. If positioned straight up, it should be set to π which is approximately 3.
+The third (z) component describes how far forward or back the fiducial is oriented. If the wall is vertical, roll = 0. If leaning forward, 0 < z < π /2. If leaning backwards, 2π > z > 3π/2.
 
 
-![rotation_example](https://i.imgur.com/hziM8jM.png)
+![rotation_example](https://i.imgur.com/dsL8551.jpg)
+x is red, y is green, z is blue
 
 #### Adding a new tag
 
