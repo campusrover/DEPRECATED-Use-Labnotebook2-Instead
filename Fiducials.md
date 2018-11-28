@@ -30,8 +30,8 @@ To find the first rotation parameter, x, consider the orientation of the fiducia
 The second (y) component accounts for leaning left or right of fiducial on the verical wall. If positioned straight up, it should be set to π which is approximately 3.
 The third (z) component describes how far forward or back the fiducial is oriented. If the wall is vertical, roll = 0. If leaning forward, 0 < z < π /2. If leaning backwards, 2π > z > 3π/2.
 
-
 ![rotation_example](https://i.imgur.com/dsL8551.jpg)
+
 x is red, y is green, z is blue
 
 #### Adding a new tag
