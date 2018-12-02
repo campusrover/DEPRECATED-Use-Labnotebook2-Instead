@@ -1,4 +1,4 @@
-###### _Ari Carr and Jacky Chen 11/28/2018_
+###### _Ari Carr and Jacky Chen 11/28/2018, updated 12/1/2018 with a new wander algorithm_
 
 ---
 # *lost\_and\_found.py*
@@ -32,31 +32,48 @@ TurtleBot to LOCALIZING. Once the state changes, the while loop will break and t
 
 ### The wander algorithm
 
-The following algorithm is used to dictate the robot's random wandering, while also ensuring it avoids obstacles. It is inspired by the Roomba algorithms we wrote at the beginning of the semester.
+We ensure maximum camera coverage, for the best odds of finding a fiducial, by having the robot drive in a rectangular outward spiral away from where it had been:
 
-The TurtleBot has four possible movements: It can drive forwards, drive backwards, turn left, and turn right. 
-
-* It turns left and moves forward when the closest obstacle is on its right.
-* It turns right and moves forward when the closest obstacle is on its left.
-* It backs up for a while when the closest obstacle is directly in front of the robot.
-* It drives forwards, combined with a certain angular velocity, when no obstacle within a set distance is detected. An angular velocity is included in order to let the robot circle around and explore as much space as it can.
+* The robot starts by spinning 360º, then driving a set distance to its right
+* The robot then spins 360º, turns 90º to the left, and drives that same distance
+* Until a fiducial is found:
+	* The robot spins 360º
+	* The robot turns left and drives for a slightly further distance than last time
+	* The robot spins 360º
+	* The robot turns left and drives the same distance as the previous step
+	* Repeat, increasing the distance to be driven for the next two turns.
 
 **Implementation:**
 
-The TurtleBot publishes an array of  640 elements to the `/scan` topic, where each element represents a pixel of the camera's width and is a number represents the distance from the nearest object to the corresponding pixel.
+In order to ensure the best possible obstacle avoidance in this algorithm, rather than implement the driving ourselves, we send the movements described above to the robot as a series of AMCL goals using the following algorithm:
 
-We divided the camera into three parts: front, left, and right. From there, we identified which part of the camera has the closest obstacle and then reacted to that information as described above.
+```
+initial_pose = a point in the map's whitespace area
+publish initial_pose
+goal = initial_pose
+offset = 1
+polarity = -1
+while not shutdown:
+	if not lost:
+		reset offset and polarity
+		continue
+	
+	spin 360 degrees at a rate of 72 degrees/second
+	
+	if goal.x == goal.y:
+		goal.x += offset
+	else:
+		goal.y += offset
+		offset = polarity * (|offset| + 1)
+		polarity *= -1
+	publish goal
+	wait for amcl to complete or a 5-second timeout
+```
 
-### Known issues
+### Goal saving
 
-**`NaN` values**
+One potential bug arising from AMCL-based wandering is that the robot would forget any AMCL goal it had been working towards when it was kidnapped. To fix this, we have included a `/move_base_simple/goal` subscriber. Whenever it receives a message, indicating a new AMCL goal, it saves that goal in this node as `current_goal`.
 
-There are two thresholds for which the TurtleBot's `/scan` array will contain `NaN` for the scan number. The min threshold, for which any lower value will be replaced with `NaN`, and the max threshold, for which any higher value will be replaced with `NaN`. In our implementation, we filtered `NaN` out and only take actual numbers into count when evaluating the array of values. However, this poses a problem when the TurtleBot is too close to an obstacle to see it; it may not notice the obstacle at all.
+In our `flying_or_lost` method, which recognizes wheel drops as described above, we have included a check for if the robot's state at the moment of kidnapping was `FLYING`. If the state was `NAVIGATING`, such that the robot was in the middle of AMCL, we set `lock_current_goal` to True, which acts as a flag to indicate that our node should stop saving new incoming goals because our AMCL-based wandering is about to start.
 
-**Backing up**
-
-We found that the making the robot drive backwards is always risky, since unlike the LIDAR-equipped TurtleBot 3 on which our original Roomba algorithm was implemented, the TurtleBot 2 doesn't have 360º vision, and thus cannot necessarily trust that it is safe to back up. We addressed this by limiting how much time the robot spends backing up upon seeing a forwards obstacle, to minimize the risk of hitting something.
-
-**Fiducial integration**
-
-The node responsible for processing fiducials has not yet been fully integrated with the state management system, such that seeing a fiducial does not publish a state change so we weren't able to test that aspect of the code. However, by manually publishing a `LOST` -> `LOCALIZING` state change, we can verify that our loop does break when a state change is noticed, and thus can say that it should break successfully once the fiducial node gains full state integration.
+Finally, our `if get_state() != States.LOST` block, which is responsible for resetting the node once wandering is complete, includes a check for `lock_current_goal`. If `lock_current_goal` is True, then the robot must have been working towards an AMCL goal prior to the kidnapping, so our node re-publishes that goal with an updated timestamp and the robot can continue its journey.
