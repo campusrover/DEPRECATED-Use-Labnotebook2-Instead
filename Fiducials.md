@@ -26,7 +26,7 @@ The transform from camera to fiducial can be combined with a transform between t
 New tags can be placed on the map and published as static transforms from within the `bringup.launch` file. To find the `x`, `y`, and `z` position, use a tape measure. 
 
 The three euler angles describing the angle of the tag are more difficult to determine. 
-To find the first rotation parameter, x, consider the orientation of the fiducial relative to the map. If the fiducial faces north x = 0, if west x = π/2, if north x = π, if east x = 3π/2.
+To find the first rotation parameter, x, consider the orientation of the fiducial relative to the map. If the fiducial faces north x = 0, if west x = π/2, if south x = π, if east x = 3π/2.
 The second (y) component accounts for leaning left or right of fiducial on the verical wall. If positioned straight up, it should be set to π which is approximately 3.
 The third (z) component describes how far forward or back the fiducial is oriented. If the wall is vertical, roll = 0. If leaning forward, 0 < z < π /2. If leaning backwards, 2π > z > 3π/2.
 
