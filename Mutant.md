@@ -9,3 +9,6 @@ Uxcell Motors: https://www.amazon.com/uxcell-600RPM-Encoder-Mounting-Bracket/dp/
 RoboClaw Manual: http://downloads.ionmc.com/docs/roboclaw_user_manual.pdf 
 
 Wiring diagrams and pictures:
+
+![Arduino Wiring](/labnotebook/IMG_2697.jpg)
+Format: ![Alt Text](url)
