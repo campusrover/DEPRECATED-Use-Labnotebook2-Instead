@@ -1,4 +1,6 @@
-@Alexander Feldman, feldmanay@gmail.com
+###### @Alexander Feldman, feldmanay@gmail.com 10/26/2018_
+----
+
 
 # Campus Rover Mark 1 Design
 

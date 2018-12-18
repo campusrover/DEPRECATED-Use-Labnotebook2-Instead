@@ -1,5 +1,4 @@
-###### Huaigu Lin 11/21/2018
-
+###### _Huaigu Lin 11/21/2018_
 ---
 
 # Costmap Clearing Part 2:

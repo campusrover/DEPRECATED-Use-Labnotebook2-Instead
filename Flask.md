@@ -1,5 +1,4 @@
 ###### _Brad Nesbitt 10/26/2018_
-
 ----
 
 # Creating a New Flask App

@@ -1,6 +1,8 @@
-######_Ben Albert 12/17/18_
+######_Ben Albert 12/17/18
+
 # Lab Notebook
 A collection of markdown and pdf files containing individual students' or teams' notes, written as deliverables to various assignments.
+
 ## Directory 
 * [Letter to Gen 3](Letter to Gen3.md)
 * General Architecture

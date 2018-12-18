@@ -1,5 +1,4 @@
-###### Huaigu Lin & Jacky Chen 11/11/2018
-
+###### _Huaigu Lin & Jacky Chen 11/11/2018_
 ---
 
 # Costmap Clearing Part 1:

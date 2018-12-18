@@ -1,4 +1,5 @@
-@Alexander Feldman, feldmanay@gmail.com (thanks @Ben and @Ari too!)
+###### _@Alexander Feldman, feldmanay@gmail.com (thanks @Ben and @Ari too!)_
+----
 
 # At long last: Fiducials
 

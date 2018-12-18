@@ -18,3 +18,6 @@ For an ideal Gen 3 implementation of Campus Rover, we think that full syncroniza
 Good luck!
 
 Gen 2
+
+#### Pito Comments
+* What exactly does "full synchronization and managing of nodes" mean? Please elaborate on that last paragraph

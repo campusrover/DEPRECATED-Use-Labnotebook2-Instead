@@ -1,5 +1,4 @@
-###### Huaigu Lin 11/13/2018
-
+###### _Huaigu Lin 11/13/2018_
 ---
 
 # CPU Usage and Errors in Navigation:
