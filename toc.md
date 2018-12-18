@@ -1,9 +1,3 @@
-######_Ben Albert 12/17/18
-
-# Lab Notebook
-A collection of markdown and pdf files containing individual students' or teams' notes, written as deliverables to various assignments.
-
-## Directory 
 * [Letter to Gen 3](Letter to Gen3.md)
 * General Architecture
 	* [Overview](architecture.md)
@@ -25,3 +19,5 @@ A collection of markdown and pdf files containing individual students' or teams'
 	* [Demo Script](demo_script_fall_2018.md)
 	* [CPU Hungry Nodes](CPU Usage and Errors in Navigation.md)
 	* [Quaternions Cheat Sheet](Quaternions Cheat Sheet.pdf)
+
+######_Ben Albert 12/17/18
