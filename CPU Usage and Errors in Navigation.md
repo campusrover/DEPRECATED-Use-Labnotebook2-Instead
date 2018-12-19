@@ -1,6 +1,3 @@
-###### _Huaigu Lin 11/13/2018_
----
-
 # CPU Usage and Errors in Navigation:
 
 During navigation I've run into a lot different errors and warnings. I copied some of the frequent ones here:
@@ -26,3 +23,7 @@ Then I found that the laptop's both CPUs' usage is nearly at 100% during navigat
 For now, we are using Dell 11 inch laptop as the onboard computer for Turtlebot. The situation might not be the same if more powerful devices are used. However, generally speaking, in our custom nodes we should avoid pulishing/updating with a frequency that's too high.
 
 Also please remember to check CPU usage if you find these errors and warnings again during navigation.
+
+---
+###### _Huaigu Lin 11/13/2018_
+

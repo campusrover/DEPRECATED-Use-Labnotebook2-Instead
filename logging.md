@@ -1,5 +1,3 @@
-@Alexander Feldman, feldmanay@gmail.com
-
 # Logging in `ROS`
 
 ### What are `ROS` logs?
@@ -42,3 +40,5 @@ A well formatted GUI exists to show all log messages and can be accessed with `$
   `msg.name == "/talker_demo_node"`.  Then, he can do some operation in it. 
   ![callback function](https://i.imgur.com/sAgGQjL.png)
   
+---
+###### _@Alexander Feldman, feldmanay@gmail.com_

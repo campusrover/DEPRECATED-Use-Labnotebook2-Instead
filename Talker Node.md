@@ -1,8 +1,4 @@
-###### _Ari Carr and Ben Albert 10/31/2018_
-
----
 # *talk.py*
----
 
 ## Overview
 
@@ -33,3 +29,5 @@ Sample Python script:
 	rospy.init_node('say_something')
 	pub.publish('Kill all humans')
 	
+---
+###### _Ari Carr and Ben Albert 10/31/2018_

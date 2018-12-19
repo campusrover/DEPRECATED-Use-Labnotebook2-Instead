@@ -1,6 +1,3 @@
-###### _Huaigu Lin & Jacky Chen 11/11/2018_
----
-
 # Costmap Clearing Part 1:
 
 Our objective of this iteration is to find a way to clean Turtlebot's costmap, so any long gone obstacle will not stay on the map, but the Turtlebot should also not run into a transient obstacle like a person or a chair.
@@ -63,3 +60,6 @@ These changes would ensure the clearing of costmap when Turtlebot perceive itsel
 ### Next Step
 
 We will look more into implementing the scan filter, so Turtlebot would immediately unmark a gone obstacle even if the scan is out of max range.
+
+---
+###### _Huaigu Lin & Jacky Chen 11/11/2018_
