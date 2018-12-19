@@ -5,6 +5,7 @@
 be changed ever. The measurements should be in centimeters.
 
 2. Use keynote to draw the space.
+
 [![Drawwing the map](https://img.youtube.com/vi/fmXNYL2Ym28/0.jpg)](https://www.youtube.com/watch?v=fmXNYL2Ym28 "Drawwing the map")
 
 ###Little Tips
