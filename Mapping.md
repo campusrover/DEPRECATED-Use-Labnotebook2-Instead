@@ -1,4 +1,5 @@
-#Mapping a sapce for the map
+#Mapping Instructions
+* Siyuan Chen, December 2018, sychen1996@brandeis.edu
 
 ###Steps
 1. Measure the static obstacles such as walls, doors, and corners that will not
