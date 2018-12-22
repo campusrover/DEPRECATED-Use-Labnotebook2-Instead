@@ -22,4 +22,4 @@ Gen 2
 * What exactly does "full synchronization and managing of nodes" mean? Please elaborate on that last paragraph
 
 ---
-###### _Ben Albert 12/16/18_
+###### _Ben Alberxt 12/16/18_
