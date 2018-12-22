@@ -96,6 +96,6 @@
 
 * To add a specific icon, pick the one you want from the [FontAwesome gallery](https://fontawesome.com/icons?d=gallery), then simply copy its html tag (e.g. `<i class="fas fa-arrow-alt-circle-up"></i>`) and paste it into the desired section of your HTML document.
 
-----
+
 ###### _Brad Nesbitt 10/26/2018_
 

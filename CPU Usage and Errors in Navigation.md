@@ -24,6 +24,5 @@ For now, we are using Dell 11 inch laptop as the onboard computer for Turtlebot.
 
 Also please remember to check CPU usage if you find these errors and warnings again during navigation.
 
----
 ###### _Huaigu Lin 11/13/2018_
 

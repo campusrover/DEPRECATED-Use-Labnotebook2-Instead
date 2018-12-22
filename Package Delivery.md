@@ -16,5 +16,4 @@ The package delivery stack is comprised of one main node, `package_handler.py`, 
 * Once the robot has reached the goal (wait for WAITING state) pick up the package.  The robot will also play back the audio recording
 * After the 
 
----
 ###### _Ben Albert 12/16/18_

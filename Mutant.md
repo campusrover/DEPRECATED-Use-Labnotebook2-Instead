@@ -18,5 +18,4 @@ Wiring diagrams and pictures:
 
 ![Arduino Picture](https://github.com/campusrover/labnotebook/blob/master/IMG_2743.jpg)
 
----
 ##### _Aaron Marks_

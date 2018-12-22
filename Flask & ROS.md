@@ -67,5 +67,4 @@ Instead of using `Flask.run()` within a Flask app's main method/script, we've ha
 
 Without the `--no-reload` argument, the lines in which your ROS node is initialized will be executed _twice_, resulting in a ROS error stating that the node was shut down because another with the same name was initialized.
 
----
 ###### _Brad Nesbitt & Huaigu Lin 10/31/2018_

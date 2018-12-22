@@ -28,7 +28,6 @@
 14. The robot comes into the charging station and relaxes until the next mission
 15. 
 
----
 ###### _Pito Salas_
 
 

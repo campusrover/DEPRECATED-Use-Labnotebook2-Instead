@@ -143,7 +143,6 @@ Implementing 2D mapping in this way aims to achieve two main advantages:
 
 2. Representing a `map_state` as a Python dictionary (shown above) makes it easy to send the data needed to work with a live 2D map as JSON. For instance, a map route or endpoint could be implemented to return a `map_state` JSON object which could, in turn, be used to render or update a map in the UI.
 
----
 ###### Brad Nesbitt & Huaigu Lin 11/10/2018
 
 

@@ -20,5 +20,4 @@ Takes button presses from the UI and sends `cmd_vels`.
 #### Rover controller:
 Uses a `move_base` action to navigate. Subscribes to `/web/destination` which parses JSON input and `/destination` which takes a PoseStamped.
 
-----
 ###### @Alexander Feldman, feldmanay@gmail.com 10/26/2018_

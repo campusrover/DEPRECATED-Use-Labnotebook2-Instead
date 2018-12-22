@@ -26,6 +26,5 @@ While the robot's states aren't too complicated yet, our goal was to create a mo
 
 If an illegal state change is requested, the current state of the robot is set to `States.ILLEGAL_STATE_CHANGE`.
 
----
 ###### _Ari Carr and Ben Albert 11/14/2018_
 

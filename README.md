@@ -21,5 +21,4 @@ Gen 2
 #### Pito Comments
 * What exactly does "full synchronization and managing of nodes" mean? Please elaborate on that last paragraph
 
----
 ###### _Ben Alberxt 12/16/18_
