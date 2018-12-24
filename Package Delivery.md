@@ -1,4 +1,3 @@
-######_Ben Albert 12/16/18_
 # Package Delivery
 ## Related Nodes
 * `package_handler.py`
@@ -16,3 +15,5 @@ The package delivery stack is comprised of one main node, `package_handler.py`, 
 * Send the robot a delivery navigation goal
 * Once the robot has reached the goal (wait for WAITING state) pick up the package.  The robot will also play back the audio recording
 * After the 
+
+###### _Ben Albert 12/16/18_

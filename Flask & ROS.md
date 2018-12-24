@@ -1,8 +1,4 @@
-###### _Brad Nesbitt & Huaigu Lin 10/31/2018_
-
----
 # Flask & ROS Implementation
----
 
 Our objective is to initialize ROS nodes _within_ a Flask app, enabling publishing and subscribing to ROS topics via API calls or UI interactions. 
 
@@ -70,3 +66,5 @@ Instead of using `Flask.run()` within a Flask app's main method/script, we've ha
         flask run --no-reload
 
 Without the `--no-reload` argument, the lines in which your ROS node is initialized will be executed _twice_, resulting in a ROS error stating that the node was shut down because another with the same name was initialized.
+
+###### _Brad Nesbitt & Huaigu Lin 10/31/2018_

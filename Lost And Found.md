@@ -1,8 +1,4 @@
-###### _Ari Carr and Jacky Chen 11/28/2018, updated 12/1/2018 with a new wander algorithm_
-
----
 # *lost\_and\_found.py*
----
 
 ## Overview
 
@@ -77,3 +73,5 @@ One potential bug arising from AMCL-based wandering is that the robot would forg
 In our `flying_or_lost` method, which recognizes wheel drops as described above, we have included a check for if the robot's state at the moment of kidnapping was `FLYING`. If the state was `NAVIGATING`, such that the robot was in the middle of AMCL, we set `lock_current_goal` to True, which acts as a flag to indicate that our node should stop saving new incoming goals because our AMCL-based wandering is about to start.
 
 Finally, our `if get_state() != States.LOST` block, which is responsible for resetting the node once wandering is complete, includes a check for `lock_current_goal`. If `lock_current_goal` is True, then the robot must have been working towards an AMCL goal prior to the kidnapping, so our node re-publishes that goal with an updated timestamp and the robot can continue its journey.
+
+###### _Ari Carr and Jacky Chen 11/28/2018, updated 12/1/2018 with a new wander algorithm_

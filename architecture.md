@@ -1,7 +1,3 @@
-###### @Alexander Feldman, feldmanay@gmail.com 10/26/2018_
-----
-
-
 # Campus Rover Mark 1 Design
 
 [Architecture diagram here](https://docs.google.com/drawings/d/1K8Bq4vd7oYqD6yXStrwqmTUtPrRfLSoVaKmgR9WnArc/edit?usp=sharing) (Outdated. Sorry)
@@ -23,3 +19,5 @@ Takes button presses from the UI and sends `cmd_vels`.
 
 #### Rover controller:
 Uses a `move_base` action to navigate. Subscribes to `/web/destination` which parses JSON input and `/destination` which takes a PoseStamped.
+
+###### @Alexander Feldman, feldmanay@gmail.com 10/26/2018_

@@ -1,8 +1,4 @@
-###### _Ari Carr and Ben Albert 11/14/2018_
-
----
 # *State Management Services*
----
 
 ## Overview
 
@@ -29,4 +25,6 @@ While the robot's states aren't too complicated yet, our goal was to create a mo
 `state.py` contains the code needed to keep track of the robot's current state and facilitate state changes. It includes the `is_legal` method, which contains a dict mapping every state to an array of the states that could legally follow it.
 
 If an illegal state change is requested, the current state of the robot is set to `States.ILLEGAL_STATE_CHANGE`.
-	
+
+###### _Ari Carr and Ben Albert 11/14/2018_
+

@@ -1,3 +1,5 @@
+# Mutant
+
 There are currently two versions of the mutant in existence. They both have the same footprint, that of a Turtlebot 3 Waffle.
 
 One of those robots, has large green wheels but operates as a standard Turtlebot3 with ROS etc. The only difference is in the OpenCR firmware, where the wheel diameter, robot radius, etc. fields are modified to account for the different chassis and wheels. It is fully operational.
@@ -16,3 +18,4 @@ Wiring diagrams and pictures:
 
 ![Arduino Picture](https://github.com/campusrover/labnotebook/blob/master/IMG_2743.jpg)
 
+##### _Aaron Marks_

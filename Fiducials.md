@@ -1,6 +1,3 @@
-###### _@Alexander Feldman, feldmanay@gmail.com (thanks @Ben and @Ari too!)_
-----
-
 # At long last: Fiducials
 
 ## Overview
@@ -50,3 +47,5 @@ A few tools exist which solve "fiducial slam" and originally we tried to impleme
 The biggest breakthrough came when I began using the built in `tf` tooling. This allowed me to work with a robust set of tools including `rviz` for easy debugging. Through this process I was able to see that the `y` and `z` axes needed to be swapped and that an inversion of the transform was needed.  These were not clear when using other tools, but were at the heart of the strange results were were seeing early on.
 
 More familiarity with `ROS` would have brought me to `tf`s sooner, but now I have that familiarity for next time. All together, I'm not sure what lesson there is to take away from this. Sometimes hardcore debugging is required.
+
+###### _@Alexander Feldman, feldmanay@gmail.com (thanks @Ben and @Ari too!)_

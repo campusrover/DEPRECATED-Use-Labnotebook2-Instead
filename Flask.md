@@ -1,6 +1,3 @@
-###### _Brad Nesbitt 10/26/2018_
-----
-
 # Creating a New Flask App
 
 ###### Create the project's directory
@@ -98,3 +95,7 @@
 `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">`
 
 * To add a specific icon, pick the one you want from the [FontAwesome gallery](https://fontawesome.com/icons?d=gallery), then simply copy its html tag (e.g. `<i class="fas fa-arrow-alt-circle-up"></i>`) and paste it into the desired section of your HTML document.
+
+
+###### _Brad Nesbitt 10/26/2018_
+
