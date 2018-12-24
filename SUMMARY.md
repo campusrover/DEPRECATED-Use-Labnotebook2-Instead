@@ -20,6 +20,5 @@
 * Other Documents
 	* [Demo Script](demo_script_fall_2018.md)
 	* [CPU Hungry Nodes](CPU Usage and Errors in Navigation.md)
-	* [Quaternions Cheat Sheet](Quaternions Cheat Sheet.pdf)
 
 ######_Ben Albert 12/17/18

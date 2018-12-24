@@ -3,3 +3,6 @@ root: ./
 structure:
   readme: README.md
   summary: SUMMARY.md
+
+title: "Campus Rover Lab Notebook"
+author: "Students of Brandeis Autonomous Robotics Lab"
