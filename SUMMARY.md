@@ -5,8 +5,7 @@
   * [Overview](general-architecture/architecture.md)
   * [Logging](general-architecture/logging.md)
   * [State Management](general-architecture/state-management-services.md)
-* Hardware
-  * [Mutant](hardware/mutant.md)
+  * [Mutant](general-architecture/mutant.md)
 * [Web Application](web-application/README.md)
   * [Creating the app](web-application/flask.md)
   * [Integrating with ROS](web-application/flask-and-ros.md)
