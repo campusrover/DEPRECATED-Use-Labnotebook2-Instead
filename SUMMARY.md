@@ -15,10 +15,11 @@
 	* Costmap Clearing
 		* [Part 1](Costmap Clearing Part 1.md)
 		* [Part 2](Costmap Clearing Part 2.md)
-* [Quaternions](quaterions.md)
 * Package Delivery
   * [Package Delivery](Package Delivery.md)
 	* [Voice Implementation](Talker Node.md)
+* Hairy Math
+  * [Quaternions](quaterions.md)
 * Demos
 	* [Demo Script](demo_script_fall_2018.md)
 	* [Demo Setup](gen2_demo_instructions.md)
