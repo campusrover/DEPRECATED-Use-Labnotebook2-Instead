@@ -1,7 +1,9 @@
-### Demo Script
+# Demo Script
+
 * Pito Salas, November 2018, pitosalas@brandeis.edu
 
-#### Setup
+## Setup
+
 * Basement space is set up like an office
 * We have to update the map to include fake hallways and offices
 * Lines will be taped to the floor to indicate the walls
@@ -10,7 +12,7 @@
 * Map is updated to match the tapes on the floor
 * Locations are added to the location table
 
-#### Demo
+## Demo
 
 1. A package has been delivered to reception
 2. The robot is sitting in its charging station
@@ -27,7 +29,5 @@
 13. Along the way the robot sees Alex and says "Hello Alex, how's it going?"
 14. The robot comes into the charging station and relaxes until the next mission
 15. 
-
-###### _Pito Salas_
-
+### _Pito Salas_
 

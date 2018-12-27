@@ -1,4 +1,4 @@
-# *talk.py*
+# Voice Implementation
 
 ## Overview
 
@@ -22,11 +22,14 @@ Sample standalone command: `rostopic pub /things_to_say std_msgs/String 'Kill al
 
 Sample Python script:
 
-	import rospy
-	from std_msgs import String
-	
-	pub = rospy.Publisher('/things_to_say', String, queue_size=1)
-	rospy.init_node('say_something')
-	pub.publish('Kill all humans')
-	
-###### _Ari Carr and Ben Albert 10/31/2018_
+```text
+import rospy
+from std_msgs import String
+
+pub = rospy.Publisher('/things_to_say', String, queue_size=1)
+rospy.init_node('say_something')
+pub.publish('Kill all humans')
+```
+
+### _Ari Carr and Ben Albert 10/31/2018_
+

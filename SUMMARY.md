@@ -1,27 +1,27 @@
-# Summary 
+# Table of contents
 
-* General Architecture
-	* [Overview](architecture.md)
-	* [Logging](logging.md)
-	* [State Management](State Management Services.md)
-* Web Application
-	* [Creating the app](Flask.md)
-	* [Integrating with ROS](Flask & ROS.md)
-	* [Live Map](LiveMap.md)
-* Navigation
-	* [Fiducial Integration](Fiducials.md)
-	* [Handling Robot Relocation While Navigating](Lost And Found.md)
-	* [CPU Hungry Nodes](CPU Usage and Errors in Navigation.md)
-	* Costmap Clearing
-		* [Part 1](Costmap Clearing Part 1.md)
-		* [Part 2](Costmap Clearing Part 2.md)
-* Package Delivery
-  * [Package Delivery](Package Delivery.md)
-	* [Voice Implementation](Talker Node.md)
-* Hairy Math
-  * [Quaternions](quaternions.md)
-* Demos
-	* [Demo Script](demo_script_fall_2018.md)
-	* [Demo Setup](gen2_demo_instructions.md)
+* [Introduction](README.md)
+* [General Architecture](general-architecture/README.md)
+  * [Overview](general-architecture/architecture.md)
+  * [Logging](general-architecture/logging.md)
+  * [State Management](general-architecture/state-management-services.md)
+* [Web Application](web-application/README.md)
+  * [Creating the app](web-application/flask.md)
+  * [Integrating with ROS](web-application/flask-and-ros.md)
+  * [Live Map](web-application/livemap.md)
+* [Navigation](navigation/README.md)
+  * [Fiducial Integration](navigation/fiducials.md)
+  * [Handling Robot Relocation While Navigating](navigation/lost-and-found.md)
+  * [CPU Hungry Nodes](navigation/cpu-usage-and-errors-in-navigation.md)
+  * [Costmap Clearing](navigation/costmap-clearing/README.md)
+    * [Part 1](navigation/costmap-clearing/costmap-clearing-part-1.md)
+    * [Part 2](navigation/costmap-clearing/costmap-clearing-part-2.md)
+* [Package Delivery](package-delivery/README.md)
+  * [Package Delivery](package-delivery/package-delivery/README.md)
+    * [Voice Implementation](package-delivery/package-delivery/talker-node.md)
+* [Hairy Math](hairy-math/README.md)
+  * [Quaternions](hairy-math/quaternions.md)
+* [Demos](demos/README.md)
+  * [Demo Script](demos/demo_script_fall_2018.md)
+  * [Demo Setup](demos/gen2_demo_instructions.md)
 
-######_Ben Albert 12/17/18
