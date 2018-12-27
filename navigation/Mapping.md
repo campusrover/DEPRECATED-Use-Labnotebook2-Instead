@@ -1,7 +1,7 @@
-#Mapping Instructions
+# Mapping Instructions
 * Siyuan Chen, December 2018, sychen1996@brandeis.edu
 
-###Steps
+### Steps
 1. Measure the static obstacles such as walls, doors, and corners that will not
 be changed ever. The measurements should be in centimeters.
 
@@ -9,7 +9,8 @@ be changed ever. The measurements should be in centimeters.
 
 [![Drawwing the map](https://img.youtube.com/vi/fmXNYL2Ym28/0.jpg)](https://www.youtube.com/watch?v=fmXNYL2Ym28 "Drawwing the map")
 
-###Little Tips
+### Little Tips
+
 1. better to have two people measure the walls because it could be longer than
 10 meters(10000 centimeters) that is very hard for one person to do the job.
 
