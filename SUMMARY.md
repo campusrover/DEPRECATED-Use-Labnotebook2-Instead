@@ -5,6 +5,8 @@
   * [Overview](general-architecture/architecture.md)
   * [Logging](general-architecture/logging.md)
   * [State Management](general-architecture/state-management-services.md)
+* Hardware
+  * [Mutant](hardware/mutant.md)
 * [Web Application](web-application/README.md)
   * [Creating the app](web-application/flask.md)
   * [Integrating with ROS](web-application/flask-and-ros.md)
@@ -16,6 +18,7 @@
   * [Costmap Clearing](navigation/costmap-clearing/README.md)
     * [Part 1](navigation/costmap-clearing/costmap-clearing-part-1.md)
     * [Part 2](navigation/costmap-clearing/costmap-clearing-part-2.md)
+  * [Mapping](navigation/costmap-clearing/mapping.md)
 * [Package Delivery](package-delivery/README.md)
   * [Package Delivery](package-delivery/package-delivery/README.md)
     * [Voice Implementation](package-delivery/package-delivery/talker-node.md)
