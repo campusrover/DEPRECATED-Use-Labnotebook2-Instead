@@ -12,10 +12,10 @@ RoboClaw Manual: http://downloads.ionmc.com/docs/roboclaw_user_manual.pdf
 
 Wiring diagrams and pictures:
 
-![Wiring Diagram](https://github.com/campusrover/labnotebook/blob/master/IMG_2697.jpg)
+![Wiring Diagram](IMG_2697.jpg)
 
-![Full Picture](https://github.com/campusrover/labnotebook/blob/master/IMG_2742.jpg)
+![Full Picture](IMG_2742.jpg)
 
-![Arduino Picture](https://github.com/campusrover/labnotebook/blob/master/IMG_2743.jpg)
+![Arduino Picture](IMG_2743.jpg)
 
-##### _Aaron Marks_
+## _Aaron Marks_
