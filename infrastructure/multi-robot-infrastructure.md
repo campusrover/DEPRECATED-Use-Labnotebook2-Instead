@@ -49,3 +49,7 @@ However,
 Use the attribute `ns`, for example:
 
 `<node name="listener1" pkg="rospy_tutorials" type="listener.py" ns="{namespace_you_choose}" />`
+
+## Publishing/Subsribing topics in other namespace
+
+Do a `rostopic list`, you will find out topics under a namespace will be listed as `/{namespace}/{topic_name}`
