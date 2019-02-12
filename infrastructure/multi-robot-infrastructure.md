@@ -2,7 +2,7 @@
 
 To have multiple robots on the same ROS core and each of them listen to a separate node, namespacing would be an easy and efficient way to help.
 
-## 1. Set namespace on robots' onboard computers with environment variable
+## Set namespace on robots' onboard computers with environment variable
 
 On the robot's onboard computer, open the terminal and type in
 
@@ -18,11 +18,11 @@ Save the file and don't forget to do
 
 Since you're already on the robot's onboard terminal, it's a good idea to change the `ROS_MASTER_URI` and bringup the robot now.
 
-## 2. Set namespace on your laptop with environment variable
+## Set namespace on your laptop with environment variable
 
 Use the same steps above. Make sure your namespace is exactly the same as the namespace of the robot you want to control.
 
-## 3. Set namespace for a termimal with temporary environment variable
+## Set namespace for a termimal with temporary environment variable
 
 To set a namespace temporarily for a terminal, which will be gone when you close the termial, just type in
 
@@ -34,7 +34,7 @@ directly in your terminal window. You can use
 
 to check it.
 
-## 4. Launch/Run a file/node with namespace in terminal
+## Launch/Run a file/node with namespace in terminal
 
 Add a special key `__ns` (double underscore here!) to your command, for example:
 
@@ -44,7 +44,7 @@ However,
 
 > Use of this keyword is generally not encouraged as it is provided for special cases where environment variables cannot be set. (http://wiki.ros.org/Nodes)
 
-## 5. Set namespace for a node in launch file
+## Set namespace for a node in launch file
 
 Use the attribute `ns`, for example:
 
