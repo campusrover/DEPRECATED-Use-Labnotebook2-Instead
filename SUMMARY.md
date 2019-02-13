@@ -6,7 +6,7 @@
   * [Logging](general-architecture/logging.md)
   * [State Management](general-architecture/state-management-services.md)
   * [Mutant](general-architecture/mutant.md)
-* [Infrastructure](README.md)
+* [Infrastructure](infrastructure/README.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
 * [Web Application](web-application/README.md)
   * [Creating the app](web-application/flask.md)
