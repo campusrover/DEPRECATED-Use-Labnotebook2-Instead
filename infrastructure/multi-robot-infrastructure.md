@@ -23,12 +23,12 @@ Also make the following other changes:
 
 ````
 alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
+export IP="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
+export ROS_IP=$IP
 export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
 export ROS_NAMESPACE=roba
-export ROS_IP=<ip address of computer where this .bashrc is stored>
 export TB3_MODEL=burger
 export TURTLEBOT3_MODEL=burger
-
 ````
 * Save the file and don't forget to do `source ~/.bashrc`
 
