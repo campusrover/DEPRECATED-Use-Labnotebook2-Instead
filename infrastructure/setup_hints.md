@@ -10,7 +10,6 @@
 * These lines should be on your laptop as well as your robot, the same way.
 
 ````
-
 export ROS_HOSTNAME=<this computer's IP>
 export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
 export ROS_NAMESPACE=roba
