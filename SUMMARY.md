@@ -21,7 +21,7 @@
   * [Costmap Clearing](navigation/costmap-clearing/README.md)
     * [Part 1](navigation/costmap-clearing/costmap-clearing-part-1.md)
     * [Part 2](navigation/costmap-clearing/costmap-clearing-part-2.md)
-  * [Mapping](navigation/costmap-clearing/mapping.md)
+  * [Mapping](navigation/mapping.md)
 * [Package Delivery](package-delivery/README.md)
   * [Package Delivery](package-delivery/package-delivery/README.md)
     * [Voice Implementation](package-delivery/package-delivery/talker-node.md)
