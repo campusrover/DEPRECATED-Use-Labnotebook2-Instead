@@ -10,10 +10,13 @@
 * These lines should be on your laptop as well as your robot, the same way.
 
 ````
-export ROS_HOSTNAME=<this computer's IP>
+alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
 export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
 export ROS_NAMESPACE=roba
+export ROS_IP=<ip address of computer where this .bashrc is stored>
 export TB3_MODEL=burger
+export TURTLEBOT3_MODEL=burger
+
 ````
 
 * ROS_HOSTNAME: the IP address of this computer.
@@ -29,6 +32,18 @@ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ````
 
 #### Test the configuration
-* Can you run rostopic list? If not, check your IP addresses and whether the ROSCORE computer is running. Try pinging roscore1.cs.brandeis.edu
-* Does it list /x/cmd_vel among them? If not, check your IP addresses. Also make sure you ran
+* Did you do bringup on the ROBOT (NOT ON YOUR COMPUTER!
+    * if not, do so!
+* Did bringup work
+    * if not, check your environment variables
+    * `printenv | grep ROS`
+    * It should include all your settings and also env variables for the path to ROS
+    * Make sure you run `source ~/.bashrc`
+* Can you run rostopic list? `rostopic list`
+    * If not, check your IP addresses
+    * Check whether the ROSCORE computer is running. 
+    * Try pinging roscore1.cs.brandeis.edu
+* Does it list /x/cmd_vel among them?
+    * If not, check your IP addresses. Also make sure you ran
 * Can you teleop the robot? `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
+    * if not, try a manual cmd_vel: rostopic pub /rob*/cmd_vel
