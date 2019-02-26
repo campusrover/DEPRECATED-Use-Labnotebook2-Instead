@@ -25,7 +25,7 @@ Also make the following other changes:
 alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
 export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
 export ROS_NAMESPACE=roba
-export ROS_HOSTNAME=129.64.243.56
+export ROS_IP=<ip address of computer where this .bashrc is stored>
 export TB3_MODEL=burger
 export TURTLEBOT3_MODEL=burger
 
