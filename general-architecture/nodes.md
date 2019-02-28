@@ -3,7 +3,7 @@
 
 ## [adjust_position](https://github.com/campusrover/cr_ros/blob/master/src/adjust_position.py)
 
-> Passes on pose information between topics
+`Dormant` Converts the Pose messages it receives from its subscription to PoseWithCovarianceStamped messages and passes them on via its publication
 
 **Publications**
 - /initialpose
@@ -12,33 +12,33 @@
 - /fid_pose
 
 
-## [check_docked](https://github.com/campusrover/cr_ros/blob/master/src/check_docked.py)*
+## [check_docked](https://github.com/campusrover/cr_ros/blob/master/src/check_docked.py)
 
-> Updates the robot's state to reflect whether it is currently being charged at its dock
+`Current` Updates the robot's state to reflect whether it is currently being charged at its dock based on charging data from its subscription
 
 **Subscriptions**
 - /mobile_base/sensors/core_throttle
 
 
-## [cpu_checker](https://github.com/campusrover/cr_ros/blob/master/src/cpu_checker.py)*
+## [cpu_checker](https://github.com/campusrover/cr_ros/blob/master/src/cpu_checker.py)
 
-> Publishes the robot's CPU usage.
+`Current` Publishes CPU usage data and prints it to the warning log if it is high or otherwise to the debug log based on data from process and system utilities
 
 **Publications**
 - /laptop_cpu_usage
 
 
-## [greeter](https://github.com/campusrover/cr_ros/blob/master/src/greet.py)*
+## [greeter](https://github.com/campusrover/cr_ros/blob/master/src/greet.py)
 
-> Recognizes known faces from the camera and greets them by their first name
+`Current` Uses facial recognition to detect and recognize known faces in the camera feed based on provided data and greets them appropriately by name via a vocal service
 
 **Subscriptions**
 - /camera/rgb/image_raw/compressed_throttle
 
 
-## [lost_and_found](https://github.com/campusrover/cr_ros/blob/master/src/lost_and_found.py)*
+## [lost_and_found](https://github.com/campusrover/cr_ros/blob/master/src/lost_and_found.py)
 
-> Detects when the robot is kidnapped, lost, and found again and adjusts its state accordingly
+`Current` Detects when the robot is flying based on whether its wheels are in contact with the ground, lost upon regaining contact with the ground, and navigating upon recognizing its location and adjusts its state and goals accordingly and publishes or logs reverent information
 
 **Publications**
 - /initialpose
@@ -50,9 +50,9 @@
 - /destination
 
 
-## [message_switch](https://github.com/campusrover/cr_ros/blob/master/src/message_switch.py)*
+## [message_switch](https://github.com/campusrover/cr_ros/blob/master/src/message_switch.py)
 
-> Receives messages of what to say and has them said at the appropriate time
+`Current` Organizes speech messages chronologically and feeds them to the speech service at appropriate times
 
 **Subscriptions**
 - /things_to_say
@@ -60,7 +60,7 @@
 
 ## [location_narration](https://github.com/campusrover/cr_ros/blob/master/src/narrate_location.py)
 
-> Publishes messages for the robot to say pertaining to where it is and what it is doing
+`Dormant` Publishes speech messages narrating the robot's behavior current and proximate location based on its state and on data from its subscription
 
 **Publications**
 - /things_to_say
@@ -71,7 +71,7 @@
 
 ## [navigation_controller](https://github.com/campusrover/cr_ros/blob/master/src/navigation_controller.py)
 
-> `Defunct` All functionality was moved to [rover_controller](https://github.com/campusrover/cr_ros/blob/master/src/rover_controller.py)*
+`Defunct` All functionality was moved to [rover_controller](https://github.com/campusrover/cr_ros/blob/master/src/rover_controller.py)
 
 **Publications**
 - /cmd_vel_mux/input/navi
@@ -80,9 +80,9 @@
 - /amcl_pose
 
 
-## [package_handler](https://github.com/campusrover/cr_ros/blob/master/src/package_handler.py)*
+## [package_handler](https://github.com/campusrover/cr_ros/blob/master/src/package_handler.py)
 
-> Adjusts robot's state and manages verbal responses pertaining to the robot's package delivery functionality
+`Current` Detects the presence of a physical package via its publications and converses with a user to determine goals and to communicate successes and errors while updating its goals to respond to expected and unexpected changes
 
 **Publications**
 - /release_package
@@ -99,9 +99,9 @@
 - /destination
 
 
-## [package_sender](https://github.com/campusrover/cr_ros/blob/master/src/package_sender.py)*
+## [package_sender](https://github.com/campusrover/cr_ros/blob/master/src/package_sender.py)
 
-> Stores information about physical packages the robot receives
+`Current` Publishes filename of appropriate prerecorded message for the robot to play based on data from its subscription
 
 **Publications**
 - /receive_package
@@ -112,12 +112,12 @@
 
 ## [pose_converter](https://github.com/campusrover/cr_ros/blob/master/src/pose_converter.py)
 
-> Provides scripts for automatically converting from different pose types
+`Dormant` Provides scripts for automatically converting from different pose types
 
 
-## [process_fid_tfs](https://github.com/campusrover/cr_ros/blob/master/src/process_fid_transforms.py)*
+## [process_fid_tfs](https://github.com/campusrover/cr_ros/blob/master/src/process_fid_transforms.py)
 
-> Uses fiducials to determine the robot's position
+`Current` Uses fiducial data from its subscription to to determine and publish the robot's position relative to the map
 
 **Publications**
 - initialpose
@@ -126,9 +126,9 @@
 - fiducial_transforms
 
 
-## [recording_sender](https://github.com/campusrover/cr_ros/blob/master/src/recording_sender.py)*
+## [recording_sender](https://github.com/campusrover/cr_ros/blob/master/src/recording_sender.py)
 
-> Records and publishes audio instructions the robot receives a package
+`Current` Records short audio clips featuring user instructions to a file and publishes its name
 
 **Publications**
 - /receive_package
@@ -140,7 +140,7 @@
 
 ## [rover_controller](https://github.com/campusrover/cr_ros/blob/master/src/rover_controller.py)
 
-> Controls the robot and adjusts its state and verbal messages in response to its status and goals
+`Dormant` Controls the robot and its state with respect to a wide range of input sources and publishes a wide range of data for other nodes to use
 
 **Publications**
 - temp_pose
@@ -158,9 +158,9 @@
 - /destination
 
 
-## [scan_filter](https://github.com/campusrover/cr_ros/blob/master/src/scan_filter.py)*
+## [scan_filter](https://github.com/campusrover/cr_ros/blob/master/src/scan_filter.py)
 
-> Adjusts scan messages to substitute out nan values
+`Current` Replaces the 'nan' value in the /scan topic with 9.90 and publishes to /scan_filtered
 
 **Publications**
 - /scan_filtered
@@ -169,9 +169,9 @@
 - scan
 
 
-## [state_manager](https://github.com/campusrover/cr_ros/blob/master/src/state.py)*
+## [state_manager](https://github.com/campusrover/cr_ros/blob/master/src/state.py)
 
-> Handles robot state changes
+`Current` Handles and validates requested state changes for legality and publishes relevant information accordingly
 
 **Publications**
 - /move_base_simple/goal
@@ -180,14 +180,14 @@
 - /state
 
 
-## [talk](https://github.com/campusrover/cr_ros/blob/master/src/talk.py)*
+## [talk](https://github.com/campusrover/cr_ros/blob/master/src/talk.py)
 
-> Plays sound files of what the robot is supposed to say
+`Current` Plays sound files of what the robot is supposed to say
 
 
-## [turtlebot_teleop](https://github.com/campusrover/cr_ros/blob/master/src/turtlebot_teleop_key.py)*
+## [turtlebot_teleop](https://github.com/campusrover/cr_ros/blob/master/src/turtlebot_teleop_key.py)
 
-> Cancels existing robot goals and allows for manual control of the robot
+`Current` Cancels existing robot goals and allows for manual control of the robot via teleoperation
 
 **Publications**
 - /cmd_vel_mux/input/teleop
@@ -199,14 +199,10 @@
 
 ## [whereabouts](https://github.com/campusrover/cr_ros/blob/master/src/whereabouts.py)
 
-> Publishes the name of the nearest waypoint when it changes
+`Dormant` Publishes the name of the nearest waypoint when it changes based on data from its subscription
 
 **Publications**
 - /nearest_waypoint
 
 **Subscriptions**
 - /amcl_pose
-
-
----
-\* Included in launch
