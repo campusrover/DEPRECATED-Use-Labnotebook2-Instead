@@ -1,4 +1,4 @@
-# Multi Robot Infrastrcucture
+# Multi Robot Infrastrcucture with Namespacing
 
 ## How to namespace multiple robots and have them on the same roscore
 
@@ -10,13 +10,13 @@ To have multiple robots on the same ROS core and each of them listen to a separa
 * On the robot's onboard computer, open the terminal and type in
 
 ````
-nano ~/.bashrc`
+nano ~/.bashrc
 ````
 
 Then add the following line to the end of the file, using the robots name as the namespace
 
 ````
-export ROS_NAMESPACE={namespace_you_choose}`
+export ROS_NAMESPACE={namespace_you_choose}
 ````
 
 Also make the following other changes:
@@ -53,7 +53,7 @@ export TURTLEBOT3_MODEL=burger
 
 ### Use the .launch file
 
-* Set namespace for a node in launch file/ Use the attribute `ns`, for example:
+* To set namespace for a node in launch file, Use the attribute `ns`, for example:
 
 `<node name="listener1" pkg="rospy_tutorials" type="listener.py" ns="{namespace_you_choose}" />`
 
@@ -64,3 +64,62 @@ export TURTLEBOT3_MODEL=burger
 ### Publishing/Subsribing topics in other namespace
 
 Do a `rostopic list`, you will find out topics under a namespace will be listed as `/{namespace}/{topic_name}`
+
+## Make changes to turtlebot3_navigation package on your laptop
+* Type `roscd turtlebot3_navigation` to go to the package directory.
+* Type `cd launch` to go to the folder that stores .launch files.
+* Open the `turtlebot3_navigation.launch` file with nano or your favorite code editor.
+* You will see the scripts for launching move base and rviz:
+
+````
+  <!-- move_base -->
+  <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+    <arg name="model" value="$(arg model)" />
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
+  </group>
+````
+ 
+### Change move base arguments
+* Add another argument `cmd_vel_topic` to the four arguments in the `<!-- Arguments -->` section:
+ 
+ ````
+    <!-- Arguments -->
+    <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+    <arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/>
+    <arg name="open_rviz" default="true"/>
+    <arg name="move_forward_only" default="false"/>
+    <arg name="cmd_vel_topic" default="/{namespace_you_choose}/cmd_vel"/>
+ ````
+ 
+ * Pass the new argument to move base launch file:
+ ````
+   <!-- move_base -->
+   <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+     <arg name="model" value="$(arg model)" />
+     <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+     <arg name="cmd_vel_topic" value="$(arg cmd_vel_topic)"/>
+   </include>
+ ````
+ 
+* These changes will make move base publish to `/{namespace_you_choose}/cmd_vel` instead of `/cmd_vel`. Open the `move_base.launch` file in the launch folder, you will see why it worked.
+
+### Change rviz arguments
+* Type `roscd turtlebot3_navigation` to go to the package directory.
+* Type `cd rviz` to go to the folder that has `turtlebot3_navigation.rviz`. It stores all the arguments for rviz.
+* Open `turtlebot3_navigation.rviz` with VSCode or other realiable code editors, since this file is long and a bit messy. 
+* In the .rviz file, search for all the lines that has the part `Topic:`
+* Add your namespace to the topics you found. For example, change 
+    ````
+    Topic: /move_base/local_costmap/footprint
+    ````` 
+    to 
+    ````
+    Topic: /roba/move_base/local_costmap/footprint
+    ````
+* These changes will make rviz subsribe to topics in your namespace.
