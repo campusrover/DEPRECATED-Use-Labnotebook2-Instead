@@ -11,6 +11,7 @@
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup_hints.md)
 * [Web Application](web-application/README.md)
+  * [AWS RoboMaker](web-application/aws-robomaker.md)
   * [Creating the app](web-application/flask.md)
   * [Integrating with ROS](web-application/flask-and-ros.md)
   * [Live Map](web-application/livemap.md)
@@ -30,4 +31,3 @@
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
-

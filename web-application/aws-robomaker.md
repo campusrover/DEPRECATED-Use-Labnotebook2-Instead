@@ -6,13 +6,13 @@ Amazon Web Services RoboMaker is an online service which allows users to develop
 ## Getting started:
 Create an AWS root account if you do not already have one. A free tier account will suffice for getting started, though make note that under a free tier membership you will be limited to 25 Simulation Units (hours) for the first twelve months.
 
-Once you have an AWS account, you should create an IAM for your account. AWS recommends not using your root user account when using services like RoboMaker. [To learn how to set up IAM, click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)
-And remember the username and password of the account you create. Additionally, save the link to where you can log in with those credentials.
+Once you have an AWS account, you should create an IAM for your account. AWS recommends not using your root user account when using services like RoboMaker. [To learn how to set up IAM, click here](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html).
+Remember the username and password of the account you create. Additionally, save the link to where you can log in with those credentials.
 
 Going forward, you should be logged in with your IAM account. Log into AWS with your IAM, then proceed.
 
 ### Amazon Documentation and Mini Tutorial:
-RoboMaker has a limited documentation set that can help you use the software. The “getting Started” section can help familiarize yourself with the software by working with a sample application. This tutorial can be found at this link: https://docs.aws.amazon.com/robomaker/latest/dg/getting-started.html
+RoboMaker has a limited documentation set that can help you use the software. The “getting Started” section can help familiarize yourself with the software by working with a sample application. [You can find this tutorial by clicking here](https://docs.aws.amazon.com/robomaker/latest/dg/getting-started.html).
 
 ### Creating an S3 bucket:
 From the AWS Management Console, type “S3” into the “find services” field and click on S3 in the autofill list below the entry box. From the S3 Management Console, click “Create Bucket”
@@ -33,7 +33,7 @@ Beck at the AWS Management Console, type “robomaker” in to the same entry fi
 
 In your Cloud9 environment, use the bash command line at the bottom of the screen and follow these instructions:
 [how to create a new RoboMaker application](https://docs.aws.amazon.com/robomaker/latest/dg/application-create-new.html)
-To create the directories needed to work with ROS.
+to create the directories needed to work with ROS.
 
 At the end, you will have both a robot workspace and a simulation workspace. The robot workspace \(`robot_ws`\)  contains source files which are to be run on the robot. The simulation workspace \(`simulation_ws`\) contains the launch files and the world files needed to run gazebo simulations. Going forward this guide assumes that you have directories set up exactly as described in the walkthrough linked above, especially that the folders `robot_app` and `simulation_app` exist inside the `src` folders of `robot_ws` and `simulation_ws`, respectively.
 
