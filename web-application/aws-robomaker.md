@@ -92,7 +92,9 @@ OPTIONAL: Once your simulation launch configuration has been saved, you can add 
 These are the steps that have been found to work when you want to run a simulation in RoboMaker. They are Kludgy, and perhaps a more elegant solution exists, but for now this is what has been found:
 
 1: make sure your applications have been built and bundled. Then from the IDE, go to RoboMaker Run → Simulation Launch → your simulation config. This will upload your application bundles to the S3 bucket you specified, then try to start the simulation. IT WILL PROBABLY FAIL. This is okay, the main goal of this step was to upload the bundles.
+
 2: Go back to the RoboMaker Management Console, and in the left menu Select Simulations → Simulation Jobs, then click “Create simulation job”
+
 3: Now we will configure the simulation job again:
 * Set the failure behavior to fail
 * For IAM role, select “create new role”, then give your role a name. Each simulation job will have its own IAM role, so make the name related to the simulation job.
@@ -100,5 +102,6 @@ These are the steps that have been found to work when you want to run a simulati
 * For robot application, select the name you gave when you configured the simulation in the IDE. The launch package name and launch file will be the same too, but you must type those in manually.
 * Click next, the next page is for configuring the simulation application, the same rules apply here as the robot application
 * Click next, review the configuration then click create.
+
 4: RoboMaker will begin preparing to launch your simulation, in a few minutes it will be ready and start automatically. Once it is running, you will be able to monitor it through gazebo, rqt, rviz and the terminal.
 5: Be sure that once you are done with your simulation \(if it is before the duration expires\) to cancel the simulation job under the action menu in the upper right of the simulation job management screen.
