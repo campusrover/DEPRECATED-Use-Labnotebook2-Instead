@@ -13,7 +13,7 @@ Basically all the steps we think are needed to get the [Fall 208 Demo Script](ht
 
 ### On another machine \(needs to be more powerful for this than for the web app\)
 
-* Run “roslaunch cr\_ros off\_board.launch”
+* Run `roslaunch cr_ros offboard_launch.launch`
 * Wait until the bringup finishes. Look for “Odom received” message
 
 ### On a third machine
