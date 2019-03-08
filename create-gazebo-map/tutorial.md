@@ -7,7 +7,7 @@ Click on `Edit` --> `Building Editor` and you should see the following page. Not
 
 ![p1](/create-gazebo-map/images/p1.png)
 
-#### 2. Import a floor plan
+### 2. Import a floor plan
 You may create a scene from scratch, or use an existing image as a template to trace over. On the Platte, click on `import` and selet a 2D map plan image in the shown prompt and click on `next`.
 ![p2](/create-gazebo-map/images/p2.png)
 
