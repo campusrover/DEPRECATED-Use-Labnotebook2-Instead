@@ -9,9 +9,11 @@ Click on `Edit` --> `Building Editor` and you should see the following page. Not
 
 ### 2. Import a floor plan
 You may create a scene from scratch, or use an existing image as a template to trace over. On the Platte, click on `import` and selet a 2D map plan image in the shown prompt and click on `next`.
+
 ![p2](/create-gazebo-map/images/p2.png)
 
 To make sure the walls you trace over the image come up in the correct scale, you must set the image's resolution in pixels per meter _(px/m)_. To do so, click/release on one end of the wall. As you move the mouse, an orange line will appear as shown below. Click/release at the end of the wall to complete the line. Once you successfully set the resolution, click on `Ok` and the 2D map plan image you selected should show up in the 2D-View area.
+
 ![p3](/create-gazebo-map/images/p3.png)
 
 ### 3. Add & Edit walls
@@ -21,6 +23,7 @@ To make sure the walls you trace over the image come up in the correct scale, yo
 - **Double-click** to finish a wall without starting a new one. 
 - **Double-clicking on an existing wall** allows you to modify it. 
 You can manipulate other models likewise. For more detailed instructions, please refer to _*http://gazebosim.org/tutorials?tut=build_world*_ for more details
+
 ![p4](/create-gazebo-map/images/p4.png)
 
 ### 4. Prepare a package
