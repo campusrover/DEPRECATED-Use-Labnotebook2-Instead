@@ -31,3 +31,4 @@
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
+* [Create Gazebo Maps](create-gazebo-map/README.md)
