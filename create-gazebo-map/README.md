@@ -1,12 +1,7 @@
 ## References
-**Building a world:** _*http://gazebosim.org/tutorials?tut=build_world*_ 
+This tutorial is largely based on what I have learnt here: **[Building a world](http://gazebosim.org/tutorials?tut=build_world)**
 
-## How to run
-Copy `small_room` and `volen` into your workspace and `catkin_make`
-
-Run `$ roslaunch small_room room.launch` view the resulting work that will be demonstrated in this tutorial
-
-Run '$ roslaunch volen volen.launch' to view the map of volen ground floor using the same method in this tutorial.
+Please refer to this official tutorial if you need more details.
 
 ## Tutorial
 ### 1. Open a Gazebo simulation:
@@ -15,7 +10,7 @@ Click on `Edit` --> `Building Editor` and you should see the following page. Not
 - **2D View:** The only place you make changes to the map. 
 - **3D View:** View only. 
 
-![p1](/images/p1.png)
+![p1](/create-gazebo-map/images/p1.png)
 
 #### 2. Import a floor plan
 You may create a scene from scratch, or use an existing image as a template to trace over. On the Platte, click on `import` and selet a 2D map plan image in the shown prompt and click on `next`.
