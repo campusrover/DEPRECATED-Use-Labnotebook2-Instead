@@ -1,6 +1,6 @@
 # Overview
 
-[Architecture diagram here](https://docs.google.com/drawings/d/1K8Bq4vd7oYqD6yXStrwqmTUtPrRfLSoVaKmgR9WnArc/edit?usp=sharing) \(Outdated. Sorry\)
+[Architecture diagram here](https://docs.google.com/drawings/d/1K8Bq4vd7oYqD6yXStrwqmTUtPrRfLSoVaKmgR9WnArc/edit?usp=sharing) \(Outdated. Sorry (No worry, GEN3 will update a new one😉)\)
 
 The most complex software controlling our rover is the navigation algorithm we would use. It must efficiently process sensor data and plan routes over long range maps and short distance obstacles. A full-fledged campus rover must also handle complex obstacles like doors, elevators, and road crossings which would each require special navigation decision making. A fully functioning rover would also incorporate a unique localization algorithm to combine sensor data from fiducials, GPS, wifi signals, and camera/lidar inputs.
 
