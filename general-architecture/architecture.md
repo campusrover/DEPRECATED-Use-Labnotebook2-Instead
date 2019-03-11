@@ -4,11 +4,9 @@
 
 On the first step, we need to bring the laptop inside the Mark-I out and turn it on. Afterwards we need to SSH into the Mark-I laptop with our own device by `ssh turtlebot@129.64.243.64`. Then we attach the Mark-I laptop to her mothership and do a bringup for her by entering `roslaunch cr_ros campus_rover.launch` in the ssh terminal (Note this bringup will automatically star roscore so we don't need to do roscore seperately). By our past experience, we need to wait for a 'bep bep bep' sound effect made by the Kabuki machine and check for "Odom received" message on the ssh terminal. 
 
-Then on the side of our own device, we want to open another terminal and enter `roslaunch cr_ros offboard_launch.launch`. This will do the off_board bringup and boot the Rviz for Mark-I to navigating herself. Once Mark-I has correctly localized herself, then we can minimize the Rviz window or even close it without any harm.
+The navigation algorithm we used is the most complex software controlling the rover. It must efficiently process sensor data and plan routes over long range maps and avoid the short distance obstacles. A full-fledged campus rover must also handle complex obstacles like doors, elevators, and road crossings which would each require special navigation decision making. A fully functioning rover would also incorporate a unique localization algorithm to combine sensor data from fiducials, GPS, wifi signals, and camera/lidar inputs, etc.
 
-The most complex software controlling our rover is the navigation algorithm we would use. It must efficiently process sensor data and plan routes over long range maps and short distance obstacles. A full-fledged campus rover must also handle complex obstacles like doors, elevators, and road crossings which would each require special navigation decision making. A fully functioning rover would also incorporate a unique localization algorithm to combine sensor data from fiducials, GPS, wifi signals, and camera/lidar inputs.
-
-Currently, reliability is a more pressing concern in delivering a rover to meet the mark 1 requirements. While a solution which provides more control in navigation would allow us to better expand our solution beyond Volen 1, it is not feasible at this stage. The turtlebot navigation package has been well tested and is proven to carefully plan routes and avoid obstacles. It also incorporates a powerful adaptive Monte Carlo localization algorithm which draws on data points from a single-beam lidar or depth camera.
+Currently, reliability is a more pressing concern in building a rover to meet the mark 1 requirements. While a solution which provides more control in navigation would allow us to better expand our solution beyond Volen 1, it is not feasible at this stage. The turtlebot navigation package has been well tested and is proven to carefully plan routes and avoid obstacles. It also incorporates a powerful adaptive Monte Carlo localization algorithm which draws on data points from a single-beam lidar or depth camera.
 
 A better solution for the mark 1 rover is to make use of the robust turtlebot navigation code and supplement the AMCL localization with a separate fiducial localization system which will supply poses to the existing algorithm by publishing pose estimates. A navigation\_controller will also wrap the standard navigation and localization nodes to provide additional control and feedback where possible.
 
@@ -27,4 +25,6 @@ Takes button presses from the UI and sends `cmd_vels`.
 Uses a `move_base` action to navigate. Subscribes to `/web/destination` which parses JSON input and `/destination` which takes a PoseStamped.
 
 ### @Alexander Feldman, feldmanay@gmail.com 10/26/2018\_
+### @Sibo Zhu, siboz@brandeis.edu 3/11/2019\_
+### @Yuchen Zhang, yzhang71@brandeis.edu 3/11/2019\_
 
