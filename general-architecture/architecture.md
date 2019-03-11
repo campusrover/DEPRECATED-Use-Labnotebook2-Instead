@@ -2,7 +2,7 @@
 
 [Architecture diagram here](https://docs.google.com/drawings/d/1K8Bq4vd7oYqD6yXStrwqmTUtPrRfLSoVaKmgR9WnArc/edit?usp=sharing) \(Outdated. Sorry (No worry, GEN3 will update a new one😉)\)
 
-On the first step, we need to bring the laptop inside the Mark-I out and turn it on. Afterwards we need to SSH into the Mark-I laptop with our own device by `ssh turtlebot@129.64.243.64`. our robot would receive data sent from LiDAR and camera. Those data will do SLAM and form a map in which will be sent to the central control system. The newly generated map will be sent to the tablet/control device 
+On the first step, we need to bring the laptop inside the Mark-I out and turn it on. Afterwards we need to SSH into the Mark-I laptop with our own device by `ssh turtlebot@129.64.243.64`. Then we attach the Mark-I laptop to her mothership and do a bringup for her by entering `roslaunch cr_ros campus_rover.launch` in the ssh terminal (Note this bringup will automatically star roscore so we don't need to do roscore seperately). By our past experience, we need to wait for a 'bep bep bep' sound effect made by the Kabuki machine and check for "Odom received" message on the ssh terminal. 
 
 The most complex software controlling our rover is the navigation algorithm we would use. It must efficiently process sensor data and plan routes over long range maps and short distance obstacles. A full-fledged campus rover must also handle complex obstacles like doors, elevators, and road crossings which would each require special navigation decision making. A fully functioning rover would also incorporate a unique localization algorithm to combine sensor data from fiducials, GPS, wifi signals, and camera/lidar inputs.
 
