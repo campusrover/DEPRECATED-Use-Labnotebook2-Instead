@@ -33,3 +33,6 @@
   * [Demo Setup](demos/gen2_demo_instructions.md)
 * [Create Gazebo Maps](create-gazebo-map/README.md)
   * [tutorial](create-gazebo-map/tutorial.md)
+  
+* [Hand Gesture Recognition](gesture-recognition/README.md)
+  * [Demo](gesture-recognition/demo.md)
