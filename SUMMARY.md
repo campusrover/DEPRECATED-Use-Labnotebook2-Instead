@@ -28,11 +28,13 @@
     * [Voice Implementation](package-delivery/package-delivery/talker-node.md)
 * [Hairy Math](hairy-math/README.md)
   * [Quaternions](hairy-math/quaternions.md)
+* [Hardware](hardware/README.md)
+  * [Raspberry Pi Camera](hardware/RaspiCam.md)
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
 * [Create Gazebo Maps](create-gazebo-map/README.md)
   * [tutorial](create-gazebo-map/tutorial.md)
-  
+
 * [Hand Gesture Recognition](gesture-recognition/README.md)
   * [Demo](gesture-recognition/demo.md)
