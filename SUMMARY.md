@@ -23,7 +23,7 @@
     * [Costmap Clearing 1](navigation/costmap-clearing/costmap-clearing-part-1.md)
     * [Costmap Clearing 2](navigation/costmap-clearing/costmap-clearing-part-2.md)
   * [Mapping a floor](navigation/floormapping.md)
-* [Voice](https://github.com/campusrover/labnotebook/blob/master/voice/voice.md)
+* [Voice](voice/voice.md)
 * [Package Delivery](package-delivery/README.md)
   * [Package Delivery](package-delivery/package-delivery/README.md)
     * [Voice Implementation](package-delivery/package-delivery/talker-node.md)
