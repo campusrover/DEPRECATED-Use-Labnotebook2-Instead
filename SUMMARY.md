@@ -31,6 +31,7 @@
   * [Quaternions](hairy-math/quaternions.md)
 * [Hardware](hardware/README.md)
   * [Raspberry Pi Camera](hardware/RaspiCam.md)
+  * [Mutant Setup](hardware/mutantSetup.md)
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
