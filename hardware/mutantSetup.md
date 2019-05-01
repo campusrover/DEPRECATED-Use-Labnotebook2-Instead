@@ -48,7 +48,7 @@ Now don't make the same mistake twice.
 ### The Amazon Echo attached to the robot is in an infinite boot loop!
 This is probably because the volume was turned up too high, and the raspberry pi cannot supply enough power. Plug the Echo into a wall outlet, turn the volume down, and then plug it back into the robot. Rule of thumb: keep the echo's volume no greater than 70%.
 
-## One of mutant's wheels isn't spinning!
+### One of mutant's wheels isn't spinning!
 Turn the robot all the way off (this means powering off the reaspberry pi, then switching the openCR board off as well), then turn it back on. If the wheel continues to not spin after this, then consult the lab's resident roboticist, Charlie.
 
 ### Nodes aren't subscribing to the right topics!
@@ -78,7 +78,17 @@ Then, use python string formatting in all your publishers and subscribers to nam
 `cmd_pub = rospy.Publisher('{}cmd_vel'.format(ns), . . .)`
 `ns` will contain both backslashes needed for the topic to conform to ROS's topic formatting guidelines, e.g. the publisher above will publish to the topic `/namespace/cmd_vel`.
 
-### list of known nodes that don't get automatically namespaced:
+#### list of known nodes that don't get automatically namespaced:
 * /fiducial_transforms (from the node aruco_detect)
 * /diagnostics (from turtlebot3_core)
 * /cmd_vel (from move_base)
+
+
+### Configuring the size of the wheels within the OpenCR firmware
+Many components of Turtlebot3 software depend on knowing the size of wheels of the robot. Some examples include Odometry, cmd_vel (the turtlebot core), and move_base. By default, turtlebot3 wheels are 6.6cm in diameter. Mutant has 10cm diameter wheels. If you use larger wheels, but the software believes it has smaller wheels, then movement behavior will not be as expected.
+
+On your remote pc, follow steps 4.1.1 through 4.1.6 [of this Robotis e-manual guide](http://emanual.robotis.com/docs/en/parts/controller/opencr10/) to install the arduino IDE and configure it to work with the OpenCR board. Please note that as of May 2019, the latest version of the Arduino IDE is 1.8.9, but the guide displays version 1.6.4.
+
+In the IDE, go to `File` --> `Examples` --> `TurtleBot3` --> `turtlebot3_waffle` (or `turtlebot3_burger` if that better fits the form factor of your mutant TB3) --> `turtlebot3_core`. This will open three files: `turtlebot3_core`, `turtlebot3_core_config.h` and `turtlebot3_waffle.h`. Go to `turtlebot3_waffle.h`. You will see that this file defines a number of characteristics of a robot, including wheel radius! Edit your wheel radius variable, then save your work - two windows will pop up. In the first one, click "ok" and in the second, click "save" - don't edit anything!
+
+Now it's time to upload the edited firmware to the OpenCR board. This is actually not too difficult - first, unplug the usb cable that connecct the OpenCR board to the Raspberry Pi (or whatever SBC your mutant is using), and plug it into your remote PC. You may have noticed that you weren't able to select a port in step 4.1.5.3 of the emanual instructions - now that the OpenCR board is connected, you should be able to select the port. Once you've done that, click the upload button at the top of the IDE to upload the firmware to your robot. Once the upload is complete, your firmware should be updated and your robot should behave as expected in movement-based tasks. To test, make the robot move forward at 0.1 m/s for 10 seconds - it should travel about a meter. If not, your firmware may not have been updated properly or your wheel measurements may be incorrect. 
