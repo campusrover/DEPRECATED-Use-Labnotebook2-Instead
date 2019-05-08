@@ -1,6 +1,8 @@
 # XmlToTxt
 ImageNet file xml format to [Darknet](https://github.com/pjreddie/darknet) text format.
 
+Full Repo here: https://github.com/campusrover/Robotics_Computer_Vision/tree/master/utils/xml_2_txt
+
 ### Installation
 ```bash
 sudo pip install -r requirements.txt
