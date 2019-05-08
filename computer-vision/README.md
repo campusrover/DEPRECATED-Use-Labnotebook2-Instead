@@ -5,10 +5,11 @@ For new contributors of Percetion_CV team, please first create **your own branch
 For new team leaders of Perception_CV, the `master branch` should **only** contain stable code that has been confirmed working. Master branch will be the source we use for integration with other teams when the time is ready. 
 
 # Introduction
+Full CV Repo here: https://github.com/campusrover/Robotics_Computer_Vision
 
 This repo is originally forked from https://github.com/ultralytics/yolov3. The purpose of this repo is to achieve custom object detection for Brandeis Autonomous Robotics Course. Changes were made based on our object of deploying CV on ROS. <br/>
 To download our most recent best trained weights, please go to https://drive.google.com/file/d/1DquRwpNDaXgkON2gj9Oks8N2ZWgN2Z9q/view?usp=sharing <br/>
-Then move the file to `weights` directory in this repo and replace everything.
+Then move the file to `weights` directory in this repo.
 
 **Notes**:<br/>
 I've put a low of useful tools inside the `./utils` directory, please feel free to use them whenever you need it. <br/>
