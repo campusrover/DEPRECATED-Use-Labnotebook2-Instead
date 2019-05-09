@@ -7,21 +7,29 @@ To launch Mutant, follow these steps:
 ## Longterm Troubleshooting
 This section should be updated as problems arise and their solutions are discovered
 
-### What if .bashrc (accidentally) gets deleted?
-Restoring `.bashrc` is not very difficult.
-
-First, type `/bin/cp /etc/skel/.bashrc ~/` into your terminal. This will replace a corrupt .bashrc file with the default .bashrc.
-Then, try `ls -a` in your user directory to view all files, including hidden ones, such as .bashrc. If a file such as `.bashrc.swp` appears, delete it with `rm .bashrc.swp`. Continue removing files that look related to .bashrc until `nano ~/.bashrc` properly opens the file without giving an error.
-Now you'll have to restore all the lines at the bottom of .bashrc that were added when ROS was installed. Fortunately, there are many computers in the lab and they all have almost identical .bashrc files! ssh from one of those computers to the one that you are restoring, copy the lines that need to be re-added, and then edit them to fit the computer that the .bashrc file is located on (things to consider: namespace, ip address, aliasas that are useful on the given machine)
-Don't forget to `source ~/.bashrc` after you are done editing the file, so the changes you made can take effect in the terminal!
-
-Now don't make the same mistake twice.
-
 ### The Amazon Echo attached to the robot is in an infinite boot loop!
 This is probably because the volume was turned up too high, and the raspberry pi cannot supply enough power. Plug the Echo into a wall outlet, turn the volume down, and then plug it back into the robot. Rule of thumb: keep the echo's volume no greater than 70%.
 
 ### One of mutant's wheels isn't spinning!
 Turn the robot all the way off (this means powering off the reaspberry pi, then switching the openCR board off as well), then turn it back on. If the wheel continues to not spin after this, then consult the lab's resident roboticist, Charlie.
+
+
+### The robot isn't working and I have literally no idea why!
+
+1. Shut down and restart roscore.
+1. Make sure everything is namespaced correctly (on your local machine) - see above for namespacing troubleshooting.
+1. Check that the battery is fully charged.
+1. Your node may have crashed right off the bat - check `rqt_graph` and check that all nodes that are supposed to be communicating with each other are actually communicating.
+
+
+### The camera feed from the raspicam is flipped
+
+1. Type `rosrun rqt_reconfigure rqt_reconfigure` into the command line.
+1. Click the boxes to flip the image hortizontally/vertically.
+1. To check whether the image is flipped correctly, just run `rqt_imageview`.
+
+##### For further details on the raspicam, look at `Hardware` - `Raspberry Pi Camera` page in the lab notebook.
+
 
 ### Nodes aren't subscribing to the right topics!
 The best way to debug topic communication is through rqt_graph in the terminal. This will create a visual representation of all nodes and topics currently in use. There are two setting to toggle:
@@ -29,6 +37,7 @@ The best way to debug topic communication is through rqt_graph in the terminal. 
 - Next, in the check box bar, make sure it is grouped by namespace and that dead sinks, leaf topics and unreachable topics are un-hidden.
 Now it's important to note that nodes appear on the graph as ovals, and topics appear in the graph as boxes. hovering over a node or topic will highlight it and all topics/ nodes connected to it. This will help to show whether a node is subscribing to and publishing all the nodes that it is expected to.
 Based on the rqt graph information, update your topic names in your nodes and launch files to match what you expect.
+
 
 ### Namespacing a topic from a node that you can't edit
 Some nodes automatically namespace their published topics, but some don't. This can be an annoyance when you desire a mutli-robot setup. Fear not, it is possible to namespace topics that aren't auto-namespaced. There are two ways to do this, and both require some launch file trickery.
@@ -66,6 +75,12 @@ In the IDE, go to `File` --> `Examples` --> `TurtleBot3` --> `turtlebot3_waffle`
 Now it's time to upload the edited firmware to the OpenCR board. This is actually not too difficult - first, unplug the usb cable that connects the OpenCR board to the Raspberry Pi (or whatever SBC your mutant is using), and plug it into your remote PC. You may have noticed that you weren't able to select a port in step 4.1.5.3 of the emanual instructions - now that the OpenCR board is connected, you should be able to select the port. Once you've done that, click the upload button at the top of the IDE to upload the firmware to your robot. Once the upload is complete, your firmware should be updated and your robot should behave as expected in movement-based tasks. To test, make the robot move forward at 0.1 m/s for 10 seconds - it should travel about a meter. If not, your firmware may not have been updated properly or your wheel measurements may be incorrect.
 
 
-1. Shut down and restart roscore.
-1. Make sure everything is namespaced correctly (on your local machine).
-1. 
+### What if .bashrc (accidentally) gets deleted?
+Restoring `.bashrc` is not very difficult.
+
+First, type `/bin/cp /etc/skel/.bashrc ~/` into your terminal. This will replace a corrupt .bashrc file with the default .bashrc.
+Then, try `ls -a` in your user directory to view all files, including hidden ones, such as .bashrc. If a file such as `.bashrc.swp` appears, delete it with `rm .bashrc.swp`. Continue removing files that look related to .bashrc until `nano ~/.bashrc` properly opens the file without giving an error.
+Now you'll have to restore all the lines at the bottom of .bashrc that were added when ROS was installed. Fortunately, there are many computers in the lab and they all have almost identical .bashrc files! ssh from one of those computers to the one that you are restoring, copy the lines that need to be re-added, and then edit them to fit the computer that the .bashrc file is located on (things to consider: namespace, ip address, aliasas that are useful on the given machine)
+Don't forget to `source ~/.bashrc` after you are done editing the file, so the changes you made can take effect in the terminal!
+
+Now don't make the same mistake twice.
