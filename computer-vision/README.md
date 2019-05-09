@@ -9,7 +9,7 @@ Full CV Repo here: https://github.com/campusrover/Robotics_Computer_Vision
 
 This repo is originally forked from https://github.com/ultralytics/yolov3 but heavily modified for our own use. The purpose of this repo is to achieve custom object detection for Brandeis Autonomous Robotics Course. Changes were made based on our object of deploying CV on ROS. <br/>
 To download our most recent best trained weights, please go to https://drive.google.com/file/d/1DquRwpNDaXgkON2gj9Oks8N2ZWgN2Z9q/view?usp=sharing <br/>
-Then move the file to `weights` directory in this repo.
+Then unzip the file and copy `coco` and `weights` directory in this repo and replace everything.
 
 **Notes**:<br/>
 I've put a low of useful tools inside the `./utils` directory, please feel free to use them whenever you need it. <br/>
@@ -74,7 +74,7 @@ All the CV subscriber and publisher are located at `./utils/` directory, they ar
 
 - `./utils/string_publisher.py` : The python script that publishes a string on rostopic of `/mutant/face_detection` which is generated from `detect.py`, the format is explained below: <br/>
 
-CV Publisher example: "['sibo', '0.04', '1.57']" <br/>
+CV Publisher example: "['sibo', -4.34, 1.63]" <br/>
 
 
 [ <br/> 
@@ -348,4 +348,4 @@ Computing mAP: 100%|████████████████████
 
 # Contact
 
-Issues should be raised directly in the repository. For additional questions or comments please email contact your CV Team Leader or Sibo Zhu at siboz1995@gmail.com
+Issues should be raised directly in the repository. For additional questions or comments please contact your CV Team Leader or Sibo Zhu at siboz1995@gmail.com
