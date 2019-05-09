@@ -7,6 +7,9 @@ To launch Mutant, follow these steps:
 ## Longterm Troubleshooting
 This section should be updated as problems arise and their solutions are discovered
 
+### SSH is slow/unresponsive/won't connect, etc.
+We've found that limiting the number of powercycles by just turning off the robot with the switch is deterimental to the robot's ability to SSH. We recommend running `sudo poweroff` every so often to run a full power cycle and get SSH working again. Usually, waiting for the Echo Dot to fully turn on is a good indicator of when the robot will be ready to SSH.
+
 ### The Amazon Echo attached to the robot is in an infinite boot loop!
 This is probably because the volume was turned up too high, and the raspberry pi cannot supply enough power. Plug the Echo into a wall outlet, turn the volume down, and then plug it back into the robot. Rule of thumb: keep the echo's volume no greater than 70%.
 
