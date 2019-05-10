@@ -26,8 +26,7 @@ Turn the robot all the way off (this means powering off the reaspberry pi, then 
 
 ### In RVIZ, the robot appears to be jumping around and won't get any sort of pose!
 
-This is usually caused by interference from another robot. Even with namespacing, another robot running on the roscore can cause interference specifically on rviz. Everything else should work as expected.
-
+This is usually caused by interference from another robot. Even with namespacing, another robot running on the roscore can cause interference specifically on rviz. We have determined that the likely cause of this is because the odom tf (transform) is not namespaced.
 
 ### The camera feed from the raspicam is flipped
 
