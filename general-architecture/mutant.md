@@ -8,7 +8,9 @@ To launch Mutant, follow these steps:
 This section should be updated as problems arise and their solutions are discovered
 
 ### SSH is slow/unresponsive/won't connect, etc.
-We've found that limiting the number of powercycles by just turning off the robot with the switch is deterimental to the robot's ability to SSH. We recommend running `sudo poweroff` every so often to run a full power cycle and get SSH working again. Usually, waiting for the Echo Dot to fully turn on is a good indicator of when the robot will be ready to SSH.
+We've found that forcing powercycles with the switch on the OpenCR board can be detrimental to the robot's ability to SSH. We recommend running `sudo poweroff` every time you want to powercycle, if possible. Give the robot ample time to fully shut down before turning it back on. Usually, when turning the robot back on, waiting for the Echo Dot to fully turn on is a good indicator of when the robot will be ready to SSH - if the Echo is powered through the Raspberry pi board. Another indicator is that if the echo is setup to communicate with the robot via bluetooth, then the Echo will say "now connected to mutant". This means the robot is ready. (please note - even though the Echo says it is connected via bluetooth, the raspberry pi does not default to use the Echo as an audio sink, so it will not play audio from the robot.)
+
+Another solution we have found is to disable DNS in SSH settings on the robot. Go to `etc/ssh` and then open the config file with `sudo nano sshd_config`. If there is a line that says `UseDNS yes` then change the `yes` to `no`. If `UseDNS` is not present in the file, then add the line `UseDNS no` to the bottom of the file. 
 
 ### The Amazon Echo attached to the robot is in an infinite boot loop!
 This is probably because the volume was turned up too high, and the raspberry pi cannot supply enough power. Plug the Echo into a wall outlet, turn the volume down, and then plug it back into the robot. Rule of thumb: keep the echo's volume no greater than 70%.
@@ -69,6 +71,7 @@ Then, use python string formatting in all your publishers and subscribers to nam
 * /fiducial_transforms (from the node aruco_detect)
 * /diagnostics (from turtlebot3_core)
 * /cmd_vel (from move_base)
+* Any and all transforms
 
 
 ### Configuring the size of the wheels within the OpenCR firmware
