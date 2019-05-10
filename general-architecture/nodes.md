@@ -1,5 +1,5 @@
 # Campusrover Node List
-
+Updated May 2019 with progress following gen3 and mutant mark 1. 
 
 ## [adjust_position](https://github.com/campusrover/cr_ros/blob/master/src/adjust_position.py)
 
@@ -14,13 +14,15 @@
 
 ## [check_docked](https://github.com/campusrover/cr_ros/blob/master/src/check_docked.py)
 
-`Current` Updates the robot's state to reflect whether it is currently being charged at its dock based on charging data from its subscription
+`Defunct` Updates the robot's state to reflect whether it is currently being charged at its dock based on charging data from its subscription
+
+Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 **Subscriptions**
 - /mobile_base/sensors/core_throttle
 
 
-## [cpu_checker](https://github.com/campusrover/cr_ros/blob/master/src/cpu_checker.py)
+## [cpu_checker](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/cpu_checker.py)
 
 `Current` Publishes CPU usage data and prints it to the warning log if it is high or otherwise to the debug log based on data from process and system utilities
 
@@ -30,29 +32,29 @@
 
 ## [greeter](https://github.com/campusrover/cr_ros/blob/master/src/greet.py)
 
-`Current` Uses facial recognition to detect and recognize known faces in the camera feed based on provided data and greets them appropriately by name via a vocal service
+`Dormant` Uses facial recognition to detect and recognize known faces in the camera feed based on provided data and greets them appropriately by name via a vocal service
 
 **Subscriptions**
 - /camera/rgb/image_raw/compressed_throttle
 
 
-## [lost_and_found](https://github.com/campusrover/cr_ros/blob/master/src/lost_and_found.py)
+## [lost_and_found](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/lost_and_found.py)
 
-`Current` Detects when the robot is flying based on whether its wheels are in contact with the ground, lost upon regaining contact with the ground, and navigating upon recognizing its location and adjusts its state and goals accordingly and publishes or logs reverent information
+`Current` Uses pickup detector data to determine whether the robot is flying or not. Handles localization recovery upon returning to the ground.
 
 **Publications**
 - /initialpose
-- cmd_vel_mux/input/teleop
+- /cmd_vel
 - /destination
 
 **Subscriptions**
-- /mobile_base/events/wheel_drop
+- /airborne
 - /destination
 
 
-## [message_switch](https://github.com/campusrover/cr_ros/blob/master/src/message_switch.py)
+## [message_switch](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/message_switch.py)
 
-`Current` Organizes speech messages chronologically and feeds them to the speech service at appropriate times
+`Dormant` Organizes speech messages chronologically and feeds them to the speech service at appropriate times
 
 **Subscriptions**
 - /things_to_say
@@ -82,7 +84,9 @@
 
 ## [package_handler](https://github.com/campusrover/cr_ros/blob/master/src/package_handler.py)
 
-`Current` Detects the presence of a physical package via its publications and converses with a user to determine goals and to communicate successes and errors while updating its goals to respond to expected and unexpected changes
+`Dormant` Detects the presence of a physical package via its publications and converses with a user to determine goals and to communicate successes and errors while updating its goals to respond to expected and unexpected changes.
+
+Currently not in use due to the lack of a sensor to detect packages on gen3's mutant.
 
 **Publications**
 - /release_package
@@ -101,7 +105,9 @@
 
 ## [package_sender](https://github.com/campusrover/cr_ros/blob/master/src/package_sender.py)
 
-`Current` Publishes filename of appropriate prerecorded message for the robot to play based on data from its subscription
+`Dormant` Publishes filename of appropriate prerecorded message for the robot to play based on data from its subscription
+
+Dormant for same reason as package_handler
 
 **Publications**
 - /receive_package
@@ -110,12 +116,12 @@
 - /physical_package
 
 
-## [pose_converter](https://github.com/campusrover/cr_ros/blob/master/src/pose_converter.py)
+## [pose_converter](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/pose_converter.py)
 
-`Dormant` Provides scripts for automatically converting from different pose types
+`Current` Provides scripts for automatically converting from different pose types
 
 
-## [process_fid_tfs](https://github.com/campusrover/cr_ros/blob/master/src/process_fid_transforms.py)
+## [process_fid_tfs](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/process_fid_transforms.py)
 
 `Current` Uses fiducial data from its subscription to to determine and publish the robot's position relative to the map
 
@@ -138,9 +144,9 @@
 - /record_stop
 
 
-## [rover_controller](https://github.com/campusrover/cr_ros/blob/master/src/rover_controller.py)
+## [rover_controller](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/rover_controller.py)
 
-`Dormant` Controls the robot and its state with respect to a wide range of input sources and publishes a wide range of data for other nodes to use
+`Current` Controls the robot and its state with respect to a wide range of input sources and publishes a wide range of data for other nodes to use
 
 **Publications**
 - temp_pose
@@ -149,27 +155,27 @@
 - /web/camera
 - /web/state
 - /web/map
-- /cmd_vel_mux/input/navi
+- /cmd_vel
 
 **Subscriptions**
-- /camera/rgb/image_rect_color/compressed
+- /raspicam_node/image/compressed
 - /web/teleop
 - /web/destination
 - /destination
 
 
-## [scan_filter](https://github.com/campusrover/cr_ros/blob/master/src/scan_filter.py)
+## [scan_filter](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/scan_filter.py)
 
-`Current` Replaces the 'nan' value in the /scan topic with 9.90 and publishes to /scan_filtered
+`Current` applies a filter to scan data to ignore the structural posts of the mutant
 
 **Publications**
-- /scan_filtered
+- /scan_filter
 
 **Subscriptions**
 - scan
 
 
-## [state_manager](https://github.com/campusrover/cr_ros/blob/master/src/state.py)
+## [state](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/state.py)
 
 `Current` Handles and validates requested state changes for legality and publishes relevant information accordingly
 
@@ -180,12 +186,12 @@
 - /state
 
 
-## [talk](https://github.com/campusrover/cr_ros/blob/master/src/talk.py)
+## [talk](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/talk.py)
 
-`Current` Plays sound files of what the robot is supposed to say
+`Current` Uses text to speech to turn strings into audio output
 
 
-## [turtlebot_teleop](https://github.com/campusrover/cr_ros/blob/master/src/turtlebot_teleop_key.py)
+## [turtlebot_teleop](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/turtlebot_teleop_key.py)
 
 `Current` Cancels existing robot goals and allows for manual control of the robot via teleoperation
 
@@ -197,7 +203,7 @@
 - initialpose
 
 
-## [whereabouts](https://github.com/campusrover/cr_ros/blob/master/src/whereabouts.py)
+## [whereabouts](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/whereabouts.py)
 
 `Dormant` Publishes the name of the nearest waypoint when it changes based on data from its subscription
 
@@ -206,3 +212,47 @@
 
 **Subscriptions**
 - /amcl_pose
+
+## [detect_pickup](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/detect_pickup.py)
+
+`Current` Uses IMU accelerometer data to decide whether the robot has been lifted, and when it has been placed on the ground.
+
+**Publications**
+- /airborne
+
+**Subcriptions**
+- /imu
+
+## [voice_destination_pub](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/voice_destination_pub.py)
+
+`Current` takes information from the alexa webhook, and if it involves going to a destination, publishes the goal pose of the specified destination.
+
+**Publications**
+- /destination
+
+**Subscriptions**
+- /voice_intents
+
+## [hand_gesture](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/hand_gesture.py)
+
+`Current` *only slightly usable in demo* pauses navigation for ten seconds if it receives signal that a hand is in view of the camera.
+
+**Publications**
+- /destination
+
+**Subscriptions**
+- /destination
+- /hand_command
+
+## [go_to_person](https://github.com/campusrover/cr_ros_2/blob/mutant_transfer/src/go_to_person.py)
+
+`Current` *only slightly usable in demo* spins, searching for recognized person, then stops.
+
+**Publications**
+- /destination
+- /cmd_vel
+
+**Subscriptions**
+- /odom
+- /face_detection
+- /has_package
