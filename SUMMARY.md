@@ -4,6 +4,7 @@
 * [General Architecture](general-architecture/README.md)
   * [Overview](general-architecture/architecture.md)
   * [Nodes](general-architecture/nodes.md)
+  * [Launch Files](general-architecture/launch-files.md)
   * [Logging](general-architecture/logging.md)
   * [State Management](general-architecture/state-management-services.md)
   * [Mutant](general-architecture/mutant.md)
