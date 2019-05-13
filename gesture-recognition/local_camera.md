@@ -1,4 +1,4 @@
-### Hand Gesture Recognition
+s### Hand Gesture Recognition
 After reaching the dead-end in the previous approach and being inspired by several successful projects (on
 Github and other personal tech blogs), I implemented an explict-feature-driven hand recognition algorithm.
 It relies on background extraction to "extract" hands (giving gray scale images), and based on which
@@ -7,6 +7,7 @@ background are ABSOLUTELY stationary but it isn't the case in our project: as th
 robot and the robot keeps moving (meaning the background keeps changing). Code can be founded [here](https://github.com/campusrover/count_fingers)
 ### References
 [Opencv python hand gesture recognition](http://creat-tabu.blogspot.com/2013/08/opencv-python-hand-gesture-recognition.html)
+
 [Hand Tracking And Gesture Detection](https://s-ln.in/2013/04/18/hand-tracking-and-gesture-detection-opencv/)
 #### Dependencies Overview
 * OpenCV
