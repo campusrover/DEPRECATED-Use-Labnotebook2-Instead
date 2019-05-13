@@ -43,4 +43,7 @@
   * [tutorial](create-gazebo-map/tutorial.md)
 
 * [Hand Gesture Recognition](gesture-recognition/README.md)
-  * [Demo](gesture-recognition/demo.md)
+  * [Attempts to using Kinect libraries](gesture-recognition/kinect.md)
+  * [Explicit Features Approach (counting fingers)](gesture-recognition/local_camera.md)
+  * [Color Extraction](gesture-recognition/color.md)
+  * [Deep Learning](gesture-recognition/SSD.md)
