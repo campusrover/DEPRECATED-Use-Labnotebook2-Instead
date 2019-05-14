@@ -5,4 +5,4 @@ obtained by doing color filtering. This approach sometimes worked fine but easil
 changes in lighting at most of the time. In a word, it was not robust enough. After speaking to Prof. Hong, I
 realized this approached had been tried by hundreds of people decades ago and will never work. Code can be found [here](https://github.com/campusrover/color_filtering).
 
-![color-filtering](/images/color-filtering.jpg)
+![color-filtering](images/color-filtering.jpg)

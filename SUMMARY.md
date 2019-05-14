@@ -46,4 +46,4 @@
   * [Attempts to using Kinect libraries](gesture-recognition/kinect.md)
   * [Explicit Features Approach (counting fingers)](gesture-recognition/local_camera.md)
   * [Color Extraction](gesture-recognition/color.md)
-  * [Deep Learning](gesture-recognition/SSD.md)
+  * [SSD model (deep learning)](gesture-recognition/SSD.md)
