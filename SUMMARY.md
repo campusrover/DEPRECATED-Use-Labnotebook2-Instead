@@ -41,7 +41,7 @@
 * [Infrastructure](infrastructure/README.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup_hints.md)
-  * [Bootable SSXD Creation](infrastucture/external-ssd-instructions.md)
+  * [Bootable SSXD Creation](infrastucture/external-ssd-instructions/ssd-instructions.md)
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
