@@ -1,6 +1,6 @@
 # Introduction
 
-## To the students of Gen 3,
+## To the students of Gen 3:
 
 We, the Gen 2 team, hope in this letter \(and in the ancillary documentation contained in the `labnotebook` repo\) to pass on the experience and knowledge we have gathered over the past semester to the Gen 3 team and beyond. We hope that future teams will not only build upon our accomplishments, but also that they will learn from and avoid our mistakes.
 
