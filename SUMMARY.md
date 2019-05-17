@@ -11,7 +11,7 @@
 * [Infrastructure](infrastructure/README.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup_hints.md)
-  * [Bootable SSD Creation](infrastructure/ssd-instructions.md)
+  * [Bootable SSD Creation](infrastructure/ssd-instructions.md)!
 * [Web Application](web-application/README.md)
   * [AWS RoboMaker](web-application/aws-robomaker.md)
   * [Creating the app](web-application/flask.md)
