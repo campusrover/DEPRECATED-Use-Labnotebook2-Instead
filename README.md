@@ -1,5 +1,21 @@
 # Introduction
 
+## To the students of Gen 4:
+
+We started our iteration with the the code from Gen 2. This consisted of several nodes which were compatible with the Turtlebot2. We immediately eliminated some nodes which did not exist on the Mutant (such as package_handler), as we did not have such a sensor. Other nodes required reworking, such as pickup_detector, as the Turtlebot2 had sensors to see whether it was on the ground or not but the Mutant did not have this functionality built in. In addition, during our time in the class, namespacing was introduced, so multiple robots could run on the same roscore. This introduced some difficulties, specifically with certain nodes that were not being namespaced correctly.
+
+It seems that many of the problems we were having resulted from the Turtlebot2 running off of a lot of proprietary software, while the Mutant (based off of a Turtlebot3) is much simpler. Using ROS, we did run into many hiccups and there was a significant amount of troubleshooting involved. A lot of information about the troubleshooting can be found in the lab notebook, on the Mutant page. As ROS is very complicated, without a doubt any future generation will also be faced with a significant amount of troubleshooting. We found the rqt_graph tool to be one of the most helpful -- it allows the user to see which nodes are subscribing/publishing, etc. Much of the time problems stem from this, and being able to see this visually can be very helpful.
+
+We participated in the development of the campus rover similar to Gen 2, where we would brainstorm projects and Pito would lead the adoption by each group of a given project. While everyone was (for the most part) able to complete their projects, we left integration of the different parts (computer vision, hand gestures, navigation) until the last day, which created some difficulties. We highly recommend teams to work on integration throughout the process so that integration is as smooth as possible for the demo at the end of the semester!
+
+In future generations, we recommend further improving the robustness of features that were implemented, such as hand gestures and CV. In addition, part of Gen 3’s goal was to allow the project to run on any Turtlebot. While the code should be able to run on any Turtlebot3, a speaker of some sort would need to be attached for the talk services. These talk services allow the robot to update the user with its progress throughout its use. With these new features, we tried to give direction to further development of the project. We think that these features will guide future generations of the class in development of the campus rover, ultimately leading to a campus rover that will actually be able to deliver packages on campus.
+
+Best of luck,
+Gen 3
+
+### Eli Cohn, 5/17/2019
+
+
 ## To the students of Gen 3:
 
 We, the Gen 2 team, hope in this letter \(and in the ancillary documentation contained in the `labnotebook` repo\) to pass on the experience and knowledge we have gathered over the past semester to the Gen 3 team and beyond. We hope that future teams will not only build upon our accomplishments, but also that they will learn from and avoid our mistakes.
