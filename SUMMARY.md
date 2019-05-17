@@ -9,7 +9,6 @@
   * [State Management](general-architecture/state-management-services.md)
   * [Mutant](general-architecture/mutant.md)
 * [Infrastructure](infrastructure/README.md)
-  * [Bootable SSD Creation](infrastructurex/ssd-instructions.md)!
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup_hints.md)
 * [Web Application](web-application/README.md)
