@@ -42,7 +42,7 @@
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup_hints.md)
   * [Bootable SSD Creation](infrastructure/external-ssd-instructions/ssd-instructions.md)
-  * [Mac Addresses](infrastructure/external-ssd-instructions/ip-addresses.md)
+  * [Mac Addresses](infrastructure/ip-addresses.md)
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
