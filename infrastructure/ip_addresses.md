@@ -5,13 +5,13 @@
 
 #### Wifi Connected Rasberry Pi's
 
-* 01:b8:27:eb:e3:9b:a2 - **mutant**
-* 01:b8:27:eb:75:89:b1 - **roba**
-* 01:b8:27:eb:01:e7:69 - **robb**
-* 01:b8:27:eb:83:21:e4 - **robc**
-* 01:b8:27:eb:8c:90:c5 - **thebert**
-* 01:b8:27:eb:a4:d5:ec - **rafael**
-* 01:74:40:bb:d5:ea:2f - **alien**
+* b8:27:eb:e3:9b:a2 - **mutant**
+* b8:27:eb:75:89:b1 - **roba**
+* b8:27:eb:01:e7:69 - **robb**
+* b8:27:eb:83:21:e4 - **robc**
+* b8:27:eb:8c:90:c5 - **thebert**
+* b8:27:eb:a4:d5:ec - **rafael**
+* 74:40:bb:d5:ea:2f - **alien**
 
 #### Wifi connected Linux Notebook
 * 5c:ff:35:0f:ef:6d - **roscore2**
