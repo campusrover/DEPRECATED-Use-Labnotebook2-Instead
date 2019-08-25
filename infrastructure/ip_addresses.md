@@ -1,11 +1,11 @@
 # Robotics Lab Mac Addresses
-* Each entry is Mac Adress - our internal name
-* Hopefully the internal dns will use our internal name so we can track everything
+* One entry for each robot or roscore.
 * All these devices live in the Robotics Lab in Gzang 006
 
+### Name, mac address, IP address, dns name
 * Wifi Connected Rasberry Pi's
-  * b8:27:eb:e3:9b:a2 - **mutant**
-  * b8:27:eb:75:89:b1 - **roba**
+  * b8:27:eb:e3:9b:a2 - **mutant** - ip - x.cs.brandeis.ed
+  * b8:27:eb:75:89:b1 - **roba** - please fill in
   * b8:27:eb:01:e7:69 - **robb**
   * b8:27:eb:83:21:e4 - **robc**
   * b8:27:eb:8c:90:c5 - **thebert**
