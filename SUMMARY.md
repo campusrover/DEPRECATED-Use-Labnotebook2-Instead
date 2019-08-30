@@ -44,6 +44,7 @@
   * [Bootable SSD Creation](infrastructure/external-ssd-instructions/ssd-instructions.md)
   * [Mac Addresses](infrastructure/ip_addresses.md)
   * [ROS Melodic](infrastructure/ros_melodic.md)
+  * [Ubuntu Brandeis Tips](infrastructure/ubuntubrandeis.md)
 * [Demos](demos/README.md)
   * [Demo Script](demos/demo_script_fall_2018.md)
   * [Demo Setup](demos/gen2_demo_instructions.md)
