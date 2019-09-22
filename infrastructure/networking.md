@@ -1,3 +1,5 @@
+# Robotics Lab Robot Networking Configuration
+
 # Robotics Lab Mac Addresses
 * One entry for each robot or roscore.
 * All these devices live in the Robotics Lab in Gzang 006
