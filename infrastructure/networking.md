@@ -1,5 +1,10 @@
 # Robotics Lab Robot Networking Configuration
 
+### Robot Bashrc File 
+
+
+### PC Bashrc File
+
 # Robotics Lab Mac Addresses
 * One entry for each robot or roscore.
 * All these devices live in the Robotics Lab in Gzang 006
