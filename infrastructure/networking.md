@@ -22,6 +22,24 @@ export TURTLEBOT3_MODEL=burger
 
 ### PC Bashrc File
 
+alias gp='git pull'
+
+alias cw='cd ~/catkin_ws'
+
+alias cs='cd ~/catkin_ws/src'
+
+alias cm='cd ~/catkin_ws && catkin_make'
+
+source /opt/ros/melodic/setup.bash
+
+source ~/catkin_ws/devel/setup.bash
+
+export ROS_MASTER_URI=http://<IP_ADDRESS>:11311
+
+export ROS_HOSTNAME=<IP_ADDRESS>
+
+export TURTLEBOT3_MODEL=burger
+
 # Robotics Lab Mac Addresses
 * One entry for each robot or roscore.
 * All these devices live in the Robotics Lab in Gzang 006
