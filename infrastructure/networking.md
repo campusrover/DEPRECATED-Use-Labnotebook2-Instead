@@ -3,13 +3,21 @@
 ### Robot Bashrc File 
 
 alias gp='git pull'
+
 alias cw='cd ~/catkin_ws'
+
 alias cs='cd ~/catkin_ws/src'
+
 alias cm='cd ~/catkin_ws && catkin_make'
+
 source /opt/ros/melodic/setup.bash
+
 source ~/catkin_ws/devel/setup.bash
+
 export ROS_MASTER_URI=http://mutant.dyn.brandeis.edu:11311
+
 export ROS_HOSTNAME=mutant.dyn.brandeis.edu
+
 export TURTLEBOT3_MODEL=burger
 
 ### PC Bashrc File
