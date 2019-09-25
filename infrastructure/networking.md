@@ -30,15 +30,19 @@ alias cs='cd ~/catkin_ws/src'
 
 alias cm='cd ~/catkin_ws && catkin_make'
 
-source /opt/ros/melodic/setup.bash
+alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
+
+source /opt/ros/kinetic/setup.bash
 
 source ~/catkin_ws/devel/setup.bash
 
-export ROS_MASTER_URI=http://<IP_ADDRESS>:11311
+export ROS_MASTER_URI=http://robc.dyn.brandeis.edu:11311
 
-export ROS_HOSTNAME=<IP_ADDRESS>
+export TB3_MODEL=burger
 
 export TURTLEBOT3_MODEL=burger
+
+export ROS_HOSTNAME=robc.dyn.brandeis.edu
 
 # Robotics Lab Mac Addresses
 * One entry for each robot or roscore.
