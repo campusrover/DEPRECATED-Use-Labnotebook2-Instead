@@ -36,13 +36,13 @@ source /opt/ros/kinetic/setup.bash
 
 source ~/catkin_ws/devel/setup.bash
 
-export ROS_MASTER_URI=http://robc.dyn.brandeis.edu:11311
+export ROS_MASTER_URI=http://<ROBOT_NAME>.dyn.brandeis.edu:11311
 
 export TB3_MODEL=burger
 
 export TURTLEBOT3_MODEL=burger
 
-export ROS_HOSTNAME=robc.dyn.brandeis.edu
+export ROS_HOSTNAME=<ROBOT_NAME>.dyn.brandeis.edu
 
 # Robotics Lab Mac Addresses
 * One entry for each robot or roscore.
