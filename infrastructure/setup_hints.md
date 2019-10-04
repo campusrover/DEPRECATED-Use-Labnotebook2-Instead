@@ -41,9 +41,46 @@ roslaunch turtlebot3_bringup turtlebot3_robot.launch
     * Make sure you run `source ~/.bashrc`
 * Can you run rostopic list? `rostopic list`
     * If not, check your IP addresses
-    * Check whether the ROSCORE computer is running. 
+    * Check whether the ROSCORE computer is running.
     * Try pinging roscore1.cs.brandeis.edu
 * Does it list /x/cmd_vel among them?
     * If not, check your IP addresses. Also make sure you ran
 * Can you teleop the robot? `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
     * if not, try a manual cmd_vel: rostopic pub /rob*/cmd_vel
+
+### Additional Intermediate Bash Tips
+
+#### Aliases: Live Better, Type Less(TM)
+You may notice that the ros installation process added a few Aliases to your .bashrc file. These serve to make your life easier, and you can add more of your own custom aliases to make your life even easier. Here are a few recommended changes to make:
+
+##### New Editor in eb
+You'll notice eb uses nano by default. nano is fine, if you enjoy living in the dark ages. To make eb open a different text editor, just replace nano with whatever your favorite installed editor is - code (vscode), atom, vim, emacs, etc.
+Bonus tip: if you're not already using `eb` as a shortcut to edit the .bashrc, start using eb!
+
+##### Networking Shortcuts
+Try using this chunk in your bashrc:
+```
+alias connect='ssh $ROBOT@$ROBOT.dyn.brandeis.edu'
+export ROBOT=robc
+export ROS_MASTER_URI=http://$ROBOT.dyn.brandeis.edu:11311
+export IP="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
+export ROS_IP=$IP
+```
+*NB* the snippet of code above uses robc as the current robot, robc can be replaced with any valid robot name
+Here's what this chunk does:
+1. The alias "connect" will ssh to your desired preconfigured robot (saves quite a bit of typing)
+1. The variable ROBOT is used to reduce the redundancy of typing the robot name anythime you need to ssh or change your ROS_MASTER_URI
+1. The last two lines will automatically obtain your IP address anytime you start a new terminal window
+Some additional things to note:
+1. The connect alias grabs ROBOT when it is called, so it can be defined before ROBOT, but ROS_MASTER_URI grabs ROBOT when it is defined, so ROBOT must be defined first
+1. The command `export ROBOT=<name>` can temporarily change the value of ROBOT - anything that accesses ROBOT will grab the temporary value (Think about what this means given the last point: connect wil ssh to the temporary robot, but ROS_MASTER_URI will not update)
+
+#### Universally Useful Time Savers
+One of the most common problems is that when you kill a ROS script, the most recent cmd_vel latches and the robot will continue in that manner therefore, it is useful to have some sort of emergency stop procedures.
+2 viable and common options:
+1. create an alias for `rostopic pub` that publishes a blank twist to cmd_vel
+1. create an alias that launches teleop - this take longer, but will immediately stop the robot as soon as it is running.  
+
+#### The Possibilities Don't Stop Here
+There's obviously still much more that could done to make a more efficient terminal experience. Don't be afraid to become a bash master. Here are some resources to help get started becoming more proficient in bash:
+[Bash Cheatsheet](https://devhints.io/bash)

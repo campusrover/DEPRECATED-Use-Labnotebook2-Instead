@@ -1,9 +1,10 @@
 ## Tutorial
 ### 1. Open a Gazebo simulation:
+First, open Gazebo - either search for gazebo in the Unity Launcher GUI or simply type `gazebo` onto the terminal.
 Click on `Edit` --> `Building Editor` and you should see the following page. Note there are three areas:
-- **Platte:** You can choose models that you wish to add into the map here. 
-- **2D View:** The only place you make changes to the map. 
-- **3D View:** View only. 
+- **Platte:** You can choose models that you wish to add into the map here.
+- **2D View:** The only place you make changes to the map.
+- **3D View:** View only.
 
 ![p1](/create-gazebo-map/images/p1.png)
 
@@ -17,11 +18,11 @@ To make sure the walls you trace over the image come up in the correct scale, yo
 ![p3](/create-gazebo-map/images/p3.png)
 
 ### 3. Add & Edit walls
-- Select **Wall** from **Platte**. 
-- On the **2D View**, click/release anywhere to start the wall. As you move the mouse, the wall's length is displayed. 
-- **Click again** to end the current wall and start an adjacent wall. 
-- **Double-click** to finish a wall without starting a new one. 
-- **Double-clicking on an existing wall** allows you to modify it. 
+- Select **Wall** from **Platte**.
+- On the **2D View**, click/release anywhere to start the wall. As you move the mouse, the wall's length is displayed.
+- **Click again** to end the current wall and start an adjacent wall.
+- **Double-click** to finish a wall without starting a new one.
+- **Double-clicking on an existing wall** allows you to modify it.
 You can manipulate other models likewise. For more detailed instructions, please refer to _*http://gazebosim.org/tutorials?tut=build_world*_ for more details
 
 ![p4](/create-gazebo-map/images/p4.png)
@@ -42,11 +43,11 @@ $ mkdir models
 ```
 
 ### 5.Save your map
-Once you finish editing the map, give a name to your model on the top on the **Platte** and click on `File` -> `Save As` to save the model you just created into `../${your_package_name}/models`. 
+Once you finish editing the map, give a name to your model on the top on the **Platte** and click on `File` -> `Save As` to save the model you just created into `../${your_package_name}/models`.
 
 ![p5](/create-gazebo-map/images/p5.png)
 
-Click on `File` -> `Exit Building Editor` to exit. **Please note that once you exit the editor, you are no longer able to make changes to the model.** Click on `File` -> `Save World As` into `../${your_package_name}/worlds`. 
+Click on `File` -> `Exit Building Editor` to exit. **Please note that once you exit the editor, you are no longer able to make changes to the model.** Click on `File` -> `Save World As` into `../${your_package_name}/worlds`.
 
 I will refer to this world file as `${your_world_file_name}.world` from now on.
 
@@ -76,9 +77,33 @@ Copy and paste the following code into your launch file and substitute `${your_p
  ```
 
 ### 7. Test
-Go to the workspace where your new package was created 
+Go to the workspace where your new package was created
 **e.g.** `cd ~/catkin_ws`
 
 run `catkin_make` and then `roslaunch ${your_package_name} ${your_launch_file}`
 
 You should see the Gazebo map you just created along with a turtlebot loaded.
+
+## Using the Model Editor instead
+The building editor is a faster, easier to use tool than the model editor, as it can create a map in mere minutes. With the model editor, you have more technical control over the world, with the trade off being a more tedious process. The model editor can help make more detailed worlds, as you can import .obj files that can be found on the internet or made in 3d modeling software such as Blender. For the purposes of use in this class, **USE THE BUILDING EDITOR** For your own recreational robotic experimentation purposes, of course, do whatever you like.
+
+If you do wish to use the model editor, here are two tips that will help you to get started making basic, serviceable worlds.
+
+### 1. Change the Color
+The basic shapes that gazebo has are a greyish-black by default- which is difficult to see on gazebo's greyish-black background. To change the color, follow these steps:
+1. Right click on the model
+1. select "open link inspector"
+1. go to the "visual" tab
+1. scroll down to "material" and open that section
+1. use the RGB values labeled "ambient" to alter the color - set them all to 1 to make it white.
+
+### 2. Alter the shape
+use the shortcut s to open the scaling tool - grab the three axis to stretch the shape. Hold ctrl to snap it to the grid.
+use the shortcut t to switch to the translation tool - this moves the model around. Hold ctrl to snap it to the grid.
+use the shortcut r to open the rotation tool. grab the rings to rotate the object.
+
+### 3. Make it Static!
+If an object isn't static, it will fall over/ obey the laws of physics if the robot collides with it - to avoid this, click the object in the left hand menu and click the is_static field.
+
+### 4. Use the Building Editor instead
+Does the model editor seem like a hassle already? Then just use the building editor, 
