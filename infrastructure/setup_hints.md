@@ -75,12 +75,12 @@ Some additional things to note:
 1. The connect alias grabs ROBOT when it is called, so it can be defined before ROBOT, but ROS_MASTER_URI grabs ROBOT when it is defined, so ROBOT must be defined first
 1. The command `export ROBOT=<name>` can temporarily change the value of ROBOT - anything that accesses ROBOT will grab the temporary value (Think about what this means given the last point: connect wil ssh to the temporary robot, but ROS_MASTER_URI will not update)
 
-#### Universally Useful Time Savers
+##### Universally Useful Time Savers
 One of the most common problems is that when you kill a ROS script, the most recent cmd_vel latches and the robot will continue in that manner therefore, it is useful to have some sort of emergency stop procedures.
 2 viable and common options:
 1. create an alias for `rostopic pub` that publishes a blank twist to cmd_vel
 1. create an alias that launches teleop - this take longer, but will immediately stop the robot as soon as it is running.  
 
-#### The Possibilities Don't Stop Here
+##### The Possibilities Don't Stop Here
 There's obviously still much more that could done to make a more efficient terminal experience. Don't be afraid to become a bash master. Here are some resources to help get started becoming more proficient in bash:
 [Bash Cheatsheet](https://devhints.io/bash)
