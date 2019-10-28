@@ -3,6 +3,18 @@
 ## setup:
 [This Robotis emanual page](http://emanual.robotis.com/docs/en/platform/turtlebot3/appendix_raspi_cam/#raspberry-pi-camera) describes how to setup the Raspberry Pi camera to be used with Turtlebot3.
 
+Here is a streamlined guide to quickly get a raspi camera working with a TB3:
+1. `sudo raspi-config` in the TB3's terminal. Navigate to option 3: Interfacing options. The first option in the sub-menu is camera - select it, then select yes when prompet to enable camera interfacing. Then, navigate to finish and reboot the robot for the change to take effect.
+2. do a `sudo apt-get update` and `sudo apt-get upgrade` to make sure there are no errors. If update throws a missing pubkey error, then record the pubkey and use this command: `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys <PUBKEY>` where <PUBKEY> is the pubkey that you recorded. once the pubkey is added, update & upgrade. If there are no errors, continue. 
+3. run the following two commands to add Ubiquity Robotic's repos to apt
+```
+$ sudo sh -c 'echo "deb https://packages.ubiquityrobotics.com/ubuntu/ubiquity xenial main" > /etc/apt/sources.list.d/ubiquity-latest.list'
+$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key C3032ED8
+```
+4. update & upgrade again.
+5. `sudo apt-get install ros-kinetic-raspicam-node`
+6. catkin make
+
 ## How to launch
 `roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch` will launch the camera alone at a resolution of 640x480.
 Alternatively, you can also use `roslaunch raspicam_node camerav1_1280x720.launch` to launch at a higher resolution.
