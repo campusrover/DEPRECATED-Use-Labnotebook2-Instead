@@ -124,7 +124,7 @@ Now that Ubuntu has been installed, we need to make it bootable. To do this, we 
 
    https://www.dionysopoulos.me/portable-ubuntu-on-usb-hdd/
 
-   NOTE: You should skip the `umount` command instruction
+   **NOTE: You should skip the `umount` command instruction**
 
 To be sure that this process worked, the final command should return a message saying the installation completed with no errors.
 
