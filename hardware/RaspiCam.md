@@ -15,6 +15,7 @@ Here is a streamlined guide to quickly get a raspi camera working with a TB3. Th
 4. update & upgrade again.
 5. `sudo apt-get install ros-kinetic-raspicam-node`
 6. catkin make
+7. if catkin_make fails due to missing diagnostics, install this: `sudo apt-get install ros-kinetic-diagnostic-updater`
 
 ## How to launch
 `roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch` will launch the camera alone at a resolution of 640x480.
