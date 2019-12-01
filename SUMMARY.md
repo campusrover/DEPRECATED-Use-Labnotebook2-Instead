@@ -42,7 +42,7 @@
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup_hints.md)
   * [Bootable SSD Creation](infrastructure/external-ssd-instructions/ssd-instructions.md)
-  * [Mac Addresses](infrastructure/ip_addresses.md)
+  * [Networking](infrastructure/networking.md)
   * [ROS Melodic](infrastructure/ros_melodic.md)
   * [Ubuntu Brandeis Tips](infrastructure/ubuntubrandeis.md)
 * [Demos](demos/README.md)
