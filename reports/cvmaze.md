@@ -48,10 +48,10 @@ Some of the algorithms we are using to detect the lines have implementations in 
 
 When the lines could be stably detected, we tested and adjusted in the real world. After it works properly, we tidy the code and make it a node called the line detector server. It subscribe the image from the robot's camera and always keeping to process the frames into the lines. It publishes the result as a topic where other nodes can subscribe to know about the information of the environment such as whether there is a wall or not. (As in some cases even there is a line at side, there could be no wall, we also check several pixels at the outer side of the line to determine whether there is truly a wall or not)
 
-e.g. left line with left wall (white brick indicates a wall):
+e.g. left line with left wall (white brick indicates a wall):  
 ![Figure 1](../images/cv_maze/20191216162333.png)
 
-e.g. left line with no left wall (black brick indicates a floor):
+e.g. left line with no left wall (black brick indicates a floor):  
 ![Figure 1](../images/cv_maze/20191216162518.png)
 
 Then, we considered about the maze configuration and determined that a maze can have 7 different kinds of possible turns, that are:  
@@ -68,16 +68,16 @@ We then decided that it is necessary to hard code the solution of these cases an
 
 In order to solve the problem that the pi camera's view of angle is too small, we let robot to stop before enter a turn and turn in place to look left and right for some extra angles so that it will have broad enough view to determine the situation correctly.  
 
-e.g. left line detected correctly
+e.g. left line detected correctly  
 ![Figure 1](../images/cv_maze/20191216163119.png)
 
-e.g. fail to detect the left line, not enough view
+e.g. fail to detect the left line, not enough view  
 ![Figure 1](../images/cv_maze/20191216163144.png)
 
-e.g. turn a bit to fix the problem
+e.g. turn a bit to fix the problem  
 ![Figure 1](../images/cv_maze/20191216163157.png)
 
-e.g. no right line, turn and no detection, correct
+e.g. no right line, turn and no detection, correct  
 ![Figure 1](../images/cv_maze/20191216163218.png)
 
 This node is called corner handle action server. When the main node detects that there is a wall (line) in the front which is so near that the robot is about to enter a turn, it will send request to this corner handler to determine the case and drive over the turn.
@@ -86,7 +86,7 @@ In order to finally get out the maze, the robot also need a navigation algorithm
 
 So the general idea is: when the robot detects a turn in the maze by analyzing the lines, its main node will call an action to handle the case and wait until the robot has passed that turn. In other time, the robot will use the pid algorithm to try to keep at the middle of the left and right walls in the maze, going forward until reaches the next turn. We have wrote the pid controller into a service node that the main node will send its request to calculate the robot's angular twist when the robot is not handling turns,  the error is calculated by the different of intercept of left line on x = 0 and right line on x = w (w is the width of the frame image).
 
-In conclusion, we have this node relationship diagram
+In conclusion, we have this node relationship diagram  
 ![Figure 1](../images/cv_maze/node_diagram.PNG)
 
 ### Discussion of interesting algorithms, modules, techniques
