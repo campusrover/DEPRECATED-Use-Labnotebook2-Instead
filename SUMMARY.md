@@ -59,4 +59,5 @@
   * [Path Planning Scenarios](reports/pathplanning.md)
   * [Reinforcement Learning Rafer](reports/reinforcement-learning-rafer.md)
   * [StalkerBot](reports/stalker.md)
+  * [Behavior Tree Generation](reports/behavior_trees.md)
 
