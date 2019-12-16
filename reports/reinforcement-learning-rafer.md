@@ -1,7 +1,6 @@
 # Reinforcement Learning Racer
-Luis Andino & Ben Ballintyn
-December 16, 2019
-Automated Robotics.
+## Author: Luis Andino & Ben Ballintyn
+
 
  **_Introduction_**
 
