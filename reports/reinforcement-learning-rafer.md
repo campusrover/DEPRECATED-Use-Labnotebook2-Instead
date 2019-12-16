@@ -1,3 +1,4 @@
+
 # Reinforcement Learning Racer
 ## Author: Luis Andino & Ben Ballintyn
 
@@ -8,11 +9,26 @@ In this project, we proposed to use deep learning methods to accomplish two task
 
 **_Relevant literature_**
 
-Deep reinforcement learning is a family of techniques that utilizes deep neural networks to approximate either a state-action value function (mapping state-action pairs to values) or a state directly to action probabilities (known as policy-gradient methods). In this project, we implemented and tested two Deep RL algorithms. The first is the DDPG agent first proposed by DeepMind [1]. To help in understanding and implementing this algorithm we also found a very helpful blog post [2] and associated PyTorch implementation of the DDPG agent. The second algorithm implemented was the Soft Actor-Critic agent proposed by Haarnoja et al. from the University of California Berkeley [3]. Again, a blog post was very helpful in understanding the agent and provided a PyTorch implementation [4].
+Deep reinforcement learning is a family of techniques that utilizes deep neural networks to approximate either a state-action value function (mapping state-action pairs to values) or a state directly to action probabilities (known as policy-gradient methods). In this project, we implemented and tested two Deep RL algorithms. The first is the DDPG agent first proposed by DeepMind [^1]. To help in understanding and implementing this algorithm we also found a very helpful blog post [^2] and associated PyTorch implementation of the DDPG agent. The second algorithm implemented was the Soft Actor-Critic agent proposed by Haarnoja et al. from the University of California Berkeley [^3]. Again, a blog post was very helpful in understanding the agent and provided a PyTorch implementation [^4].
 
-The computer vision components, there was a mixture of GitHub repositories, Open-CV tutorials and a blog post posted on analyticsvidhya, written by Aman Goel. The analyticsvidhya blog post helped me to understand the facial_recognition library in python and how to properly implement it. The GitHub repository that was used as a reference for the proof of concept implementation that was done on Mac OS was written by Adam Geitgey, who is the author of the facial recognition python library[^1]. His Github repository along with his README helped me understand how the algorithm works and how to latter modify it within an ROS environment.
 
-There was an assortment of ROS wiki articles used to troubleshoot and understand the errors that were occurring with OpenCV reading the data that was coming from the TurtleBot 3. The wiki articles lead me to the cv_bridege ROS package that can convert a ROS compressed image topic to an OpenCV format[^2].
+The computer vision components, there was a mixture of GitHub repositories, Open-CV tutorials and a blog post posted on analyticsvidhya, written by Aman Goel. The analyticsvidhya blog post helped me to understand the facial_recognition library in python and how to properly implement it[^5]. The GitHub repository that was used as a reference for the proof of concept implementation that was done on Mac OS was written by Adam Geitgey, who is the author of the facial recognition python library[^6]. His Github repository along with his README helped me understand how the algorithm works and how to latter modify it within an ROS environment.
+
+There was an assortment of ROS wiki articles used to troubleshoot and understand the errors that were occurring with OpenCV reading the data that was coming from the TurtleBot 3. The wiki articles lead me to the cv_bridege ROS package that can convert a ROS compressed image topic to an OpenCV format[^7].
+
+[^1]: Lillicrap et al., 2015. Continuous control with deep reinforcement learning https://arxiv.org/pdf/1509.02971.pdf
+
+[^2]: Chris Yoon. Deep Deterministic Policy Gradients Explained. https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b
+
+[^3]: Haarnoja et al., 2018. Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. https://arxiv.org/abs/1801.01290 
+
+[^4]: Vaishak V. Kumar. Soft Actor-Critic Demystified. https://towardsdatascience.com/soft-actor-critic-demystified-b8427df61665
+
+[^5]: Blog, Guest. “A Simple Introduction to Facial Recognition (with Python Codes).” Analytics Vidhya, May 7, 2019. https://www.analyticsvidhya.com/blog/2018/08/a-simple-introduction-to-facial-recognition-with-python-codes/.
+
+[^6]: Geitgey, Adam, Facial Recognition, GitHub Repository https://github.com/ageitgey/face_recognition 
+
+[^7]: “Wiki.” ros.org. Accessed December 13, 2019. http://wiki.ros.org/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages.
 
 **Technical descriptions, illustrations**
 
@@ -62,32 +78,6 @@ We both did a good job of accomplishing what we wanted to, even though we had to
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Bibliography
-
-
-
-1. Lillicrap et al., 2015. Continuous control with deep reinforcement learning [https://arxiv.org/pdf/1509.02971.pdf](https://arxiv.org/pdf/1509.02971.pdf)
-2. Chris Yoon. Deep Deterministic Policy Gradients Explained. [https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b](https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b)
-3. Haarnoja et al., 2018. Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. [https://arxiv.org/abs/1801.01290](https://arxiv.org/abs/1801.01290) 
-4. Vaishak V. Kumar. Soft Actor-Critic Demystified. [https://towardsdatascience.com/soft-actor-critic-demystified-b8427df61665](https://towardsdatascience.com/soft-actor-critic-demystified-b8427df61665)
-5. [https://www.analyticsvidhya.com/blog/2018/08/a-simple-introduction-to-facial-recognition-with-python-codes/](https://www.analyticsvidhya.com/blog/2018/08/a-simple-introduction-to-facial-recognition-with-python-codes/)
-
-6. “Wiki.” ros.org. Accessed December 13, 2019. http://wiki.ros.org/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages.
-
- 
 
 
 
