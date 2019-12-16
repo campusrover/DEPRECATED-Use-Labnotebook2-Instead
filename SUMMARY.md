@@ -59,5 +59,3 @@
   * [Path Planning Scenarios](reports/pathplanning.md)
   * [Reinforcement Learning Rafer](reports/rlracer.md)
   * [StalkerBot](reports/stalker.md)
-
-
