@@ -8,6 +8,7 @@
   * [Logging](general-architecture/logging.md)
   * [State Management](general-architecture/state-management-services.md)
   * [Mutant](general-architecture/mutant.md)
+  * [CR Software Version 3](general-architecture/cr_3_project.md)
 * [Web Application](web-application/README.md)
   * [AWS RoboMaker](web-application/aws-robomaker.md)
   * [Creating the app](web-application/flask.md)
