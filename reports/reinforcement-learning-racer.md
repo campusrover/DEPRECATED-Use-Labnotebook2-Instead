@@ -3,11 +3,11 @@
 ## Author: Luis Andino & Ben Ballintyn
 
 
- **_Introduction_**
+ ### Introduction
 
 In this project, we proposed to use deep learning methods to accomplish two tasks. 1. To navigate the robot throughout a racecourse using LIDAR data only and 2. To recognize certain signs (stop, go) and act accordingly. For the first objective, we implemented 2 deep reinforcement learning algorithms (Deep Deterministic Policy Gradient and Soft Actor-Critic) to try and learn to map LIDAR sensor data to appropriate actions (linear and angular velocities). We intended to train these algorithms on multiple simulated race tracks in the Gazebo simulation environment and if possible deploy the trained network on a real-world robot. For the second objective, we adapted existing computer vision models to recognize hazard signs like stop, yield, go, and caution. The last of our original objectives was to implement a facial recognition algorithm to work with the TurtleBot 3 architecture and hardware constraints.
 
-**_Relevant literature_**
+### Relevant literature 
 
 Deep reinforcement learning is a family of techniques that utilizes deep neural networks to approximate either a state-action value function (mapping state-action pairs to values) or a state directly to action probabilities (known as policy-gradient methods). In this project, we implemented and tested two Deep RL algorithms. The first is the DDPG agent first proposed by DeepMind [^1]. To help in understanding and implementing this algorithm we also found a very helpful blog post [^2] and associated PyTorch implementation of the DDPG agent. The second algorithm implemented was the Soft Actor-Critic agent proposed by Haarnoja et al. from the University of California Berkeley [^3]. Again, a blog post was very helpful in understanding the agent and provided a PyTorch implementation [^4].
 
@@ -30,7 +30,7 @@ There was an assortment of ROS wiki articles used to troubleshoot and understand
 
 [^7]: “Wiki.” ros.org. Accessed December 13, 2019. http://wiki.ros.org/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages.
 
-**Technical descriptions, illustrations**
+### Technical descriptions, illustrations
 
 For the driving component of this project, the first step was to create a racetrack to simulate the robot on. To do this, I used Gazebo’s building editor to create a racecourse out of straight wall pieces (there are no default curved pieces in Gazebo). Creating the course (seen in Figure 1) involved saving a .sdf file from gazebo inside the turtlebot3_gazebo/models folder, a .worlds file in turtlebot3_gazebo/world, and a launch file in turtlebot3_gazebo/launch. The initial goal was to train the agent to drive counter-clockwise around the track as fast as possible. To do this, I implemented 5 types of nodes to carry out the different parts of the canonical RL loop (Figure 2) and manually chose 31 points around the track as “checkpoints” to monitor the robot’s progress within a training episode. How close the agent is to the next checkpoint is monitored from timestep to timestep and is used to compute the rewards used to train the agent.
 
@@ -57,7 +57,7 @@ The color recognition and control node came from a desire to define hazards. The
 
 To add color ranges that you want to pick up you have to add the RGB ranges as NumPy arrays as seen in figure 8. After you manually add the RGB range or individual value you want to detect, you must create a find colors object based on the ranges. In this case, the ROS video image comes from the HSV variable. That was set whole converting the ROS Image to an OpenCV format.
 
-**Discussion of interesting algorithms, modules, techniques**
+### Discussion of interesting algorithms, modules, techniques
 
 The two deep RL algorithms tried were the Deep Deterministic Policy Gradient (DDPG) and Soft Actor-Critic (SAC) agents. The major difference between these methods is that the DDPG is deterministic, that is it outputs a single action every timestep, whereas the SAC agent outputs the parameters of a probability distribution from which an action is drawn. In addition, the DDPG agent is trained simply to maximize reward, whereas the SAC agent also tries to maximize the “entropy” of its policy. Simply, it balances maximizing reward with a predefined amount of exploration. For the first few weeks of the project, I exclusively tried training the DDPG agent by playing around with different hyperparameters such as noise magnitude and batch size as well as tuning the collision detection. I found that the agent was able to make significant progress and at one point completed two full laps of the track. However, after leaving the agent to train overnight, I returned to find that its performance had almost completely deteriorated and was mostly moving backward, clearly a terrible strategy. After doing a little more reading on the DDPG I found that it is an inherently unstable algorithm in that it is not guaranteed to continually improve. This prompted me to look for an alternative deep RL algorithm that was not so brittle. This search led me to the SAC algorithm which was specifically said to be more robust and sample efficient. I again implemented this agent with help from a blog post and started tuning parameters and found that it took longer (almost 3500 episodes) to show any significant learning however it seems to be maintaining its learning better. I am unsure what the problem with my current training method is for the DDPG agent and suspect the problem may just be due to the brittleness of the algorithm. One possible change that could help both agents would be to average over the LIDAR readings (within one scan) to reduce the dimensionality of the input (currently 360 inputs) to the networks which should help reduce learning complexity at the cost of lower spatial resolution. Finally, an interesting behavior produced by both robots was that during straight parts of the course, they learned a strategy of alternating between full left and full right turn instead of no turn at all. It will be interesting to see if this strategy gets worked out over time or is an artifact of the simulation environment 
 
@@ -65,7 +65,7 @@ The facial_recognition package comes with a pre-built model that has a  99.38% a
 
 The sign detection of RL racer was supposed to feature real signs detection, but We ran into a problem finding models of American sign or even when we did we could not get it to run. This is why we went the color route and because we could not train a model in time. The control nodes and the color detection nodes all work, but we were never able to implement it into the RL racer because it took longer than expected to train racer. The theory of color detection is that we can mimic signs by using specific RGB values that we want the robot to pick up. So, Green would be Go, Red would be stopped, and Yellow would be a cushion. Obviously, this is to mimic traffic signals.
 
-**_Story of the project._**
+### Story of the project.
 
 This project was very interesting and a lot of fun to work on, even though we had to pivot a few times in order to have a finished product. However, we still learned a lot and worked well together always talking, even though we had two distinct parts we wanted to get done in order to come together. Unfortunately, we could not bring everything together that we wanted we still accomplished a lot.
 
@@ -76,9 +76,11 @@ The problem that my facial recognition aspect has is that you have to be within 
 
 We both did a good job of accomplishing what we wanted to, even though we had to pivot a few times. We believe that the code we implemented could be used in further projects. The deep RL code could be used to learn to drive around pre-gazeboed maps with some adaptation and the general method could be applied anywhere continuous control is needed. The facial recognition algorithm can be easily added to the code base of Campus Rover for package delivery authentication and any other facial recognition applications. 
 
-**GitHub Link**
+### GitHub Link
 
-[Reinforcement Learning Racer]( https://github.com/landinojr/RL_Racer "Google's Homepage"): ![alt text](https://github.com/campusrover/labnotebook/tree/master/images/RL_Racer.png "GitHub QR Code")
+[Reinforcement Learning Racer](https://github.com/landinojr/RL_Racer "GitHub RL"): 
+
+![alt text](../images/RL_Racer.png "GitHub QR Code")
 
 
 
