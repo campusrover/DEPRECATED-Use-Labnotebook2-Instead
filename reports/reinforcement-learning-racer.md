@@ -3,7 +3,7 @@
 ## Author: Luis Andino & Ben Ballintyn
 
 
- **_Introduction_**
+ ### Introduction
 
 In this project, we proposed to use deep learning methods to accomplish two tasks. 1. To navigate the robot throughout a racecourse using LIDAR data only and 2. To recognize certain signs (stop, go) and act accordingly. For the first objective, we implemented 2 deep reinforcement learning algorithms (Deep Deterministic Policy Gradient and Soft Actor-Critic) to try and learn to map LIDAR sensor data to appropriate actions (linear and angular velocities). We intended to train these algorithms on multiple simulated race tracks in the Gazebo simulation environment and if possible deploy the trained network on a real-world robot. For the second objective, we adapted existing computer vision models to recognize hazard signs like stop, yield, go, and caution. The last of our original objectives was to implement a facial recognition algorithm to work with the TurtleBot 3 architecture and hardware constraints.
 
