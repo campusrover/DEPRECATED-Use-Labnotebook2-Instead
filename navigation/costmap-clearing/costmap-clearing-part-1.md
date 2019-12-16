@@ -1,4 +1,4 @@
-# Costmap Clearing Part 1
+# Costmap Clearing 1
 
 Our objective of this iteration is to find a way to clean Turtlebot's costmap, so any long gone obstacle will not stay on the map, but the Turtlebot should also not run into a transient obstacle like a person or a chair.
 

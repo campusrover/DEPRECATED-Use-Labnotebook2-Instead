@@ -1,6 +1,8 @@
-# Final Project Report
-## Author: 
+# Path Planning Scenarios
+
+## Author:
 
 ### Introduction
 
 etc etc
+

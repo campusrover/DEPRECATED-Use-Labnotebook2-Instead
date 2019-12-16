@@ -1,54 +1,58 @@
-# Robotics Lab Robot Networking Configuration
+# Networking
 
-### Robot Bashrc File 
+## Robotics Lab Robot Networking Configuration
+
+### Robot Bashrc File
 
 alias gp='git pull'
 
-alias cw='cd ~/catkin_ws'
+alias cw='cd ~/catkin\_ws'
 
-alias cs='cd ~/catkin_ws/src'
+alias cs='cd ~/catkin\_ws/src'
 
-alias cm='cd ~/catkin_ws && catkin_make'
+alias cm='cd ~/catkin\_ws && catkin\_make'
 
 source /opt/ros/melodic/setup.bash
 
-source ~/catkin_ws/devel/setup.bash
+source ~/catkin\_ws/devel/setup.bash
 
-export ROS_MASTER_URI=http://mutant.dyn.brandeis.edu:11311
+export ROS\_MASTER\_URI=[http://mutant.dyn.brandeis.edu:11311](http://mutant.dyn.brandeis.edu:11311)
 
-export ROS_HOSTNAME=mutant.dyn.brandeis.edu
+export ROS\_HOSTNAME=mutant.dyn.brandeis.edu
 
-export TURTLEBOT3_MODEL=burger
+export TURTLEBOT3\_MODEL=burger
 
 ### PC Bashrc File
 
 alias gp='git pull'
 
-alias cw='cd ~/catkin_ws'
+alias cw='cd ~/catkin\_ws'
 
-alias cs='cd ~/catkin_ws/src'
+alias cs='cd ~/catkin\_ws/src'
 
-alias cm='cd ~/catkin_ws && catkin_make'
+alias cm='cd ~/catkin\_ws && catkin\_make'
 
-alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
+alias bu='roslaunch turtlebot3\_bringup turtlebot3\_robot.launch'
 
 source /opt/ros/kinetic/setup.bash
 
-source ~/catkin_ws/devel/setup.bash
+source ~/catkin\_ws/devel/setup.bash
 
-export ROS_MASTER_URI=http://<ROBOT_NAME>.dyn.brandeis.edu:11311
+export ROS\_MASTER\_URI=http://.dyn.brandeis.edu:11311
 
-export TB3_MODEL=burger
+export TB3\_MODEL=burger
 
-export TURTLEBOT3_MODEL=burger
+export TURTLEBOT3\_MODEL=burger
 
-export ROS_HOSTNAME=<ROBOT_NAME>.dyn.brandeis.edu
+export ROS\_HOSTNAME=.dyn.brandeis.edu
 
-# Robotics Lab Mac Addresses
+## Robotics Lab Mac Addresses
+
 * One entry for each robot or roscore.
 * All these devices live in the Robotics Lab in Gzang 006
 
 ### Name, mac address, IP address, dns name
+
 * Wifi Connected Rasberry Pi's
   * b8:27:eb:e3:9b:a2 - **mutant** - mutant.dyn.brandeis.edu
   * b8:27:eb:75:89:b1 - **roba** - roba.dyn.brandeis.edu
@@ -63,7 +67,8 @@ export ROS_HOSTNAME=<ROBOT_NAME>.dyn.brandeis.edu
   * 44:37:e6:b7:4b:d1 - **roscore1**
 
 ### Internal DNS names
-* Currently the names are formed as <hostname>.dyn.brandeis.edu
-* <hostname> is literally the `hostname` of the particular robot
+
+* Currently the names are formed as .dyn.brandeis.edu
+*  is literally the `hostname` of the particular robot
 * You can check and set it with the `$ hostname` command
 * 

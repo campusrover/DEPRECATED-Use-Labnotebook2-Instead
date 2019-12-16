@@ -1,6 +1,8 @@
-# Final Project Report
-## Author: 
+# Computer Vision Maze Solver
+
+## Author:
 
 ### Introduction
 
 etc etc
+

@@ -1,6 +1,8 @@
-# Final Project Report
-## Author: 
+# Gestures
+
+## Author:
 
 ### Introduction
 
 etc etc
+

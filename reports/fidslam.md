@@ -1,6 +1,8 @@
-# Final Project Report
-## Author: 
+# Fiducial Slam
+
+## Author:
 
 ### Introduction
 
 etc etc
+

@@ -1,5 +1,6 @@
-# Various Tips For Using Ubuntu At Brandeis
+# Ubuntu Brandeis Tips
 
-### Setting Up Eduroam
+## Setting Up Eduroam
 
-![Ubuntu Eduroam Setup](/ubuntuwifi.png)
+![Ubuntu Eduroam Setup](../.gitbook/assets/ubuntuwifi.png)
+

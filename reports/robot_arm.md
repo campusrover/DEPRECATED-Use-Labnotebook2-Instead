@@ -1,6 +1,8 @@
-# Final Project Report
-## Author: 
+# Robot Arm
+
+## Author:
 
 ### Introduction
 
 etc etc
+
