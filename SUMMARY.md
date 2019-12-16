@@ -50,7 +50,7 @@
   * [Demo Setup](demos/gen2_demo_instructions.md)
 * [Create Gazebo Maps](create-gazebo-map/README.md)
   * [tutorial](create-gazebo-map/tutorial.md)
-* [Final Project Reports](reports/README.md)
+* Final Project Reports
   * [Robot Arm](reports/robot_arm.md)
   * [Computer Vision Maze Solver](reports/cvmaze.md)
   * [Danger Signs](reports/dangersigns.md)
