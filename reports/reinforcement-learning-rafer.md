@@ -1,2 +1,2 @@
-# Reinforcement Learning Rafer
+# Reinforcement Learning Racer
 
