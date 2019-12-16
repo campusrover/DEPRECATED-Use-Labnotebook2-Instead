@@ -75,7 +75,7 @@ We both did a good job of accomplishing what we wanted to, even though we had to
 
 **GitHub Link**
 
-[Reinforcement Learning Racer]( https://github.com/landinojr/RL_Racer "Google's Homepage"): ![alt text](https://github.com/campusrover/labnotebook/tree/master/images/RL_Racer.png "GitHub QR Code")
+[Reinforcement Learning Racer]( https://github.com/landinojr/RL_Racer "GitHub RL"): ![alt text](images/RL_Racer.png "GitHub QR Code")
 
 
 
