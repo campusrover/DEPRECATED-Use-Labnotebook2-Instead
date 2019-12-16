@@ -61,6 +61,7 @@ The steps for adding a photo are as simple as adding to the “face_pcitures” 
 ![Figure 6](../images/RL_Racer_adding_face.png) 
 
 The major difference between the service implementation is the segmentation of the image callback and image processing as you can see in figure 7.  We keep track of the frame in a global variable called frame that can be later accessed. We also need the name of the person to be passed and we only process the next 20 frames and if we don’t see the person requested, we will send no. This also is reinforced with a suggested control request implementation.
+
 ![Figure 7](../images/RL_Racer_add_colors.png) 
 
 The color recognition and control node came from a desire to define hazards. There was also a need to still follow other rules while training the neural net and to keep other factors in mind. This uses the basics of OpenCV to create color masks that you can put a specific RGB value you want to pick up. To run the program, you need to run python files in two separate windows. The first command is $ rosrun facial_ recognition racecar_signal.py The second command is: $ rosrun faical_recognition red_light_green_light.py. The racecar_signal node does all the image processing while the red_light_green_light node is a state machine that determines what to send over cmd_vel.
