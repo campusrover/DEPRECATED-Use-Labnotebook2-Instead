@@ -9,28 +9,14 @@ In this project, we proposed to use deep learning methods to accomplish two task
 
 ### Relevant literature 
 
-Deep reinforcement learning is a family of techniques that utilizes deep neural networks to approximate either a state-action value function (mapping state-action pairs to values) or a state directly to action probabilities (known as policy-gradient methods). In this project, we implemented and tested two Deep RL algorithms. The first is the DDPG agent first proposed by DeepMind [^1]. To help in understanding and implementing this algorithm we also found a very helpful blog post [^2] and associated PyTorch implementation of the DDPG agent. The second algorithm implemented was the Soft Actor-Critic agent proposed by Haarnoja et al. from the University of California Berkeley [^3]. Again, a blog post was very helpful in understanding the agent and provided a PyTorch implementation [^4].
+Deep reinforcement learning is a family of techniques that utilizes deep neural networks to approximate either a state-action value function (mapping state-action pairs to values) or a state directly to action probabilities (known as policy-gradient methods). In this project, we implemented and tested two Deep RL algorithms. The first is the DDPG agent first proposed by DeepMind [^1]. To help in understanding and implementing this algorithm we also found a very helpful blog post [2] and associated PyTorch implementation of the DDPG agent. The second algorithm implemented was the Soft Actor-Critic agent proposed by Haarnoja et al. from the University of California Berkeley [3]. Again, a blog post was very helpful in understanding the agent and provided a PyTorch implementation [4].
 
 
-The computer vision components, there was a mixture of GitHub repositories, Open-CV tutorials and a blog post posted on analyticsvidhya, written by Aman Goel. The analyticsvidhya blog post helped me to understand the facial_recognition library in python and how to properly implement it[^5]. The GitHub repository that was used as a reference for the proof of concept implementation that was done on Mac OS was written by Adam Geitgey, who is the author of the facial recognition python library[^6]. His Github repository along with his README helped me understand how the algorithm works and how to latter modify it within an ROS environment.
+The computer vision components, there was a mixture of GitHub repositories, Open-CV tutorials and a blog post posted on analyticsvidhya, written by Aman Goel. The analyticsvidhya blog post helped me to understand the facial_recognition library in python and how to properly implement it[5]. The GitHub repository that was used as a reference for the proof of concept implementation that was done on Mac OS was written by Adam Geitgey, who is the author of the facial recognition python library[6]. His Github repository along with his README helped me understand how the algorithm works and how to latter modify it within an ROS environment.
 
-There was an assortment of ROS wiki articles used to troubleshoot and understand the errors that were occurring with OpenCV reading the data that was coming from the TurtleBot 3. The wiki articles lead me to the cv_bridege ROS package that can convert a ROS compressed image topic to an OpenCV format[^7].
+There was an assortment of ROS wiki articles used to troubleshoot and understand the errors that were occurring with OpenCV reading the data that was coming from the TurtleBot 3. The wiki articles lead me to the cv_bridege ROS package that can convert a ROS compressed image topic to an OpenCV format[7].
 
-[^1]: Lillicrap et al., 2015. Continuous control with deep reinforcement learning https://arxiv.org/pdf/1509.02971.pdf
 
-[^2]: Chris Yoon. Deep Deterministic Policy Gradients Explained. https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b
-
-[^3]: Haarnoja et al., 2018. Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. https://arxiv.org/abs/1801.01290 
-
-[^4]: Vaishak V. Kumar. Soft Actor-Critic Demystified. https://towardsdatascience.com/soft-actor-critic-demystified-b8427df61665
-
-[^5]: Blog, Guest. “A Simple Introduction to Facial Recognition (with Python Codes).” Analytics Vidhya, May 7, 2019. https://www.analyticsvidhya.com/blog/2018/08/a-simple-introduction-to-facial-recognition-with-python-codes/.
-
-[^6]: Geitgey, Adam, Facial Recognition, GitHub Repository https://github.com/ageitgey/face_recognition 
-
-[^7]: “Wiki.” ros.org. Accessed December 13, 2019. http://wiki.ros.org/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages.
-
-[^8]: PyPI. (2019). face_recognition. [online] Available at: https://pypi.org/project/face_recognition/ [Accessed 16 Dec. 2019].
 
 ### Technical descriptions, illustrations
 
@@ -75,7 +61,7 @@ To add color ranges that you want to pick up you have to add the RGB ranges as N
 
 The two deep RL algorithms tried were the Deep Deterministic Policy Gradient (DDPG) and Soft Actor-Critic (SAC) agents. The major difference between these methods is that the DDPG is deterministic, that is it outputs a single action every timestep, whereas the SAC agent outputs the parameters of a probability distribution from which an action is drawn. In addition, the DDPG agent is trained simply to maximize reward, whereas the SAC agent also tries to maximize the “entropy” of its policy. Simply, it balances maximizing reward with a predefined amount of exploration. For the first few weeks of the project, I exclusively tried training the DDPG agent by playing around with different hyperparameters such as noise magnitude and batch size as well as tuning the collision detection. I found that the agent was able to make significant progress and at one point completed two full laps of the track. However, after leaving the agent to train overnight, I returned to find that its performance had almost completely deteriorated and was mostly moving backward, clearly a terrible strategy. After doing a little more reading on the DDPG I found that it is an inherently unstable algorithm in that it is not guaranteed to continually improve. This prompted me to look for an alternative deep RL algorithm that was not so brittle. This search led me to the SAC algorithm which was specifically said to be more robust and sample efficient. I again implemented this agent with help from a blog post and started tuning parameters and found that it took longer (almost 3500 episodes) to show any significant learning however it seems to be maintaining its learning better. I am unsure what the problem with my current training method is for the DDPG agent and suspect the problem may just be due to the brittleness of the algorithm. One possible change that could help both agents would be to average over the LIDAR readings (within one scan) to reduce the dimensionality of the input (currently 360 inputs) to the networks which should help reduce learning complexity at the cost of lower spatial resolution. Finally, an interesting behavior produced by both robots was that during straight parts of the course, they learned a strategy of alternating between full left and full right turn instead of no turn at all. It will be interesting to see if this strategy gets worked out over time or is an artifact of the simulation environment 
 
-The facial_recognition package comes with a pre-built model that has a  99.38% accuracy rate and built-in methods for facial encoding and facial comparison[^8]. The algorithm takes the facial encodings from loaded images that can be manually added a given script and uses landmarks to encode the pictures face. Using OpenCV we take the frames from a given camera, the algorithm finds the faces in the frame, encodes them, then compares the captured data facial encodings. One of the main challenges that I faced while trying to optimize the algorithm further resulted in failure because I could not figure out how to increase the processing time of facial recognition. This was mostly to do with my computer, but there was also a concern of wifi image loss or just slow wifi. Since ROS compressed image is just a published topic published, which relies on wifi. I got around this by manually dropping frames. I tried ROS each way at first limiting the queue and adding sleep functions, but it causes some problems when trying to implement this with other nodes. These methods would just throughout the frames it would still wait within a queue and still have to be processed. To get around these limitations I hardcoded a counter to only take 1 every 6 frames that come in and process it. It is not ideal but it works. The service implementation does something similar as I only want to a total of 24 processed frames, but still following the 1 out of 6 frame method. In total even though I am being sent (6*24) =144, I am only processing 24 frames, but this only occurs when the desired face is not in the frame.
+The facial_recognition package comes with a pre-built model that has a  99.38% accuracy rate and built-in methods for facial encoding and facial comparison[8]. The algorithm takes the facial encodings from loaded images that can be manually added a given script and uses landmarks to encode the pictures face. Using OpenCV we take the frames from a given camera, the algorithm finds the faces in the frame, encodes them, then compares the captured data facial encodings. One of the main challenges that I faced while trying to optimize the algorithm further resulted in failure because I could not figure out how to increase the processing time of facial recognition. This was mostly to do with my computer, but there was also a concern of wifi image loss or just slow wifi. Since ROS compressed image is just a published topic published, which relies on wifi. I got around this by manually dropping frames. I tried ROS each way at first limiting the queue and adding sleep functions, but it causes some problems when trying to implement this with other nodes. These methods would just throughout the frames it would still wait within a queue and still have to be processed. To get around these limitations I hardcoded a counter to only take 1 every 6 frames that come in and process it. It is not ideal but it works. The service implementation does something similar as I only want to a total of 24 processed frames, but still following the 1 out of 6 frame method. In total even though I am being sent (6*24) =144, I am only processing 24 frames, but this only occurs when the desired face is not in the frame.
 
 The sign detection of RL racer was supposed to feature real signs detection, but We ran into a problem finding models of American sign or even when we did we could not get it to run. This is why we went the color route and because we could not train a model in time. The control nodes and the color detection nodes all work, but we were never able to implement it into the RL racer because it took longer than expected to train racer. The theory of color detection is that we can mimic signs by using specific RGB values that we want the robot to pick up. So, Green would be Go, Red would be stopped, and Yellow would be a cushion. Obviously, this is to mimic traffic signals.
 
@@ -95,6 +81,26 @@ We both did a good job of accomplishing what we wanted to, even though we had to
 [Reinforcement Learning Racer](https://github.com/landinojr/RL_Racer "GitHub RL"): 
 
 ![alt text](../images/RL_Racer.png "GitHub QR Code")
+
+
+### Bibliography 
+
+
+[1]: Lillicrap et al., 2015. Continuous control with deep reinforcement learning https://arxiv.org/pdf/1509.02971.pdf
+
+[2]: Chris Yoon. Deep Deterministic Policy Gradients Explained. https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b
+
+[3]: Haarnoja et al., 2018. Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor. https://arxiv.org/abs/1801.01290 
+
+[4]: Vaishak V. Kumar. Soft Actor-Critic Demystified. https://towardsdatascience.com/soft-actor-critic-demystified-b8427df61665
+
+[5]: Blog, Guest. “A Simple Introduction to Facial Recognition (with Python Codes).” Analytics Vidhya, May 7, 2019. https://www.analyticsvidhya.com/blog/2018/08/a-simple-introduction-to-facial-recognition-with-python-codes/.
+
+[6]: Geitgey, Adam, Facial Recognition, GitHub Repository https://github.com/ageitgey/face_recognition 
+
+[7]: “Wiki.” ros.org. Accessed December 13, 2019. http://wiki.ros.org/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages.
+
+[8]: PyPI. (2019). face_recognition. [online] Available at: https://pypi.org/project/face_recognition/ [Accessed 16 Dec. 2019].
 
 
 
