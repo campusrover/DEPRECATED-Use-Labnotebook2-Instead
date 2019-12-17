@@ -124,7 +124,17 @@ Inference via the turtlebot3s are done via a ROS node on a laptop that subscribe
 
 The rational behind reading and writing files instead of predicting on ROS nodes from the camera is a result of struggles throughout the semester to successfully integrate Tensorflow graphs onto the ROS system. We ran into numerous session problems with Keras implementations, and ultimately decided on moving nearly all of the processing from the turtlebot3 into the accompanying laptop. This allows us to (nearly) get inference real time given frames from the turtlebot3.
 
-![Figure8](../images/dangersigns_photos/30.png)
-![Figure9](../images/dangersigns_photos/34.png)
+![Figure8](../images/dangersigns_photos/30.jpg)
+![Figure9](../images/dangersigns_photos/34.jpg)
+
+An alternate way of doing inference, but in this case doing object detection with items with the COCO dataset rather than our custom dataset can be run via our yolo_runner.py node directly on ROS. This is an approach that does not utilize read/write and instead prints predictions and bounding boxes to the screen. However, with this approach drawing to the screen was cut due to how it lagged the process when attempting to perform inference on the turtlebot3's frames.
 
 ### Section 4 - Reflection
+
+This project was a strong lesson in the risks of attempting a large project in a short time span that combines two complex fields within computer science (Robotics and Machine Learning) whilst learning much of it on the go. It was quite humbling to be very ambitious with our project goals and fall short of many of the "exciting" parts of the project. However, it was also a pleasure to have the freedom to work on and learn continuously while attempting to deploy models and demos to some fairly cutting edge problems. Overall, this made the experience a learning experience that resulted in not only many hours of head-banging and lost progress but also a deeper appreciation for the application of computer vision in robotics and the challenges of those who helped pave the way for our own small success.
+
+References:
+https://github.com/eriklindernoren/PyTorch-YOLOv3
+https://github.com/qqwweee/keras-yolo3
+https://pjreddie.com/darknet/yolo/
+https://github.com/cfotache/pytorch_objectdetecttrack
