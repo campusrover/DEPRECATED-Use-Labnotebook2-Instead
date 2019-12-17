@@ -4,7 +4,7 @@
 
 In Kinect.md, the previous generations dicussed the prospects and limitations of using a Kinect camera. We attempted to use the new Kinect camera v2, which was released in 2014. 
 
-![figure1](/images/Kinect.jpg) 
+![figure1](/images/5.png) 
 
 Thus, we used the libfreenect2 package to download all the appropiate files to get the raw image output on our Windows. The following link includes instructions on how to install it all properly onto a Linux OS. 
 
