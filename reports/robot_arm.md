@@ -30,7 +30,7 @@ Github Repository: [Arm Interface Project](https://github.com/jsmith2021Brandeis
 
 ​	The ROS Publisher publishes to the `armcommand` topic. The command is formatted in terms of a component tag, along with integers for required parameters. For example, `MANIP 1` closes the hand or `ARM 0 330 0 20 20` extends the arm at low power. The python node below waves the arm when a face is shown below, and shows how simply the arm can be controlled in ROS. 
 
-![Luis' Program to control the arm if a face is found](images\Robot_Arm\FacialRecog.JPG)
+![Luis' Program to control the arm if a face is found](images/Robot_Arm/FacialRecog.JPG)
 
 
 
@@ -38,13 +38,13 @@ Github Repository: [Arm Interface Project](https://github.com/jsmith2021Brandeis
 
 
 
-![Graph of Ros Robot Showing arm command topic](images\Robot_Arm\RosGrapg.png)
+![Graph of Ros Robot Showing arm command topic](images/Robot_Arm/RosGrapg.png)
 
 
 
 ​	Finally, the Arduino Program running on the Arm itself sets up the program to run the motors and distance sensor, establish the serial connection, and parses data coming over the serial connection. This is accomplished by reading the tag and waiting for the correct number of integer arguments. For example, if "ARM" is received, the program loads the next four arguments received into an array and makes a function call to move the arm position.  The program to control the manipulator is shown below, note how it hides the actual degree measurements on whether the servo is open or closed and returns an error message if the improper command is specified.
 
-![Move Manip Function on Arduino Program](images\Robot_Arm\ArduinoProgram.JPG)
+![Move Manip Function on Arduino Program](images/Robot_Arm/ArduinoProgram.JPG)
 
 ​	Then, the Arduino commands the motor to move to the specified angle and returns the distance sensor reading (The heartbeat doubles as the distance reading). The arm and associated reverse kinematics program was provided by Charlie Squires (with the author rearranging the microprocessor and battery connection so the arm could be removed from its original mounting and added to the robot).
 
@@ -76,7 +76,7 @@ Github Repository: [Arm Interface Project](https://github.com/jsmith2021Brandeis
 
 ​	One pivot during this project was the realization that the servos have no ability to report their angle to the user. I investigated the Servo library I am using, VarSpeedSevo to determine the `isMoving` function could at least return whether the motor was moving, but my testing showed that it couldn't detect this [9]. Plotting the number of times the servo moved by different degrees shows that there is no correlation between where the servo is jammed and what the isMoving function returns.  The lack of feedback data made implementing a ROS action less feasible, because an action should be able to know when it is finished. This is an example of the kind of investigation that the next user of the arm interfacing project should hopefully be able to avoid.
 
-![Plot showing that servo cannot tell if the motor is still moving](images\Robot_Arm\MotionChart.JPG)
+![Plot showing that servo cannot tell if the motor is still moving](images/Robot_Arm/MotionChart.JPG)
 
 ​	Another problem was the mounting of the arm, as the campus rover was not designed to have a place for it. I initially mounted it above the lidar, but we ended up mounting it on top of the robot (see videos in Appendix A). Hopefully the next iteration of campus rover will include a mount for the arm that is stable and doesn't interfere with the lidar.
 
