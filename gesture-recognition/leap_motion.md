@@ -1,4 +1,4 @@
-﻿# Leap Motion: Alternative approach (semi-successful one)  
+﻿# Leap Motion: Alternative approach (successful one)  
 
 ## **Intro** 
  
