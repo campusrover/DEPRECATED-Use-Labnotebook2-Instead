@@ -135,3 +135,7 @@ The algorithm to make robot walk straight without hitting the wall is also neces
 ### GitHub Link
 
 [cv maze](https://github.com/campusrover/cv_maze "GitHub RL")
+
+### Demo video Links
+Third view: https://drive.google.com/file/d/1lwV-g8Pd23ECZXnbm_3yocLtlppVsSnT/view?usp=sharing  
+First view on screen: https://drive.google.com/file/d/1TGCNDxP1frjd9xORnvTLTU84wuU0UyWo/view?usp=sharing  
