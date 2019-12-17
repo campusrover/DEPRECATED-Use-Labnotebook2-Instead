@@ -1,6 +1,6 @@
 ﻿# Leap Motion: Alternative approach (semi-successful one)  
 
-### **Intro** 
+## **Intro** 
  
  As a very last minute and spontaneous approach, we decided to use a Leap Motion device. Leap Motion uses an Orion SDK, two IR camerad and three infared LEDs. This is able to generate a roughly hemispherical area where the motions are tracked.
  
@@ -16,7 +16,7 @@
  
  The set up is relatively simple and just involved downloading for the appropriate OS. In this case, Linux (x86 for a 32 bit Ubuntu system).  
  
- ### **Steps to downloading Leap Motion and getting it started:**
+ ## **Steps to downloading Leap Motion and getting it started:**
  
  1. download the SDK from https://www.leapmotion.com/setup/linux; you can extract this package and you will find two DEB files that can be installed on Ubuntu.
 2. Open Terminal on the extracted location and install the DEB file using the following command (for 64-bit PCs):
@@ -108,8 +108,9 @@ In the second image above, the x y and z parameters indicate where the leap moti
 
 <img src="labnotebook/images/right3.png" alt="Your image title" width="350" height="500"/>
 
+## **Conclusion**
 
-
+So, we got the Leap Motion to successfully work and are able to have the robot follow our two designated motion. We could have done many more if we had discovered this solution earlier. One important thing to note is that at this moment we are not able to mount the Leap Motion onto the physical robot as LeapMotion is not supported by the Raspberry Pi (amd64). If we are able to obtain an Atomic Pi, this project should be able to be furthered explored. Leap Motion is a very powerful and accurate piece of technology that was much easier to work with than the Kinect, but I advise still exploring both options. 
 
 
 
