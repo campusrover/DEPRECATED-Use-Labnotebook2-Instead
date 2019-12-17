@@ -2,7 +2,7 @@
 
 Jacob Smith COSI 119a  Fall 2019, Brandeis University
 
-Github Repository: [Arm Interface Project](https://github.com/jsmith2021Brandeis/Robot-Arm-Interface)
+Github Repository: [Arm Interface Project](<https://github.com/campusrover/Robot-Arm-Interface>)
 
 **Introduction and Relevant literature**
 
@@ -92,7 +92,7 @@ Github Repository: [Arm Interface Project](https://github.com/jsmith2021Brandeis
 
 Sources
 
-[1] [Arm Interface Project](https://github.com/jsmith2021Brandeis/Robot-Arm-Interface)
+[1] [Arm Interface Project](<https://github.com/campusrover/Robot-Arm-Interface>)
 
 [2] [Facial Recognition and and Arm Interfacing](https://github.com/jsmith2021Brandeis/FacialArm)
 
