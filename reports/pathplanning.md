@@ -95,6 +95,9 @@ Learning Rate = 0.0004, Batch Size = 200
 
 ### References
 Mnih, Volodymyr, et al. "Human-level control through deep reinforcement learning." Nature 518.7540 (2015): 529.
+
 Mnih, Volodymyr, et al. "Playing atari with deep reinforcement learning." arXiv preprint arXiv:1312.5602 (2013). https://arxiv.org/abs/1312.5602
+
 Nuin, Yue Leire Erro, et al. "ROS2Learn: a reinforcement learning framework for ROS 2." arXiv preprint arXiv:1903.06282 (2019). https://arxiv.org/abs/1903.06282
+
 Van Hasselt, Hado, Arthur Guez, and David Silver. "Deep reinforcement learning with double q-learning." Thirtieth AAAI conference on artificial intelligence. 2016. https://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/viewPaper/12389
