@@ -1,10 +1,10 @@
 # Path Planning Scenarios
 
-#### Github Link: https://github.com/DHDanielSuh/Path_Planning_with_QLearning
+#### Github Link: https://github.com/campusrover/PathFinding
 ## Author: Daniel Suh
 
 
-## Robot Path Finding using A Star Algorithm, Wave front Algorithm, and Reinforcement Learning.
+## Robot Path Finding using A Star Algorithm, Wave front Algorithm, and Reinforcement Learning
 
    The current society considers robots as a crucial element. It is because they have substituted human beings concerning the daily functions, which could be dangerous or essential. Therefore, the designation of an effective technique of navigation for robots that can achieve mobility as well as making sure that they are secure is the crucial considerations related to autonomous robotics. The report, therefore, addresses the pathfinding in robots using A-Star Algorithm, Wavefront Algorithm, as well as using Reinforcement Learning. The primary aim of path planning in robotics is to establish safe paths for the robots that can achieve mobility. The preparation of routes in robotics should achieve optimality. These algorithms target the development of strategies that are intended to provide solutions to problems like the ability of a robot to detect the distance between objects that causes obstructions, techniques of evading the obstacles, as well as how to achieve mobility between two elements of blockage in the shortest possible path. Moreover, the project is meant to help in coming up with the shortest route, if possible, that the Robot can use to reach the destination.
 
