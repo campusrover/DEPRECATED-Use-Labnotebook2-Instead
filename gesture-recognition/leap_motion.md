@@ -76,20 +76,20 @@ In the second image above, the x y and z parameters indicate where the leap moti
 
 ### **Forward** 
 
-<img src="..images/forward.jpg" alt="Your image title" width="350" height="500"/>
+<img src="../images/forward.jpg" alt="Your image title" width="350" height="500"/>
 
-<img src="..images/forward2.png" alt="Your image title" width="355" height="500"/>
+<img src="../images/forward2.png" alt="Your image title" width="355" height="500"/>
 
-<img src="..images/forward3.png" alt="Your image title" width="350" height="500"/>
+<img src="../images/forward3.png" alt="Your image title" width="350" height="500"/>
 
 
 ### **Backward** 
 
-<img src="..images/backwards.png" alt="Your image title" width="350" height="500"/>
+<img src="../images/backwards.png" alt="Your image title" width="350" height="500"/>
 
 <img src="../images/backwards2.png" alt="Your image title" width="359" height="500"/>
 
-<img src="..images/backwards3.png" alt="Your image title" width="360" height="500"/>
+<img src="../images/backwards3.png" alt="Your image title" width="360" height="500"/>
 
 ### **Left Rotation** 
 
