@@ -4,7 +4,7 @@
 ## Author: Daniel Suh
 
 
-## Robot Path Finding using A Star Algorithm, Wave front Algorithm, and Reinforcement Learning
+## Robot Path Finding using A Star Algorithm, Wave front Algorithm, and Reinforcement Learning.
 
    The current society considers robots as a crucial element. It is because they have substituted human beings concerning the daily functions, which could be dangerous or essential. Therefore, the designation of an effective technique of navigation for robots that can achieve mobility as well as making sure that they are secure is the crucial considerations related to autonomous robotics. The report, therefore, addresses the pathfinding in robots using A-Star Algorithm, Wavefront Algorithm, as well as using Reinforcement Learning. The primary aim of path planning in robotics is to establish safe paths for the robots that can achieve mobility. The preparation of routes in robotics should achieve optimality. These algorithms target the development of strategies that are intended to provide solutions to problems like the ability of a robot to detect the distance between objects that causes obstructions, techniques of evading the obstacles, as well as how to achieve mobility between two elements of blockage in the shortest possible path. Moreover, the project is meant to help in coming up with the shortest route, if possible, that the Robot can use to reach the destination.
 
@@ -28,7 +28,7 @@ Path MAP
 
    To make it more efficient and more tactical, the wavefront algorithm was utilized to help in determining the correct path that can be used by the Robot to reach the destination effectively. This type of Algorithm is regarded as a cell decomposition path method. When the workplace paths are divided into equal segments, getting the right paths can always be an issue; however, using this Algorithm will help to come up with the correct way that can easily use by the Robot in reaching the destination. The method uses the breadth-first search based on the position in which the target is. The nodes in this method are increasingly assigned values from the target note. At sometimes, the modified wavefront algorithm would be suggested in future research to come up with the best estimate of the path that is needed to be followed. The improved version of the system as well uses the notes; nevertheless, it provides for the most accurate results. In this project, for the remote censored Robot to find the correct path to reach the target faster, the wavefront algorithm was utilized.
 
-   In the allocation of the nodes, the following equation holds
+   In the allocation of the nodes, the following equation holds!
 
    Map (i,j) = {min (neighborhood (i j)) + 4 [empty diagonal cell]/ min (neighborhood (i j)) + 3 other empty  cell obstacle cell]
 
