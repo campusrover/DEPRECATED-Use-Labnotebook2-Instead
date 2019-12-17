@@ -93,8 +93,8 @@ The x, y, width, and height, should be float values that are to the width and he
 
 ##### Training Configurations
 
-As we were retraining weights from PJReddie's site.
-[PJReddie YOLO](https://pjreddie.com/darknet/yolo/). It is here that one can find some of the pretrained weights for different YOLO implementations and their performance in mAP and FLOPS on the COCO dataset. The COCO dataset is a popular dataset for training in object detection and is called the Common Objects in Context dataset that includes over a quarter of a million images.
+As we were retraining weights from
+[PJReddie's site](https://pjreddie.com/darknet/yolo/). It is here that one can find some of the pretrained weights for different YOLO implementations and their performance in mAP and FLOPS on the COCO dataset. The COCO dataset is a popular dataset for training in object detection and is called the Common Objects in Context dataset that includes over a quarter of a million images.
 
 For our initial training, we used the YOLOv3-416 configuration and weights for 416 by 416 sized images, as well as the YOLOv3 tiny configuration and weights in the event of latency issues. Modifications were made in the yolov3.cfg file that we used for training for our single class inference.
 
@@ -133,8 +133,10 @@ An alternate way of doing inference, but in this case doing object detection wit
 
 This project was a strong lesson in the risks of attempting a large project in a short time span that combines two complex fields within computer science (Robotics and Machine Learning) whilst learning much of it on the go. It was quite humbling to be very ambitious with our project goals and fall short of many of the "exciting" parts of the project. However, it was also a pleasure to have the freedom to work on and learn continuously while attempting to deploy models and demos to some fairly cutting edge problems. Overall, this made the experience a learning experience that resulted in not only many hours of head-banging and lost progress but also a deeper appreciation for the application of computer vision in robotics and the challenges of those who helped pave the way for our own small success.
 
+The two largest challenges in the project was data collection for our custom dataset and integration with ROS. That is, creating and annotating a custom dataset took longer than expected and we ran into trouble with training where our images were perhaps not distinct enough/did not cover enough environments for our weights to make sufficient progress. For integration, we ran into issues between python2 and python3, problems with integrating Keras with ROS, and other integration issues that greatly slowed the pace of the project. This made us realize that in the future, not to discount the work required for integration across platforms and frameworks.
+
 References:
-https://github.com/eriklindernoren/PyTorch-YOLOv3
-https://github.com/qqwweee/keras-yolo3
-https://pjreddie.com/darknet/yolo/
-https://github.com/cfotache/pytorch_objectdetecttrack
+* [PJReddie for Darknet Weights](https://pjreddie.com/darknet/yolo/)
+* [Erik Lindernoren's PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3)
+* [Qqwweee's Keras YOLOv3](https://github.com/qqwweee/keras-yolo3)
+* [Cfotache PyTorch Object Detection](https://github.com/cfotache/pytorch_objectdetecttrack)
