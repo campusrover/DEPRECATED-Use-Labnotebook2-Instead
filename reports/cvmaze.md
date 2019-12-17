@@ -92,6 +92,40 @@ In conclusion, we have this node relationship diagram
 Then the workflow of our whole picture is pretty straightforward. The below flowchart describes it:
 <img src="../images/cv_maze/workflow.PNG" width="850">
 
+### Discussion of interesting algorithms, modules, techniques
+
+In this section, we briefly talk about some details of the algorithms we use.
+
+The Process of Canny edge detection algorithm can be broken down to 5 different steps:
+
+1. Apply Gaussian filter to smooth the image in order to remove the noise
+
+2. Find the intensity gradients of the image
+
+3. Apply non-maximum suppression to get rid of spurious response to edge detection
+
+4. Apply double threshold to determine potential edges
+
+5. Track edge by hysteresis: Finalize the detection of edges by suppressing all the other edges that are weak and not connected to strong edges.
+
+The simplest case of Hough transform is detecting straight lines, which is what we use. In general, the straight line y = mx + b can be represented as a point (b, m) in the parameter space. However, vertical lines pose a problem. They would give rise to unbounded values of the slope parameter m. Thus, for computational reasons, Duda and Hart proposed the use of the Hesse normal form
+
+    r = x cos ⁡ θ + y sin ⁡ θ
+
+where r is the distance from the origin to the closest point on the straight line, and θ is the angle between the x axis and the line connecting the origin with that closest point.
+
+<img src="../images/cv_maze/R_theta_line.GIF" width="850">
+
+It is therefore possible to associate with each line of the image a pair ( r , θ ).The ( r , θ ) plane is sometimes referred to as Hough space for the set of straight lines in two dimensions. This representation makes the Hough transform conceptually very close to the two-dimensional Radon transform. (They can be seen as different ways of looking at the same transform.)
+
+Given a single point in the plane, then the set of all straight lines going through that point corresponds to a sinusoidal curve in the (r,θ) plane, which is unique to that point. A set of two or more points that form a straight line will produce sinusoids which cross at the (r,θ) for that line. Thus, the problem of detecting collinear points can be converted to the problem of finding concurrent curves.
+
+After use the Hough line algorithm to find a set of straight lines in the frame. we use a slope filter to find a single line which slope is in a particular range and is also closest to a particular reference value. For the front line, we always use the one at most bottom of the frame, which means it is the closest wall.
+
+Pid controller stands for a proportional, integral and derivative controller, which out put is them sum of these three terms, with each of them times a constant factor. 
+
+In our pid implementation, the raw input of the error is the term that will times the proportional factor. The integral term is calculated by the sum of the content of a error history deque, which keeps the latest 10 error history values and sum their product with the time gap between each other (graphically the area of a trapezoid). The derivative term is calculated by the difference of the current error and the last error, divided by the difference of their time gap.
+
 ### Story of the project.
 
 As above mentioned, our project is strongly relied on the accuracy of edge detection. At the beginning, we only apply Gaussian filter to remove the noise in the image then just apply double threshold to determine edges. However, it does not work well. Then we try to convert the denoised  image to a hsv image and convert this hsv image into a binary image before applying canny function. Unfortunately, it does not work every time. Sometimes because of the light and shadow issue it cannot detect the desired edges. Finally, we changed our binary image generation method by considering 3 features, hue, saturation and value, rather than only one feature hue, which turns out works much more robust.
