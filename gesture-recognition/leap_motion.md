@@ -16,7 +16,11 @@
  
  The set up is relatively simple and just involved downloading for the appropriate OS. In this case, Linux (x86 for a 32 bit Ubuntu system).  
  
- ## **Steps to downloading Leap Motion and getting it started:**
+ ## **Steps to downloading Leap Motion and getting it started:** 
+ 
+ ### **Link if needed** 
+ 
+ - https://www.leapmotion.com/setup/desktop/linux/
  
  1. download the SDK from https://www.leapmotion.com/setup/linux; you can extract this package and you will find two DEB files that can be installed on Ubuntu.
 2. Open Terminal on the extracted location and install the DEB file using the following command (for 64-bit PCs):
@@ -106,6 +110,10 @@ In the second image above, the x y and z parameters indicate where the leap moti
 <img src="../images/right2.png" alt="Your image title" width="375" height="500"/>
 
 <img src="../images/right3.png" alt="Your image title" width="350" height="500"/>
+
+## **RQT Graph** 
+
+<img src="../images/leapmotionss3.png" alt="Your image title" width="350" height="500"/>
 
 ## **Conclusion**
 
