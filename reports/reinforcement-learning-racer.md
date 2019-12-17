@@ -77,15 +77,13 @@ The problem that my facial recognition aspect has is that you have to be within 
 We both did a good job of accomplishing what we wanted to, even though we had to pivot a few times. We believe that the code we implemented could be used in further projects. The deep RL code could be used to learn to drive around pre-gazeboed maps with some adaptation and the general method could be applied anywhere continuous control is needed. The facial recognition algorithm can be easily added to the code base of Campus Rover for package delivery authentication and any other facial recognition applications. 
 
 ### GitHub Link
+[Reinforcement Learning Racer on the Campus Rover Git Hub](https://github.com/campusrover/RL_Racer "GitHub RL"): 
 
 [Reinforcement Learning Racer](https://github.com/landinojr/RL_Racer "GitHub RL"): 
 
 ![alt text](../images/RL_Racer.png "GitHub QR Code")
 
-[Reinforcement Learning Racer on the Campus Rover Git Hub](https://github.com/campusrover/RL_Racer "GitHub RL"): 
 
-
- 
 
 
 ### Bibliography 
