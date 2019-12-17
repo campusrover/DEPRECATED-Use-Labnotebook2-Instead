@@ -113,7 +113,7 @@ In the second image above, the x y and z parameters indicate where the leap moti
 
 ## **RQT Graph** 
 
-<img src="../images/leapmotionss3.png" alt="Your image title" width="500" height="500"/>
+<img src="../images/leapmotionss3.png" alt="Your image title" width="700" height="500"/>
 
 ## **Conclusion**
 
