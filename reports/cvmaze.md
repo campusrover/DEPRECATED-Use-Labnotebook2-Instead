@@ -87,13 +87,13 @@ In order to finally get out the maze, the robot also need a navigation algorithm
 So the general idea is: when the robot detects a turn in the maze by analyzing the lines, its main node will call an action to handle the case and wait until the robot has passed that turn. In other time, the robot will use the pid algorithm to try to keep at the middle of the left and right walls in the maze, going forward until reaches the next turn. We have wrote the pid controller into a service node that the main node will send its request to calculate the robot's angular twist when the robot is not handling turns,  the error is calculated by the different of intercept of left line on x = 0 and right line on x = w (w is the width of the frame image).
 
 In conclusion, we have this node relationship diagram  
-![Figure 1](../images/cv_maze/node_diagram.PNG =250x)
+<img src="../images/cv_maze/node_diagram.PNG" width="200">
 
 ### Discussion of interesting algorithms, modules, techniques
 As above mentioned, our project is strongly relied on the accuracy of edge detection. At the begining, we only apply Gaussian filter to remove the noise in the image then just apply double threshold to determine edges. However, it does not work well. Then we try to convert the denoised  image to a hsv image and convert this hsv image into a binary image before applying canny function. Unfortunately, it does not work every time. Sometimes because of the light and shadow issue it cannot detect the desired edges. Finally, we changed our binary image generation method by considering 3 features, hue, saturation and value, rather than only one feature hue, which turns out works much more robust.
 
 Then the workflow of our whole picture is pretty straightforward. The below flowchart describes it:
-![Figure 1](../images/cv_maze/workflow.PNG =250x)
+<img src="../images/cv_maze/workflow.PNG" width="200">
 
 ### Story of the project.
 how to stablize the edges. 
