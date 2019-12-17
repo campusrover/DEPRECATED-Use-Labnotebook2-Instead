@@ -2,7 +2,7 @@
 
 ## Author: Tirtho Aungon and Jade Garisch 
 
-# aPartg 1: Kinect aka libfreenect2 
+# Part 1: Kinect aka libfreenect2 
 
 #### **Intro**
 
@@ -46,9 +46,7 @@ Predicted Palm (H), Predicted L, Predicted Fist (H), Predicted Fist (V), Predict
 
 
 
-# Part 2:
-
-## Leap Motion: Alternative approach (semi-successful one)  
+# Part 2: Leap Motion: Alternative approach (semi-successful one)  
 
 ## **Intro** 
  
