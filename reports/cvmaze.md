@@ -90,7 +90,12 @@ In conclusion, we have this node relationship diagram
 ![Figure 1](../images/cv_maze/node_diagram.PNG)
 
 ### Discussion of interesting algorithms, modules, techniques
+As above mentioned, our project is strongly relied on the accuracy of edge detection. At the begining, we only apply Gaussian filter to remove the noise in the image then just apply double threshold to determine edges. However, it does not work well. Then we try to convert the denoised  image to a hsv image and convert this hsv image into a binary image before applying canny function. Unfortunately, it does not work every time. Sometimes because of the light and shadow issue it cannot detect the desired edges. Finally, we changed our binary image generation method by considering 3 features, hue, saturation and value, rather than only one feature hue, which turns out works much more robust.
+
+Then the workflow of our whole picture is pretty straightforward. The below flowchart describes it:
+![Figure 1](../images/cv_maze/workflow.PNG)
 
 ### Story of the project.
+how to stablize the edges. 
 
 ### GitHub Link
