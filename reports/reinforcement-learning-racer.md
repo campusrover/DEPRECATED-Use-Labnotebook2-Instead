@@ -82,6 +82,11 @@ We both did a good job of accomplishing what we wanted to, even though we had to
 
 ![alt text](../images/RL_Racer.png "GitHub QR Code")
 
+[Reinforcement Learning Racer on the Campus Rover Git Hub](https://github.com/campusrover/RL_Racer "GitHub RL"): 
+
+
+ 
+
 
 ### Bibliography 
 
