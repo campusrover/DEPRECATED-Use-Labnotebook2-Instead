@@ -14,7 +14,7 @@
 
    A two-dimensional environment where the robot training was to be undertaken was created. The atmosphere was made in such a way that for the Robot to finds its path from location A to B, there are several obstacles, destructions, and walls that would hinder it from getting to the destination. The result would be to identify how the Robot would meander through the barriers to reach the desired position. A robot sensor was used to help the robot to perceive the environment. To determine the best way of path determination, the following criteria were utilized, A star Algorithm and Wavefront Algorithm and Reinforcement Learning.
 
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/gazebo_world.png" width="500">
+<img src="..images/img/gazebo_world.png" width="500">
 
 #### A Star Algorithm
 
