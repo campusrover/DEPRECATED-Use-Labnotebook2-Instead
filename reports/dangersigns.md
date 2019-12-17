@@ -135,6 +135,8 @@ This project was a strong lesson in the risks of attempting a large project in a
 
 The two largest challenges in the project was data collection for our custom dataset and integration with ROS. That is, creating and annotating a custom dataset took longer than expected and we ran into trouble with training where our images were perhaps not distinct enough/did not cover enough environments for our weights to make sufficient progress. For integration, we ran into issues between python2 and python3, problems with integrating Keras with ROS, and other integration issues that greatly slowed the pace of the project. This made us realize that in the future, not to discount the work required for integration across platforms and frameworks.
 
+[Link to github repo](https://github.com/mmillendorf/dangersigns)
+
 References:
 * [PJReddie for Darknet Weights](https://pjreddie.com/darknet/yolo/)
 * [Erik Lindernoren's PyTorch YOLOv3](https://github.com/eriklindernoren/PyTorch-YOLOv3)
