@@ -14,7 +14,7 @@
 
    A two-dimensional environment where the robot training was to be undertaken was created. The atmosphere was made in such a way that for the Robot to finds its path from location A to B, there are several obstacles, destructions, and walls that would hinder it from getting to the destination. The result would be to identify how the Robot would meander through the barriers to reach the desired position. A robot sensor was used to help the robot to perceive the environment. To determine the best way of path determination, the following criteria were utilized, A star Algorithm and Wavefront Algorithm and Reinforcement Learning.
 
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/gazebo_world.png" width="500">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/gazebo_world.png" width="500">
 
 #### A Star Algorithm
 
@@ -36,7 +36,7 @@ Path MAP
 
 
 Path MAP
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/WaveFront_Path.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/WaveFront_Path.png" width="400">
 
 #### Deep Learning Reinforcement in Path Findings
 
@@ -44,30 +44,30 @@ Path MAP
 
    𝑄ˆ(𝑠, 𝑎) = (1 − 𝛼𝑡). 𝑄ˆ(𝑠, 𝑎) + 𝛼𝑡(𝑟 + 𝛾 max 𝑎 ′ 𝑄ˆ(𝑠 ′ , 𝑎′ ))
 
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/Q_Learning.png" width="500">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/Q_Learning.png" width="500">
 
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/Q_Learning1.png" width="500">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/Q_Learning1.png" width="500">
 
    Figure portrays the single target fortification learning system. Where the specialist, spoke to by an oval, is in the state (s) at time step (t). The operator plays out the activity-dependent on the Q-esteem. The earth gets this activity, and accordingly, it restores the following states' to the operator and a comparing reward (r) for making a move (a). 
 
 Path MAP
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/Reinforcement_Learning_Path.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/Reinforcement_Learning_Path.png" width="400">
 
 ##### Training Result Difference between Learning Rate
 
 Learning Rate = 0.0001, Batch Size = 200
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/lr_0.0001.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/lr_0.0001.png" width="400">
 
 ###### Best Model
 
 Learning Rate = 0.0002, Batch Size = 200 
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/lr_0.0002.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/lr_0.0002.png" width="400">
 
 Learning Rate = 0.0003, Batch Size = 200
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/lr_0.0003.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/lr_0.0003.png" width="400">
 
 Learning Rate = 0.0004, Batch Size = 200
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/lr_0.0004.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/lr_0.0004.png" width="400">
 
 #### Double q learning
 
@@ -77,7 +77,7 @@ Learning Rate = 0.0004, Batch Size = 200
 
    As opposed to Q learning, the Double Q learning equation is vectorial functions.
 
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/Q_Learning2.png" width="500">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/Q_Learning2.png" width="500">
 
    The figure portrays the multi-objective reinforcements support learning structure. Like the single goal RL system, in MORL structure, the operator is spoken to by an oval and is in the state (s) at time step (t). The specialist makes a move dependent on the accessible Q-values. The earth gets this activity, and accordingly, it restores the following state s' to the specialist.
 
