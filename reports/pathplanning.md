@@ -22,7 +22,7 @@
 
 
 Path MAP
-<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/tree/master/path_planning_with_qlearning/src/img/AStar_Path.png" width="400">
+<img src="https://github.com/DHDanielSuh/Path_Planning_with_QLearning/blob/master/path_planning_with_qlearning/src/img/AStar_Path.png" width="400">
 
 #### Wave front Algorithm
 
