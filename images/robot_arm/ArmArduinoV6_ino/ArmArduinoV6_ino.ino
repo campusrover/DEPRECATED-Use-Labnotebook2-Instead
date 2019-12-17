@@ -11,6 +11,7 @@
 
 //inlcude varSpeedServe library and set up named servos
 #include <DistanceSensor.h>
+#include <VarSpeedServo.h>
 
 DistanceSensor distanceSensor;
 VarSpeedServo fingerServo, base_servo, shoulder_servo, elbow_servo, wrist_servo, hand_servo;
@@ -24,9 +25,6 @@ bool newData;
 int paramIndex=0;
 int params[4];
 int numParams=0;
-
-//timer global variables
-long startTime=millis();
 
 //calculation global variables
 const float BASE_HGT = 100;              //base hight
@@ -75,15 +73,6 @@ void loop() {
     process();
     newData=false;
   }
-
-  //publish Distance on a time interval
-  if(millis()-startTime>5000){
-    Serial.print("DIST: ");
-    Serial.println(distanceSensor.getDistance());
-    startTime=millis();
-  }
-  
-  
 }
 
 //checks for Serial data separated by tokens
@@ -113,12 +102,10 @@ void getToken() {
 void process() {
     //if command is arm, prepare to read 4 paremeters
     if (strcmp(receivedChars, "ARM") == 0) {
-      numParams=4;
-      paramIndex=0;
+      acknowledgeCommand(4,"ARM");
     //if command is manip, prepare to read 1 paremeter
     } else if (strcmp(receivedChars, "MANIP") == 0) {
-      numParams=1;
-      paramIndex=0;
+      acknowledgeCommand(1,"MANIP");
     //if there is a paremeter to read, read it and add to array
     }else if(paramIndex<numParams){
       int dataNumber = 0;           
@@ -134,6 +121,16 @@ void process() {
     }
 }
 
+//sets global variables and prints message to acknowledge start of header command
+void acknowledgeCommand(int providedNumParams,char* command){
+  numParams=providedNumParams;
+  paramIndex=0;
+  Serial.print("Recieved Command: ");
+  Serial.print(command);
+  Serial.print("\tDIST: ");
+  Serial.println(distanceSensor.getDistance());
+
+}
 
 //move the manipulator to the specified state
 void moveManip(int state) {
@@ -153,9 +150,7 @@ void moveManip(int state) {
 }
 
 /* arm positioning routine utilizing inverse kinematics *
-
   x is distance from base mm, y is height mm, base_rotation  is rotation around base in degrees, gripper_angle is hand rottion in degrees, servospeed is how fast is it to happen 0-300
-
   void set_arm( uint16_t x, uint16_t y, uint16_t z, uint16_t grip_angle )
   *****************************************************************************************************/
 void moveArm( float x, float y, int base_rotation_d, int servoSpeed ) {
