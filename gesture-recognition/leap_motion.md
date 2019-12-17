@@ -5,7 +5,7 @@
  As a very last minute and spontaneous approach, we decided to use a Leap Motion device. Leap Motion uses an Orion SDK, two IR camerad and three infared LEDs. This is able to generate a roughly hemispherical area where the motions are tracked.
  
 
- <img src="labnotebook/images/leap.png" alt="Your image title" width="400"/>
+ <img src="../labnotebook/images/leap.png" alt="Your image title" width="400"/>
  
  
  <img src="labnotebook/images/setup.png" alt="Your image title" width="400"/>
