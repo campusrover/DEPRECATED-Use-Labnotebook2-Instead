@@ -56,7 +56,7 @@
   * [Behavior Trees](reports/behavior_trees.md)
   * [Computer Vision Maze Solver](reports/cvmaze.md)
   * [Danger Signs](reports/dangersigns.md)
-  * [Fiducial Slam](reports/fidslam.md)
+  * [Fiducial Slam](reports/FiducialSLAM.md)
   * [Gestures](reports/gestures.md)
   * [Path Planning Scenarios](reports/pathplanning.md)
   * [Reinforcement Learning Racer](reports/reinforcement-learning-racer.md)
