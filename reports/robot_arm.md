@@ -2,7 +2,7 @@
 
 Jacob Smith COSI 119a  Fall 2019, Brandeis University
 
-Github Repository: [Arm Interface Project](<https://github.com/campusrover/Robot-Arm-Interface>)
+Github Repository: [Arm Interface Project](<https://github.com/campusrover/Robot-Arm-Interface)
 
 **Introduction and Relevant literature**
 
