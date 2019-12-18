@@ -1,6 +1,7 @@
 #### Cosi 119a - Autonomous Robotics
 #### Team: Stalkerbot
 #### Team members: Danbing Chen, Maxwell Hunsinger
+#### Github Repository: https://github.com/campusrover/stalkerbot
 #### Final Report
 
 ## Introduction
@@ -65,3 +66,5 @@ The inconsistency of the camera and Aruco Detect was our first big obstacle. We 
 The second challenge is the ros_tf library, and in general how orientation and pose function in the 3D world. At the beginning of the algorithm development, we did not have to deal with poses and orientations, but when we had to deal with them, we realized the poses and orientations we thought were aligned were all over the place. It turned out, that the axes used by Aruco Detect and ros_tf were different. The x axis in ros_tf is the y axis in Aruco Detect, for example. In addition, communicating with ros_tf requires a good understanding of the package as well as spatial orientation. There are many pitfalls, such as mixing the target frame and the child frame, mixing up the map frame and the odom frame.
 
 Over the course of the development, Danbing worked on the basic follow algorithm, fiducial_filter, fiducial_interval, motion_detect, detect_interval, and sigint_catcher. Max worked on location_pub, move_base_follow and the integration of move_base_follow to make advanced_follow.
+
+
