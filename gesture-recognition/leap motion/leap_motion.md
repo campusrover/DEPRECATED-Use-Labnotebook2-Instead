@@ -5,10 +5,10 @@
  As a very last minute and spontaneous approach, we decided to use a Leap Motion device. Leap Motion uses an Orion SDK, two IR camerad and three infared LEDs. This is able to generate a roughly hemispherical area where the motions are tracked.
  
 
- <img src="../images/leap.png" alt="Your image title" width="400"/>
+ <img src="/images/leap.png"  width="400"/>
  
  
- <img src="../images/setup.png" alt="Your image title" width="400"/>
+ <img src="/images/setup.png" width="400"/>
  
 
  
@@ -60,9 +60,9 @@ Once having Leap Motion installed, we were able to simulate it on RViz. We decid
 
 This is what the Leap Motion sees (the raw info):
 
-<img src="../images/leapmotionss.png" alt="Your image title" width="800" height="500"/>
+<img src="/images/leapmotionss.png" alt="Your image title" width="800" height="500"/>
 
-<img src="../images/leapmotionss2.png" alt="Your image title" width="800" height="500"/>
+<img src="/images/leapmotionss2.png" alt="Your image title" width="800" height="500"/>
 
 In the second image above, the x y and z parameters indicate where the leap motion detects a hand (pictured in the first photo)
 
@@ -72,44 +72,46 @@ In the second image above, the x y and z parameters indicate where the leap moti
 **This is how the hand gestures looked relative to the robot's motion:** 
 
 ### **Stationary** 
-<img src="../images/stat.png" alt="Your image title" width="400"/>
+<img src="/images/stat.png" alt="Your image title" width="400"/>
 
 ### **Forward** 
 
-<img src="../images/forward.jpg" alt="Your image title" width="350" height="500"/>
+<img src="/images/forward.jpg" alt="Your image title" width="350" height="500"/>
 
-<img src="../images/forward2.png" alt="Your image title" width="355" height="500"/>
+<img src="/images/forward2.png" alt="Your image title" width="355" height="500"/>
 
-<img src="../images/forward3.png" alt="Your image title" width="350" height="500"/>
+<img src="/images/forward3.png" alt="Your image title" width="350" height="500"/>
 
 
 ### **Backward** 
 
-<img src="../images/backwards.png" alt="Your image title" width="350" height="500"/>
+<img src="/images/backwards.png" alt="Your image title" width="350" height="500"/>
 
-<img src="../images/backwards2.png" alt="Your image title" width="359" height="500"/>
+<img src="/images/backwards2.png" alt="Your image title" width="359" height="500"/>
 
-<img src="../images/backwards3.png" alt="Your image title" width="360" height="500"/>
+<img src="/images/backwards3.png" alt="Your image title" width="360" height="500"/>
 
 ### **Left Rotation** 
 
-<img src="../images/left.png" alt="Your image title" width="350" height="500"/>
+<img src="/images/left.png" alt="Your image title" width="350" height="500"/>
 
-<img src="../images/left2.png" alt="Your image title" width="360" height="500"/>
+<img src="/images/left2.png" alt="Your image title" width="360" height="500"/>
 
-<img src="../images/left3.png" alt="Your image title" width="370" height="500"/>
+<img src="/images/left3.png" alt="Your image title" width="370" height="500"/>
 
 ### **Right Rotation**
 
-<img src="../images/right.png" alt="Your image title" width="340" height="500"/>
+<img src="/images/right.png" alt="Your image title" width="340" height="500"/>
 
-<img src="../images/right2.png" alt="Your image title" width="375" height="500"/>
+<img src="/images/right2.png" alt="Your image title" width="375" height="500"/>
 
-<img src="../images/right3.png" alt="Your image title" width="350" height="500"/>
+<img src="/images/right3.png" alt="Your image title" width="350" height="500"/>
 
 ## **Conclusion**
 
 So, we got the Leap Motion to successfully work and are able to have the robot follow our two designated motion. We could have done many more if we had discovered this solution earlier. One important thing to note is that at this moment we are not able to mount the Leap Motion onto the physical robot as LeapMotion is not supported by the Raspberry Pi (amd64). If we are able to obtain an Atomic Pi, this project should be able to be furthered explored. Leap Motion is a very powerful and accurate piece of technology that was much easier to work with than the Kinect, but I advise still exploring both options. 
 
 
+## **GIT HUB REPO**
 
+https://github.com/campusrover/gesture_recognition
