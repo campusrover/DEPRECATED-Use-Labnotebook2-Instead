@@ -39,4 +39,6 @@ https://github.com/filipefborba/HandRecognition/blob/master/project3/project3.ip
 - What this model predicts: Predicted Thumb Down
 Predicted Palm (H), Predicted L, Predicted Fist (H), Predicted Fist (V), Predicted Thumbs up, Predicted Index, Predicted OK, Predicted Palm (V), Predicted C
 
+### GITHUB REPO 
 
+https://github.com/campusrover/gesture_recognition
