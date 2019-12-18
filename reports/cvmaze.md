@@ -87,7 +87,7 @@ In order to finally get out the maze, the robot also need a navigation algorithm
 So the general idea is: when the robot detects a turn in the maze by analyzing the lines, its main node will call an action to handle the case and wait until the robot has passed that turn. In other time, the robot will use the pid algorithm to try to keep at the middle of the left and right walls in the maze, going forward until reaches the next turn. We have wrote the pid controller into a service node that the main node will send its request to calculate the robot's angular twist when the robot is not handling turns,  the error is calculated by the different of intercept of left line on x = 0 and right line on x = w (w is the width of the frame image).
 
 In conclusion, we have this node relationship diagram  
-<img src="../images/cv_maze/node_diagram.PNG" width="650">
+<img src="../images/cv_maze/node_diagram.PNG" width="850" />
 
 Then the workflow of our whole picture is pretty straightforward. The below flowchart describes it:
 <img src="../images/cv_maze/workflow.PNG" width="850">
