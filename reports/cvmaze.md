@@ -90,7 +90,9 @@ In conclusion, we have this node relationship diagram
 <img src="../images/cv_maze/node_diagram.PNG" width="850" />
 
 Then the workflow of our whole picture is pretty straightforward. The below flowchart describes it:
-<img src="../images/cv_maze/workflow.PNG" width="850">
+<img src="../images/cv_maze/workflow.PNG" width="640" height="360" />
+xxx
+
 
 ### Discussion of interesting algorithms, modules, techniques
 
