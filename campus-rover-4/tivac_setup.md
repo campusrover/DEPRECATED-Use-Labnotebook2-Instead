@@ -51,8 +51,20 @@ rosrun rosserial_tivac make_libraries_energia libraries/
 
 If that command completes without error, you should find the directory `ros_lib` inside `libraries`. Congratulations! You can now turn your Tiva C launchpad into a ROS node.
 
-This guide was adapted from [here](http://wiki.ros.org/rosserial_tivac/Tutorials/Energia%20Setup)
+This guide up to this point was adapted from [here](http://wiki.ros.org/rosserial_tivac/Tutorials/Energia%20Setup)
 
-## Step 4: running the node and communicating with ROS
+## Step 4: Configure Energia for Tiva C
+
+Open Energia. From the Menu at the top, Select `Tools`, then `Boards`, then `Boards Manager`.
+
+In the Boards Manager, scroll down and select `Energia TivaC boards`, and install it.
+
+Under `Tools/Boards` again, select `LaunchPad (Tiva C) tm4c123 (80MHz)`
+
+Now, plug the Tiva C into your PC via USB. Now, under `Tools` you should now be able to select `Ports`, and the only option should be `/dev/ttyACM0`. Select it.
+
+You are now configured to compile and upload your code to the Tiva C board by using the `Upload` button (it looks like an arrow pointing to the right)
+
+## Step 5: running the node and communicating with ROS
 
 For the node on your Tiva C to communicate with ROS, the computer it is attached to must be running the `serial_node` from the `rosserial_python` package. This node is installed by default along with ROS. Run it independantly with `rosrun`, or add it to your project's launch file.
