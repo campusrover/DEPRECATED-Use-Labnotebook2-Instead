@@ -51,6 +51,8 @@
   * [Demo Setup](demos/gen2_demo_instructions.md)
 * [Create Gazebo Maps](create-gazebo-map/README.md)
   * [tutorial](create-gazebo-map/tutorial.md)
+* [Campus Rover Prototype](campus-rover-4/README.md)
+  * [Setup to work with Tiva C Launchpad](campus-rover-4/tivac_setup.md)
 * [Final Project Reports](reports/README.md)
   * [Robot Arm](reports/robot_arm.md)
   * [Behavior Trees](reports/behavior_trees.md)
@@ -61,4 +63,3 @@
   * [Path Planning Scenarios](reports/pathplanning.md)
   * [Reinforcement Learning Racer](reports/reinforcement-learning-racer.md)
   * [StalkerBot](reports/stalkerbot.md)
-
