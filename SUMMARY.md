@@ -53,6 +53,7 @@
   * [tutorial](create-gazebo-map/tutorial.md)
 * [Campus Rover Prototype](campus-rover-4/README.md)
   * [Setup to work with Tiva C Launchpad](campus-rover-4/tivac_setup.md)
+  * [Communicating with Rosserial](campus-rover-4/communicate_with_rosserial.md)
 * [Final Project Reports](reports/README.md)
   * [Robot Arm](reports/robot_arm.md)
   * [Behavior Trees](reports/behavior_trees.md)
