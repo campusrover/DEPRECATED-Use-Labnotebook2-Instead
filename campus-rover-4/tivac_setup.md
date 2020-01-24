@@ -65,6 +65,12 @@ Now, plug the Tiva C into your PC via USB. Now, under `Tools` you should now be 
 
 You are now configured to compile and upload your code to the Tiva C board by using the `Upload` button (it looks like an arrow pointing to the right)
 
-## Step 5: running the node and communicating with ROS
+## Step 5: enabling your computer to send data to the TivaC
+
+1. Download the [Ti udev rules](https://s3.amazonaws.com/energiaUS/files/71-ti-permissions.rules)
+2. in a terminal, cd to where you downloaded the udev rules. then, move them using this command: `sudo mv 71-ti-permissions.rules /etc/udev/rules.d/`
+3. restart the udev service using this command: `sudo service udev restart`
+
+## Step 6: running the node and communicating with ROS
 
 For the node on your Tiva C to communicate with ROS, the computer it is attached to must be running the `serial_node` from the `rosserial_python` package. This node is installed by default along with ROS. Run it independantly with `rosrun`, or add it to your project's launch file.
