@@ -23,4 +23,3 @@ Ngrok is basically a service which creates a public URL for your computer's loca
 ## Voice Webhook Node
 
 The voice\_webhook node is a flask app \(and thus will require that flask is installed on the computer it is running on, as it should be on the main computer\). Furthermore, as it relied on ngrok to make itself available to Alexa, it must be running on the same computer as ngrok. Look over the node python file to get an understanding of how it works. Alexa will basically send over a rather large and convoluted JSON string representing a user intent every time the user commands the skill to do something. This node will basically parse the JSON string, produce a new, simplified JSON string, publish it to the voice\_intents topic \(in most cases\) for other nodes to execute, and return a reply for the echo to verbally say to the user.
-

@@ -12,10 +12,10 @@ The other robot, has blue wheels of similar size to the standard TB3 wheels. Thi
 
 Wiring diagrams and pictures:
 
-![Wiring Diagram](../ardwire.jpg)
+![Wiring Diagram](../../images/ard_mut/ardwire.jpg)
 
-![Full Picture](../mutpicture.jpg)
+![Full Picture](../../images/ard_mut/mutpicture.jpg)
 
-![Arduino Picture](../ardpicture.jpg)
+![Arduino Picture](../../images/ard_mut/ardpicture.jpg)
 
 ## _Aaron Marks_

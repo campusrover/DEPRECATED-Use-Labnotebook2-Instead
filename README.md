@@ -9,7 +9,8 @@ When contributing, please make sure to do the following:
 3. Add your file to Summary.md so it is accessible from the gitbook webpage
 4. Give your images common sense names. They should be descriptive and/ or associative. "p1.png" is bad, "gazebo_img1.png" is better.
 5. Only use hyphens, not underscores, in filenames.
-6. Follow Markdown format guidleines. There is a Markdown extenstion for VS code which will assist you in this endeavor. Here are some common mistakes:
+6. Try to order files in SUMMARY.md is a way that makes sense if they were to be read through sequentially
+7. Follow Markdown format guidleines. There is a Markdown extenstion for VS code which will assist you in this endeavor. Here are some common mistakes:
 
    1. No trailing spaces at the end of lines
    2. One (and only one) blank new line on either side of Headers, lists, and code blocks
@@ -18,7 +19,7 @@ When contributing, please make sure to do the following:
    5. no trailing punctuation in headers
    6. Do not skip header levels, only one H1
 
-7. Furthermore, please follow these style guidelines:
+8. Furthermore, please follow these style guidelines:
 
    1. Do not use bold or italics in headers
    2. Do not use emphasis to take the place of a code snippet

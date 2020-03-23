@@ -1,4 +1,0 @@
-# Hairy Math
-
-
-

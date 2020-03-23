@@ -11,7 +11,7 @@
 * If you want to apply it without opening a new terminal, do `source ~/.bashrc`
 * These lines should be on your laptop as well as your robot, the same way.
 
-```text
+```sh
 alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
 export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
 export ROS_NAMESPACE=roba
@@ -29,7 +29,7 @@ export TURTLEBOT3_MODEL=burger
 * SSH into the robot
 * Run the following command to launch ROS on the robot
 
-```text
+```sh
 roslaunch turtlebot3_bringup turtlebot3_robot.launch
 ```
 
@@ -65,7 +65,7 @@ You'll notice eb uses nano by default. nano is fine, if you enjoy living in the 
 
 Try using this chunk in your bashrc:
 
-```text
+```sh
 alias connect='ssh $ROBOT@$ROBOT.dyn.brandeis.edu'
 export ROBOT=robc
 export ROS_MASTER_URI=http://$ROBOT.dyn.brandeis.edu:11311

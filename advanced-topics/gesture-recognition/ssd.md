@@ -11,4 +11,3 @@ After processing raw images from the robot, a message \(hands recognized or not\
 ## References
 
 Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy,Scott E. Reed, Cheng-Yang Fu, and Alexander C. Berg. SSD: single shot multibox detector. CoRR, abs/1512.02325, 2015. Victor Dibia, Real-time Hand-Detection using Neural Networks \(SSD\) on Tensorflow, \(2017\), GitHub repository, [https://github.com/victordibia/handtracking](https://github.com/victordibia/handtracking)
-

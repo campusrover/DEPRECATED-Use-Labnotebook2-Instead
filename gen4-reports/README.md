@@ -11,4 +11,3 @@ The following pages are each a project report by a student in Autonomous Robotic
 3. Write your project report using markdown. You can include images as well as links. There are many tutorials on Markdown but you most likely already know it.
 4. Git add, commit and push your changes
 5. If you did it right then they will appear in the [Labnotebook](https://app.gitbook.com/@campus-rover/s/lab-notebook/final-project-reports/robot_arm)
-
