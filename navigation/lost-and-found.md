@@ -42,7 +42,7 @@ We ensure maximum camera coverage, for the best odds of finding a fiducial, by h
 
 In order to ensure the best possible obstacle avoidance in this algorithm, rather than implement the driving ourselves, we send the movements described above to the robot as a series of AMCL goals using the following algorithm:
 
-```text
+```python
 initial_pose = a point in the map's whitespace area
 publish initial_pose
 goal = initial_pose
@@ -74,4 +74,3 @@ In our `flying_or_lost` method, which recognizes wheel drops as described above,
 Finally, our `if get_state() != States.LOST` block, which is responsible for resetting the node once wandering is complete, includes a check for `lock_current_goal`. If `lock_current_goal` is True, then the robot must have been working towards an AMCL goal prior to the kidnapping, so our node re-publishes that goal with an updated timestamp and the robot can continue its journey.
 
 #### _Ari Carr and Jacky Chen 11/28/2018, updated 12/1/2018 with a new wander algorithm_
-

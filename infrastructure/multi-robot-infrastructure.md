@@ -9,19 +9,19 @@ To have multiple robots on the same ROS core and each of them listen to a separa
 * Boot up the robot and ssh into it
 * On the robot's onboard computer, open the terminal and type in
 
-```text
+```sh
 nano ~/.bashrc
 ```
 
 Then add the following line to the end of the file, using the robots name as the namespace
 
-```text
+```sh
 export ROS_NAMESPACE={namespace_you_choose}
 ```
 
 Also make the following other changes:
 
-```text
+```sh
 alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
 export IP="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
 export ROS_IP=$IP
@@ -44,13 +44,13 @@ export TURTLEBOT3_MODEL=burger
 
 ### Permanently associate your laptop with the name space
 
-* Use the same steps above. Make sure your namespace is exactly the same as the namespace of the robot you want to control. 
+* Use the same steps above. Make sure your namespace is exactly the same as the namespace of the robot you want to control.
 * From now on, whenever you do, e.g. a cmd\_vel, it will be directed just to your robot.
 
 ### Use an environment variable
 
 * Set namespace for a termimal with temporary environment variable.
-* To set a namespace temporarily for a terminal, which will be gone when you close the termial, just type in `export ROS_NAMESPACE={namespace_you_choose}` directly in your terminal window. 
+* To set a namespace temporarily for a terminal, which will be gone when you close the termial, just type in `export ROS_NAMESPACE={namespace_you_choose}` directly in your terminal window.
 * You can use `echo $ROS_NAMESPACE` to check it.
 
 ### Use the .launch file
@@ -75,7 +75,7 @@ Do a `rostopic list`, you will find out topics under a namespace will be listed 
 * Open the `turtlebot3_navigation.launch` file with nano or your favorite code editor.
 * You will see the scripts for launching move base and rviz:
 
-```text
+```xml
   <!-- move_base -->
   <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
     <arg name="model" value="$(arg model)" />
@@ -83,7 +83,7 @@ Do a `rostopic list`, you will find out topics under a namespace will be listed 
   </include>
 
   <!-- rviz -->
-  <group if="$(arg open_rviz)"> 
+  <group if="$(arg open_rviz)">
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
   </group>
@@ -93,7 +93,7 @@ Do a `rostopic list`, you will find out topics under a namespace will be listed 
 
 * Add another argument `cmd_vel_topic` to the four arguments in the `<!-- Arguments -->` section:
 
-  ```text
+  ```xml
     <!-- Arguments -->
     <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
     <arg name="map_file" default="$(find turtlebot3_navigation)/maps/map.yaml"/>
@@ -104,7 +104,7 @@ Do a `rostopic list`, you will find out topics under a namespace will be listed 
 
   * Pass the new argument to move base launch file:
 
-    ```text
+    ```xml
     <!-- move_base -->
     <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
      <arg name="model" value="$(arg model)" />
@@ -119,20 +119,19 @@ Do a `rostopic list`, you will find out topics under a namespace will be listed 
 
 * Type `roscd turtlebot3_navigation` to go to the package directory.
 * Type `cd rviz` to go to the folder that has `turtlebot3_navigation.rviz`. It stores all the arguments for rviz.
-* Open `turtlebot3_navigation.rviz` with VSCode or other realiable code editors, since this file is long and a bit messy. 
+* Open `turtlebot3_navigation.rviz` with VSCode or other realiable code editors, since this file is long and a bit messy.
 * In the .rviz file, search for all the lines that has the part `Topic:`
-* Add your namespace to the topics you found. For example, change 
+* Add your namespace to the topics you found. For example, change
 
-  ```text
+  ```sh
     Topic: /move_base/local_costmap/footprint
     `
   ```
 
-    to 
+    to
 
-  ```text
+  ```sh
     Topic: /roba/move_base/local_costmap/footprint
   ```
 
 * These changes will make rviz subsribe to topics in your namespace.
-

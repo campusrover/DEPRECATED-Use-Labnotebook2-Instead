@@ -6,11 +6,11 @@ Updated May 2019 with progress following gen3 and mutant mark 1.
 
 `Dormant` Converts the Pose messages it receives from its subscription to PoseWithCovarianceStamped messages and passes them on via its publication
 
-**Publications**
+Publications
 
 * /initialpose
 
-**Subscriptions**
+Subscriptions
 
 * /fid\_pose
 
@@ -20,7 +20,7 @@ Updated May 2019 with progress following gen3 and mutant mark 1.
 
 Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
-**Subscriptions**
+Subscriptions
 
 * /mobile\_base/sensors/core\_throttle
 
@@ -28,7 +28,7 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 `Current` Publishes CPU usage data and prints it to the warning log if it is high or otherwise to the debug log based on data from process and system utilities
 
-**Publications**
+Publications
 
 * /laptop\_cpu\_usage
 
@@ -36,7 +36,7 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 `Dormant` Uses facial recognition to detect and recognize known faces in the camera feed based on provided data and greets them appropriately by name via a vocal service
 
-**Subscriptions**
+Subscriptions
 
 * /camera/rgb/image\_raw/compressed\_throttle
 
@@ -44,13 +44,13 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 `Current` Uses pickup detector data to determine whether the robot is flying or not. Handles localization recovery upon returning to the ground.
 
-**Publications**
+Publications
 
 * /initialpose
 * /cmd\_vel
 * /destination
 
-**Subscriptions**
+Subscriptions
 
 * /airborne
 * /destination
@@ -59,7 +59,7 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 `Dormant` Organizes speech messages chronologically and feeds them to the speech service at appropriate times
 
-**Subscriptions**
+Subscriptions
 
 * /things\_to\_say
 
@@ -67,11 +67,11 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 `Dormant` Publishes speech messages narrating the robot's behavior current and proximate location based on its state and on data from its subscription
 
-**Publications**
+Publications
 
 * /things\_to\_say
 
-**Subscriptions**
+Subscriptions
 
 * /nearest\_waypoint
 
@@ -79,11 +79,11 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 `Defunct` All functionality was moved to [rover\_controller](https://github.com/campusrover/cr_ros/blob/master/src/rover_controller.py)
 
-**Publications**
+Publications
 
 * /cmd\_vel\_mux/input/navi
 
-**Subscriptions**
+Subscriptions
 
 * /amcl\_pose
 
@@ -93,7 +93,7 @@ Now defunct - mutant does not dock, because it is not based on the kobuki base.
 
 Currently not in use due to the lack of a sensor to detect packages on gen3's mutant.
 
-**Publications**
+Publications
 
 * /release\_package
 * /record\_start
@@ -101,7 +101,7 @@ Currently not in use due to the lack of a sensor to detect packages on gen3's mu
 * /physical\_package
 * /destination
 
-**Subscriptions**
+Subscriptions
 
 * /release\_package
 * /receive\_package
@@ -115,11 +115,11 @@ Currently not in use due to the lack of a sensor to detect packages on gen3's mu
 
 Dormant for same reason as package\_handler
 
-**Publications**
+Publications
 
 * /receive\_package
 
-**Subscriptions**
+Subscriptions
 
 * /physical\_package
 
@@ -131,11 +131,11 @@ Dormant for same reason as package\_handler
 
 `Current` Uses fiducial data from its subscription to to determine and publish the robot's position relative to the map
 
-**Publications**
+Publications
 
 * initialpose
 
-**Subscriptions**
+Subscriptions
 
 * fiducial\_transforms
 
@@ -143,11 +143,11 @@ Dormant for same reason as package\_handler
 
 `Current` Records short audio clips featuring user instructions to a file and publishes its name
 
-**Publications**
+Publications
 
 * /receive\_package
 
-**Subscriptions**
+Subscriptions
 
 * /record\_start
 * /record\_stop
@@ -156,7 +156,7 @@ Dormant for same reason as package\_handler
 
 `Current` Controls the robot and its state with respect to a wide range of input sources and publishes a wide range of data for other nodes to use
 
-**Publications**
+Publications
 
 * temp\_pose
 * /teleop\_keypress
@@ -166,7 +166,7 @@ Dormant for same reason as package\_handler
 * /web/map
 * /cmd\_vel
 
-**Subscriptions**
+Subscriptions
 
 * /raspicam\_node/image/compressed
 * /web/teleop
@@ -177,11 +177,11 @@ Dormant for same reason as package\_handler
 
 `Current` applies a filter to scan data to ignore the structural posts of the mutant
 
-**Publications**
+Publications
 
 * /scan\_filter
 
-**Subscriptions**
+Subscriptions
 
 * scan
 
@@ -189,7 +189,7 @@ Dormant for same reason as package\_handler
 
 `Current` Handles and validates requested state changes for legality and publishes relevant information accordingly
 
-**Publications**
+Publications
 
 * /move\_base\_simple/goal
 * /initialpose
@@ -204,11 +204,11 @@ Dormant for same reason as package\_handler
 
 `Current` Cancels existing robot goals and allows for manual control of the robot via teleoperation
 
-**Publications**
+Publications
 
 * /cmd\_vel\_mux/input/teleop
 
-**Subscriptions**
+Subscriptions
 
 * /web/teleop
 * initialpose
@@ -217,11 +217,11 @@ Dormant for same reason as package\_handler
 
 `Dormant` Publishes the name of the nearest waypoint when it changes based on data from its subscription
 
-**Publications**
+Publications
 
 * /nearest\_waypoint
 
-**Subscriptions**
+Subscriptions
 
 * /amcl\_pose
 
@@ -229,11 +229,11 @@ Dormant for same reason as package\_handler
 
 `Current` Uses IMU accelerometer data to decide whether the robot has been lifted, and when it has been placed on the ground.
 
-**Publications**
+Publications
 
 * /airborne
 
-**Subcriptions**
+Subscriptions
 
 * /imu
 
@@ -241,11 +241,11 @@ Dormant for same reason as package\_handler
 
 `Current` takes information from the alexa webhook, and if it involves going to a destination, publishes the goal pose of the specified destination.
 
-**Publications**
+Publications
 
 * /destination
 
-**Subscriptions**
+Subscriptions
 
 * /voice\_intents
 
@@ -253,11 +253,11 @@ Dormant for same reason as package\_handler
 
 `Current` _only slightly usable in demo_ pauses navigation for ten seconds if it receives signal that a hand is in view of the camera.
 
-**Publications**
+Publications
 
 * /destination
 
-**Subscriptions**
+Subscriptions
 
 * /destination
 * /hand\_command
@@ -266,14 +266,13 @@ Dormant for same reason as package\_handler
 
 `Current` _only slightly usable in demo_ spins, searching for recognized person, then stops.
 
-**Publications**
+Publications
 
 * /destination
 * /cmd\_vel
 
-**Subscriptions**
+Subscriptions
 
 * /odom
 * /face\_detection
 * /has\_package
-

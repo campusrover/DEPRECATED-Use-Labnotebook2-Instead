@@ -2,7 +2,7 @@
 
 During navigation I've run into a lot different errors and warnings. I copied some of the frequent ones here:
 
-```text
+```sh
 [ WARN] [1542144731.816164220]: Costmap2DROS transform timeout. Current time: 1542144731.8160, global_pose stamp: 1542144730.2532, tolerance: 1.5000
 [ WARN] [1542144731.816266907]: Could not get robot pose, cancelling reconfiguration
 [ WARN] [1542144732.472418469]: Unable to get starting pose of robot, unable to create global plan
@@ -27,4 +27,3 @@ For now, we are using Dell 11 inch laptop as the onboard computer for Turtlebot.
 Also please remember to check CPU usage if you find these errors and warnings again during navigation.
 
 ## _Huaigu Lin 11/13/2018_
-

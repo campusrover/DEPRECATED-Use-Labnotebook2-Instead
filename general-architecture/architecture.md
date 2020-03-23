@@ -20,11 +20,11 @@ At the top level, a central control node will manage core tasks like interacting
 
 `process_fiducial_transforms` also publishes acts primarily as a transform from the camera-relative pose from the built-in aruco\_detect node, to a map relative pose based on it’s knowledge of the locations of fiducials in the map. The node is always running, but only when it sees a fiducial will it publish a cur\_pose message to assist the AMCL localization.
 
-## Teleop:
+## Teleop
 
 Takes button presses from the UI and sends `cmd_vels`. \(However, there is a bug in this application. After the user teleop the rover, it can’t respond to new commands, such as back to charging station or go to xxx office. In gen3, we will fix this bug.\)
 
-## Rover controller:
+## Rover controller
 
 Uses a `move_base` action to navigate. Subscribes to `/web/destination` which parses JSON input and `/destination` which takes a PoseStamped.
 
@@ -33,4 +33,3 @@ Uses a `move_base` action to navigate. Subscribes to `/web/destination` which pa
 ### @Sibo Zhu, siboz@brandeis.edu 3/11/2019\_
 
 ### @Yuchen Zhang, yzhang71@brandeis.edu 3/11/2019\_
-

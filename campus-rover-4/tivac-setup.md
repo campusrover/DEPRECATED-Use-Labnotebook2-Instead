@@ -71,6 +71,8 @@ You are now configured to compile and upload your code to the Tiva C board by us
 2. in a terminal, cd to where you downloaded the udev rules. then, move them using this command: `sudo mv 71-ti-permissions.rules /etc/udev/rules.d/`
 3. restart the udev service using this command: `sudo service udev restart`
 
+**PRO TIP:** Follow the same three steps above on the robot's raspberry pi to give rosserial access to communicate with the tivac. (a restart may be required)
+
 ## Step 6: running the node and communicating with ROS
 
 For the node on your Tiva C to communicate with ROS, the computer it is attached to must be running the `serial_node` from the `rosserial_python` package. This node is installed by default along with ROS. Run it independantly with `rosrun`, or add it to your project's launch file.

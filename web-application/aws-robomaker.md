@@ -1,10 +1,10 @@
 # AWS RoboMaker
 
-## Introduction:
+## Introduction
 
 Amazon Web Services RoboMaker is an online service which allows users to develop and test robotic applications online. Robomaker has a number of advanced features, but this notebook page will focus on developing nodes and simulating them in Gazebo. To use RoboMaker, you will also need to use AWS S3 and Cloud9.
 
-## Getting started:
+## Getting started
 
 Create an AWS root account if you do not already have one. A free tier account will suffice for getting started, though make note that under a free tier membership you will be limited to 25 Simulation Units \(hours\) for the first twelve months.
 
@@ -12,11 +12,11 @@ Once you have an AWS account, you should create an IAM for your account. AWS rec
 
 Going forward, you should be logged in with your IAM account. Log into AWS with your IAM, then proceed.
 
-### Amazon Documentation and Mini Tutorial:
+### Amazon Documentation and Mini Tutorial
 
 RoboMaker has a limited documentation set that can help you use the software. The “getting Started” section can help familiarize yourself with the software by working with a sample application. [You can find this tutorial by clicking here](https://docs.aws.amazon.com/robomaker/latest/dg/getting-started.html).
 
-### Creating an S3 bucket:
+### Creating an S3 bucket
 
 From the AWS Management Console, type “S3” into the “find services” field and click on S3 in the autofill list below the entry box. From the S3 Management Console, click “Create Bucket”
 
@@ -27,7 +27,7 @@ From the AWS Management Console, type “S3” into the “find services” fiel
 
 This bucket is where your bundled robotic applications will be stored.
 
-## Creating a Development Environment:
+## Creating a Development Environment
 
 Beck at the AWS Management Console, type “robomaker” in to the same entry field as S3 in the last part to go to the RoboMaker Management Console. In the left hand menu, under Development, select “Development environments” then click “Create Environment”
 
@@ -39,18 +39,18 @@ In your Cloud9 environment, use the bash command line at the bottom of the scree
 
 At the end, you will have both a robot workspace and a simulation workspace. The robot workspace \(`robot_ws`\) contains source files which are to be run on the robot. The simulation workspace \(`simulation_ws`\) contains the launch files and the world files needed to run gazebo simulations. Going forward this guide assumes that you have directories set up exactly as described in the walkthrough linked above, especially that the folders `robot_app` and `simulation_app` exist inside the `src` folders of `robot_ws` and `simulation_ws`, respectively.
 
-### Adding new scripts to `robot_ws`:
+### Adding new scripts to `robot_ws`
 
 Python ROS node files should be stored in the scripts folder inside robot\_app. When you add a new node, you must also add it to the `CMakeLists.txt` inside `robot_app`. In the section labelled “install” you will see `scripts/rotate.py`, below that line is where you should list all file names that you add \(with scripts/ preceding the name\).
 
-### Modifying the Simulation:
+### Modifying the Simulation
 
 When creating your directories, two files were put inside `simulation_app/launch`: `example.launch` and `spawn_turtlebot.launch`
 
 * Inside `spawn_turtlebot.launch`, you will see a line that looks like this \(it should be on line 3\): `<arg name="model" default="$(optenv TURTLEBOT3_MODEL waffle_pi)" doc="model type [burger, waffle, waffle_pi]"/>` In this section: `default="$(optenv TURTLEBOT3_MODEL waffle_pi)"` you can replace `waffle_pi` with `burger` or `waffle` to change the model of turtlebot3 used in the simulation
 * Inside `example.launch` you will see this line \(it should be on line 8\): `<arg name="world_name" value="$(find simulation_app)/worlds/example.world"/>` You can replace `example.world` with the name of another world file to change the world used for the simulation. Note that the world file must be present in the folder `simulation_app/worlds`. You can copy world files from the folder `catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds` \(which is on your personal machine if you have installed ROS Kinetic\)
 
-## Building and Bundling your applications:
+## Building and Bundling your applications
 
 In order to use your applications in simulation, they must first be built and bundled to a format that RoboMaker likes to use. At the top of the IDE, click: RoboMaker Run → Add or Edit configurations, then click Colcon Build.
 
@@ -96,4 +96,3 @@ These are the steps that have been found to work when you want to run a simulati
    * Click next, review the configuration then click create.
 4. RoboMaker will begin preparing to launch your simulation, in a few minutes it will be ready and start automatically. Once it is running, you will be able to monitor it through gazebo, rqt, rviz and the terminal.
 5. Be sure that once you are done with your simulation \(if it is before the duration expires\) to cancel the simulation job under the action menu in the upper right of the simulation job management screen.
-

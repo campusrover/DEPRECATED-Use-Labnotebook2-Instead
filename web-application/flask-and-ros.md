@@ -24,7 +24,7 @@ There is an apparent obstacle to implementing ROS within Flask, though. It seems
 
 Note that the 3rd example proposes a solution; their Flask app's main thread initializes and starts a new thread in which a ROS node is initialized:
 
-```text
+```python
     # ROS node, publisher, and parameter.
     # The node is started in a separate thread to avoid conflicts with Flask.
     # The parameter *disable_signals* must be set if node is not initialized in the main thread.
@@ -35,7 +35,7 @@ Note that the 3rd example proposes a solution; their Flask app's main thread ini
 
 However, to actually serve the app, they call `Flask.run()`:
 
-```text
+```python
 if __name__ == '__main__':
     if NGROK:
         print 'NGROK mode'
@@ -57,7 +57,7 @@ Flask's documentation on [**Flask.run\(\)**](http://flask.pocoo.org/docs/0.12/ap
 >
 > "The alternative way to start the application is through the Flask.run\(\) method. This will immediately launch a local server exactly the same way the flask script does. This works well for the common case but it does not work well for development which is why from Flask 0.11 onwards the flask method is recommended. The reason for this is that due to how the reload mechanism works there are some bizarre side-effects \(like executing certain code twice, sometimes crashing without message or dying when a syntax or import error happens\). It is however still a perfectly valid method for invoking a non automatic reloading application."
 
-**Solution**
+## Solution
 
 Instead of using `Flask.run()` within a Flask app's main method/script, we've had success with using the following via Flask's command line interface:
 
@@ -68,4 +68,3 @@ Instead of using `Flask.run()` within a Flask app's main method/script, we've ha
 Without the `--no-reload` argument, the lines in which your ROS node is initialized will be executed _twice_, resulting in a ROS error stating that the node was shut down because another with the same name was initialized.
 
 ## _Brad Nesbitt & Huaigu Lin 10/31/2018_
-

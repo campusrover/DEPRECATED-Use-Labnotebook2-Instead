@@ -1,6 +1,34 @@
 # Introduction
 
-## To the students of Gen 4:
+Welcome to the Campus Rover Lab Notebook, a living resource for and by the students of COSI 119a at Brandeis University. This notebook serves as a place for students to record useful discoveries that will benefit future students when they encounter the same problems. By building up this knowledge base, each generation should be more successful than the last.
+
+When contributing, please make sure to do the following:
+
+1. Proofread your writing for spelling and grammatical errors, especially in areas where excat typing is important (e.g. code snippets)
+2. Place your files in the appropriate folders. Only create new folders if absolutely necessary. If you make a new folder, give it a README which clearly describes the content of the folder
+3. Add your file to Summary.md so it is accessible from the gitbook webpage
+4. Give your images common sense names. They should be descriptive and/ or associative. "p1.png" is bad, "gazebo_img1.png" is better.
+5. Only use hyphens, not underscores, in filenames.
+6. Follow Markdown format guidleines. There is a Markdown extenstion for VS code which will assist you in this endeavor. Here are some common mistakes:
+
+   1. No trailing spaces at the end of lines
+   2. One (and only one) blank new line on either side of Headers, lists, and code blocks
+   3. Use consistant spacing
+   4. no embedded HTML or raw links
+   5. no trailing punctuation in headers
+   6. Do not skip header levels, only one H1
+
+7. Furthermore, please follow these style guidelines:
+
+   1. Do not use bold or italics in headers
+   2. Do not use emphasis to take the place of a code snippet
+   3. Label your code snippets \(starting with \`\`\`)with the language they contain! common languages in this course are `python`, `bash`, `xml` and `c++`
+   4. Surround package names, file paths and other important info of this nature with single backticks \(\`)
+   5. Add a byline at the bottom of the page, including your name and date of publishing
+
+## Letters From Past Gens
+
+### To the students of Gen 4
 
 We started our iteration with the the code from Gen 2. This consisted of several nodes which were compatible with the Turtlebot2. We immediately eliminated some nodes which did not exist on the Mutant \(such as package\_handler\), as we did not have such a sensor. Other nodes required reworking, such as pickup\_detector, as the Turtlebot2 had sensors to see whether it was on the ground or not but the Mutant did not have this functionality built in. In addition, during our time in the class, namespacing was introduced, so multiple robots could run on the same roscore. This introduced some difficulties, specifically with certain nodes that were not being namespaced correctly.
 
@@ -10,11 +38,13 @@ We participated in the development of the campus rover similar to Gen 2, where w
 
 In future generations, we recommend further improving the robustness of features that were implemented, such as hand gestures and CV. In addition, part of Gen 3’s goal was to allow the project to run on any Turtlebot. While the code should be able to run on any Turtlebot3, a speaker of some sort would need to be attached for the talk services. These talk services allow the robot to update the user with its progress throughout its use. With these new features, we tried to give direction to further development of the project. We think that these features will guide future generations of the class in development of the campus rover, ultimately leading to a campus rover that will actually be able to deliver packages on campus.
 
-Best of luck, Gen 3
+Best of luck,
 
-### Eli Cohn, 5/17/2019
+Gen 3
 
-## To the students of Gen 3:
+#### Eli Cohn, 5/17/2019
+
+### To the students of Gen 3
 
 We, the Gen 2 team, hope in this letter \(and in the ancillary documentation contained in the `labnotebook` repo\) to pass on the experience and knowledge we have gathered over the past semester to the Gen 3 team and beyond. We hope that future teams will not only build upon our accomplishments, but also that they will learn from and avoid our mistakes.
 
@@ -33,4 +63,3 @@ Good luck!
 Gen 2
 
 ### _Ben Alberxt 12/16/18_
-

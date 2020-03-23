@@ -4,6 +4,8 @@
 
 ### Robot Bashrc File
 
+```sh
+
 alias gp='git pull'
 
 alias cw='cd ~/catkin\_ws'
@@ -21,9 +23,11 @@ export ROS\_MASTER\_URI=[http://mutant.dyn.brandeis.edu:11311](http://mutant.dyn
 export ROS\_HOSTNAME=mutant.dyn.brandeis.edu
 
 export TURTLEBOT3\_MODEL=burger
+```
 
 ### PC Bashrc File
 
+```sh
 alias gp='git pull'
 
 alias cw='cd ~/catkin\_ws'
@@ -45,6 +49,7 @@ export TB3\_MODEL=burger
 export TURTLEBOT3\_MODEL=burger
 
 export ROS\_HOSTNAME=.dyn.brandeis.edu
+```
 
 ## Robotics Lab Mac Addresses
 
@@ -62,13 +67,12 @@ export ROS\_HOSTNAME=.dyn.brandeis.edu
   * b8:27:eb:a4:d5:ec - **rafael** - rafael.dyn.brandeis.edju
   * 74:40:bb:d5:ea:2f - **alien** - alien.dyn.brandeis.edu
 * Wifi connected Linux Notebook
-  * 5c:ff:35:0f:ef:6d - **roscore2** 
+  * 5c:ff:35:0f:ef:6d - **roscore2**
 * Wired Linux Desktop
   * 44:37:e6:b7:4b:d1 - **roscore1**
 
 ### Internal DNS names
 
 * Currently the names are formed as .dyn.brandeis.edu
-*  is literally the `hostname` of the particular robot
+* is literally the `hostname` of the particular robot
 * You can check and set it with the `$ hostname` command
-* 

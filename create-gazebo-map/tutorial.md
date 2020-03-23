@@ -1,8 +1,6 @@
-# tutorial
+# Tutorial
 
-## Tutorial
-
-### 1. Open a Gazebo simulation:
+## 1. Open a Gazebo simulation
 
 First, open Gazebo - either search for gazebo in the Unity Launcher GUI or simply type `gazebo` onto the terminal. Click on `Edit` --&gt; `Building Editor` and you should see the following page. Note there are three areas:
 
@@ -10,19 +8,19 @@ First, open Gazebo - either search for gazebo in the Unity Launcher GUI or simpl
 * **2D View:** The only place you make changes to the map.
 * **3D View:** View only.
 
-![p1](../.gitbook/assets/p1.png)
+![p1](images/p1.png)
 
-### 2. Import a floor plan
+## 2. Import a floor plan
 
 You may create a scene from scratch, or use an existing image as a template to trace over. On the Platte, click on `import` and selet a 2D map plan image in the shown prompt and click on `next`.
 
-![p2](../.gitbook/assets/p2.png)
+![p2](images/p2.png)
 
 To make sure the walls you trace over the image come up in the correct scale, you must set the image's resolution in pixels per meter _\(px/m\)_. To do so, click/release on one end of the wall. As you move the mouse, an orange line will appear as shown below. Click/release at the end of the wall to complete the line. Once you successfully set the resolution, click on `Ok` and the 2D map plan image you selected should show up in the 2D-View area.
 
-![p3](../.gitbook/assets/p3.png)
+![p3](images/p3.png)
 
-### 3. Add & Edit walls
+## 3. Add & Edit walls
 
 * Select **Wall** from **Platte**.
 * On the **2D View**, click/release anywhere to start the wall. As you move the mouse, the wall's length is displayed.
@@ -32,9 +30,9 @@ To make sure the walls you trace over the image come up in the correct scale, yo
 
   You can manipulate other models likewise. For more detailed instructions, please refer to [http://gazebosim.org/tutorials?tut=build\_world](http://gazebosim.org/tutorials?tut=build_world) for more details
 
-![p4](../.gitbook/assets/p4.png)
+![p4](images/p4.png)
 
-### 4. Prepare a package
+## 4. Prepare a package
 
 You need to create a package for your Gazebo world so that you can use `roslaunch` to launch your it later.
 
@@ -48,28 +46,28 @@ You need to create a package for your Gazebo world so that you can use `roslaunc
 
 * Go to your package and create three folders **launch**, **worlds** and **models**.
 
-  ```text
-  $ cd ${your_package_name}
-  $ mkdir launch}
-  $ mkdir worlds
-  $ mkdir models
+  ```sh
+  cd ${your_package_name}
+  mkdir launch}
+  mkdir worlds
+  mkdir models
   ```
 
-### 5.Save your map
+## 5.Save your map
 
 Once you finish editing the map, give a name to your model on the top on the **Platte** and click on `File` -&gt; `Save As` to save the model you just created into `../${your_package_name}/models`.
 
-![p5](../.gitbook/assets/p5.png)
+![p5](images/p5.png)
 
 Click on `File` -&gt; `Exit Building Editor` to exit. **Please note that once you exit the editor, you are no longer able to make changes to the model.** Click on `File` -&gt; `Save World As` into `../${your_package_name}/worlds`.
 
 I will refer to this world file as `${your_world_file_name}.world` from now on.
 
-### 6.Create a launch file for your gazebo map
+## 6.Create a launch file for your gazebo map
 
 Go to `../${your_package_name}/launch` and make a new file `${your_launch_file}` Copy and paste the following code into your launch file and substitute `${your_package_name}` and `{your_world_file_name}` with their actual names.
 
-```markup
+```xml
  <launch>
     <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
     <arg name="x_pos" default="0.0"/>
@@ -91,7 +89,7 @@ Go to `../${your_package_name}/launch` and make a new file `${your_launch_file}`
 </launch>
 ```
 
-### 7. Test
+## 7. Test
 
 Go to the workspace where your new package was created **e.g.** `cd ~/catkin_ws`
 
@@ -113,11 +111,10 @@ The basic shapes that gazebo has are a greyish-black by default- which is diffic
 
 use the shortcut s to open the scaling tool - grab the three axis to stretch the shape. Hold ctrl to snap it to the grid. use the shortcut t to switch to the translation tool - this moves the model around. Hold ctrl to snap it to the grid. use the shortcut r to open the rotation tool. grab the rings to rotate the object.
 
-### 3. Make it Static!
+### 3. Make it Static
 
 If an object isn't static, it will fall over/ obey the laws of physics if the robot collides with it - to avoid this, click the object in the left hand menu and click the is\_static field.
 
 ### 4. Use the Building Editor instead
 
-Does the model editor seem like a hassle already? Then just use the building editor,
-
+Does the model editor seem like a hassle already? Then just use the building editor.

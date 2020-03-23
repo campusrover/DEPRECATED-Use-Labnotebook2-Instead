@@ -40,7 +40,7 @@ you will need:
 * google chrome \(for the web app - you can use another browser, but that would require editing a shell script in the cr\_web package\)
 * flask module for python
 
-  Google how to get Chrome and flask. cr\_ros\_2 and cr\_web are repos in the campus rover github community. 
+  Google how to get Chrome and flask. cr\_ros\_2 and cr\_web are repos in the campus rover github community.
 
 ### Using Git and Github
 
@@ -50,5 +50,4 @@ If this class is your first time using github - don't worry! Though it may seem 
 * in a repository's main directory in your terminal, `gs` \(or `git status`\) is a super useful command that will show you all the files you have edited.
 * `git add` --&gt; `git commit -m` --&gt; `git push` is how you will be updating your repos on github. **Pro Tip:** if you've edited multiple files in a subdirectory, for example in src, then you can type `git add src` to add all modified files in src, rather than typing each file individually.
 * always do a pull before a push if you think someone else has made edits to your repo.
-* if you've made changes locally that you don't want to keep, `git reset --hard` will revert back to your last pull or clone. 
-
+* if you've made changes locally that you don't want to keep, `git reset --hard` will revert back to your last pull or clone.

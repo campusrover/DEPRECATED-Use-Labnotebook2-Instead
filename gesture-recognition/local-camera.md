@@ -57,4 +57,3 @@ This package contains two nodes.
 1. Using Kinect on mutant instead of local webcam.
 2. Furthermore, use depth camera to extract hand to get better quality images
 3. Incorporate **Skeleton tracking** into this package to better localize hands \(I am using **region of insterests** to localize hands, which is a bit dumb\).
-

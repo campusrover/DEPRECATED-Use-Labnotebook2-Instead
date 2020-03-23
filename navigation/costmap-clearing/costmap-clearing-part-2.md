@@ -7,4 +7,3 @@ At first I changed all the `nan` readings to 9.90, but later Alex help me notice
 Now the robot will immediately unmark an obstacle on cost map once it is gone even the camera is out of range.
 
 ## _Huaigu Lin 11/21/2018_
-

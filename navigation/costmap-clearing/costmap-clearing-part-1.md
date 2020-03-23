@@ -56,4 +56,3 @@ These changes would ensure the clearing of costmap when Turtlebot perceive itsel
 We will look more into implementing the scan filter, so Turtlebot would immediately unmark a gone obstacle even if the scan is out of max range.
 
 ### _Huaigu Lin & Jacky Chen 11/11/2018_
-

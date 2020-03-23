@@ -50,5 +50,4 @@ The biggest breakthrough came when I began using the built in `tf` tooling. This
 
 More familiarity with `ROS` would have brought me to `tf`s sooner, but now I have that familiarity for next time. All together, I'm not sure what lesson there is to take away from this. Sometimes hardcore debugging is required.
 
-#### _@Alexander Feldman, feldmanay@gmail.com \(thanks @Ben and @Ari too!\)_
-
+## _@Alexander Feldman, feldmanay@gmail.com \(thanks @Ben and @Ari too!\)_

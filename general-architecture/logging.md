@@ -31,18 +31,17 @@ A well formatted GUI exists to show all log messages and can be accessed with `$
 
 ## Message Node
 
-* It subscribes to the /rosout topic. Every node brought up on the roscore can be seen in the /rosout. Therefore, 
+* It subscribes to the /rosout topic. Every node brought up on the roscore can be seen in the /rosout. Therefore,
 
   the Message Node, as a traffic cop, could communicate with any node through /rosout.
 
-* To pass the message from a node to the Message Node, the code just needs one line of code, i.e. rospy.log\(\). The API can be   found in the Log Implementation section above. 
-* User who wants to use Message Node only needs to put its name and what operations he needs to do inside the 
+* To pass the message from a node to the Message Node, the code just needs one line of code, i.e. rospy.log\(\). The API can be   found in the Log Implementation section above.
+* User who wants to use Message Node only needs to put its name and what operations he needs to do inside the
 
-  callback function. In the example, if user wants to subscribe to the /talker\_demo\_node, he can just find it by 
+  callback function. In the example, if user wants to subscribe to the /talker\_demo\_node, he can just find it by
 
-  `msg.name == "/talker_demo_node"`.  Then, he can do some operation in it. 
+  `msg.name == "/talker_demo_node"`.  Then, he can do some operation in it.
 
   ![callback function](https://i.imgur.com/sAgGQjL.png)
 
 ### _@Alexander Feldman, feldmanay@gmail.com_
-

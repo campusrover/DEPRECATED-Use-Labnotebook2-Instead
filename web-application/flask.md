@@ -25,10 +25,10 @@
 
 ### Basic layout in Python file \(e.g. `__init__.py`\)
 
-```text
+```python
 import flask from Flask
 
-def create_app( test_config=None ): 
+def create_app( test_config=None ):
     app = Flask( __name__, instance_relative_config=True )
     ...
     return app
@@ -38,7 +38,7 @@ def create_app( test_config=None ):
 
 ### Set environment variables & run the application\
 
-```text
+```sh
 export FLASK_APP=flaskr
 export FLASK_ENV=development
 flask run
@@ -71,9 +71,9 @@ flask run
 
 * Bootstrap provides a large [selection of pre-made UI components](https://getbootstrap.com/docs/4.1/components/alerts/).
 * To enable using Bootstrap via CDN: 1. Paste this into your HTML document's header, _before_ any other links to css: `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">`
-  1. Paste these _in order_ near the very of your HTML document, right bofore the `</body>` closing tag: 
+  1. Paste these _in order_ near the very of your HTML document, right bofore the `</body>` closing tag:
 
-```text
+```xml
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -89,4 +89,3 @@ flask run
 * To add a specific icon, pick the one you want from the [FontAwesome gallery](https://fontawesome.com/icons?d=gallery), then simply copy its html tag \(e.g. `<i class="fas fa-arrow-alt-circle-up"></i>`\) and paste it into the desired section of your HTML document.
 
 ### _Brad Nesbitt 10/26/2018_
-

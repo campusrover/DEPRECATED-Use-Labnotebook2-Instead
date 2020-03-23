@@ -1,8 +1,8 @@
 # Bootable SSD Creation
 
-## **0. Introduction**
+## Introduction
 
-* **SSD** Solid state disk. Either internal or external. In our case we are using external SSDs which connect to your computer with a USB connection. 
+* **SSD** Solid state disk. Either internal or external. In our case we are using external SSDs which connect to your computer with a USB connection.
 * **USB Stick** Also known as a thumb drive, flash drive, memory stick, a memory key. Its a small form factor, dongle like device which also plugs into your computer.
 * **Bootable SSD** and **Bootable USB Stick** have been formatted and created in such a way that the computer can boot from them and thereby leave your default internal disks untouched.
 
@@ -16,17 +16,16 @@
 * You will now plug in the SSD and format it with the right partitions
 * Next you will install Ubuntu 18.04 onto the SSD and reboot.
 
-## **1. Create Bootable Ubuntu USB stick**
+## Create Bootable Ubuntu USB stick
 
 In order to install Ubuntu onto an SSD, we need to first create a bootable USB Flash Drive. This drive will be used to boot Ubuntu and install it onto the SSD. The process can be completed as follows:
 
-**1. Plug the USB SSD drive into your computer**
+1. **Plug the USB SSD drive into your computer**
+2. **Download the appropriate Ubuntu 18.04 desktop image for your machine**
 
-**2. Download the appropriate Ubuntu 18.04 desktop image for your machine**
+    [http://releases.ubuntu.com/18.04/](http://releases.ubuntu.com/18.04/)
 
-[http://releases.ubuntu.com/18.04/](http://releases.ubuntu.com/18.04/)
-
-**3. Flash the Ubuntu image onto your USB stick.**
+3. **Flash the Ubuntu image onto your USB stick.**
 
 How to flash Ubuntu with Mac: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos\#0](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0)
 
@@ -40,11 +39,11 @@ With Ubuntu flashed onto your flash drive, it can now be booted and installed on
 
 Booting from a USB depends on your operating system. Instructions for Windows and Mac are below:
 
-**MacOS**
+### MacOS
 
 Restart your computer. While it is booting up, hold down the alt/option button. A menu should appear, select the "EFI Boot" option. If the MacOS login screen appears, you will need to restart and try again.
 
-**Windows**
+### Windows
 
 Restart your computer. While it is booting up, press the boot menu key. This is often one of the F keys on most Windows machines, but sometimes ESC as well. With the boot menu button pressed, you will be shown the BIOS menu. From here you need to change the boot order so that your Ubuntu USB drive is prioritized above the drive where Windows is installed. Once this is done, reboot and Ubuntu should be booted.
 
@@ -58,7 +57,7 @@ With Ubuntu running on your machine, plug in your external SSD \(while keeping t
 
 Now that you are on the Ubuntu desktop, it is time to install Ubuntu to the SSD. The following steps will take you through installing Ubutnu onto your SSD:
 
-**1. Partitioning your SSD**
+### Partitioning your SSD
 
 You will use a program called **GParted** to partition your SSD for installation. From the applications menu in Ubuntu \(top left corner\), open up **GParted** and in the top right corner, select your SSD.
 
@@ -82,7 +81,7 @@ To complete the process, click the green checkmark from the top menu once again.
 
 ![Gparted](../.gitbook/assets/gparted.png)
 
-**2. Installing Ubuntu onto the SSD**
+### Installing Ubuntu onto the SSD
 
 With the SSD partitioned, we can now install Ubuntu. Click the **Install Ubuntu 18.04** icon from the side bar to begin the process. You will be prompted to go through a series of menus. Choose "minimal" install.
 
@@ -100,7 +99,7 @@ DO NOT SELECT THE OPTION TO ERASE DISK AND INSTALL UBUNTU. THIS WILL ERASE YOUR 
 
 The **“Something else”** option allows us to assign mount points to the previously partitioned SSD. In the list of partitions, find the SSD. It should be called something like SDx. **Be really careful that you are picking the right one.** You will see the 3 partitions that were made in GParted. To set the partitions up for Ubuntu, double click on and configure the partitions as follows:
 
-**sdx2**
+#### sdx2
 
 ```text
 Use as: ext4
@@ -108,7 +107,7 @@ format: checked
 Mount point = /
 ```
 
-**sdx3**
+#### sdx3
 
 ```text
 Use as: ext4
@@ -118,7 +117,7 @@ Mount point = /home
 
 The partitions are now ready and Ubuntu can be installed. Select the SSD from the menu below and click install. Ubuntu will now install, and once done you will need to restart your system and remove the thumb drive.
 
-## **4. Make The SSD Bootable**
+### Make The SSD Bootable
 
 Now that Ubuntu has been installed, we need to make it bootable. To do this, we will follow a tutorial online. The tutorial begins at the section **Create an ESP on the Ubuntu HDD**, and can be found at the following link:
 

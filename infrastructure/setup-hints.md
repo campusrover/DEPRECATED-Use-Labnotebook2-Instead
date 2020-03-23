@@ -82,4 +82,3 @@ One of the most common problems is that when you kill a ROS script, the most rec
 #### The Possibilities Don't Stop Here
 
 There's obviously still much more that could done to make a more efficient terminal experience. Don't be afraid to become a bash master. Here are some resources to help get started becoming more proficient in bash: [Bash Cheatsheet](https://devhints.io/bash)
-
