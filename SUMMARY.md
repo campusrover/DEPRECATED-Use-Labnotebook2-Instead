@@ -34,6 +34,7 @@
     * [Fall 2018 Script](cr-package/demos/gen2-demo-instructions.md)
   * [cr_ros_3 Package Project Report](cr-package/cr-3-project.md)
 * [ROS Tips](ros-tips/README.md)
+  * [Handy Commands](ros-tips/handy-commands.md)
   * [Launch Files](ros-tips/launch-files.md)
   * [Logging](ros-tips/logging.md)
   * [Communicating with Rosserial](ros-tips/communicate-with-rosserial.md)
