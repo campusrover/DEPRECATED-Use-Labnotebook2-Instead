@@ -1,4 +1,4 @@
-# Cloud Desktop ☁️
+# Cloud Desktop
 
 ![novnc](../.gitbook/assets/novnc.png)
 

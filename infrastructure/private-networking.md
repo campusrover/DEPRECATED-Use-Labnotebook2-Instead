@@ -22,9 +22,13 @@ To facilitate lab@home, we have created a private network for connect robots and
 * Authkey (like this `tskey-123abc456`)
 * Running either `Raspbian 10`, `Ubuntu 18.04`, or `Ubuntu 20.04`
 
-*You can check your OS version by doing `lsb_release -a`*
+{% hint style="info" %}
+You can check your OS version by doing `lsb_release -a`
+{% endhint %}
 
-*If you don't have an Authkey, please reach out to your TA*
+{% hint style="info" %}
+If you don't have an Authkey, please reach out to your TA
+{% endhint %}
 
 ### Installation
 
@@ -45,6 +49,45 @@ Once the robot is successfully connected to the network, you can try to reach it
 
 ```bash
 ssh pi@100.xx.xxx.xxx
+```
+
+{% hint style="success" %}
+Now that the robot is on the network, you can configure your cloud desktop to control the robot directly.
+{% endhint %}
+
+### Setup robot remote control
+
+To control a specific robot, you need to connect to its `ROS` master.
+
+On your robot, edit `~/.bashrc`, add or replace the following lines:
+
+```bash
+# Replace with the robot's Tailscale IP
+export ROS_MASTER_URI=http://100.xx.xxx.xxx:11311/
+export ROS_IP=100.xx.xxx.xxx
+```
+
+{% hint style="info" %}
+If you are not sure what the Tailscale IP is, run `ip addr show dev tailscale0 | grep 'inet ' | awk '{print $2}'`
+{% endhint %}
+
+On your cloud desktop (or your computer if you are not using cloud desktop), edit `~/.bashrc`, add or replace with the following lines:
+
+```bash
+# Replace with the robot's Tailscale IP
+export ROS_MASTER_URI=http://100.xx.xxx.xxx:11311/
+# Replace with the cloud desktop's IP
+export ROS_IP=172.xx.xxx.xxx
+```
+
+{% hint style="info" %}
+If you are not sure what the Tailscale IP is, run `ip addr show dev eth0 | grep 'inet ' | awk '{print $2}'`
+{% endhint %}
+
+Once this is setup, test the connectivity with
+
+```bash
+rostopic list
 ```
 
 ## Setup non cloud desktop for private networking
@@ -84,7 +127,9 @@ sudo ./pi_connect.sh tskey-123abc456
 
 ### Unofficially supported installation
 
-**Caution: all the instructions here have not been tested, you are on your own!!!**
+{% hint style="danger" %}
+**Caution:** all the instructions here have not been tested, you are on your own!!!
+{% endhint %}
 
 #### MacOS
 
@@ -106,3 +151,7 @@ Once you have Tailscale installed, you can start it with the following command
 ```bash
 sudo tailscale up --authkey=tskey-123abc456 --accept-routes
 ```
+
+{% hint style="success" %}
+Now that your computer is on the network, follow the [instructions](#setup-robot-remote-control) to control the robot directly.
+{% endhint %}
