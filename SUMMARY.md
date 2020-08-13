@@ -51,6 +51,8 @@
     * [Color Extraction](advanced-topics/gesture-recognition/color.md)
     * [SSD model \(deep learning\)](advanced-topics/gesture-recognition/ssd.md)
 * [Infrastructure](infrastructure/README.md)
+  * [Cloud Desktop](infrastructure/cloud-desktop.md)
+  * [Private Networking](infrastructure/private-networking.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup-hints.md)
   * [Bootable SSD Creation](infrastructure/ssd-instructions.md)
