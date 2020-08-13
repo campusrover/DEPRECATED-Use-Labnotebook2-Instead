@@ -68,7 +68,7 @@ export ROS_IP=100.xx.xxx.xxx
 ```
 
 {% hint style="info" %}
-If you are not sure what the Tailscale IP is, run `ip addr show dev tailscale0 | grep 'inet ' | awk '{print $2}'`
+If you are not sure what the Tailscale IP is, run `ip addr show dev tailscale0 | grep -Eo '([0-9]{1,3}[\.]){3}[0-9]{1,3}'`
 {% endhint %}
 
 On your cloud desktop (or your computer if you are not using cloud desktop), edit `~/.bashrc`, add or replace with the following lines:
@@ -81,7 +81,7 @@ export ROS_IP=172.xx.xxx.xxx
 ```
 
 {% hint style="info" %}
-If you are not sure what the Tailscale IP is, run `ip addr show dev eth0 | grep 'inet ' | awk '{print $2}'`
+If you are not sure what the cloud desktop's IP is, run `ip addr show dev eth0 | grep -Eo '([0-9]{1,3}[\.]){3}[0-9]{1,3}'`
 {% endhint %}
 
 Once this is setup, test the connectivity with

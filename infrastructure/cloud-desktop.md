@@ -77,11 +77,8 @@ For more details and troubleshooting about Private Networking, see [this](privat
 Run the following command
 
 ```sh
-ip addr show dev eth0 | grep 'inet ' | awk '{print $2}'
-# `172.40.0.6/16`
+ip addr show dev eth0 | grep -Eo '([0-9]{1,3}[\.]){3}[0-9]{1,3}'
 ```
-
-Your IP address is `172.40.0.6` (digits before the `/`).
 
 ### What is my hostname?
 
