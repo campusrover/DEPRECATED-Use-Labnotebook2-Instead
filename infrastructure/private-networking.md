@@ -2,11 +2,11 @@
 
 ```
 
-desktop-1 \        _ _ _ _ _        / robot-1 100.89.2.122
-           \      |         |      /
-desktop-2 - - - - |  Relay  | - - - - robot-2 100.99.31.234
-           /      |_ _ _ _ _|      \
-desktop-3 /      100.64.10.101      \ robot-3 100.86.232.111
+  100.89.2.122 desktop-1 \       / robot-1 100.89.2.122
+                          \     /
+  100.99.32.12 desktop-2 - - - - - robot-2 100.99.31.234
+                           /    \
+  100.88.77.234 desktop-3 /      \ robot-3 100.86.232.111
 
 ```
 
@@ -89,6 +89,10 @@ Once this is setup, test the connectivity with
 ```bash
 rostopic list
 ```
+
+{% hint style="info" %}
+The following instructions are for if you are running cloud desktop on your own computer!
+{% endhint %}
 
 ## Setup non cloud desktop for private networking
 

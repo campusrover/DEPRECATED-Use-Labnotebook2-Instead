@@ -45,7 +45,7 @@ You can now `ssh` in using the cloud desktop link given to you.
 Using the terminal
 
 ```sh
-ssh root@ssh.desktop1.roslab.example.com
+ssh root@desktop1.ros.campusrover.org -p 2222
 ```
 
 ## Private Networking
@@ -54,11 +54,11 @@ All cloud desktops are, by default, connected to a shared private Tailscale netw
 
 ```
 
-desktop-1 \        _ _ _ _ _        / robot-1 100.89.2.122
-           \      |         |      /
-desktop-2 - - - - |  Relay  | - - - - robot-2 100.99.31.234
-           /      |_ _ _ _ _|      \
-desktop-3 /      100.64.10.101      \ robot-3 100.86.232.111
+  100.89.2.122 desktop-1 \       / robot-1 100.89.2.122
+                          \     /
+  100.99.32.12 desktop-2 - - - - - robot-2 100.99.31.234
+                           /    \
+  100.88.77.234 desktop-3 /      \ robot-3 100.86.232.111
 
 ```
 
@@ -77,7 +77,7 @@ For more details and troubleshooting about Private Networking, see [this](privat
 Run the following command
 
 ```sh
-ip addr show dev eth0 | grep -Eo '([0-9]{1,3}[\.]){3}[0-9]{1,3}'
+ip addr show dev tailscale0 | grep -Eo '([0-9]{1,3}[\.]){3}[0-9]{1,3}'
 ```
 
 ### What is my hostname?
