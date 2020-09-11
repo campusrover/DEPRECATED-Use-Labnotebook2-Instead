@@ -44,9 +44,23 @@ The Lidar needs to be mounted on the top plexiglass part. You will need to drill
 
 ### Loading software
 
-You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. This is the one we are using: 
+You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. This is the one we are using: xxxx. I recommend you use the app "Balena Etcher" to copy the image onto your microsd card.
 
 Now we are facing a dilemma. We need to get the robot on your network. There are several ways of doing this. Here is one.
 
 1. Locate a wired network connection (on your router for example) and use a network cable to connect your robot to the network
-1. 
+
+1. Now turn the power on the robot and it should boot up into linux. But you won't know this because there's no keyboard or screen!
+
+1. Using your own computer (we will refer to this as the *remote* computer from now on) that is attached to the network check that you see the robot.
+
+`ping gopigo3.local`
+
+Once this works you know that you have access to the robot from your remote computer. Make note of the robot' ip address. It will likely look like 192.168.1.xx but not necessarily.
+
+1. Now use `ssh` (secure shell) to get to the robot from the remote:
+
+`ssh pi@gopigo3.local`
+
+It will ask you for the password for account `pi`. It is `raspberry`.
+
