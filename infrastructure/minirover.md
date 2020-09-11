@@ -61,7 +61,11 @@ Assuming it is totally off:
 
 ![Button to reboot](button.jpg)
 
+### Turning it off
 
+1. From your ssh command line on the remote computer, type `sudo shutdown now`
+
+1. Once the robot has stopped blinking you can turn off the power switch on the battery pack
 
 ### Loading software
 
@@ -91,8 +95,6 @@ It will ask you for the password for account `pi`. It is `raspberry`. Once you g
 
 Where <SSID> is the network's name. You can surround it in quotes if there are spaces or other funny characters. <password> is the password.
 
-1. Next shutdown the robot nicely:
+1. Next shutdown the robot nicely (see above), disconnect the network cable, and start the robot up nicely again (see above.)
 
-`sudo shutdown now`
-
-1. Once it's shutdown, unplug the network cable and start it up again.
+1. Once it's back, follow the same steps to `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot.
