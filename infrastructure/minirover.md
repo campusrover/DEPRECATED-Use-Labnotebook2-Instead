@@ -23,10 +23,18 @@ In addition to what you received with the Basic Kit you will need the following 
 
 The Battery pack is different form what the instructions talk about. The Y-Cable is used to connect the barrel connector of the battery pack with the corresponding battery connector on the "Red Board" which in turn will power the Raspberry Pi.
 
-
-
 The robot will come with a microSD card with the dexter software. There is some very very simple calibration that you need to do.
+
+#### Battery Pack
+
+The battery pack is specific in terms of voltage and capacity. Don't substitute it for another one. It also comes with a charger. Note that the battery pack needs to be in the "on" position in order to have the charger do anything. And obviously it has to be in "ON" for the robot to work.
+
+#### Camera
+
+You will have bought the camera separately, but the instructions talk about how to mount it to the robot. Make sure it is centered in all three dimensions. A good spot is on the front of the top plexiglass part. It can be do without any extra parts, but [Dexter has this bracket](https://www.dexterindustries.com/store/camera-distance-sensor-mount/) which works nicely too. 
 
 ### GoPiGo3 -> MiniRover
 
-In addition to the basic kit you will also get a rechargeable battery pack, some cables and a Lidar. 
+The Lidar needs to be mounted on the top plexiglass part. You will need to drill two holes. Make sure that the Lidar is exactly centered and pointed forward, but as far back on the plexi as possible.
+
+![Top View of MiniRover](topview.jpg)
