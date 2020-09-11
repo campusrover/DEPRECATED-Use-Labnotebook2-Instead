@@ -67,7 +67,7 @@ Assuming it is totally off:
 
 1. Once the robot has stopped blinking you can turn off the power switch on the battery pack
 
-### Loading software
+### Connecting to the network
 
 You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. This is the one we are using: xxxx. I recommend you use the app "Balena Etcher" to copy the image onto your microsd card.
 
@@ -98,3 +98,15 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 1. Next shutdown the robot nicely (see above), disconnect the network cable, and start the robot up nicely again (see above.)
 
 1. Once it's back, follow the same steps to `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot.
+
+### VPN
+
+You can run everything on the robot itself but it doesn't have a screen. You could plug an external screen, keyboard and mouse and have a complete ROS enabled computer (the robot) at your finger-tips. But it would be real slow. So instead we are going to add the robot to a "VPN" - virtual private network which will allow you to work with it remotely.
+
+#### Key Environment Variables
+
+`ROS_MASTER_URI=http:/12.13.14.15:xxxx` should always be set to the computer where roscore is running. In our world, roscore runs on the robot itself. So we need to know the ip address of the robot. You think you know it, but wait.
+
+`ROS_IP=12.13.14.15` should be equal to the local ip address, a computer's own ip address. You think you know it, but wait!
+
+
