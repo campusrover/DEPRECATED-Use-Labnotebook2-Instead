@@ -35,6 +35,18 @@ You will have bought the camera separately, but the instructions talk about how 
 
 ### GoPiGo3 -> MiniRover
 
-The Lidar needs to be mounted on the top plexiglass part. You will need to drill two holes. Make sure that the Lidar is exactly centered and pointed forward, but as far back on the plexi as possible.
+The Lidar needs to be mounted on the top plexiglass part. You will need to drill two holes. Make sure that the Lidar is exactly centered and pointed forward.
 
 ![Top View of MiniRover](topview.jpg)
+![Side View of MiniRover](sideview.jpg)
+
+## Setup of MiniRover
+
+### Loading software
+
+You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. This is the one we are using: 
+
+Now we are facing a dilemma. We need to get the robot on your network. There are several ways of doing this. Here is one.
+
+1. Locate a wired network connection (on your router for example) and use a network cable to connect your robot to the network
+1. 
