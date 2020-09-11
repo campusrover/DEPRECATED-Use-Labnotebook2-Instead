@@ -105,9 +105,9 @@ You can run everything on the robot itself but it doesn't have a screen. You cou
 
 #### Key Environment Variables
 
-`ROS_MASTER_URI=http:/12.13.14.15:xxxx` should always be set to the computer where roscore is running. In our world, roscore runs on the robot itself. So we need to know the ip address of the robot. You think you know it, but wait.
+`ROS_MASTER_URI=http:/100.94.206.80:11311` (example!) should always be set to the computer where roscore is running. In our world, roscore runs on the robot itself. So we need to know the ip address of the robot. You think you know it, but wait.
 
-`ROS_IP=12.13.14.15` should be equal to the local ip address, a computer's own ip address. You think you know it, but wait.
+`ROS_IP=100.94.206.80` (example) should be equal to the local ip address, a computer's own ip address. You think you know it, but wait.
 
 As you know ROS requires that all nodes can talk to roscore. These two environment variables need to be defined on each computer that is involved, that is, both the robot and the remote computer. So you would have the following:
 
