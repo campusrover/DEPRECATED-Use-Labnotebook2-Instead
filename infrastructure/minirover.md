@@ -128,3 +128,16 @@ On both the robot and the cloud desktop there is a shell script which will try t
 `./rosutils/clouddesktop_once.bash # used on the cloud desktop`
 
 `./rosutils/minirover_once.bash # used on the robot`
+
+## FAQ
+
+* miniRover
+  * hostname `gopigo3`
+  * default account `pi`
+  * default password raspberry
+* Cloud or Docker Desktop
+  * default password `dev@ros`
+  * url: <unetid>.ros.campusrover.org:6080/vnc.html (desktop)
+  * url: <unetid>.ros.campusrover.org:8080 (cloud vscode)
+* Commands
+  * `printenv | grep ROS` - display all ros related environment variables
