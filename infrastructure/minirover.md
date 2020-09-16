@@ -134,6 +134,26 @@ On both the robot and the cloud desktop there is a shell script which will try t
 
 `./rosutils/minirover_once.bash # used on the robot`
 
+## Running the robot
+
+~~~~
+# make sure environment is set correctly
+`~/rosutils/reset_context.bash
+cd ~/catkin_ws
+
+# Start Lidar and motors
+roslaunch gpg_bran ydlidar_gpg.launch
+
+# And in a second terminal, ssh'd to the robot
+`~/rosutils/reset_context.bash
+cd ~/catkin_ws
+
+# Start camera
+roslaunch gpg_bran gpg_raspicam.launch
+
+
+
+
 ## FAQ
 
 * miniRover
