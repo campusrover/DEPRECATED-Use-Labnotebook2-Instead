@@ -74,7 +74,7 @@ Assuming it is totally off:
 
 ### Connecting to the network
 
-You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. This is the one we are using: xxxx. I recommend you use the app "Balena Etcher" to copy the image onto your microSD card.
+You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. [This link](https://drive.google.com/drive/folders/1rmt9I9YtlrG3B5IyqSFD_oM0xei-HdNa?usp=sharing) is to a google folder that will contain the versions. You should use the latest one in that folder. I recommend you use the app "Balena Etcher" to copy the image onto your microSD card.
 
 Now we are facing a dilemma. We need to get the robot on your network. There are several ways of doing this. Here is one.
 
