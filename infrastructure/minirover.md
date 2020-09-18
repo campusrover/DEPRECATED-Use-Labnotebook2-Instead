@@ -70,7 +70,7 @@ Assuming it is totally off:
 
 1. From your ssh command line on the remote computer, type `sudo shutdown now`
 
-1. Once the robot has stopped blinking you can turn off the power switch on the battery pack
+1. Once the Raspberry Pi has stopped blinking you can turn off the power switch on the battery pack
 
 ### Connecting to the network
 
@@ -96,7 +96,7 @@ It will ask you for the password for account `pi`. It is `raspberry`. Once you g
 
 1. Now we want to get your robot onto your local wifi network. You need to know the wifi network's name and password. On the robot command line type:
 
-`nmcli d wifi connect <SSID> password <password>`
+`sudo nmcli d wifi connect <SSID> password <password>`
 
 Where <SSID> is the network's name. You can surround it in quotes if there are spaces or other funny characters. <password> is the password.
 
