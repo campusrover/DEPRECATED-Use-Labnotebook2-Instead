@@ -72,9 +72,12 @@ Assuming it is totally off:
 
 1. Once the Raspberry Pi has stopped blinking you can turn off the power switch on the battery pack
 
-### Connecting to the network
+### MicroSD Card
 
 You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. [This link](https://drive.google.com/drive/folders/1rmt9I9YtlrG3B5IyqSFD_oM0xei-HdNa?usp=sharing) is to a google folder that will contain the versions. You should use the latest one in that folder. I recommend you use the app "Balena Etcher" to copy the image onto your microSD card.
+
+To create a new MicroSD from the old one, see [Backup Raspi Card on MacOS](https://medium.com/@ccarnino/backup-raspberry-pi-sd-card-on-macos-the-2019-simple-way-to-clone-1517af972ca5)
+### Connecting to the network
 
 Now we are facing a dilemma. We need to get the robot on your network. There are several ways of doing this. Here is one.
 
@@ -128,31 +131,12 @@ ROS_IP = remote computer's own IP address
 
 These IP addresses are on different networks and cannot access each other. So instead we've created what is called a "virtual private network" that connects them together. Both your robot and your cloud desktop have an *alternate* ip address which they can both see.
 
-On both the robot and the cloud desktop there is a shell script which will try to set up the two key environment variables for you. You need to run it once to get the environment variables set up.
-
-`./rosutils/clouddesktop_once.bash # used on the cloud desktop`
-
-`./rosutils/minirover_once.bash # used on the robot`
-
 ## Running the robot
 
 ~~~~
-# make sure environment is set correctly
-`~/rosutils/reset_context.bash
-cd ~/catkin_ws
-
-# Start Lidar and motors
-roslaunch gpg_bran ydlidar_gpg.launch
-
-# And in a second terminal, ssh'd to the robot
-`~/rosutils/reset_context.bash
-cd ~/catkin_ws
-
 # Start camera
 roslaunch gpg_bran gpg_raspicam.launch
-
-
-
+~~~~
 
 ## FAQ
 
