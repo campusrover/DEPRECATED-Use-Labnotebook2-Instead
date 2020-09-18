@@ -85,7 +85,7 @@ Now we are facing a dilemma. We need to get the robot on your network. There are
 
 1. Now turn the power on the robot and it should boot up into linux. But you won't know this because there's no keyboard or screen!
 
-1. Using your own computer (we will refer to this as the *remote* computer from now on) that is attached to the network check that you see the robot.
+1. Using your own computer or development environment that is attached to the network check that you see the robot. This includes a linux computer where you program, or a browser web development environment. Broadly speaking, it's the computer "other than" to raspberry pi on the robot (we will refer to this as the *remote* computer from now on). 
 
 `ping gopigo3.local`
 
@@ -124,19 +124,16 @@ As you know ROS requires that all nodes can talk to roscore. These two environme
 ROS_MASTER_URI = robot's own ip address
 ROS_IP = robot's own ip address
 
-##### Remote Computer
+##### Remote Computer 
 
 ROS_MASTER_URI = robots ip address
 ROS_IP = remote computer's own IP address
 
 These IP addresses are on different networks and cannot access each other. So instead we've created what is called a "virtual private network" that connects them together. Both your robot and your cloud desktop have an *alternate* ip address which they can both see.
 
-## Running the robot
+## Conclusion
 
-~~~~
-# Start camera
-roslaunch gpg_bran gpg_raspicam.launch
-~~~~
+This is the end of these instructions. From here you should have a working ROS environment on your robot and your "remote" computer.
 
 ## FAQ
 
@@ -148,5 +145,3 @@ roslaunch gpg_bran gpg_raspicam.launch
   * default password `dev@ros`
   * url: <unetid>.ros.campusrover.org:6080/vnc.html (desktop)
   * url: <unetid>.ros.campusrover.org:8080 (cloud vscode)
-* Commands
-  * `printenv | grep ROS` - display all ros related environment variables
