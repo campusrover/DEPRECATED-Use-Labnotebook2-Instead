@@ -57,7 +57,6 @@
     * [SSD model \(deep learning\)](advanced-topics/gesture-recognition/ssd.md)
 * [Infrastructure](infrastructure/README.md)
   * [Cloud Desktop](infrastructure/cloud-desktop.md)
-  * [MiniRover Instructions](infrastructure/minirover.md)
   * [Private Networking](infrastructure/private-networking.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup-hints.md)
