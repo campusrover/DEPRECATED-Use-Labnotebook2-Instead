@@ -70,3 +70,8 @@ sudo ./pi_connect.sh <tskey-123abc456>
 # On successful connect, you should see this
 # Connected. IP address: 100.xx.xxx.xxx
 ````
+Once you have that ip address you have to update ~/rosutils/rset.bash, near the very top with the ip address printed in the step above.
+
+````
+export ROBOT_IP=100.xx.xxx.xxx
+````
