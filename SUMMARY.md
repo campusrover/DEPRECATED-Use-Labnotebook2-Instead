@@ -1,6 +1,11 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [MiniRover](minirover/README.md)
+  * [Build](minirover/build.md)
+  * [Setup](minirover/setup.md)
+  * [Use](minirover/use.md)
+  * [Faq](minirover/faq.md)
 * [Campus Rover Packages](cr-package/README.md)
   * [Architecture Overview](cr-package/architecture.md)
   * [State Manager Overview](cr-package/state-management-services.md)
