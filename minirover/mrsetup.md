@@ -47,7 +47,7 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 
 You can run everything on the robot itself but it doesn't have a screen. You could plug an external screen, keyboard and mouse and have a complete ROS enabled computer (the robot) at your finger-tips. But it would be real slow. So instead we are going to add the robot to a "VPN" - virtual private network which will allow you to work with it remotely.
 
-1. Reset the vpn configuration by:
+1. Prepare the vpn configuration by:
 
 ````
 sudo apt-get remove -y tailscale
@@ -55,6 +55,19 @@ sudo rm -rf /var/lib/tailscale/tailscaled.state
 
 # Reboot right after!
 sudo reboot
+````
+
+1. Setup vpn
+
+````
+cd ~/rosutils
+chmod +x pi_connect.sh
+
+# Run the script with the tailscale authkey
+sudo ./pi_connect.sh tskey-123abc456
+
+# On successful connect, you should see this
+# Connected. IP address: 100.xx.xxx.xxx
 ````
 
 #### Key Environment Variables
