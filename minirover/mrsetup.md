@@ -17,19 +17,25 @@ Now we are facing a dilemma. We need to get the robot on your network. There are
 
 1. Using your own computer or development environment that is attached to the network check that you see the robot. This includes a linux computer where you program, or a browser web development environment. Broadly speaking, it's the computer "other than" to raspberry pi on the robot (we will refer to this as the *remote* computer from now on). 
 
-`ping gopigo3.local`
+````
+ping gopigo3.local
+````
 
 Once this works you know that you have access to the robot from your remote computer. Make note of the robot' ip address. It will likely look like 192.168.1.xx but not necessarily.
 
 1. Now use `ssh` (secure shell) to get to the robot from the remote:
 
-`ssh pi@gopigo3.local`
+````
+ssh pi@gopigo3.local
+````
 
 It will ask you for the password for account `pi`. It is `raspberry`. Once you get in you are 1/2 way there!
 
 1. Now we want to get your robot onto your local wifi network. You need to know the wifi network's name and password. On the robot command line type:
 
-`sudo nmcli d wifi connect <SSID> password <password>`
+````
+sudo nmcli d wifi connect <SSID> password <password>
+````
 
 Where <SSID> is the network's name. You can surround it in quotes if there are spaces or other funny characters. <password> is the password.
 
