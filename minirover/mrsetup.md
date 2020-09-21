@@ -70,3 +70,18 @@ sudo ./pi_connect.sh tskey-123abc456
 # Connected. IP address: 100.xx.xxx.xxx
 ````
 
+
+## Conclusion
+
+This is the end of these instructions. From here you should have a working ROS environment on your robot and your "remote" computer.
+
+## FAQ
+
+* miniRover
+  * hostname `gopigo3`
+  * default account `pi`
+  * default password raspberry
+* Cloud or Docker Desktop
+  * default password `dev@ros`
+  * url: <unetid>.ros.campusrover.org:6080/vnc.html (desktop)
+  * url: <unetid>.ros.campusrover.org:8080 (cloud vscode)
