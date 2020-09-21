@@ -1,6 +1,6 @@
 ## Setup of MiniRover
 
-* See the important information about turning the robot on and off here: [Setting Up the Robot](mrsetup.md)
+* See the important information about turning the robot on and off here: [Setting Up the Robot](minirover/mrsetup.md)
 
 ### MicroSD Card
 
