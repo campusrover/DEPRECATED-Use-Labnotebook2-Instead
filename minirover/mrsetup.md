@@ -60,11 +60,12 @@ sudo reboot
 1. Setup vpn
 
 ````
+# Get the tskey from Pito
 cd ~/rosutils
 chmod +x pi_connect.sh
 
 # Run the script with the tailscale authkey
-sudo ./pi_connect.sh tskey-123abc456
+sudo ./pi_connect.sh <tskey-123abc456>
 
 # On successful connect, you should see this
 # Connected. IP address: 100.xx.xxx.xxx
