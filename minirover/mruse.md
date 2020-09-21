@@ -13,7 +13,7 @@ Assuming it is totally off:
 
 1. Click the micro button on the red board
 
-![Button to reboot](button.jpg)
+![Button to reboot](minirover/button.jpg)
 
 ### Turning it off
 
