@@ -41,6 +41,16 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 
 You can run everything on the robot itself but it doesn't have a screen. You could plug an external screen, keyboard and mouse and have a complete ROS enabled computer (the robot) at your finger-tips. But it would be real slow. So instead we are going to add the robot to a "VPN" - virtual private network which will allow you to work with it remotely.
 
+1. Reset the vpn configuration by:
+
+````
+sudo apt-get remove -y tailscale
+sudo rm -rf /var/lib/tailscale/tailscaled.state
+
+# Reboot right after!
+sudo reboot
+````
+
 #### Key Environment Variables
 
 `ROS_MASTER_URI=http:/100.94.206.80:11311` (example!) should always be set to the computer where roscore is running. In our world, roscore runs on the robot itself. So we need to know the ip address of the robot. You think you know it, but wait.
