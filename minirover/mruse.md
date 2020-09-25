@@ -53,24 +53,44 @@ roslaunch gpg_bran raspicam.launch
 
 ### Web Desktop tools
 
-There are numerous scripts, programs and launch files that are preinstalled on your ROS web desktop. I will document only some of them here but you can look around and find more that are interesting. All of them from the book are here. I have not renamed any of them for that reason.
-
-
-
-
-You often don't need the camera, but if you do then also do this
-
-```
-roslaunch gpg_bran raspicam.launch 
-```
-
-### Working from your browser desktop
-
 Note that this includes all flavors, cloud based, local docker based, and gpu based browser desktops. If you just want to use the simulators on their own and are not using an actual miniRover, then: `rset cloud` is enough. At that point you can run your ROS programs.
 
-### ROS launch files
+There are numerous scripts, programs and launch files that are preinstalled on your ROS web desktop. I will document only some of them here but you can look around and find more that are interesting. All of them from the book are here. I have not renamed any of them for that reason.
 
-This is a list that grows and changes. So I am just listing the key ones.
+```
+# Fun prr examples
+rosrun prrexamples red_light_green_light.py
+rosrun prrexamples wander.py
+
+# Visualize robot with rviz
+roslaunch gopigo3_navigation gopigo3_rviz.launch 
+
+# Or with gazebo (not as useful)
+roslaunch gopigo3_navigation gopigo3_gazebo.launch 
+
+```
+
+### Rset Command
+
+In order to facilitate working in all the combinations of environments we have these commands:
+
+* rset pi - declare that this is the raspberry pi
+* rset cloud - declare that this is a cloud desktop working with sim
+* rset robot - declare that this is a cloud desktop working with a real robot
+* rset - display settings
+
+### Aliases
+
+There are a bunch of handy aliases:
+
+* `myip` - this computer's regular local ip
+* `myvpnip` - this computer's vpn ip if it has one
+* `stopnow` - immediately stop the robot
+* `teleop` - run a simple teleop tool
+* `ru` - connect to rosutils
+* `cm` - catkin_make
+
+
 
 ### Accounts and passwords
 
