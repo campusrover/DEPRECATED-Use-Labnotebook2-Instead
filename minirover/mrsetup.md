@@ -46,16 +46,6 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 
 1. Once it's back, follow the same steps to `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot.
 
-### Update a few things
-
-We have installed some Brandeis specific software which should be updated:
-
-```
-cd ~/rosutils
-git pull
-```
-
-
 ### VPN
 
 You can run everything on the robot itself but it doesn't have a screen. You could plug an external screen, keyboard and mouse and have a complete ROS enabled computer (the robot) at your finger-tips. But it would be real slow. So instead we are going to add the robot to a "VPN" - virtual private network which will allow you to work with it remotely.
@@ -83,8 +73,16 @@ sudo ./pi_connect.sh <tskey-123abc456>
 # On successful connect, you should see this
 # Connected. IP address: 100.xx.xxx.xxx
 ````
-Once you have that ip address you have to update ~/rosutils/rset.bash, near the very top with the ip address printed in the step above.
 
-````
-export ROBOT_IP=100.xx.xxx.xxx
-````
+1. `myvpnip` should now return that same IP address.
+
+### Update a few things
+
+We have installed some Brandeis specific software which should be updated:
+
+```
+cd ~/rosutils
+git pull
+cp ~/rosutils/bashrc_template.bash ~/.bashrc
+```
+1. Edit the new ~/.bashrc according to the instructions in the file.

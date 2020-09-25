@@ -15,7 +15,7 @@ Assuming it is totally off:
 
 ![Button to reboot](button.jpg)
 
-1. Look at the Raspberry Pi (not the "red board") You will see a red and green button blinking. Wait until the little green lights have settled down to slow flickering.
+1. Look at the Raspberry Pi (not the "red board") You will see tiny red and green LEDs blinking. Wait until the green one has settled down to slow flickering.
 
 ### Turning it off
 
@@ -41,11 +41,22 @@ rset by itself displays the current satus
 
 ### Starting the MiniRover ROS applications
 
-Note that all we run on the MiniRover itself are roscore, and the nodes needed for the motors, lidar and camera. Everything else runs on your "remote". On the actual miniRover (using ssh) do this:
+Note that all we run on the MiniRover itself are roscore, and the nodes needed for the motors, lidar and camera. Everything else runs on your "remote". The following commands are to be done on the MiniRover from ~/catkin_ws
 
 ```
-roslaunch gpg_bran gpg_ydlidar.launch # launch the motor controller and lidar
+# launch the motor controller and lidar
+roslaunch gpg_bran gpg_ydlidar.launch 
+
+# launch camera (optional if you need the camera)
+roslaunch gpg_bran raspicam.launch
 ```
+
+### Web Desktop tools
+
+There are numerous scripts, programs and launch files that are preinstalled on your ROS web desktop. I will document only some of them here but you can look around and find more that are interesting. All of them from the book are here. I have not renamed any of them for that reason.
+
+
+
 
 You often don't need the camera, but if you do then also do this
 
