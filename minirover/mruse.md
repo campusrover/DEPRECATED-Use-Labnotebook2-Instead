@@ -89,6 +89,8 @@ There are a bunch of handy aliases:
 * `teleop` - run a simple teleop tool
 * `ru` - connect to rosutils
 * `cm` - catkin_make
+* `cw` - cd ~/catkin_ws
+* `cs` - cd ~/catkin_ws/src
 
 
 

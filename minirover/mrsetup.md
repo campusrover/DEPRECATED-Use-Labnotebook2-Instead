@@ -80,9 +80,13 @@ sudo ./pi_connect.sh <tskey-123abc456>
 
 We have installed some Brandeis specific software which should be updated:
 
-```
+````bash
 cd ~/rosutils
 git pull
 cp ~/rosutils/bashrc_template.bash ~/.bashrc
-```
+cd ~/catkin_ws/src/gpg_bran4
+git pull
+````
+
 1. Edit the new ~/.bashrc according to the instructions in the file.
+
