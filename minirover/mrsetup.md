@@ -88,5 +88,7 @@ cd ~/catkin_ws/src/gpg_bran4
 git pull
 ````
 
+#### And then
+
 1. Edit the new ~/.bashrc according to the instructions in the file.
 
