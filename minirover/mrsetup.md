@@ -2,7 +2,7 @@
 
 This section will help you get your robot set up to go. Note that if you received this from the Autonomous Robotics Lab then part of these steps may already be done.
 
-See the important information about turning the robot on and off here: [Setting Up the Robot](minirover/mrsetup.md). 
+See the important information about turning the robot on and off here: [Setting Up the Robot](mruse.md). 
 
 ### MicroSD Card
 
@@ -16,7 +16,7 @@ Now we are facing a dilemma. We need to get the robot on your network. There are
 
 1. Locate a wired network connection (on your router for example) and use a network cable to connect your robot to the network
 
-1. Now turn the power on (see [Setup of MiniRover](minirover/setup.md)for instructions. It should boot up into linux. But you won't know this because there's no keyboard or screen!
+1. Now turn the power on (see [Setup of MiniRover](mrsetup.md)for instructions. It should boot up into linux. But you won't know this because there's no keyboard or screen!
 
 1. Using your own computer or development environment that is attached to the network check that you see the robot. This includes a linux computer where you program, or a browser web development environment. Broadly speaking, it's the computer "other than" to raspberry pi on the robot (we will refer to this as the *remote* computer from now on). 
 
