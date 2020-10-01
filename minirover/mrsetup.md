@@ -12,7 +12,12 @@ To create a new MicroSD from the old one, see [Backup Raspi Card on MacOS](https
 
 ### Connecting to the network
 
-Now we are facing a dilemma. We need to get the robot on your network. There are several ways of doing this. Here is one.
+Now we are facing a dilemma. We need to get the robot on your network. There are several ways of doing this. Below are two specific scenarios that we support:
+
+1. A usb keyboard, usb mouse **and** a HDMI display **and** eduroam wifi access
+1. *OR* A network cable **and** non-eduroam wifi access
+
+#### Scenario 1
 
 1. Locate a wired network connection (on your router for example) and use a network cable to connect your robot to the network
 
@@ -45,6 +50,19 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 1. Next shutdown the robot nicely (see above), disconnect the network cable, and start the robot up nicely again (see above.)
 
 1. Once it's back, follow the same steps to `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot.
+
+#### Scenario 2
+
+1. Connect your mouse, keyboard and screen to the Raspberry pi. You will find several free USB ports and an HDMI port. Look closely they are all there.
+
+1. Boot up the Rasberry Pi and wait until it is running and you see the desktop
+1. Locate the network settings dialog box by clicking the network icon on the top right
+1. Add eduroam as a network, and fill it in as follows:
+
+![Button to reboot](networksettings.png)
+
+1. Finally shutdown the robot, unplug the keyboard, mouse and monitor and reboot
+1. Once it's back `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot.
 
 ### VPN
 
