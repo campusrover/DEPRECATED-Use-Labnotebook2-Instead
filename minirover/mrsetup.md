@@ -62,7 +62,32 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 ![Button to reboot](networksettings.png)
 
 1. Finally shutdown the robot, unplug the keyboard, mouse and monitor and reboot
-1. Once it's back `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot.
+1. Once it's back `ssh pi@gopigo3.local` and enter the password `raspberry` and you should have a wireless enabled robot
+
+### Troubleshooting ssh gopigo3.local
+
+Under certain circumstances gopigo3.local will be found. If so you need to find out the ip address of your robot when it is on wifi (not wired). If then this should work:
+
+```
+ssh pi@<ip address>
+```
+
+### Updating the hostname of your Robot
+
+Next come up with a name for your robot. It comes to you called "gopigo3" but they are all called that and this can cause confusion. Let's say you want to call your robot `myrobot`. Oddly you have to change it in two places. Here's how"
+
+```
+# In the shell of the robot:
+sudo hostname myrobot
+
+# In the hostname file:
+sudo nano /etc/hostname
+```
+Now the robot is called myrobot and at least it will be different from other miniRovers.
+
+#### Eduroam
+
+On eduroam it is often automatically known as myrobot.dyn.brandeis.edu. So after rebooting it check if this works. It's not guaranteed but often it works just fine.
 
 ### VPN
 
