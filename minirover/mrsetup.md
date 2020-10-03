@@ -74,16 +74,16 @@ ssh pi@<ip address>
 
 ### Updating the hostname of your Robot
 
-Next come up with a name for your robot. It comes to you called "gopigo3" but they are all called that and this can cause confusion. Let's say you want to call your robot `myrobot`. Oddly you have to change it in two places. Here's how"
+Rename the `hosrtname` of your robot. It comes to you called "gopigo3" but they are all called that and this can cause confusion. Let's say you want to call your robot `pitosalas`. Oddly you have to change it in two places. Here's how"
 
 ```
 # In the shell of the robot:
-sudo hostname myrobot
+sudo hostname pitosalas
 
 # In the hostname file:
 sudo nano /etc/hostname
 ```
-Now the robot is called myrobot and at least it will be different from other miniRovers.
+Now the robot is called `pitosalas` and at least it will be different from other miniRovers.
 
 #### Eduroam
 
