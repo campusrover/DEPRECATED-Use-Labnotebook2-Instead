@@ -119,7 +119,7 @@ sudo ./pi_connect.sh <tskey-123abc456>
 
 1. `myvpnip` should now return that same IP address.
 
-### Updates for your Robot
+## Updates for your Robot
 
 We have installed some Brandeis specific software which should be updated:
 
@@ -133,7 +133,7 @@ git pull
 
 And then edit the new ~/.bashrc according to the instructions in the file.
 
-### Updates to your **Cloud Desktop**
+## Updates to your **Cloud Desktop**
 
 1. Check that you have ~/rosutils directory on your cloud desktop. If not:
 
