@@ -135,3 +135,20 @@ git pull
 
 1. Edit the new ~/.bashrc according to the instructions in the file.
 
+### Updates to your Cloud Desktop
+
+1. Check that you have ~/rosutils directory on your cloud desktop. If not:
+    1. `cd`
+    1. `git clone https://github.com/campusrover/rosutils.git`
+    1. `cp rosutils/bashrc_template.bash .bashrc`
+    1. Edit .bashrc according to the instructions in it
+1. Check that you have the following directories:
+    1. ~/catklin_ws/src/Chapter9_GoPiGo3_Slam and ~/catklin_ws/src/Chapter8_Virtual_Slam. If not:
+        1. `cd ~`
+        1. `git clone https://github.com/PacktPublishing/Hands-On-ROS-for-Robotics-Programming.git`
+        1. `cp -R Hands-On-ROS-for-Robotics-Programming/Chapter9_GoPiGo3_SLAM ~/catkin_ws/src`
+        1. `cp -R Hands-On-ROS-for-Robotics-Programming/Chapter8_Virtual_SLAM ~/catkin_ws/src`
+        1. `cd catkin_Ws`
+        1. `catkin_make`
+
+        
