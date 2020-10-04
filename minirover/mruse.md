@@ -68,6 +68,11 @@ roslaunch gopigo3_navigation gopigo3_rviz.launch
 # Or with gazebo (not as useful)
 roslaunch gopigo3_navigation gopigo3_gazebo.launch 
 
+# Run different simulated stages to experiment with roslaunch 
+roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch
+roslaunch turtlebot3_gazebo turtlebot3_stage_2.launch
+roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
+roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
 ```
 
 ### Rset Command
