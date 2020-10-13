@@ -55,7 +55,7 @@ roslaunch gpg_bran raspicam.launch
 
 Note that this includes all flavors, cloud based, local docker based, and gpu based browser desktops. If you just want to use the simulators on their own and are not using an actual miniRover, then: `rset cloud` is enough. At that point you can run your ROS programs.
 
-There are numerous scripts, programs and launch files that are preinstalled on your ROS web desktop. I will document only some of them here but you can look around and find more that are interesting. All of them from the book are here. I have not renamed any of them for that reason.
+There are numerous scripts, programs and launch files that are preinstalled on your ROS wegpgb desktop. I will document only some of them here but you can look around and find more that are interesting. All of them from the book are here. I have not renamed any of them for that reason.
 
 ```
 # Fun prr examples
@@ -73,7 +73,19 @@ roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch
 roslaunch turtlebot3_gazebo turtlebot3_stage_2.launch
 roslaunch turtlebot3_gazebo turtlebot3_stage_3.launch
 roslaunch turtlebot3_gazebo turtlebot3_stage_4.launch
+
+# Control the robot
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+# Begin building the map on real robot
+roslaunch gopigo3_navigation gopigo3_slam.launch
+
+# Begin localization with AMCL
+roslaunch gopigo3_navigation amcl.launch
+
 ```
+
+
 
 ### Rset Command
 
