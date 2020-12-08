@@ -9,10 +9,10 @@
 3. Write your project report using markdown. You can include images as well as links. There are many tutorials on Markdown but you most likely already know it.
 4. Go to `SUMMARY.md`, add your newly created `.md`'s there (format: `[NAME](faq/MY_CONTRIBUTION.md)`). Like this,
 
-```markdown
-* [FAQ](faq/README.md)
-  * ...
-  * [My Contribution](faq/my_contribution.md)
-```
+    ```markdown
+    * [FAQ](faq/README.md)
+    * ...
+    * [My Contribution](faq/my_contribution.md)
+    ```
 
 5. Git add, commit and push your changes.
