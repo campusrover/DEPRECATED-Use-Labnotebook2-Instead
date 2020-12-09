@@ -68,6 +68,7 @@
   * [AWS RoboMaker](miscellaneous/aws-robomaker.md)
   * [Quaternions](miscellaneous/quaternions.md)
 * [FAQ](faq/README.md)
+  * [BLDC Motor Guide](faq/bldc-motor-guide.md)
 * [Gen 4 Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
