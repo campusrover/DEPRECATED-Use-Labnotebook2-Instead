@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-* [What is a BLDC motor?](#What-is-a-BLDC-motor?)
-* [Types of BLDC motor](#Types-of-BLDC-motor)
-* [BLDC motor lingos](#BLDC-motor-lingos)
-* [BLDC electric speed controllers (ESC)](#BLDC-electric-speed-controllers-(ESC))
-* [BLDC control algorithms](#BLDC-control-algorithms)
+* [What is a BLDC motor?](#what-is-a-bldc-motor?)
+* [Types of BLDC motor](#types-of-bldc-motor)
+* [BLDC motor lingos](#bldc-motor-lingos)
+* [BLDC electric speed controllers (ESC)](#bldc-electric-speed-controllers-esc)
+* [BLDC control algorithms](#bldc-control-algorithms)
 
 ## What is a BLDC motor?
 
@@ -30,7 +30,7 @@ BLDC motors are commonly found in drones, electric cars, even robots!
 
 There are a couple different types of BLDC motor on the market for different applications. Here are some examples,
 
-<ins>Small motor</ins>
+### Small motor
 
 ![drone motor](https://asset1.djicdn.com/assets/e310/features/s1bg-eb83d6f693bc50c348bac81127a0708d.jpg)
 
@@ -40,7 +40,7 @@ There are a couple different types of BLDC motor on the market for different app
 * ~0.3 NM torque
 * application: small drones
 
-<ins>Mid-size motor</ins>
+### Mid-size motor
 
 ![rc car motor](https://cdn.shopify.com/s/files/1/0227/7805/2685/products/66_800x.jpg?v=1604039398)
 
@@ -50,7 +50,7 @@ There are a couple different types of BLDC motor on the market for different app
 * ~4 NM torque
 * application: RC cars, electric skateboard, robot actuator
 
-<ins>Stepper motor</ins>
+### Stepper motor
 
 ![stepper motor](https://cdn-reichelt.de/bilder/web/xxl_ws/A300/RCT_34HS1456.png)
 
@@ -88,7 +88,7 @@ When shopping for a BLDC motor, there are a couple motor specific terms to consi
 
 To drive a BLDC motor, you need a dedicated speed controller (ESC) to control it. Here are different types of ESC for different applications. These ESCs (like the motors above) are considered hobbyist-use, but they are quite sufficient for building small/mid-size robots.
 
-<ins>Drone ESC</ins>
+### Drone ESC
 
 ![drone esc](https://cdn.getfpv.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/i/aikon-ak32-35a-blheli32-2-4s-esc.jpg)
 
@@ -100,7 +100,7 @@ To drive a BLDC motor, you need a dedicated speed controller (ESC) to control it
 * application: small drone, small fighter robot, RC helicopter
 * downside: cannot handle big motors, heat up very quickly, only simple motor control algorithms available
 
-<ins>RC car ESC</ins>
+### RC car ESC
 
 ![car esc](https://images-na.ssl-images-amazon.com/images/I/61uJXess5mL._AC_SX425_.jpg)
 
@@ -112,7 +112,7 @@ To drive a BLDC motor, you need a dedicated speed controller (ESC) to control it
 * application: RC car, RC boat, electric skateboard
 * downside: limited control protocol (PWM only), only simple motor control algorithms available
 
-<ins>Robot ESC</ins>
+### Robot ESC
 
 ![odrive](https://images.squarespace-cdn.com/content/v1/58aff26de4fcb53b5efd2f02/1497230897496-GTMBNP5FZX1AQ9XTAFUW/ke17ZwdGBToddI8pDm48kCk9mSdcm3omhb4y0rzE2UB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0lqfkVpRp1g_2L-WsTQRP4K8zjDEmixMFHPtmSt0dm4CtxbCRswi6y2y0diUNJAOFw/IMG_20170611_181036.jpg)
 
