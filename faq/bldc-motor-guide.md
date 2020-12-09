@@ -1,12 +1,8 @@
 # BLDC motor guide
 
-## Table of Contents
-
-* [What is a BLDC motor?](#what-is-a-bldc-motor?)
-* [Types of BLDC motor](#types-of-bldc-motor)
-* [BLDC motor lingos](#bldc-motor-lingos)
-* [BLDC electric speed controllers (ESC)](#bldc-electric-speed-controllers-esc)
-* [BLDC control algorithms](#bldc-control-algorithms)
+{% hint style="info" %}
+Don't know how to read a BLDC motor's spec sheet, check out [this section](#bldc-motor-lingos)
+{% endhint %}
 
 ## What is a BLDC motor?
 
