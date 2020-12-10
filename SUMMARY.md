@@ -70,6 +70,7 @@
 * [FAQ](faq/README.md)
   * [BLDC Motor Guide](faq/bldc-motor-guide.md)
   * [Spawning Multiple Robots](faq/spawn_multiple_robots.md)
+  * [Creating a gazebo world](faq/gazebo_world.md)
 * [Gen 4 Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
