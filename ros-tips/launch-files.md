@@ -139,7 +139,7 @@ But what if your condition is based on something else? There is a way to evaluat
 
 ### Spawning Multiple Robots
 
-In order to spawn multiple robots with a gazebo file (in this file, there are two robots, seeker and hider), you must define their x,y,z positions, as shown below. Also shown is setting the yaw, which is used to spin the robot; for example, if one robot was desired to face forward and the other backward, one’s yaw would be 0 while the others is 3.14. 
+In order to spawn multiple robots in a gazebo launch file (in this example, there are two robots, seeker and hider), you must define their x,y,z positions, as shown below. Also shown is setting the yaw, which is used to spin the robot. For example, if one robot was desired to face forward and the other backward, ones yaw would be 0 while the others would be 3.14. 
 
 ``` xml
     <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]"/>
@@ -154,6 +154,7 @@ In order to spawn multiple robots with a gazebo file (in this file, there are tw
 ```
 
 After setting their initial positions, you must use grouping for each robot. Here, you put the logic so the launch file knows which python files correspond to which robot. It is also very important to change the all the parameters to match your robots name (ex: $(arg seeker_pos_y)). Without these details, the launch file will not spawn your robots correctly. 
+
 ``` xml
     <group ns="seeker">
         <param name="robot_description" command="$(find xacro)/xacro.py $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
