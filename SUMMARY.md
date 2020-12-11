@@ -67,6 +67,7 @@
 * [Miscellaneous](miscellaneous/README.md)
   * [AWS RoboMaker](miscellaneous/aws-robomaker.md)
   * [Quaternions](miscellaneous/quaternions.md)
+  * [Bouncy Objects in Gazebo](miscellaneous/bouncy-objects.md)
 * [FAQ](faq/README.md)
   * [BLDC Motor Guide](faq/bldc-motor-guide.md)
   * [Spawning Multiple Robots](faq/spawn_multiple_robots.md)
