@@ -71,6 +71,7 @@
   * [BLDC Motor Guide](faq/bldc-motor-guide.md)
   * [Spawning Multiple Robots](faq/spawn_multiple_robots.md)
   * [Creating a gazebo world](faq/gazebo_world.md)
+  * [Publish commands to a commandline](faq/publish_commands_to_commandline.md)
 * [Gen 4 Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
