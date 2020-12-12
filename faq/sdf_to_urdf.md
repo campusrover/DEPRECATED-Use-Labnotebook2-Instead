@@ -4,13 +4,13 @@ For some users it is easier to create a model through the given Gazebo simulator
 
 ### Building  Saving a model 
 
-When you want to buld a model in Gazebo it is best that you do it in the Model Editor that you can get you with CTRl m
+When you want to build a model in Gazebo it is best that you do it in the Model Editor that you can get you with CTRl m
 
 Once the model is built and you save it to the right directory it is saved as an .sdf file 
 
 ### Why is .sdf not useful for Autonomous Pacman and how it conflicts with Services?
 
-For the sake of the autonomous pacman project, our goal was to implement collectibles that pacman could pick up to make him "invincible". Though ,the gazebo SpawnModel & DeleteModel services expect a .urdf file in order to track the model down in order to Spawn or Delete. 
+For the sake of the autonomous pacman project, our goal was to implement collectibles that pacman could pick up to make him "invincible". Though ,the gazebo SpawnModel & DeleteModel services expect a .urdf file in order to track the model down to Spawn or Delete. 
 Example of spawning a custom .urdf is below. 
 
 ``` python 
