@@ -1,6 +1,6 @@
 ### Creating a Gazebo Model 
 
-For the convenience of users it is easier to create a model through the given Gazebo simulator in the Model Editor. The problem that arises is using that made object else where in a project. 
+For some users it is easier to create a model through the given Gazebo simulator in the Model Editor than having to write a custom file. The problem that arises is using objects and specific services else where in a project can be difficult due to the extension names of the file. 
 
 ### Building  Saving a model 
 
@@ -10,7 +10,18 @@ Once the model is built and you save it to the right directory it is saved as an
 
 ### Why is .sdf not useful for Autonomous Pacman and how it conflicts with Services?
 
-For the sake of the autonomous pacman project, our goal was to implement collectibles that pacman could pick up to make him "invincible". Though the gazebo SpawnModel & DeleteModel services expect a .urdf file in order to track the model down in order to Spawn or Delete 
+For the sake of the autonomous pacman project, our goal was to implement collectibles that pacman could pick up to make him "invincible". Though ,the gazebo SpawnModel & DeleteModel services expect a .urdf file in order to track the model down in order to Spawn or Delete. 
+Example of spawning a custom .urdf is below. 
+
+``` python 
+    spawn_model_client = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    spawn_model_client(
+    model_name='TESTCYLINDER',
+    model_xml=open('/my_ros_data/catkin_ws/src/ros-autonomous-pacman/models/TESTCYLINDER/TESTCYLINDER.urdf', 'r').read(), 
+    initial_pose=Pose(),
+    reference_frame='world'
+    )
+```
 
 
 ### Solution 
