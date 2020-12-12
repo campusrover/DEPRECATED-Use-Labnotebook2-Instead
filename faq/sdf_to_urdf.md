@@ -23,10 +23,11 @@ Example of spawning a custom .urdf is below.
     )
 ```
 
-
+Documetnation for Spawn -  http://docs.ros.org/en/jade/api/gazebo_msgs/html/srv/SpawnModel.html
+Documentation for Delete - http://docs.ros.org/en/jade/api/gazebo_msgs/html/srv/DeleteModel.html
 ### Solution 
 
-After reasearching it was with great pleasure that we found an open source library that allows you put input the name of the .sdf file and then converts it to .urdf as output to where you specify. It is a really straight forward process that can be done by using the following links below 
+After reasearching it was with great pleasure that we found an open source library that allows you to put input the name of the .sdf file and then converts it to .urdf as output to where you specify. It is a really straight forward process that can be done by using the following links below 
 
 Github repo - https://github.com/andreasBihlmaier/pysdf
 Youtube video instruction - https://www.youtube.com/watch?v=8g5nMxhi_Pw
