@@ -1,4 +1,4 @@
-### Namespaces and Namespacing with TFs
+##### Evalyn Berleant, Kelly Duan
 
 ### TF prefixes
 The tf prefix is a parameter that determines the prefix that will go before the name of a tf frame from broadcasters such as gazebo and the robot state publisher, similar to namespacing with nodes that publish to topics. It is important to include

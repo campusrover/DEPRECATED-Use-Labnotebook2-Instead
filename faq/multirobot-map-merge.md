@@ -1,4 +1,4 @@
-### Multi-robot Map Merge
+##### Evalyn Berleant, Kelly Duan
 
 This FAQ section assumes understanding of creating TF listeners/broadcasters, using the TF tree, namespacing, and launching of multiple robots. This tutorial also relies on the ROS [gmapping](http://wiki.ros.org/gmapping) package although different SLAM methods can be substituted.
 
