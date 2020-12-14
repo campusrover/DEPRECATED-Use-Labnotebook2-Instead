@@ -1,4 +1,4 @@
-##### Evalyn Berleant, Kelly Duan
+#### Evalyn Berleant, Kelly Duan
 
 Arguments and parameters are important tags for roslaunch files that are similar, but not quite the same.
 
