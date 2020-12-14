@@ -1,5 +1,7 @@
 # Creating Bouncy Objects in Gazebo
 
+### August Soderberg & Joe Pickens
+
 This guide will give you all the tools you need to create a bouncy surface in Gazebo whether you want to make a basketball bounce on the ground or to make a hammer rebound off of an anvil.
 
 First you will need to create the URDF file for your model, examine any of the URDF files given to you for help with this, I will put a generic example of a ball I created below.
