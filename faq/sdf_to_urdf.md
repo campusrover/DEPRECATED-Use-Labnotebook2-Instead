@@ -34,5 +34,6 @@ After reasearching it was with great pleasure that we found an open source libra
 Github repo - https://github.com/andreasBihlmaier/pysdf
 Youtube video instruction - https://www.youtube.com/watch?v=8g5nMxhi_Pw
 
+Authors - Alexion Ramos & Ilan Hascal 
 
 
