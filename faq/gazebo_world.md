@@ -1,3 +1,5 @@
+#### Mahima Devanahalli
+
 ### Creating a Gazebo World 
 
 To create a gazebo world you can first create new models on gazebo, mannually and save those as sdf files. You can also use premade gazebo models. Once you do this, you can make a world file which incorporates all the models you need. 
