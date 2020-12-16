@@ -4,6 +4,8 @@
 Don't know how to read a BLDC motor's spec sheet, check out [this section](#bldc-motor-lingos)
 {% endhint %}
 
+*Authors: Julian Ho, Cass Wang*
+
 ## What is a BLDC motor?
 
 BLDC motor stands for Brushless DC motor, as their name implies, brushless DC motors do not use brushes. With brushed motors, the brushes deliver current through the commutator into the coils on the rotor.
