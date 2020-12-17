@@ -1,5 +1,7 @@
-### Intro - Pre-built models in Gazebo
+#### Yifei Han
 
+### Intro - Pre-built models in Gazebo
+ 
 A lot of times we may use the simple pre-built models within Gazebo to simulate real world objects without putting much effort in mimicing the details of the objects.
 At the top tool bar, you may click and drag either a cube, cylinder or sphere into the model. You can easily size the object by changing its configuration by selecting 
 it and entering information on the left tool bar but you may wonder how to actually change the visual of such objects.
