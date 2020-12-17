@@ -69,7 +69,7 @@
   * [Quaternions](miscellaneous/quaternions.md)
 * [FAQ](faq/README.md)
   * [BLDC Motor Guide](faq/bldc-motor-guide.md)
-  * [Spawning Multiple Robots!](faq/spawn_multiple_robots.md)
+  * [Spawning Multiple Robots](faq/spawn_multiple_robots.md)
   * [Namespaces and Namespacing TFs](faq/namespacing-tfs.md)
   * [Multirobot map merging](faq/multirobot-map-merge.md)
   * [Creating a gazebo world](faq/gazebo_world.md)
