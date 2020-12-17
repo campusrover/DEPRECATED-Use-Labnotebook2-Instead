@@ -1,4 +1,4 @@
-#### Mahima Devanahalli
+### Author: Mahima Devanahalli
 
 ### Creating a Gazebo World 
 
