@@ -1,4 +1,4 @@
-### Spawning Multiple Robots - By Belle
+# Spawning Multiple Robots - By Belle
 
 In order to spawn multiple robots in a gazebo launch file (in this example, there are two robots, seeker and hider), you must define their x,y,z positions, as shown below. Also shown is setting the yaw, which is used to spin the robot. For example, if one robot was desired to face forward and the other backward, ones yaw would be 0 while the others would be 3.14. 
 
