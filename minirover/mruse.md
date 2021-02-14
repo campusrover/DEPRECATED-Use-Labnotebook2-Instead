@@ -35,7 +35,7 @@ We've implemented a very simple tool to set up the IP addresses correctly. It wi
 1. If you have a cloud desktop add a real robot, run `rset robot` on your cloud desktop and `rset pi` on the  actual miniRover (over ssh)
 1. If you have a local docker based desktop, run `rset docker` there.
 
-rset by itself displays the current satus
+rset by itself displays the current status
 
 (I know a combination is missing and plan a revision of this)
 
@@ -45,7 +45,7 @@ Note that all we run on the MiniRover itself are roscore, and the nodes needed f
 
 ```
 # launch the motor controller and lidar
-roslaunch gpg_bran gpg_ydlidar.launch 
+roslaunch minirover mr_bringup.launch
 
 # launch camera (optional if you need the camera)
 roslaunch gpg_bran raspicam.launch
@@ -85,8 +85,6 @@ roslaunch gopigo3_navigation amcl.launch
 
 ```
 
-
-
 ### Rset Command
 
 In order to facilitate working in all the combinations of environments we have these commands:
@@ -119,8 +117,8 @@ There are a bunch of handy aliases:
   * default password raspberry
 * Cloud or Docker Desktop
   * default password `dev@ros`
-  * url: <unetid>.ros.campusrover.org:6080/vnc.html (desktop)
-  * url: <unetid>.ros.campusrover.org:8080 (cloud vscode)
+  * desktop: url: http://vnc.<unetid>.ros.campusrover.org
+  * vscode: http://code.<unetid>.ros.campusrover.org
 
 ### Key Environment Variables
 
@@ -142,5 +140,3 @@ These IP addresses are on different networks and cannot access each other. So in
 
 * `myip` returns your local ip address
 * `myvpnip` returns your vpn ip address (if you have one)
-
-

@@ -4,7 +4,9 @@ This section will help you get your robot set up to go. Note that if you receive
 
 See the important information about turning the robot on and off here: [Using the Robot](mruse.md). 
 
-### MicroSD Card
+### MicroSD Card (if needed)
+
+**If your robot was set up by me, then you should skip this step!**
 
 You are going to load software onto the microSD Card - which will wipe out what you loaded onto it according the the instructions before. We provide you a disk image on which to store it. It changes from time to time. [This link](https://drive.google.com/drive/folders/1rmt9I9YtlrG3B5IyqSFD_oM0xei-HdNa?usp=sharing) is to a google folder that will contain the versions. You should use the latest one in that folder. I recommend you use the app "Balena Etcher" to copy the image onto your microSD card.
 
@@ -19,11 +21,14 @@ Now we are facing a dilemma. We need to get the robot on your network. There are
 
 #### Scenario 1
 
+1. I will tell you what the name of your robot is. Plug it in below wherever you see `gopigo3`
+
 1. Locate a wired network connection (on your router for example) and use a network cable to connect your robot to the network
 
 1. Now turn the power on (see [Using MiniRover](mruse.md)for instructions. It should boot up into linux. But you won't know this because there's no keyboard or screen!
 
-1. Using your own computer or development environment that is attached to the network check that you see the robot. This includes a linux computer where you program, or a browser web development environment. Broadly speaking, it's the computer "other than" to raspberry pi on the robot (we will refer to this as the *remote* computer from now on). 
+1. Using your own computer or development environment that is attached to the network check that you see the robot. This includes a linux computer where you program, or a browser web development environment. Broadly speaking, it's the computer "other than" to raspberry pi on the robot (we will refer to this as the *remote* computer from now on).
+
 
 ````
 ping gopigo3.local
@@ -55,7 +60,7 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 
 1. Connect your mouse, keyboard and screen to the Raspberry pi. You will find several free USB ports and an HDMI port. Look closely they are all there.
 
-1. Boot up the Rasberry Pi and wait until it is running and you see the desktop
+1. Boot up the Raspberry Pi and wait until it is running and you see the desktop
 1. Locate the network settings dialog box by clicking the network icon on the top right
 1. Add eduroam as a network, and fill it in as follows:
 
@@ -68,13 +73,13 @@ Where <SSID> is the network's name. You can surround it in quotes if there are s
 
 Under certain circumstances gopigo3.local will be found. If so you need to find out the ip address of your robot when it is on wifi (not wired). If then this should work:
 
-```
+```bash
 ssh pi@<ip address>
 ```
 
 ### Updating the hostname of your Robot
 
-Rename the `hosrtname` of your robot. It comes to you called "gopigo3" but they are all called that and this can cause confusion. Let's say you want to call your robot `pitosalas`. Oddly you have to change it in two places. Here's how"
+Rename the `hostname` of your robot. It comes to you called "gopigo3" but they are all called that and this can cause confusion. Let's say you want to call your robot `pitosalas`. Oddly you have to change it in two places. Here's how"
 
 ```
 # In the shell of the robot:
@@ -87,7 +92,7 @@ Now the robot is called `pitosalas` and at least it will be different from other
 
 #### Eduroam
 
-On eduroam it is often automatically known as myrobot.dyn.brandeis.edu. So after rebooting it check if this works. It's not guaranteed but often it works just fine.
+On eduroam it is often automatically known as gopigo3.dyn.brandeis.edu. So after rebooting it check if this works. It's not guaranteed but often it works just fine.
 
 ### VPN
 
@@ -144,16 +149,5 @@ cp rosutils/bashrc_template.bash .bashrc
 ````
 
 Edit .bashrc according to the instructions in it
-
-Check that you have the following directories: `~/catklin_ws/src/Chapter9_GoPiGo3_Slam and ~/catklin_ws/src/Chapter8_Virtual_Slam`. If not:
-
-````bash
-cd ~
-git clone https://github.com/PacktPublishing/Hands-On-ROS-for-Robotics-Programming.git
-cp -R Hands-On-ROS-for-Robotics-Programming/Chapter9_GoPiGo3_SLAM ~/catkin_ws/src
-cp -R Hands-On-ROS-for-Robotics-Programming/Chapter8_Virtual_SLAM ~/catkin_ws/src
-cd catkin_ws
-catkin_make
-````
 
 ## This will continue to be updated
