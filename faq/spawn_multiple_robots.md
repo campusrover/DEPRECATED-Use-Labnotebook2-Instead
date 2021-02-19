@@ -35,6 +35,8 @@ After setting their initial positions, you must use grouping for each robot. Her
         <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model hider -x $(arg hider_pos_x) -y $(arg hider_pos_y) -z $(arg hider_pos_z) -Y               $(arg hider_yaw) -param robot_description" />
     </group>
 ```
+
 ### References
 
-* We also found this [Launch Multiple Robots in Gazebo](https://www.theconstructsim.com/ros-qa-130-how-to-launch-multiple-robots-in-gazebo-simulator/)
+* This is from TheConstruct: [Launch Multiple Robots in Gazebo](https://www.theconstructsim.com/ros-qa-130-how-to-launch-multiple-robots-in-gazebo-simulator/)
+* And this is from our own Belle Scott: [Hide and Seek](https://github.com/campusrover/hideandseek)
