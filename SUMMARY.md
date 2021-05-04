@@ -68,6 +68,7 @@
   * [AWS RoboMaker](miscellaneous/aws-robomaker.md)
   * [Quaternions](miscellaneous/quaternions.md)
 * [FAQ](faq/README.md)
+  * [DIY Gazebo World](faq/diy-gazebo-world.md)
   * [BLDC Motor Guide](faq/bldc-motor-guide.md)
   * [Spawning Multiple Robots](faq/spawn_multiple_robots.md)
   * [Namespaces and Namespacing TFs](faq/namespacing-tfs.md)
