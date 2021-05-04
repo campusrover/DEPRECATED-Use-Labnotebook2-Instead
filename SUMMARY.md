@@ -79,6 +79,7 @@
   * [Change object color within Gazebo](faq/change_model_color.md)
   * [Bouncy Objects in Gazebo](faq/bouncy-objects.md)
   * [SDF to URDF convertion](faq/sdf_to_urdf.md)
+  * [TF in Gazebo](faq/gazebo_tf.md)
 * [Gen 4 Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
