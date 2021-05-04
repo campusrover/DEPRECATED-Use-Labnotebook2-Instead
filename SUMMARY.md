@@ -47,6 +47,7 @@
     * [Tutorial](ros-tips/create-gazebo-map/tutorial.md)
 * [Advanced Topics](advanced-topics/README.md)
   * [Computer Vision](advanced-topics/computer-vision/README.md)
+    * [Saving and Loading Pytorch Models](advanced-topics/computer-vision/pretrained-model-deployment.md)
     * [Data Annotation](advanced-topics/computer-vision/labelimg.md)
     * [Annotation Format Conversion](advanced-topics/computer-vision/xml-2-txt.md)
   * [Hand Gesture Recognition](advanced-topics/gesture-recognition/README.md)
