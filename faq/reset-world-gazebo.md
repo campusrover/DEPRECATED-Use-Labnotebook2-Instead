@@ -27,14 +27,17 @@ reset_world = rospy.ServiceProxy('/gazebo/reset_world', Empty)
 reset_world()
 ```
 
-###Empty
+### Empty
+
 We import Empty from std_srvs.srv to send signal to correct services. Empty type is one of the most common service pattern for sending signal to ROS Node.
 Empty service does not exchange any actual data between service and a client.
 
-###rospy.wait_for_service('/gazebo/reset_world')
+### rospy.wait_for_service('/gazebo/reset_world')
+
 Line above allows code to wait until specific service is active. 
 
-###reset_world = rospy.ServiceProxy('/gazebo/reset_world', Empty)
+### reset_world = rospy.ServiceProxy('/gazebo/reset_world', Empty)
+
 Here we declare reset_world as service definition. First parameter is service name we want to call.
 In our case, we call '/gazebo/reset_world' to reset our Gazebo world. Second parameter is for srv which usually contain a request message and a response message.
 For resetting Gazebo world, we do not need any request message nor response message. For resetting Gazebo world, second parameter should be 'Empty'
