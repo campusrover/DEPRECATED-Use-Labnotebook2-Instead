@@ -9,10 +9,10 @@ This tutorial is for .dae files. It would probably work with .stl or .obj files 
 
 Making a model can be difficult if you are not sure where to start. My advice is to go as simple as possible. Not only will it make gazebo simulation simpler, it will save you time when you inevitable need to make changes.
 
-Make sure that the object you are designing looks exactly like you want it to in Gazebo. Obviously, this speaks to overall design, but almost more important than that, make sure that your orientation is correct. This means making sure that your model is centralized the way you want it on the x, y and *z–axis* Trying to update the pose though code never worked and it is one adjustment away through editing your model. Note: you can add collisions but if you want to create a surface for the robots to drive on, it will be easier to just make it as thin as possible.
+Make sure that the object you are designing looks exactly like you want it to in Gazebo. Obviously, this speaks to overall design, but almost more important than that, make sure that your orientation is correct. This means making sure that your model is centralized the way you want it on the x, y and *z–axis*. Trying to update the pose though code never worked and it is one adjustment away through editing your model. Note: you can add collisions but if you want to create a surface for the robots to drive on, it will be easier to just make it as thin as possible.
 
 ### Step 2! Importing your model
->*Learning from my mistakes*
+>*Learning from my mistakes | *
 >It might be tempting to use the Add function via the Custom Shapes but this was probably the most frustrating part of my project. What I suggest, as it would have save me weeks of work, it would behoove you to add the mesh (the 3d model files) to a world file so that you can get you measurement and adjustments.
 
 The best tutorial that I found was http://gazebosim.org/tutorials/?tut=import_mesh It is fairly simple and the most reliable way to get your model to show up. From here, however, save a new world from this file as it will have a more complete .world file. Robots should be launched from roslaunch but double check how they interact by adding the model via the Insert tab. It will be white and more boxy but it will help you with positioning, interation and scale.
@@ -33,7 +33,7 @@ Using one of the models in gazebo-9 or my_ros_data/.gazebo/models as a template,
     <model.sdf>
     <model.config>
 ```
-According to your model, you might need to edit more but for me, it sufficed to edit the mesh uri with my dae file, update the .sdf and .config files and add png versions of the colors i used in blender.
+According to your model, you might need to edit more but, for me, it sufficed to edit the mesh uri with my dae file, update the .sdf and .config files and add png versions of the colors I used in blender.
 
 In order for Gazebo to open files through roslaunch, they must be in the proper spot. You can double check where exactly Gazebo is looking by checking the $GAZEBO_RESOURCE_PATH and $GAZEBO_MODEL_PATH in the setup.sh in the gazebo-9 folder. It will probably be something like usr/share/gazebo-9 but just **copy and paste** the entire file into this folder !! after !! you !! have !! confirmed !! that !! it !! works !! in !! your !! world !! file !! *(To check without a roslaunch, navigate to the directory that holds your .world file AND .dae file and in the terminal $ gazebo your_world.world)*
 
@@ -49,28 +49,3 @@ Launch files are pretty straightforward actually. Having an understanding about 
 >
 >3. Reference other launch files to know what you need for your file.
 >4. Update arg fields as needed
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Getting the namespace
-
-
-# References
