@@ -6,7 +6,7 @@ This tutorial assumes the reader knows how to use/access args and parameters in 
 
 When making launch files you may sometimes want aspects of your launch (Such as the urdf file that is used) to be dependent on certain conditions
 
-![All of these robots use the same launch file but the urdf file that is loaded is different based on robot team and type](https://ibb.co/LrJX2k0)
+![All of these robots use the same launch file but the urdf file that is loaded is different based on robot team and type](https://i.ibb.co/ZSYpkLf/630de797bf9efc23a45847f3cc37a1fc.png)
 
 In order to have this functionality you can use the group tag with an if parameter like so:
 
