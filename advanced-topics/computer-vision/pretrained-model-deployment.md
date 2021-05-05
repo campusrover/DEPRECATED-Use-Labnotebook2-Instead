@@ -71,6 +71,7 @@ In order to trace your trained model and save the trace to a file, you may run t
 `PATH = "path/to/traced/model/traced_model.pt/pth"`
 `dummy_input = torch.ones(typical_input_size, dtype=dype_of_typical_input)`
 `traced_model = torch.jit.trace(model, dummy_input)`
+
 `torch.save(traced_model, PATH)`
 
 The `dummy_input` can simply be a bare tensor that is the same size as a typical input for your model. You may also use one of the training or test inputs. The content of the
