@@ -111,7 +111,7 @@ Though the actor can operate without animations, it is preferable for you to add
 To add an animation to the actor, all it needs is a name fore the animation, and the file that contains the animation. The syntax for this is:
 NOTE: THE FILE BECOMES BUGGY OR WILL NOT WORK IF THERE IS NO SKIN.
 
-# IMPORTANT: I ORDER FOR THE ANIMATION TO WORK, THE SKELETON OF THE SKIN MUST BE COMPATABLE WITH THE ANIMATION!!!!
+# IMPORTANT: IN ORDER FOR THE ANIMATION TO WORK, THE SKELETON OF THE SKIN MUST BE COMPATABLE WITH THE ANIMATION!!!!
 
 ```xml
 <actor name="actor">
