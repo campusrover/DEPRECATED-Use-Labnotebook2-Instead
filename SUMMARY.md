@@ -39,6 +39,7 @@
   * [cr_ros_3 Package Project Report](cr-package/cr-3-project.md)
 * [ROS Tips](ros-tips/README.md)
   * [Add SDF in ROS](ros-tips/how-to-add-sdf-in-ros.md)
+  * [Add Textures to SDF](ros-tips/how-to-add-texture-to-sdf.md)
   * [Handy Commands](ros-tips/handy-commands.md)
   * [Launch Files](ros-tips/launch-files.md)
   * [Logging](ros-tips/logging.md)
