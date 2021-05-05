@@ -48,3 +48,5 @@ lowEnd = 30
 ```
 
 The lower and upper bounds are decided and the Canny algorithm is run on the image. In the case of this function, the new image is then published to a topic called "canny mask" for use by another node. 
+
+The above code was created for use in a project completed by myself and fellow student Adam Ring
