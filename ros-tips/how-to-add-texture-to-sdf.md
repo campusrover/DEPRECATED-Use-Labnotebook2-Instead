@@ -19,7 +19,7 @@ After building your own model in the sdf format, you should have a structured mo
 
 
 
-![image-20210505100405303](/home/tongkai/catkin_ws/src/labnotebook/images/cargo_dir.png)
+![image-20210505100405303](../images/cargo_dir.png)
 
 It's important that you have the directory exactly the same, since importing the texture into gazebo is based on finding parameters and texture images within that directory.
 
