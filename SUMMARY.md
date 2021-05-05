@@ -38,6 +38,7 @@
     * [Fall 2018 Script](cr-package/demos/gen2-demo-instructions.md)
   * [cr_ros_3 Package Project Report](cr-package/cr-3-project.md)
 * [ROS Tips](ros-tips/README.md)
+  * [Add SDF in ROS](ros-tips/how-to-add-sdf-in-ros.md)
   * [Handy Commands](ros-tips/handy-commands.md)
   * [Launch Files](ros-tips/launch-files.md)
   * [Logging](ros-tips/logging.md)
