@@ -1,4 +1,5 @@
 # Change Camera Pitch
+## Jacqueline Zhou
 
 ## Summary
 This is a quick tip on how to change turtlebot3_waffle's camera pitch, so that the camera (in simulation) can look down or up
