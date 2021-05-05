@@ -2,11 +2,13 @@
 
 ## Author: Lisandro Mayancela
 
+This tutorial assumes the reader knows how to use/access args and parameters in a launch file.
+
 When making launch files you may sometimes want aspects of your launch (Such as the urdf file that is used) to be dependent on certain conditions
 
-![All of these robots use the same launch file but the urdf file that is loaded is different based on robot team and type](https://gyazo.com/630de797bf9efc23a45847f3cc37a1fc)
+![All of these robots use the same launch file but the urdf file that is loaded is different based on robot team and type](https://ibb.co/LrJX2k0)
 
-In order to have this functionality you can use the <group> tag with an if parameter like so:
+In order to have this functionality you can use the group tag with an if parameter like so:
 
 ```
 <group if="condition goes here">
@@ -55,5 +57,10 @@ For a better example let's look at a launch file which spawns a robot into a gaz
           name="robot_state_publisher" output="screen"/>
 </launch>
 ```
+
+In lines 7-27 we see a chain of these if statements which then end up deciding one out of four urdf files to load as the robot_description which then gets passed into the spawn_minibot_model node.
+
+
+
 
 
