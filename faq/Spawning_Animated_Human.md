@@ -4,6 +4,8 @@ This FAQ section assumes understanding of creating a basic Gazebo world and how 
 
 ### Setting up empty Gazebo world
 
+By Nathan Cai
+
 (If you have a prexisting Gazebo world you want to place an actor you can skip this part)
 Empty Gazebo worlds often lack a proper ground plane so it must be added in manually. You can directly paste this code into the world file.
 
