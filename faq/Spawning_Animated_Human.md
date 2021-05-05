@@ -68,7 +68,7 @@ Here is the quick setup of everything, one can simply copy and paste this code a
 
 ## Defining an actor
 
-Human or animated models in Gazebo are called actors, which contains all the information of an actor. The information can include: 'pose', 'skin', 'animation', or any 'plugins'. Each actor needs a unique name. It uses the syntax:
+Human or animated models in Gazebo are called actors, which contains all the information of an actor. The information can include: `pose`, `skin`, `animation`, or any `plugins`. Each actor needs a unique name. It uses the syntax:
 ```xml
 <actor name="actor">
     ...
@@ -160,7 +160,7 @@ Scripts are tasks that you can assign an actor to do, in this case it is to make
     </script>
 </actor>
 ```
-You can add as many waypoitns as you want so long as they are at different times. The actor will navigate directly to that point at the specified time of arrive in '<time>0</time>' and pose using '<pose>0 0 0 0 0 0</pose>'.
+You can add as many waypoitns as you want so long as they are at different times. The actor will navigate directly to that point at the specified time of arrive in `<time>0</time>` and pose using `<pose>0 0 0 0 0 0</pose>`.
 
 ## Plugin addons
 
