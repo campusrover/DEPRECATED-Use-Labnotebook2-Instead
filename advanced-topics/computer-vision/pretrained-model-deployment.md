@@ -1,6 +1,5 @@
 # Deploying a Pretrained Pytorch Model in Ubuntu 18.04 Virtual Environment
-
-#### By Adam Ring
+By Adam Ring
 
 Using a pre-trained deep learning model from a framework such as Pytorch has myriad applications in robotics, from computer vision to speech recognition, and many places inbetween.
 Sometimes you have a model that you want to train on another system with more powerful hardware, and then deploy the model elsewhere on a less powerful system. For this task, it
