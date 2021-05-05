@@ -82,7 +82,7 @@
   * [SDF to URDF convertion](faq/sdf_to_urdf.md)
   * [TF in Gazebo](faq/gazebo_tf.md)
   * [Programmatically Resetting Gazebo World](faq/reset-world-gazebo.md)
-  * [Spawning_Animated_Human](faq/Spawning_Animated_Human.md)
+  * [Spawning Animated Human](faq/Spawning_Animated_Human.md)
 * [Gen 4 Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
