@@ -81,3 +81,25 @@ Note that the origin of the Box-geometry is at the geometric center of the box, 
 
 #### Step 3: Add to the model SDF file
 With a working .sdf file, slowly start adding in more complexity.
+
+Under the &lt;geometry&gt; label, add your .stl model file
+```html
+<geometry>
+        <mesh filename="package://package_name/model_path/model.stl" scale="0.01 0.01 0.01"/>
+</geometry>
+```
+
+The &lt;geometry&gt; label can be added below &lt;collision&gt; and &lt;visual&gt; label.
+
+### Import the model in you .world file
+In your .world file, import the sdf file using &lt; include &gt; tag
+```html
+<include>
+      <uri>model://my_model</uri>
+</include>
+```
+
+Then open termial to add the model path to Gazebo variable.
+```bash
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/package_name/model_path/
+```
