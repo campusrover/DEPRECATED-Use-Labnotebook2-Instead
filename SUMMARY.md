@@ -45,6 +45,7 @@
   * [Logging](ros-tips/logging.md)
   * [Communicating with Rosserial](ros-tips/communicate-with-rosserial.md)
   * [PID for Beginners](ros-tips/PID-guide.md)
+  * [joint controllers](ros-tips/joint-controllers.md)
   * [Create Gazebo Maps](ros-tips/create-gazebo-map/README.md)
     * [Tutorial](ros-tips/create-gazebo-map/tutorial.md)
 * [Advanced Topics](advanced-topics/README.md)
