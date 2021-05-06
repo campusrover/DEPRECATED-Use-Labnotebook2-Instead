@@ -27,7 +27,7 @@ In this section of xml code there are a number of variables which will need to b
 2. joint name. This must match the name of the joint you wish to control.
 3. actuator name. See transmission name.
 4. <hardwareInterface> This section must be changed to match the type of controller you wish to use.
-1. note that this appears twice. Once underneath the joint name, and again under actuator name. They must match each other.
-2. If you want to use a position controler instead of velocity replace "VelocityJointInterface" with "PositionJointInterface" or "EffortJointInterface" for an effort joint.
+    1. note that this appears twice. Once underneath the joint name, and again under actuator name. They must match each other.
+    2. If you want to use a position controler instead of velocity replace "VelocityJointInterface" with "PositionJointInterface" or "EffortJointInterface" for an effort joint.
 
 By making these modifications you can correctly set up a joint controller in your homemade urdf.
