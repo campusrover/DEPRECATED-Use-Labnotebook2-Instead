@@ -89,6 +89,7 @@
   * [Using Rviz Markers](faq/rviz-markers.md)
   * [Adjust Camera Pitch](faq/camera_pitch.md)
   * [Spawn Object to Gazebo via Terminal ROS Service Call](faq/spawn_model_terminal.md)
+  * [Teleport Model Within Gazebo Simulation](faq/model_teleportation.md)
 * [Gen 4 Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
