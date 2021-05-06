@@ -1,8 +1,8 @@
-# Teleport Model Within Gazebo Simulation
+# Teleport Model within Gazebo Simulation
 
 by Frank Hu
 
-If you want to move existing model within Gazebo simulation, you can do so via rosservice call.
+If you want to move existing model within Gazebo simulation, you can do so via `rosservice call`.
 
 Open a new terminal tab, and enter
 
