@@ -1,4 +1,5 @@
-# How to change joint control type
+# How to change joint control type 
+By Cole Peterson
 
 Each joint in ros has a type. These types determine the degrees of freedom of a joint. For example, a continuous joint can spin around a single axis, while a fixed joint has zero degrees of freedom and cannot move. At a low level, when publishing commands to a joint in ros you are telling it how you want it to move about its degrees of freedom.
 
