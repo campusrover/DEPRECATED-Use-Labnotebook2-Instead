@@ -1,5 +1,7 @@
 # TF in Gazebo
 
+MinJun Song
+
 ## Introduction
 
 When we manipulate a robot in the gazebo world, there are times when the odometry of the robot does not correspond correctly with the actual position of the robot.  This might be due to the robot running into objects which leads to mismatch between the rotation of the wheels and the calculation for the location derived from it.  So it will be **useful to get the absolute position of the robot that is given by the gazebo environment.**
