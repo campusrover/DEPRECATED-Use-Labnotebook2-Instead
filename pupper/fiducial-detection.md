@@ -1,5 +1,7 @@
 # Fiducial Detection
 
+![Fiducial Tag Families](apriltag_families.png)
+
 ## Raspicam
 * We use a RaspberryPi v1 camera whose full documentation can be found at [Raspicam Docs](https://www.raspberrypi.org/documentation/hardware/camera/), this also includes hardware and software specs 
 * Additional information on how to install Raspicam hardware can be found at [Raspicam Installation](https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera)
