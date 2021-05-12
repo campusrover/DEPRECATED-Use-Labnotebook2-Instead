@@ -8,16 +8,16 @@
 
 ## AprilTags
 * We use the `pupil_apriltags` package to detect fiducials in the Raspicam image so full documentation for the AprilTags can be found at [Pupil AprilTags](https://pypi.org/project/pupil-apriltags/)
-* The package works by taking the camera paramters, fiducial size and family, and additional fiducial detection paramters and creating a `detector` class which contains a `detect` method that inputs a camera frame and outputs a list of detected fiducials
+* The package works by taking the camera parameters, fiducial size and family, and additional fiducial detection parameters and creating a `detector` class which contains a `detect` method that inputs a camera frame and outputs a list of detected fiducials
 * In order to print new apriltags you have to follow the instructions at [AprilTag Generation](https://github.com/AprilRobotics/apriltag-generation) and [Premade AprilTags](https://github.com/AprilRobotics/apriltag-imgs)
 
-## Paramters and Tuning
-* The `params.yaml` file contains all of the fiducial vision paramters
-* The camera paramters which are used in the `params.yaml` file were found online in the raspicam section
+## Parameters and Tuning
+* The `params.yaml` file contains all of the fiducial vision parameters
+* The camera parameters which are used in the `params.yaml` file were found online in the raspicam section
 * The size of the fiducial in meters can be adjusted by printing out new fiducials of a larger size 
 
 ## Transformation Math
 * The `src/transforms.py` and `src/geometry.py` contain the methods used for transforming the fiducial detection results into easier to work with translations and rotations 
-* Also, paramters in `params.yaml` are used to slightly adjust the detection results after transformation
+* Also, parameters in `params.yaml` are used to slightly adjust the detection results after transformation
 
 ![Fiducial Tag Families](apriltag_families.png)

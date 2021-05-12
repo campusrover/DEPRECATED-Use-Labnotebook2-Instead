@@ -8,8 +8,7 @@
 
 ## Configuration Space
 * Configuration space is essentially a series of points that represent infeasible locations and rotations for a robot in an environment
-* We can use this along with discretization to generate a graph of all the feasible locations for the pupper robot in an environment with obstacls, assuming we have the models for the agent and the obstacles
+* We can use this along with discretization to generate a graph of all the feasible locations for the pupper robot in an environment with obstacles, assuming we have the models for the agent and the obstacles
 * Below are two example configuration spaces shown in red for an ego agent in green for the obstacle in blue, notice how the configuration spaces changes when the rotation of the agent changes
 
 ![Example Configuration Space 1](config_space_1.png) ![Example Configuration Space 2](config_space_2.png)
-
