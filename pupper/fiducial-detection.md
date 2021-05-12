@@ -1,6 +1,6 @@
 # Fiducial Detection
 
-![Fiducial Tag Families](apriltag_families.png)
+![Example of Fiducial Detection](fids.png)
 
 ## Raspicam
 * We use a RaspberryPi v1 camera whose full documentation can be found at [Raspicam Docs](https://www.raspberrypi.org/documentation/hardware/camera/), this also includes hardware and software specs 
@@ -20,4 +20,4 @@
 * The `src/transforms.py` and `src/geometry.py` contain the methods used for transforming the fiducial detection results into easier to work with translations and rotations 
 * Also, paramters in `params.yaml` are used to slightly adjust the detection results after transformation
 
-![Example of Fiducial Detection](fids.png)
+![Fiducial Tag Families](apriltag_families.png)
