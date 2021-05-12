@@ -1,6 +1,6 @@
 # Software Overview
 
-The code can be found at [Pupper GitHub Repository](https://github.com/campusrover/pupperVisualOdometry/tree/master)
+The code can be found at [Pupper GitHub Repository](https://github.com/campusrover/pupper2/tree/master)
 
 ## Directory 
 

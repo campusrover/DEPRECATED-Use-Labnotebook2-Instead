@@ -1,7 +1,5 @@
 # Hardware
 
-![Basic hardware Layout](pupper_titan.png)
-
 The robot was donated by the [Hands-On Robotics Initiative](https://handsonrobotics.org/). Due to time constraints and some delays, a prebuilt robot was delivered instead of a parts kits. The build instructions can be found on this [Google Doc](https://docs.google.com/document/d/1ztO-zyF31r9wYJvHZEMbAYyhtuHloNoHOm8AScbr3wc). It also includes other relevant instructions that will be referenced later, such as motor calibration, software installation and run instructions.
 
 ## Hardware Overview
