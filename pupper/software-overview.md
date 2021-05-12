@@ -2,95 +2,57 @@
 
 The code can be found at [Pupper GitHub Repository](https://github.com/campusrover/pupperVisualOdometry/tree/master)
 
-### Directory 
+## Directory 
 
 ```bash
 ├───models
-│   └───__pycache__
+│   └───agent.py
+│   └───goal.py
+│   └───obstacle.py
 ├───plots
+│   └───plotN.png
 ├───src
-│   └───__pycache__
-└───__pycache__
+│   └───boundary_detection.py
+│   └───controller.py
+│   └───fiducial_vision.py
+│   └───geometry.py
+│   └───main.py
+│   └───node.py
+│   └───path_finder.py
+│   └───boundary_profiler.py
+│   └───transforms.py
+│   └───path_test.py
+│   └───viz.py
+├───params.yaml
 ```
 
+## Components Overview 
 
-* Reflects the "new" multi robot setup
+### Models
+* The models can be found at `/models/`
+* The obstacle, agent, and goal models are of type Shape which can be found within  `src/boundary_detection.py`
+* The paramters of the models can be found within `params.yaml` 
+* The goal model is a shape containing only a single point 
+* The obstacle and agent models are defined by 4 corner points which are then interpolated to create a series of points defining the boundary of the model
+* Each model also has a center as well which would be it's relative location to the pupper 
 
-### .bashrc ON BOTH your laptop and your Robot
+### Computer Vision
+* The computer vision module can be found at `/src/fiducial_vision.py`
+* The fiducial and computer vision package requires numerous parameters to work correctly, these include fiducial tag size, lens size, and center pixel of the image
+* The module itself contains the `Vision` class which  contains a method `capture_continuous` which returns a generator which yields the results of the fiducial detection module on frames of the RaspberryPi camera
 
-* This shell script is run automatically whenever you open a new terminal or tab in a terminal
-* This means that if you edit it and save it, it still does nothing until you open a new terminal
-* If you want to apply it without opening a new terminal, do `source ~/.bashrc`
-* These lines should be on your laptop as well as your robot, the same way.
+### Boundary Generation and Planning
+* The modules relevant to boundary generation and planning are `src/boundary_detection.py`, `src/path_finder.py`, `/src/path_profiler.py`, and `path_test.py`
+* Boundary generation works by taking in the detected postions and rotations of fidcials and then creating `obstacle` classes to represent each fiducial. Then each `obstacle.points` of type `Point[]` are transformed to it's corresponding fiducials location by the `src/transform.py` class. Then The pupper robot model `models/agent.py` which is at `(0, 0)` and each `obstacle` are used to calculate the configuration space for robot using the[Minkowski Sum](https en.wikipedia.org/wiki/Minkowski_addition)
+* Also, the `models/goal.py`class is used to represent the goal of the pupper which corresponds to the fiducial with `id = 0` 
+* Finally, each point in the resulting configuration space is used to generate a graph of the area where vertices of the graph close to the points in the configuration space are removed so that when a shortest path search is performed the resulting path only includes valid positions from the robot's current position to the goal 
 
-```sh
-alias bu='roslaunch turtlebot3_bringup turtlebot3_robot.launch'
-export ROS_MASTER_URI=http://roscore1.cs.brandeis.edu:11311
-export ROS_NAMESPACE=roba
-export ROS_IP=<ip address of computer where this .bashrc is stored>
-export TB3_MODEL=burger
-export TURTLEBOT3_MODEL=burger
-```
+### Controls
 
-* ROS\_HOSTNAME: the IP address of this computer.
-* ROS\_MASTER: the IP address of whereever ROSCORE is running. We have roscore always running on the little computer by the door. It happens to be called roscore1.cs.brandeis.edu
-* ROS\_NAMESPACE: Indicates a unique name for a specific robot. That way when we send a /cmd\_vel it is turned into, e.g. /roba/cmd\_vel. This way all the robots can coexist on one ROSCORE. It also means you don't have to run your own ROSCORE anymore.
+### Main
 
-### ON THE ROBOT
+### Vizualization
 
-* SSH into the robot
-* Run the following command to launch ROS on the robot
+### Transforms and Geometry
 
-```sh
-roslaunch turtlebot3_bringup turtlebot3_robot.launch
-```
-
-### Test the configuration
-
-* Did you do bringup on the ROBOT \(NOT ON YOUR COMPUTER!
-  * if not, do so!
-* Did bringup work
-  * if not, check your environment variables
-  * `printenv | grep ROS`
-  * It should include all your settings and also env variables for the path to ROS
-  * Make sure you run `source ~/.bashrc`
-* Can you run rostopic list? `rostopic list`
-  * If not, check your IP addresses
-  * Check whether the ROSCORE computer is running.
-  * Try pinging roscore1.cs.brandeis.edu
-* Does it list /x/cmd\_vel among them?
-  * If not, check your IP addresses. Also make sure you ran
-* Can you teleop the robot? `roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch`
-  * if not, try a manual cmd\_vel: rostopic pub /rob\*/cmd\_vel
-
-## Additional Intermediate Bash Tips
-
-### Aliases: Live Better, Type Less\(TM\)
-
-You may notice that the ros installation process added a few Aliases to your .bashrc file. These serve to make your life easier, and you can add more of your own custom aliases to make your life even easier. Here are a few recommended changes to make:
-
-#### New Editor in eb
-
-You'll notice eb uses nano by default. nano is fine, if you enjoy living in the dark ages. To make eb open a different text editor, just replace nano with whatever your favorite installed editor is - code \(vscode\), atom, vim, emacs, etc. Bonus tip: if you're not already using `eb` as a shortcut to edit the .bashrc, start using eb!
-
-#### Networking Shortcuts
-
-Try using this chunk in your bashrc:
-
-```sh
-alias connect='ssh $ROBOT@$ROBOT.dyn.brandeis.edu'
-export ROBOT=robc
-export ROS_MASTER_URI=http://$ROBOT.dyn.brandeis.edu:11311
-export IP="$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')"
-export ROS_IP=$IP
-```
-
-_NB_ the snippet of code above uses robc as the current robot, robc can be replaced with any valid robot name Here's what this chunk does: 1. The alias "connect" will ssh to your desired preconfigured robot \(saves quite a bit of typing\) 1. The variable ROBOT is used to reduce the redundancy of typing the robot name anythime you need to ssh or change your ROS\_MASTER\_URI 1. The last two lines will automatically obtain your IP address anytime you start a new terminal window Some additional things to note: 1. The connect alias grabs ROBOT when it is called, so it can be defined before ROBOT, but ROS\_MASTER\_URI grabs ROBOT when it is defined, so ROBOT must be defined first 1. The command `export ROBOT=<name>` can temporarily change the value of ROBOT - anything that accesses ROBOT will grab the temporary value \(Think about what this means given the last point: connect wil ssh to the temporary robot, but ROS\_MASTER\_URI will not update\)
-
-#### Universally Useful Time Savers
-
-One of the most common problems is that when you kill a ROS script, the most recent cmd\_vel latches and the robot will continue in that manner therefore, it is useful to have some sort of emergency stop procedures. 2 viable and common options: 1. create an alias for `rostopic pub` that publishes a blank twist to cmd\_vel 1. create an alias that launches teleop - this take longer, but will immediately stop the robot as soon as it is running.
-
-#### The Possibilities Don't Stop Here
-
-There's obviously still much more that could done to make a more efficient terminal experience. Don't be afraid to become a bash master. Here are some resources to help get started becoming more proficient in bash: [Bash Cheatsheet](https://devhints.io/bash)
+## Dependencies
