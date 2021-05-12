@@ -53,16 +53,3 @@ The code can be found at [Pupper GitHub Repository](https://github.com/campusrov
 
 ### Main
 * The program can be run simply by navigating to the root of the repository and then running `python3 main.py` 
-
-
-## Dependencies
-* `picamera`
-* `pupil_apriltags`
-* `tqdm`
-* `scipy`
-* `UDPComms`
-* `pyyaml`
-* `opencv` or `cv2`
-* `argparse`
-* `pickle`
-* `matplotlib`
