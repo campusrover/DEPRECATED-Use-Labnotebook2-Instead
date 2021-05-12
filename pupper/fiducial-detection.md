@@ -19,3 +19,5 @@
 ## Transformation Math
 * The `src/transforms.py` and `src/geometry.py` contain the methods used for transforming the fiducial detection results into easier to work with translations and rotations 
 * Also, paramters in `params.yaml` are used to slightly adjust the detection results after transformation
+
+![Example of Fiducial Detection](fids.png)
