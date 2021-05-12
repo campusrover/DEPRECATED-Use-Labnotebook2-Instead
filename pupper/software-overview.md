@@ -10,7 +10,7 @@ The code can be found at [Pupper GitHub Repository](https://github.com/campusrov
 │   └───goal.py
 │   └───obstacle.py
 ├───plots
-│   └───plotN.png
+│   └───map.png
 ├───src
 │   └───boundary_detection.py
 │   └───controller.py
