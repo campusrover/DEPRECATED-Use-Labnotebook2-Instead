@@ -101,3 +101,5 @@
   * [Path Planning Scenarios](gen4-reports/pathplanning.md)
   * [Reinforcement Learning Racer](gen4-reports/reinforcement-learning-racer.md)
   * [StalkerBot](gen4-reports/stalkerbot.md)  
+* [Pupper project](pupper/README.md)
+  * [Test](pupper/setup-hints.md)
