@@ -1,6 +1,18 @@
-# Setup Troubleshooting
+# Software Overview
 
-## Hints on how to set things up
+The code can be found at [Pupper GitHub Repository](https://github.com/campusrover/pupperVisualOdometry/tree/master)
+
+### Directory 
+
+```bash
+├───models
+│   └───__pycache__
+├───plots
+├───src
+│   └───__pycache__
+└───__pycache__
+```
+
 
 * Reflects the "new" multi robot setup
 
