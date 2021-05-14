@@ -116,6 +116,7 @@
     * [Desktop UI](clouddesktop/user-guide/desktop-ui.md)
     * [Code Editor](clouddesktop/user-guide/code-editor.md)
   * [Operator Guide](clouddesktop/operation-guide/README.md)
+    * [Architecture](clouddesktop/operation-guide/architecture.md)
     * [Configuration](clouddesktop/operation-guide/configuration.md)
     * [K3s Cluster](clouddesktop/operation-guide/setup/cluster.md)
     * [Operating](clouddesktop/operation-guide/operating/README.md)
