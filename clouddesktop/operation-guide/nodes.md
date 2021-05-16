@@ -1,4 +1,4 @@
-# Configuration
+# Nodes
 
 As of May 2021, the cloud desktop cluster is consisted of 2 physical nodes.
 
@@ -9,7 +9,7 @@ As of May 2021, the cloud desktop cluster is consisted of 2 physical nodes.
 | robotics-rover1 | rover1.cs.brandeis.edu | 12C/24T, 32GB, 1TB, RTX2060S | Master |
 | robotics-rover2 | rover2.cs.brandeis.edu | 12C/24T, 32GB, 1TB, RTX2060S | Node |
 
-## Software Versions
+## Software
 
 The software stack is simple, each node run a K3s server managed by systemd.
 
