@@ -16,16 +16,7 @@ Ports:
 
 The current container image is structured this way:
 
-```mermaid
-graph TB
-    tb3-ros(cosi119/tb3-ros)
-    ubuntu-desktop-lxde-vnc(cosi119/ubuntu-desktop-lxde-vnc)
-    ubuntu(ubuntu:18.04)
-    ubuntu-cuda(nvidia/cuda:11.3.0-cudnn8-runtime-ubuntu18.04)
-
-    tb3-ros --- ubuntu-desktop-lxde-vnc ---|18.04| ubuntu
-    ubuntu-desktop-lxde-vnc ---|18.04-cuda| ubuntu-cuda
-```
+![Layering](graphs/image-layer.svg)
 
 `cosi119/tb3-ros`
   - installs ROS melodic and ROS packages
