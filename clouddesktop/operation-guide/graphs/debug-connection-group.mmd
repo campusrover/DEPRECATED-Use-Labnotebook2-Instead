@@ -1,0 +1,19 @@
+graph TD
+    all-desktops(Unable to connect to all desktops) --> brandeis(Check Brandeis Network connectivity)
+    group-desktops(Unable to connect to a group of desktops) --> check-node(Check the status of each node)
+  
+    check-node --> ssh-node(Identify and SSH into the problem node)
+    ssh-node --> ssh-ok{Is SSH working?}
+
+    ssh-ok --> |Yes| check-k3s(Check the status of K3s by doing:<br>systemctl status k3s.service)
+    check-k3s --> k3s-ok{Is K3s running ok?}
+    ssh-ok -->|No| physical-access(Node is down or not reachable.<br>This suggests an internal networking issue, or need a reboot.)
+
+    k3s-ok -->|Yes| check-firewall(Check the firewall configuration, are the necessary ports open?)
+    k3s-ok -->|No| restart-k3s(Restart k3s:<br>systemctl restart k3s.service)
+
+    brandeis --> brandeis-ok{Is it down?}
+    brandeis-ok -->|Yes| check-brandeis(Check with Brandeis)
+    brandeis-ok -->|No| master-node(Check master node by SSH) --> ssh-ok
+
+    check-firewall -->|Still broken?| check-connection-to-master(If this is a slave node, check connection to master)

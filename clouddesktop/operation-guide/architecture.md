@@ -2,32 +2,35 @@
 
 ## Overview
 
-The cloud desktop architecture is simple. It leverages docker for container runtime and K8s fo scheduling.
+The cloud desktop architecture is simple. On a high level, it looks like this:
 
-![general arch](../../images/clouddesktop/arch-general.png)
+![Overview](graphs/arch-overview.svg)
+
+## Cloud Desktop Cluster
+
+Cloud desktop cluster is a cluster of cloud desktops. It is implemented as a K8s cluster for easy scheduling and orchestration of cloud desktop containers.
 
 ## Cloud Desktop Container
 
-The cloud desktop container (also known as `tb3-ros`) is the docker container image we use. It is mainly consists of 3 components.
+The cloud desktop container provides a virtualized desktop environment that is isolated and portable. It consists of 3 components.
 
 - VNC server paired with a NoVNC server
 - VSCode server
 - Tailscale client
 
-### Supervisord
-
-Each of the components are managed by a process control system called `supervisord`. Supervisor is responsible for spawning and restarting these components. For detailed configs, see [supervisord.conf](https://github.com/pitosalas/tb3-ros/blob/61c393140da2dbcff15fa48f0ba9c6435d5ff94c/tb3-ros/files/supervisor/supervisord.conf).
-
-### Dockerfile
-
-The dockerfile for the cloud desktop container can be found on GitHub [here](https://github.com/pitosalas/tb3-ros/tree/master/tb3-ros).
+For details, see [Container Image](image.md).
 
 ## Networking
 
 ![arch network](../../images/clouddesktop/arch-network.png)
 
-Each container has access to 2 networks. One is created by K8s, one created by Tailscale.
+K8s network:
+- Used for communication with the load balancer to allow each container to be accessible from a URL
+- Implemented with Flannel
 
-K8s network is used for communication with the load balancer to allow each container to be accessible from a URL.
+Tailscale network:
+- Used for communication between cloud desktops and robots globally
+- Managed with [Tailscale Dashboard](https://login.tailscale.com/admin/machines)
 
-Tailscale network is used for communication and control of robots globally.
+AWS Route53:
+- Provides DNS records for redirecting traffic to the cluster

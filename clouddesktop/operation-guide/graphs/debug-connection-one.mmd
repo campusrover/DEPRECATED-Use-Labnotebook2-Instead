@@ -1,0 +1,9 @@
+graph TD
+    one-desktop(Unable to connect to one desktop) --> check-deployment(Check the status of the deployment by doing:<br>kubectl -n clouddesktop-prod get pods)
+    
+    check-deployment -->|Waiting| out-of-resource(Cluster is out of resource to allocate this new desktop)
+    check-deployment -->|Pending| check-crashes(Check if the deployment is constantly crashing & restarting)
+    check-crashes --> invalid-config(Check if the deployment file is correct)
+    invalid-config -->|Still broken?| debug-guide
+    
+    debug-guide(Debug guide:<br>https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/#debugging-pods)

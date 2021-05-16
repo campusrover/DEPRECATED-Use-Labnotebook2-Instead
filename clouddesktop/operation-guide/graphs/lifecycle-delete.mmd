@@ -1,0 +1,8 @@
+graph LR
+    delete-user(Delete User)
+    delete-storage(Delete storage on K8s)
+    delete-desktop(Delete cloud desktop)
+    
+    subgraph du [delete-user]
+    delete-user --> delete-storage --> delete-desktop
+    end
