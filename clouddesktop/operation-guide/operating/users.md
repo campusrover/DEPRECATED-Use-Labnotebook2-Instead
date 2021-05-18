@@ -85,6 +85,8 @@ resources:
 
 **Note: Beware if we have enough free GPUs in the cluster**
 
+**Note: Make sure the docker image is a CUDA enabled variant (ie. `tb3-ros:v2.1.1-cuda`)**
+
 ```diff
 resources:
   limits: # increase to maximum 16GB of ram
@@ -100,5 +102,17 @@ resources:
 To apply the previously changed values,
 
 ```bash
+kubectl apply -k example-clouddesktop
+```
+
+### Restarting a Desktop
+
+To restart a desktop, you need to delete and redeploy the desktop.
+
+*This will NOT lead to loss of data.*
+
+```bash
+kubectl delete -k example-clouddesktop
+
 kubectl apply -k example-clouddesktop
 ```
