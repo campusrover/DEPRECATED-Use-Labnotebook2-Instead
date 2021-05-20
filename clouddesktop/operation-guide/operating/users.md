@@ -5,7 +5,6 @@
 - `kubectl` [Installation Guide](https://kubernetes.io/docs/tasks/tools/)
 - [Setup Instructions](cluster.md#setup)
 - `terraform` [Installation Guide](https://www.terraform.io/downloads.html)
-- `make`
 - AWS Credentials to AWS Route53
     - Access Key
     - Secret Key
