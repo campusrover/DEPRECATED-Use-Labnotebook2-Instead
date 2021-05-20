@@ -42,7 +42,6 @@ To under what each of these commands do under the hood, see [here](../lifecycle.
 
 ```bash
 make add-user id=example
-make apply-new-user id=example
 ```
 
 ### Delete a user
