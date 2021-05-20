@@ -24,6 +24,7 @@ Once you have obtained the `k3s.yaml` file, make the following modification,
 - server: https://localhost:6443
 + server: https://123.123.123.123:6443
 ```
+
 After the modification, this file is ready for use. Update your shell to always use this file,
 
 ```bash
@@ -52,11 +53,13 @@ kubectl describe node robotics-rover1
 
 ### See all deployed pods
 
+- Notice that `-n clouddesktop-prod` refers to the clouddesktop-prod k8s `namespace`
+
 ```bash
 kubectl -n clouddesktop-prod get pods
 ```
 
-### See a specififc pod
+### See a specific pod
 
 ```bash
 kubectl -n clouddesktop-prod describe pod julianho-clouddesktop-deployment-abc123efg-123abc

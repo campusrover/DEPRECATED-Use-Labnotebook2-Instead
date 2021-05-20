@@ -3,24 +3,24 @@
 ## Requirements
 
 - `kubectl` [Installation Guide](https://kubernetes.io/docs/tasks/tools/)
-  - [Setup Instructions](cluster.md#setup)
+- [Setup Instructions](cluster.md#setup)
 - `terraform` [Installation Guide](https://www.terraform.io/downloads.html)
 - `make`
 - AWS Credentials to AWS Route53
-  - Access Key
-  - Secret Key
+    - Access Key
+    - Secret Key
 
 ## Setup
 
 First obtain the users repo from [here](https://github.com/campusrover/clouddesktop-k8s).
 
-Setup `.env` file by filling in all required keys:
+Setup `.env` file by filling in all required fields:
 
 ```bash
 mv .env.sample .env
 ```
 
-Once everything is properly setup, do a:
+It's better to use an IAM `user group` to create a new `user` associated with the `clouddesktop` user group. It will generate a access and secret key for you to put in the above file. The ingress IP is the ip address of the main node. Once everything is properly setup, do:
 
 ```bash
 export $(make env)
@@ -58,7 +58,7 @@ For user `example`, modify the file `example-clouddesktop/deployment.yaml`.
 
 #### To increase minimum resource
 
-*For detailed explaination of what units you can change it to, see [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).*
+*For detailed explanation of what units you can change it to, see [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).*
 
 ```diff
 resources:
@@ -70,7 +70,7 @@ resources:
 
 #### To increase maximum resource limit
 
-*For detailed explaination of what units you can change it to, see [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).*
+*For detailed explanation of what units you can change it to, see [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).*
 
 ```diff
 resources:
