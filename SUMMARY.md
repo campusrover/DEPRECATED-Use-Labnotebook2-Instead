@@ -5,6 +5,7 @@
   * [Build](minirover/mrbuild.md)
   * [Setup](minirover/mrsetup.md)
   * [Use](minirover/mruse.md)
+  * [Troubleshooting](minirover/mrtroubleshooting.md)
 * [Campus Rover Packages](cr-package/README.md)
   * [Architecture Overview](cr-package/architecture.md)
   * [State Manager Overview](cr-package/state-management-services.md)
