@@ -60,6 +60,7 @@
     * [Color Extraction](advanced-topics/gesture-recognition/color.md)
     * [SSD model \(deep learning\)](advanced-topics/gesture-recognition/ssd.md)
 * [Infrastructure](infrastructure/README.md)
+  * [Batteries and Chargers](infrastructure/batteries-and-chargers.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup-hints.md)
   * [Bootable SSD Creation](infrastructure/ssd-instructions.md)
