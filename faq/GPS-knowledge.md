@@ -12,7 +12,7 @@ Each GPS satellite is basically sending radio signals towards earth which encode
 ### Multi-band vs single-band
 We will need this information going forward so I will just add this here. Satellites transmit multiple radio frequencies to help shed light on the effects the ionosphere and troposphere are having on the radio signals. Multi-band GPS means that you are listening to multiple radio frequencies which can improve accuracy overall, single-band GPS is not as good. More on this later.
 
-### Non-corrected GPS Data
+### Non-corrected GPS data
 For less than $20 you can buy a cheap plug and play GPS sensor which does not attempt to correct its GPS data in any way. We purchased the *G72 G-Mouse USB GPS Dongle* to take some preliminary results. Below we see 5 minutes of continuous GPS data (in blue) taken from a fixed GPS location (in red). I will note it was a cloudy rainy day when the data was recorded and the true GPS location was under a large concrete overhang outdoors near other buildings. This is a particularly difficult situation which lead to the larger than normal maximum inaccuracy of ~25 meters. ![GPS data](https://i.imgur.com/5wtUIYS.png)
 
 Important time saving note: no matter how fancy or expensive your GPS sensor is, if it is not being corrected by some kind of secondary remote device, you will not see good accuracy. This is confusing because a lot of GPS sensors tout their "centimeter accuracy in seconds" which would imply you could just plug it in and achieve that accuracy. 
@@ -20,7 +20,7 @@ Important time saving note: no matter how fancy or expensive your GPS sensor is,
 **There are no shortcuts, for centimeter accuracy you need to correct your GPS data with and outside source.**
 
 ### How to correct GPS data
-The most common and most accurate way to correct GPS data is by utilizing two GPS sensors in a process called Differential GPS (DGPS). There are three ways to achieve a differential GPS system [(source: RACELOGIC)](https://en.racelogic.support/VBOX_Automotive/01General_Information/Knowledge_Base/How_Does_DGPS_(Differential_GPS)_Work%3F):
+The most common and most accurate way to correct GPS data is by utilizing two GPS sensors in a process called Differential GPS (DGPS). There are three ways to achieve a differential GPS system according to [RACELOGIC](https://en.racelogic.support/VBOX_Automotive/01General_Information/Knowledge_Base/How_Does_DGPS_(Differential_GPS)_Work%3F):
 
 * SBAS – Correction messages are sent from Geostationary Satellites, for example, EGNOS or WASS.
 * RTCMv2 – Correction messages are sent from a static base station, giving 40 – 80 cm accuracy.
@@ -33,12 +33,12 @@ RTK stands for Real-Time Kinematic and provides ~1cm accuracy when it is set up 
 ### How RTK works
 RTK correction relies on two GPS sensors to provide our ~1cm accuracy. One sensor is part of the "base station" and the other is a "rover".
 
-### Base Station
+### Base station
 The base station consists of a GPS sensor in an accurately known, fixed location on earth which is continually reading in the radio signals from the satellites and it uses its known location to determine the precise timing error that each satellite signal is experiencing. This is an incredibly complex calculation to figure out which timing errors each individual radio signal is experiencing. We cannot simply say that the measurement is off by 4 meters and assume that all nearby GPS sensors will experience the same 4 meter error vector. The base station computer must look at each satellite signal it is using to calculate location, look at the total error in location, and then reverse engineer the timing error that each radio signal exhibits. (Accurate GPS requires 3-4 different satellites to determine location, our calculation will thus produce at least 3-4 timing error values, one for each satellite).
 
 The base station will then send these timing errors in the form of an RTCM message (this is the standard RTK error message) to the "rover" so that the rover can perform its own calculations based on which satellites it is currently using. This will ultimately achieve the ~1cm accuracy.
 
-### Base Station Types
+### Base station types
 There are two ways to acquire RTK corrections. You can either set up a local base station (by the time you are reading this we might have a base station on the Brandeis Campus) or you can utilize RTK corrections from various public or subscription based base stations around the country.
 
 #### Why you should set up a local base station
@@ -49,7 +49,7 @@ This will take you through the process we plan to follow (or may have already fo
 
 Even if you don't plan on following our steps, this includes a ton of information and notes on things that will help inform any GPS application you are interested in.
 
-### GPS Module
+### GPS module
 The GPS module is what processes all of the information read in from the antenna and gives you actual usable data. For cost and performance reasons we have selected the [ZED-F9P module](https://www.u-blox.com/en/product/zed-f9p-module) from u-blox. More specifically, we have selected the developer kit from SparkFun which is called the [SparkFun GPS-RTK2 Board - ZED-F9P](https://www.sparkfun.com/products/15136) which is a board containing the ZED-F9P module and has convenient ports attached for everything you will need to plug in.
 
 Important information about this board:
