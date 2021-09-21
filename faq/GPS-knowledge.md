@@ -22,7 +22,7 @@ Important time saving note: no matter how fancy or expensive your GPS sensor is,
 **There are no shortcuts, for centimeter accuracy you need to correct your GPS data with and outside source.**
 
 ### How to correct GPS data
-The most common and most accurate way to correct GPS data is by utilizing two GPS sensors in a process called Differential GPS (DGPS). There are three ways to achieve a differential GPS system according to [RACELOGIC](https://en.racelogic.support/VBOX_Automotive/01General_Information/Knowledge_Base/How_Does_DGPS_(Differential_GPS)_Work%3F):
+The most common and most accurate way to correct GPS data is by utilizing two GPS sensors in a process called Differential GPS (DGPS). There are three ways to achieve a differential GPS system according to [RACELOGIC](https://bit.ly/3CyITvP):
 
 * SBAS – Correction messages are sent from Geostationary Satellites, for example, EGNOS or WASS.
 * RTCMv2 – Correction messages are sent from a static base station, giving 40 – 80 cm accuracy.
