@@ -13,7 +13,9 @@ Each GPS satellite is basically sending radio signals towards earth which encode
 We will need this information going forward so I will just add this here. Satellites transmit multiple radio frequencies to help shed light on the effects the ionosphere and troposphere are having on the radio signals. Multi-band GPS means that you are listening to multiple radio frequencies which can improve accuracy overall, single-band GPS is not as good. More on this later.
 
 ### Non-corrected GPS data
-For less than $20 you can buy a cheap plug and play GPS sensor which does not attempt to correct its GPS data in any way. We purchased the *G72 G-Mouse USB GPS Dongle* to take some preliminary results. Below we see 5 minutes of continuous GPS data (in blue) taken from a fixed GPS location (in red). I will note it was a cloudy rainy day when the data was recorded and the true GPS location was under a large concrete overhang outdoors near other buildings. This is a particularly difficult situation which lead to the larger than normal maximum inaccuracy of ~25 meters. ![GPS data](https://i.imgur.com/5wtUIYS.png)
+For less than $20 you can buy a cheap plug and play GPS sensor which does not attempt to correct its GPS data in any way. We purchased the *G72 G-Mouse USB GPS Dongle* to take some preliminary results. Below we see 5 minutes of continuous GPS data (in blue) taken from a fixed GPS location (in red). I will note it was a cloudy rainy day when the data was recorded and the true GPS location was under a large concrete overhang outdoors near other buildings. This is a particularly difficult situation which lead to the larger than normal maximum inaccuracy of ~25 meters. 
+
+![GPS data](https://i.imgur.com/5wtUIYS.png)
 
 Important time saving note: no matter how fancy or expensive your GPS sensor is, if it is not being corrected by some kind of secondary remote device, you will not see good accuracy. This is confusing because a lot of GPS sensors tout their "centimeter accuracy in seconds" which would imply you could just plug it in and achieve that accuracy. 
 
