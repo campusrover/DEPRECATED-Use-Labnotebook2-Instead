@@ -1,0 +1,6 @@
+# Running a pretrained TFLite model
+
+The following section will detail how to download and execute a TFLite model that has been compiled for the Edge TPU
+
+## Downloading a model
+
