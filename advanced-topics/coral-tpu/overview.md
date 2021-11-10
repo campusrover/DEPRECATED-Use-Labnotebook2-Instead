@@ -1,7 +1,5 @@
 # Google Coral TPU Overview
 
-The Google Coral TPU is a USB machine learning accelerator which can plugged into a computer to increase machine learning performance on Tensorflow Lite models. The following documentation will detail how to install the relevant libraries and use the provided PyCoral library in Python to make use of the Coral TPU.
-
 ## Requirements
 
 - Linux Debian 10, or a derivative thereof (such as Ubuntu 18.04)
