@@ -1,4 +1,4 @@
-# Google Coral TPU Overview
+# Google Coral TPU Setup
 
 ## Requirements
 
