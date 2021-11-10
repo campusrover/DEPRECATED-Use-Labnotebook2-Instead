@@ -1,5 +1,3 @@
-# Google Coral TPU Setup
-
 ## Requirements
 
 - Linux Debian 10, or a derivative thereof (such as Ubuntu 18.04)
