@@ -8,7 +8,7 @@
 
 For details on how to set up for Windows or Mac OS, see [Get started with the USB Accelerator](https://coral.ai/docs/accelerator/get-started/) on the Coral website.
 
-## Setup
+## Installing Required Packages
 
 Follow the following steps in order to get your environment configured for running models on the Coral TPU
 1. Open up a terminal window and run the following commands:
