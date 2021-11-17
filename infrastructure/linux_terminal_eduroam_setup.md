@@ -28,7 +28,7 @@ Run the following command to get the names of your wireless devices.
 - `ip link show`
 
 Running this command will list all of your networking devices. You will want to note the name of your wireless networking device, for this tutorial I will assume the wireless
-devices name will be `wlan0` as it is named on the Raspberry Pi 3b+, however you will want to substitute this for the name of your wireless device if your's differs.
+device's name will be `wlan0` as it is named on the Raspberry Pi 3b+, however you will want to substitute this for the name of your wireless device if your's differs.
 
 Next you will run the following commands to connect your machine to eduroam.
 
