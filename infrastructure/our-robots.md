@@ -1,6 +1,6 @@
 # Our Robots
 
-| | Bullet1 | xxxx |   
+| properties | Bullet1 | xxxx |   
 | -- | -- | -- |
 | Hostname: | bullet1 |   |
 | Model: | Bullet 1.0 |  |
