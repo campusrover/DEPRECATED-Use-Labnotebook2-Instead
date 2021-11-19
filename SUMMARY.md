@@ -64,6 +64,7 @@
     * [Download/Run Pretrained Models](advanced-topics/coral-tpu/running-pretrained-models.md)
 * [Infrastructure](infrastructure/README.md)
   * [Connect to Eduroam via Ubuntu Terminal](infrastructure/linux_terminal_eduroam_setup.md)
+  * [Lab Robot Inventory](infrastructure/our-robots.md)
   * [Batteries and Chargers](infrastructure/batteries-and-chargers.md)
   * [Multi Robot Setup](infrastructure/multi-robot-infrastructure.md)
   * [Setup Troubleshooting](infrastructure/setup-hints.md)
