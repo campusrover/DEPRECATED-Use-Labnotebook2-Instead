@@ -1,5 +1,11 @@
 # Our Robots
 
-| Name | Type | Hostname | OS | ROS version | User | Maintainer | Last used |
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| Bullet1 | Bullet 1.0 | 20.04 | Noetic | ubuntu | Pito | 2021-11-19 |
+| Bullet1 |
+| -- | 
+| Hostname: Bullet1 |
+| Model: Bullet 1.0 | 
+| OS: Ubuntu 20.04 |
+| Ros: Noetic |
+| Username: ubuntu |
+| Maintainer: Pito | 
+| Last tested: 2021-11-19 |
