@@ -7,6 +7,7 @@
 | OS: | Ubuntu 20.04 |  |
 | Ros: | Noetic |   |
 | Username: | ubuntu |   |
+| Password: | `default 2` |   |
 | Maintainer: | Pito |  |
 | Last tested: | 2021-11-19 |  |
 | Hostname: | Robc |   |
@@ -27,6 +28,7 @@
 | Model: | minirover |  |
 | OS: | Ubuntu 20.04 |  |
 | Ros: | Noetic |   |
-| Username: | ubuntu |   |
+| Username: | pi |   |
+| Password: | `Default 1`
 | Maintainer: | Pito |  |
-| Last tested: | 2021-12-10 |  |
+| Last tested: | 2022-01-29 |  |
