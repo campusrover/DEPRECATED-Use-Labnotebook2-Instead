@@ -1,61 +1,8 @@
 # Networking
-
-## Robotics Lab Robot Networking Configuration
-
-### Robot Bashrc File
-
-```sh
-
-alias gp='git pull'
-
-alias cw='cd ~/catkin\_ws'
-
-alias cs='cd ~/catkin\_ws/src'
-
-alias cm='cd ~/catkin\_ws && catkin\_make'
-
-source /opt/ros/melodic/setup.bash
-
-source ~/catkin\_ws/devel/setup.bash
-
-export ROS\_MASTER\_URI=[http://mutant.dyn.brandeis.edu:11311](http://mutant.dyn.brandeis.edu:11311)
-
-export ROS\_HOSTNAME=mutant.dyn.brandeis.edu
-
-export TURTLEBOT3\_MODEL=burger
-```
-
-### PC Bashrc File
-
-```sh
-alias gp='git pull'
-
-alias cw='cd ~/catkin\_ws'
-
-alias cs='cd ~/catkin\_ws/src'
-
-alias cm='cd ~/catkin\_ws && catkin\_make'
-
-alias bu='roslaunch turtlebot3\_bringup turtlebot3\_robot.launch'
-
-source /opt/ros/kinetic/setup.bash
-
-source ~/catkin\_ws/devel/setup.bash
-
-export ROS\_MASTER\_URI=http://.dyn.brandeis.edu:11311
-
-export TB3\_MODEL=burger
-
-export TURTLEBOT3\_MODEL=burger
-
-export ROS\_HOSTNAME=.dyn.brandeis.edu
-```
-
 ## Robotics Lab Mac Addresses
 
 * One entry for each robot or roscore.
 * All these devices live in the Robotics Lab in Gzang 006
-
 ### Name, mac address, IP address, dns name
 
 * Wifi Connected Rasberry Pi's
