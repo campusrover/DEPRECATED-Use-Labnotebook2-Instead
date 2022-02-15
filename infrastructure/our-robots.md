@@ -1,34 +1,8 @@
 # Our Robots
 
-| properties | Bullet1 | xxxx |   
-| -- | -- | -- |
-| Hostname: | bullet1 |   |
-| Model: | Bullet 1.0 |  |
-| OS: | Ubuntu 20.04 |  |
-| Ros: | Noetic |   |
-| Username: | ubuntu |   |
-| Password: | `default 2` |   |
-| Maintainer: | Pito |  |
-| Last tested: | 2021-11-19 |  |
-| Hostname: | Robc |   |
-| Model: | TB3 |  |
-| OS: | Ubuntu 20.04 |  |
-| Ros: | Noetic |   |
-| Username: | ubuntu |   |
-| Maintainer: | Adam |  |
-| Last tested: | 2021-12-10 |  |
-| Hostname: | Robb |   |
-| Model: | TB3 |  |
-| OS: | Ubuntu 20.04 |  |
-| Ros: | Noetic |   |
-| Username: | ubuntu |   |
-| Maintainer: | Adam |  |
-| Last tested: | 2021-12-10 |  |
-| Hostname: | Mr2 |   |
-| Model: | minirover |  |
-| OS: | Ubuntu 20.04 |  |
-| Ros: | Noetic |   |
-| Username: | pi |   |
-| Password: | `Default 1`
-| Maintainer: | Pito |  |
-| Last tested: | 2022-01-29 |  |
+* **hostname, maintainer, password, last updated, username, ros, OS**
+* mr2, pito, default 2, Jqn 15 2022, pi, noetic, ubuntu 20.04
+* rafael, pito, Default 1, Jan 15 2022, ubuntu, noetic, ubuntu 20.04
+* robb, adam, default 1, Dec 10, 2021, ubuntu, noetic, ubuntu 20.04
+* robc, adam, default 1, Dec 10, 2021, ubuntu, noetic, ubuntu 20.04
+* bullet1, pito, default 2, Nov 11, 2021, ubuntu, noetic, ubuntu 20.04
