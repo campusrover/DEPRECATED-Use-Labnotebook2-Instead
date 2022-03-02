@@ -15,6 +15,8 @@ connecting to Eduroam has been tested on a barebones version of Ubuntu 20.04.
  
  Connect your machine through a wired connection (e.g. To a router/wall connection through an ethernet port) and the following commands to install `nmcli` and configure it to
  start upon bootup of your machine.
+
+ Note: If it doesn't work even with a connection, and you are on campus, send an email to help@brandeis.edu noting the mac address of the `eth0` device (using `ip link show`) and the fact that you are trying to connect. Ask them if they see any activity at that particular mac address.
  
  - `sudo apt-get update`
  - `sudo apt install network-manager`
