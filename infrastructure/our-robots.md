@@ -2,6 +2,7 @@
 
 | hostname | maintainer | password | last updated | username | ros | OS | known problems |
 | -------- | ---------- | -------- | ------------ | -------- | --- | -- | -------------- |
+| mr1 | pito | default 2 | Mar 3 2022 | pi | noetic | ubuntu 20.04 | none |
 | mr2 | pito | default 2 | Jan 15 2022 | pi | noetic | ubuntu 20.04 | none |
 | rafael | pito | Default 1 | Jan 15 2022 | ubuntu | noetic | ubuntu 20.04 | lidar does not work |
 | robb | adam | default 1 | Feb 16 2022 | ubuntu | noetic | ubuntu 20.04 | none |
