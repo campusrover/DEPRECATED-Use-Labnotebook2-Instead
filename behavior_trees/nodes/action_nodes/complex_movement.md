@@ -1,7 +1,6 @@
 # Complex Movement
 
-These nodes classified as "basic movement" nodes are the fundamental building blocks needed in order to make a
-robotics behavior tree application.
+These nodes classified as "basic movement" nodes are used to implement complex movements without the use of basic movement nodes.
 
 
 ## RotateToAngleDynamic
