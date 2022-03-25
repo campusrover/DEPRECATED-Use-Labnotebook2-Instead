@@ -14,7 +14,7 @@ by update nodes and then have one LinearAngularDynamic node providing dynamic mo
 ```
 {
     "name":"my_node",
-    "type":"LinearAngularDynamic",
+    "type":"RotateToAngleDynamic",
     "angular_var_name":"my_angular_vel",
     "curr_angle_var_name": "my_curr_angle",
     "blackboard":{
