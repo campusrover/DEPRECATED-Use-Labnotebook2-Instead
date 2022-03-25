@@ -10,5 +10,6 @@
 | roba | adam | default 1 | Feb 2 2022 | ubuntu | noetic | ubuntu 20.04 | none |
 | donatello | adam | default 1 | Feb 16 2022 | ubuntu | noetic | ubuntu 20.04 | none |
 | bullet1 | pito | default 2 | Nov 11 2021 | ubuntu | noetic | ubuntu 20.04 | none |
-| cat1 | pito | default 2 | Mar 3 2022 | ubuntu | noetic | ubuntu 20.04 | none
+| cat1 | pito | default 2 | Mar 3 2022 | ubuntu | noetic | ubuntu 20.04 | none |
+| alien | pito | default 2 | Mar 25 2022 | ubuntu | noetic | ubuntu 20.04 | no lidar |
 
