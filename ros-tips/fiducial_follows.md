@@ -31,11 +31,14 @@ Use this web site: [Aruco Markers Generator](https://chev.me/arucogen/) and prin
 
 First you have to enable the camera. **On the robot (`onboard`)** run the following, either by itself or as part of another launch file. 
 
-`roslaunch raspicam_node camerav2_1280x960_10fps.launch` # for a comppressed image, a good default
-`roslaunch raspicam_node camerav2_1280x960_10fps.launch enable_raw:=true` # for an uncompressed image
-`roslaunch raspicam_node camerav2_410x308_30fps.launch` # lower res, higher FPS.
+`roslaunch raspicam_node camerav2_410x308_30fps.launch`
 
 You can view the image of the camera within Rviz by subscribing to `/raspicam_node/image` or `rqt_image`. If the image happens to be upside down then. If the image is upsdide down get help to change the VFlip default variable.
+
+#### Other launch options
+
+`roslaunch raspicam_node camerav2_1280x960_10fps.launch` # for a comppressed image, a good default
+`roslaunch raspicam_node camerav2_1280x960_10fps.launch enable_raw:=true` # for an uncompressed image
 
 #### Topics
 
