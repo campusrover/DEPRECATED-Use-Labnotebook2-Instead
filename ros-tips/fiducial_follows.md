@@ -1,7 +1,17 @@
 # Working with Fiducials
 
+**UNDER DEVELOMENT**
+
 This document will not be explaining fiducials or localization. It is meant to help you get the software up and running on your robot. We are working here purely with ROS1 based robots, running on a Raspberry Pi with a Rasberry Pi Camera. Also we are working purely with Aruco Fiducials and the Ubiquity aruco_detect library. There are many other variations which are going to be ignored.
 
+## Building Blocks
+
+There are several new components which come into play in order to use fiducials 
+
+1. Camera - Which converts light into a published topic with an image
+1. Fiducial "signs" - Which you print out and place within view of the robot
+1. `aruco_detect` package - which analyzes the images and locates fiducials in them, publishing a tf for the relative position between the camera and the fiducial
+1. `fiducial_slam` package - which collects information about multiple fiducials that can be placed around it.
 ## Packages necessary
 
 ### [raspicam_node](https://github.com/UbiquityRobotics/raspicam_node) - Main Camera Node
@@ -65,5 +75,6 @@ When you have just one fiducial things are simpler. `aruco_detect` will create a
 You can see this by running rviz, looking at the tf tree. When you display the tf tree you will see the tf and the robot. Depending on which of the two you make the rviz "fixed frame".
 ## Reference Links
 [Ubiquity Overview of Fiducials](https://learn.ubiquityrobotics.com/fiducials)
+[Fiducial Slam Project Report](https://campus-rover.gitbook.io/lab-notebook/gen4-reports/fiducialslam)
 
 
