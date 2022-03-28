@@ -48,15 +48,21 @@ You will see that when you enable the camera it will begin publishing on one of 
 
 Note that the last part of the topic (as you would see it in `rostopic list`) is not actually used when you subscribe to it. In fact the topic you subscribe to is `raspicam_node/camera` and the `/compressed` is used to designate that the data is a compressed image. This is confusing and unusual.
 
+## Detect Fiducials
 
-### Detect Fiducials
+### Basic
 
-Make sure first that your camera is pointed at a Fiducial that you printed earlier. Now run 
+Make sure first that your camera is pointed at a Fiducial that you printed earlier. Now run (on your vnc)
 
 `roslaunch aruco_detect aruco_detect.launch`
 
 If detect sees the tag and identifies it you should see a large number of new topics (`rostopic list`). One that you can check is `/fiducial_images/. View it with rqt_image or rviz. If it is working and the fiducial is in view, you will see an colored outline around the fiducial. aruco_detect does have numerous parameters that in the future you can look at tweaking.
 
+### Transforms
+
+When you have just one fiducial things are simpler. `aruco_detect` will create a tf between that fiducial and the robot itself. In theory that means that as the robot moves, as long as it can see the fiducial, you can use the TF to determin the robot's location relative to the tf.
+
+You can see this by running rviz, looking at the tf tree. When you display the tf tree you will see the tf and the robot. Depending on which of the two you make the rviz "fixed frame".
 ## Reference Links
 [Ubiquity Overview of Fiducials](https://learn.ubiquityrobotics.com/fiducials)
 
