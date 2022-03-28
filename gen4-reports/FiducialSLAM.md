@@ -1,7 +1,7 @@
 # Fiducial SLAM
 ## Author: Addison Pitha (additions by Pito Salas)
 ### Link
-https://github.com/campusrover/FiducialSlam
+[Source Code For This Project](https://github.com/campusrover/FiducialSlam)
 ### Introduction
 
 This project began as an effort to improve the localization capabilities of campus rover as an improvement to lidar based localization. Motivating its conception were the following issues: Upon startup, in order to localize the robot, the user must input a relatively accurate initial pose estimate. After moving around, if the initial estimate is good, the estimate should converge to the correct pose. 
