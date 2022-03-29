@@ -11,7 +11,7 @@ There are several new components which come into play in order to use fiducials
 1. Camera - Which converts light into a published topic with an image
 1. Fiducial "signs" - Which you print out and place within view of the robot
 1. `aruco_detect` package - which analyzes the images and locates fiducials in them, publishing a tf for the relative position between the camera and the fiducial
-1. `fiducial_slam` package - which collects information about multiple fiducials that can be placed around it.
+
 ## Packages necessary
 
 ### [raspicam_node](https://github.com/UbiquityRobotics/raspicam_node) - Main Camera Node
@@ -65,8 +65,6 @@ Note that the last part of the topic (as you would see it in `rostopic list`) is
 Make sure first that your camera is pointed at a Fiducial that you printed earlier. Now run (on your vnc)
 
  `roslaunch aruco_detect aruco_detect.launch vis_msgs:=false dictionary:=16 fiducial_len:=0.10`
-
-`
 
 If detect sees the tag and identifies it you should see a large number of new topics (`rostopic list`). One that you can check is `/fiducial_images/. View it with rqt_image or rviz. If it is working and the fiducial is in view, you will see an colored outline around the fiducial. aruco_detect does have numerous parameters that in the future you can look at tweaking.
 
