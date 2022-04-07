@@ -1,0 +1,10 @@
+# Running a pretrained TFLite model
+
+The following section will detail how to download and execute a TFLite model that has been compiled for the Edge TPU
+
+## Downloading a model
+
+Pretrained TFLite models that have been precompiled for the Coral TPU can be found on the [models section of the Coral website](https://coral.ai/models/).
+
+- Once you have downloaded your model, place it into a folder within your workspace.
+- 
