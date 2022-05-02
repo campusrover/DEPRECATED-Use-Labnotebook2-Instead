@@ -1,8 +1,8 @@
 # Project Report for Project Sample
-    * Team: Pito Salas (rpsalas@brandeis.edu) and Charlie Squires (charliesquires@gmail.com)
-    * Date: xxx
-    * Github repo: xxxx
-
+* Team: Pito Salas (rpsalas@brandeis.edu) and Charlie Squires (charliesquires@gmail.com)
+* Date: xxx
+* Github repo: xxxx
+`
 ## Introduction
 
 ### Problem Statement including original objectives
