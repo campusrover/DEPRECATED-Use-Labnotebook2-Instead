@@ -99,6 +99,7 @@
   * [Spawn Object to Gazebo via Terminal ROS Service Call](faq/spawn_model_terminal.md)
   * [Teleport Model Within Gazebo Simulation](faq/model_teleportation.md)
   * [GPS Research and Information](faq/GPS-knowledge.md)
+  * [Astra Pro Depth Camera Setup](faq/astra_pro_depth_camera_setup.md)
 * [Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
