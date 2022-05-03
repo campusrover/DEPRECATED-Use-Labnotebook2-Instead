@@ -3,7 +3,10 @@ Chris Minkwon Choi
 
 ## Introduction
 
-Among multiple ways to move a robot, teleop is one of the most intuitive methods. In your project, you can add teleop feature easily for various purposes. 
+Among multiple ways to move a robot, teleop is one of the most intuitive methods. In your project, you can add teleop feature easily for various purposes. For example, this code is used in the Robotag Project. Robotag Project is a game where robots play game of tag. In Robotag Project, this code is used to let the user take over the control and play as either cop or rubber. 
+
+## How to use
+The control is very intuitive, and there is short instruction built in to the system. w,a,d,x is for each directions, and s stops the robot. You can also play around with the original teleop and familiarize with the control using the original teleop.
 
 ## What to add
 
@@ -85,110 +88,110 @@ def checkAngularLimitVelocity(vel):
 
 ```
 
-Then when you want to use teleop, add following code. These are the actual moving parts. 
+Then when you want to use teleop, add following code. These are the actual moving parts. Change 'use-teleop' to any other state name you need. If you want teleop to work in all times, take this code outside the if statement. 
 
 
 ```python
-    if state=='use-teleop':
-        if rospy.Time.now().to_sec()-time_switch.to_sec()>10:
-            inc_x = posex2 -posex1
-            inc_y = posey2 -posey1
-            angle_to_goal = atan2(inc_y, inc_x)
-            z=math.sqrt((inc_x*inc_x)+(inc_y*inc_y))
-            if z > .05:
-                if z < .3:
-                    twist.linear.x=0
-                    twist.angular.z=0
-                    state="cop"
-                    time_switch=rospy.Time.now()
-
-
-
-        if os.name != 'nt':
-            settings = termios.tcgetattr(sys.stdin)
-
-        #rospy.init_node('turtlebot3_teleop')
-        cmd_vel_msg = '/cmd_vel'
-        cmd_vel_pub = rospy.Publisher(cmd_vel_msg, Twist, queue_size=10)
-        turtlebot3_model = rospy.get_param("model", "burger")
-        cmd_vel_pub.publish(twist)
+if state=='use-teleop':
+    if rospy.Time.now().to_sec()-time_switch.to_sec()>10:
         inc_x = posex2 -posex1
         inc_y = posey2 -posey1
+        angle_to_goal = atan2(inc_y, inc_x)
+        z=math.sqrt((inc_x*inc_x)+(inc_y*inc_y))
+        if z > .05:
+            if z < .3:
+                twist.linear.x=0
+                twist.angular.z=0
+                state="cop"
+                time_switch=rospy.Time.now()
 
-        status = 0
-        target_linear_vel   = 0.0
-        target_angular_vel  = 0.0
-        control_linear_vel  = 0.0
-        control_angular_vel = 0.0
 
-        try:
-            print(msg)
-            while(1):
-                key = getKey()
-                if key == 'w' :
-                    target_linear_vel = checkLinearLimitVelocity(target_linear_vel + LIN_VEL_STEP_SIZE)
-                    status = status + 1
-                    print(vels(target_linear_vel,target_angular_vel))
-                elif key == 'x' :
-                    target_linear_vel = checkLinearLimitVelocity(target_linear_vel - LIN_VEL_STEP_SIZE)
-                    status = status + 1
-                    print(vels(target_linear_vel,target_angular_vel))
-                elif key == 'a' :
-                    target_angular_vel = checkAngularLimitVelocity(target_angular_vel + ANG_VEL_STEP_SIZE)
-                    status = status + 1
-                    print(vels(target_linear_vel,target_angular_vel))
-                elif key == 'd' :
-                    target_angular_vel = checkAngularLimitVelocity(target_angular_vel - ANG_VEL_STEP_SIZE)
-                    status = status + 1
-                    print(vels(target_linear_vel,target_angular_vel))
-                elif key == ' ' or key == 's' :
-                    target_linear_vel   = 0.0
-                    control_linear_vel  = 0.0
-                    target_angular_vel  = 0.0
-                    control_angular_vel = 0.0
-                    print(vels(target_linear_vel, target_angular_vel))
-                elif key == 'r':
-                    state = 'robber'
+
+    if os.name != 'nt':
+        settings = termios.tcgetattr(sys.stdin)
+
+    #rospy.init_node('turtlebot3_teleop')
+    cmd_vel_msg = '/cmd_vel'
+    cmd_vel_pub = rospy.Publisher(cmd_vel_msg, Twist, queue_size=10)
+    turtlebot3_model = rospy.get_param("model", "burger")
+    cmd_vel_pub.publish(twist)
+    inc_x = posex2 -posex1
+    inc_y = posey2 -posey1
+
+    status = 0
+    target_linear_vel   = 0.0
+    target_angular_vel  = 0.0
+    control_linear_vel  = 0.0
+    control_angular_vel = 0.0
+
+    try:
+        print(msg)
+        while(1):
+            key = getKey()
+            if key == 'w' :
+                target_linear_vel = checkLinearLimitVelocity(target_linear_vel + LIN_VEL_STEP_SIZE)
+                status = status + 1
+                print(vels(target_linear_vel,target_angular_vel))
+            elif key == 'x' :
+                target_linear_vel = checkLinearLimitVelocity(target_linear_vel - LIN_VEL_STEP_SIZE)
+                status = status + 1
+                print(vels(target_linear_vel,target_angular_vel))
+            elif key == 'a' :
+                target_angular_vel = checkAngularLimitVelocity(target_angular_vel + ANG_VEL_STEP_SIZE)
+                status = status + 1
+                print(vels(target_linear_vel,target_angular_vel))
+            elif key == 'd' :
+                target_angular_vel = checkAngularLimitVelocity(target_angular_vel - ANG_VEL_STEP_SIZE)
+                status = status + 1
+                print(vels(target_linear_vel,target_angular_vel))
+            elif key == ' ' or key == 's' :
+                target_linear_vel   = 0.0
+                control_linear_vel  = 0.0
+                target_angular_vel  = 0.0
+                control_angular_vel = 0.0
+                print(vels(target_linear_vel, target_angular_vel))
+            elif key == 'r':
+                state = 'robber'
+                break
+            else:
+                if (key == '\x03'):
                     break
-                else:
-                    if (key == '\x03'):
-                        break
 
-                if status == 20 :
-                    print(msg)
-                    status = 0
+            if status == 20 :
+                print(msg)
+                status = 0
 
-                twist = Twist()
-
-                control_linear_vel = makeSimpleProfile(control_linear_vel, target_linear_vel, (LIN_VEL_STEP_SIZE/2.0))
-                twist.linear.x = control_linear_vel; twist.linear.y = 0.0; twist.linear.z = 0.0
-
-                control_angular_vel = makeSimpleProfile(control_angular_vel, target_angular_vel, (ANG_VEL_STEP_SIZE/2.0))
-                twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = control_angular_vel
-
-                cmd_vel_pub.publish(twist)
-
-        except:
-            print(e)
-
-        finally:
             twist = Twist()
-            twist.linear.x = 0.0; twist.linear.y = 0.0; twist.linear.z = 0.0
-            twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = 0.0
+
+            control_linear_vel = makeSimpleProfile(control_linear_vel, target_linear_vel, (LIN_VEL_STEP_SIZE/2.0))
+            twist.linear.x = control_linear_vel; twist.linear.y = 0.0; twist.linear.z = 0.0
+
+            control_angular_vel = makeSimpleProfile(control_angular_vel, target_angular_vel, (ANG_VEL_STEP_SIZE/2.0))
+            twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = control_angular_vel
+
             cmd_vel_pub.publish(twist)
 
-        if os.name != 'nt':
-            termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+    except:
+        print(e)
+
+    finally:
+        twist = Twist()
+        twist.linear.x = 0.0; twist.linear.y = 0.0; twist.linear.z = 0.0
+        twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = 0.0
+        cmd_vel_pub.publish(twist)
+
+    if os.name != 'nt':
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
 ```
 
 If you want to enter this 'use-teleop' using 'z' key,
 
 ```python
-    if os.name != 'nt':
-        settings = termios.tcgetattr(sys.stdin)
-    key = getKey()
-    if key == 'z': #h for human
-        state = 'use-teleop'
+if os.name != 'nt':
+    settings = termios.tcgetattr(sys.stdin)
+key = getKey()
+if key == 'z': #h for human
+    state = 'use-teleop'
 ```
 
 
