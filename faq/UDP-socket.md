@@ -2,7 +2,7 @@
 
 ## Author: Lucian Fairbrother
 
-Need to give information to your roscore that you can't transport with rosnodes? 
+Do you need to give information to your roscore that you can't transport with rosnodes? 
 
 You may have trouble running certain libraries or code in your vnc environment, a UDP connection could allow you to run it somewhere else and broadcast it into your vnc.
 There are many reasons this could happen and UDP sockets are the solution. In our project we used multiple roscores to broadcast the locations of our robots. We send the robot coordinates over a UDP socket that the other roscore can then pickup and use.
