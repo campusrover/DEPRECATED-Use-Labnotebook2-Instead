@@ -67,6 +67,7 @@
   * [AWS RoboMaker](miscellaneous/aws-robomaker.md)
   * [Quaternions](miscellaneous/quaternions.md)
 * [FAQ and Tips](faq/README.md)
+  * [UDP Socket](faq/UDP-socket.md)
   * [Add SDF in ROS](ros-tips/how-to-add-sdf-in-ros.md)
   * [Add Textures to SDF](ros-tips/how-to-add-texture-to-sdf.md)
   * [Handy Commands](ros-tips/handy-commands.md)
