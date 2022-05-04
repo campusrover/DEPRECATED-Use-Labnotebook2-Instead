@@ -47,13 +47,17 @@ Every robot needs its own computer to run.
  NODES
 
   Allinone.py - main program node
+  
   tf_sender.py - the socket sender node
+  
   receiver.py - the socket receiver node
  
  OTHER FILES
  
   Map.yaml
+  
   Map.pgm
+  
   AMCL
   
 ### problems that were solved, pivots that had to be taken
