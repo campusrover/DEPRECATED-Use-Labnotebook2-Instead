@@ -81,6 +81,5 @@ Fifth stage: TF + node on each computer
 The solution we found is to run a node on a computer that deals with the coordinates, while the node on the robot focuses on moving around. This could solve the problem we encountered in the first stage. We also added more playability. The user can take over the control of either cop or rubber, and control the robot with Teleop. Or the user can also yield the control back to the computer. 
  
  
-### Your own assessment
 
 
