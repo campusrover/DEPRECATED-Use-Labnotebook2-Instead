@@ -21,8 +21,15 @@ Currently implemented two robots that can alternate between cop and robber, and 
 ### Technical Description, illustrations
  
 ### Discussion of interesting algorithms, modules, techniques
- COP ALGORITHYM -
-    The cop algorithym was difficult to implement. The question of how to orient a cop towards moving coordinates was difficult for us to wrap our heads around. We first had to understand the pose variables. The pose orientation variable ranges from -3.14 to 3.14 and represents the angles a robot could be in, in radians. We created a variable that
+ COP ALGORITHYM-
+    The cop algorithym was difficult to implement. The question of how to orient a cop towards moving coordinates was difficult for us to wrap our heads around. We first had to understand the pose variables. The pose orientation variable ranges from -3.14 to 3.14 and represents the angles a robot could be in, in radians. We eventually figured out a good compass algorithym, we used an if statement that calculated whether turning left or right was closer to the goal angle and then executed it. We had it go forward if the actual angle was within .2 radians of the goal angle
+    
+UDP-SOCKETS-
+    We used UDP-sockets to send info accross our roscores. Because we had two roscores and we needed the robots to communicate their locations to each other we had them send their locations constantly over UDP sockets. We made a sender and receiver for each robot. The sender would subscribe to the AMCL_pose and then send out the message over the socket. The receiver would receive the message decode it, put it into a float64 list and publish it to the robot. 
+    
+STATE SWITCH-
+    State switching in our game is hugely important, if the robots aren't localized properly and one thinks a tag has happened while the other doesn't they will get caught as the same state. To deal with this we used AMCL to increase the localization and decrease any error. We also set up the tag such that the robber would stop for ten seconds after it became the cop and not be able to tag the new robber during that period. There were a few reasons we did this. Firstly because we wanted the new robber to have a chance to get away before it would get tagged again. Otherwise the two robots could get into an infinite loop of state switching. We also set the distance for the robber tag to be further than the cop to recognize a tag. The robber recognizes a tag at .35 and the cop recognizes it at .3 the reason for this is because the robber stops after recognizing the tag and the cop will keep going until it recognizes the tag. This makes it very unlikely for only one robot to recognize a tag which would result in them getting stuck in the same state.
+    
  
 ### Guide on how to use the code written
 Every robot needs its own computer to run. 
@@ -33,6 +40,7 @@ Every robot needs its own computer to run.
 5. go into your vnc and run roslaunch robotag robo.launch
 
 ### Clear description and tables of source files, nodes, messages, actions and so on
+ Robo.launch- The main launch file for our project
  
 ## Story of the project.
 ### How it unfolded, how the team worked together
