@@ -74,7 +74,9 @@ When SSH'ed into a robot, you can't just run `bringup` anymore. Use this command
 `roslaunch turtlebot3_bringup turtlebot3_robot.launch multi_robot_name:=THEROBOTNAME`
 
 This will cause the bringup nodes to be properly prefixed with the robot's name.    
-For example, `raspicam_node/images/compressed` becomes `name/raspicam_node/images/compressed`.
+For example, `raspicam_node/images/compressed` becomes `name/raspicam_node/images/compressed`.    
+Additionally, the robot will also subscribe to some different nodes.    
+The only one I can know of so far is `cmd_vel` which becomes `name/cmd_vel`. Keep this in mind if your robots don't move.
 
 As long as you launch the core robot first, this should work.
 
