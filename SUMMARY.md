@@ -26,7 +26,7 @@
     * [Voice Implementation](cr-package/package-delivery/talker-node.md)
   * [Voice](cr-package/voice/README.md)
     * [Alexa Voice Integration](cr-package/voice/voice.md)
-	*[Alexa Backend with Flask-ASK](faq/alexa-flask-ask.md)
+    * [Alexa Backend with Flask-ASK](faq/alexa-flask-ask.md)
   * [Mutant](cr-package/mutant/README.md)
     * [Mutant Project Overview](cr-package/mutant/mutant-description.md)
     * [Mutant Setup](cr-pacakge/mutant/mutant-setup.md)
