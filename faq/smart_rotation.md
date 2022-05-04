@@ -1,9 +1,9 @@
 # Smart Rotation for Navigation
 ### Author - Eyal Cohen
 
-## Given two coordinates in a 2-dimensional plane and your robots' current direction, the smart rotation algorithm will calculate your target angle and return whether your robot should to turn left, turn right, or go straight ahead to reach its navigation goal.
+#### Given two coordinates in a 2-dimensional plane and your robots' current direction, the smart rotation algorithm will calculate your target angle and return whether your robot should to turn left, turn right, or go straight ahead to reach its navigation goal.
 
-
+## How It Works:
 Inputs: `posex1` is a float that represents the  x-axis coordinate of your robot, `posey1` is a float that represents your robot's y-axis coordinate. `posex2` and `posey2` are floats that represent the x and y of your robot's goal. Lastly, `theta` represents your robot's current pose angle.
 
 ``` python 
@@ -39,7 +39,7 @@ Firstly, the `angle_goal` from your robot's coordinate (not taking its current a
 In order to decide whether your robot should go left or right, we must determine where the `angle_goal` is relative to its current rotational direction. If the `angle_goal` is on the robot's left rotational hemisphere, the robot should rotate left, otherwise it should rotate right. Since we are working in Radians, π is equivilant to 180 degrees. 
 To check whether the `angle_goal` is within the left hemisphere of the robot, we must add π to `theta` (the robot's current direction) to get the upperbound of the range of values we want to check the target may be included in. If the `angle_goal` is between `theta` and that upper bound, then the robot must turn in that direction to most efficiently reach its goal.
 
-Consider this example:
+## Consider This Example:
 ``` python
     smartRotation(0,0,2,2,0)
 ```
