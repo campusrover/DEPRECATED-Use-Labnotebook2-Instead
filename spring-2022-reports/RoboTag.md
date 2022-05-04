@@ -9,13 +9,11 @@ Eyal Cohen(eyalcohen@brandeis.edu)
 ## Introduction
 We wanted to create a dynamic project involving multiple robots. Since this project would be presented to people with a wide range of robotics knowledge, we wanted to create an intuitive project. We decided to recreate the game of tag using robots as most people have played the game.
  
-The robots have one of two roles, cop and rubber. The robbers roam around until a cop approaches them. When a cop is inside a certain distance, the rubber starts running away from the cop. The cop always chances after the nearest rubber. When the cop catches the rubber, then the roles switch, and the rubber gets 5 seconds to run away. 
+The robots have one of two roles, cop and robber. The robbers roam around until a cop approaches them. When a cop is inside a certain distance, the rubber starts running away from the cop. The cop always chances after the nearest rubber. When the cop catches the rubber, then the roles switch, and the rubber gets 5 seconds to run away. 
  
  
 ### Problem Statement including original objectives
  
-### Relevant literature
-The PRR examples and previous PAs were great resources for this project. The stage system was inspired by the wall follower PA, the human control mechanism is from the Teleop example, and TF is from the double TF PA. 
  
 ## What was created
 Currently implemented two robots that can alternate between cop and rubber, and user-controlled cop and rubber. 
@@ -25,7 +23,13 @@ Currently implemented two robots that can alternate between cop and rubber, and 
 ### Discussion of interesting algorithms, modules, techniques
  
 ### Guide on how to use the code written
-Every robot needs its own computer to run. On each computer run $$$
+Every robot needs its own computer to run. 
+1. On each computer clone the repository
+2. Go into allinone.py and change one initialized state to robber, such that you have a cop and robber
+3. go into tf_sender.py and change the ip address to the ip address of the other computer
+4. go into receiver.py and change the ip address to your ip address
+5. go into your vnc and run roslaunch robotag robo.launch
+
 ### Clear description and tables of source files, nodes, messages, actions and so on
  
 ## Story of the project.
