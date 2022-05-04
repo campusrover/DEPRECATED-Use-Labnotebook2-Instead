@@ -1,5 +1,7 @@
 # NASCAR TurtleBot Racing Series
 
+Spring 2022 Brendon Lu, Joshua Liu
+
 ## Introduction
 
 ### Problem statement, including original objectives
