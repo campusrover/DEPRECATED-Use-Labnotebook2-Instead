@@ -19,7 +19,8 @@ The robots have one of two roles, cop and robber. The robbers roam around until 
 Currently implemented two robots that can alternate between cop and robber, and user-controlled cop and robber. 
  
 ### Technical Description, illustrations
- 
+ ![IMG_0093](https://user-images.githubusercontent.com/92168798/166615484-2d3fd134-8995-4355-a80a-2a7a8d54f7e9.jpg)
+
 ### Discussion of interesting algorithms, modules, techniques
  COP ALGORITHYM-
     The cop algorithym was difficult to implement. The question of how to orient a cop towards moving coordinates was difficult for us to wrap our heads around. We first had to understand the pose variables. The pose orientation variable ranges from -3.14 to 3.14 and represents the angles a robot could be in, in radians. We eventually figured out a good compass algorithym, we used an if statement that calculated whether turning left or right was closer to the goal angle and then executed it. We had it go forward if the actual angle was within .2 radians of the goal angle
@@ -40,10 +41,21 @@ Every robot needs its own computer to run.
 5. go into your vnc and run roslaunch robotag robo.launch
 
 ### Clear description and tables of source files, nodes, messages, actions and so on
+ 
  Robo.launch- The main launch file for our project
  
-## Story of the project.
-### How it unfolded, how the team worked together
+ NODES
+
+  Allinone.py - main program node
+  tf_sender.py - the socket sender node
+  receiver.py - the socket receiver node
+ 
+ OTHER FILES
+ 
+  Map.yaml
+  Map.pgm
+  AMCL
+  
 ### problems that were solved, pivots that had to be taken
 We faced a lot of difficulties and had to make many changes throughout the project. We spent lots of time on not only problem solving but also designing. We had multiple hours-long talks in person and on Zoom discussing how to design our project. In these talks, we made decisions to move from one stage to another, start over from scratch for modularity, and rather use move_base or TF. 
  
@@ -66,4 +78,5 @@ The solution we found is to run a node on a computer that deals with the coordin
  
  
 ### Your own assessment
+
 
