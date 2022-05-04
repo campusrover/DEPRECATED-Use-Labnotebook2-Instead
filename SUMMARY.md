@@ -102,6 +102,7 @@
   * [Astra Pro Depth Camera Setup](faq/astra_pro_depth_camera_setup.md)
   * [Smart Rotation](faq/smart_rotation.md)
   * [Tkinter w/ ROS](faq/tkinter-ROS.md)
+  * [Multiple robots on one roscore](faq/multi-robot-one-core.md)
 * [Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
