@@ -13,14 +13,16 @@ The robots have one of two roles, cop and robber. The robbers roam around until 
  
  
 ### Problem Statement including original objectives
- 
+
  
 ## What was created
-Currently implemented two robots that can alternate between cop and rubber, and user-controlled cop and rubber. 
+Currently implemented two robots that can alternate between cop and robber, and user-controlled cop and robber. 
  
 ### Technical Description, illustrations
  
 ### Discussion of interesting algorithms, modules, techniques
+ COP ALGORITHYM -
+    The cop algorithym was difficult to implement. The question of how to orient a cop towards moving coordinates was difficult for us to wrap our heads around. We first had to understand the pose variables. The pose orientation variable ranges from -3.14 to 3.14 and represents the angles a robot could be in, in radians. We created a variable that
  
 ### Guide on how to use the code written
 Every robot needs its own computer to run. 
@@ -38,7 +40,7 @@ Every robot needs its own computer to run.
 We faced a lot of difficulties and had to make many changes throughout the project. We spent lots of time on not only problem solving but also designing. We had multiple hours-long talks in person and on Zoom discussing how to design our project. In these talks, we made decisions to move from one stage to another, start over from scratch for modularity, and rather use move_base or TF. 
  
 First stage: one node on each robot.
-We tried to let robots directly talk to each other. We used TF to move robots around. The biggest problem was that robots could not switch roles between rubber and cop. Also, each node had too many subscribers and publishers that send and receive information on coordinates and roles. 
+We tried to let robots directly talk to each other. We used TF to move robots around. The biggest problem was that robots could not switch roles between robber and cop. Also, each node had too many subscribers and publishers that send and receive information on coordinates and roles. 
  
 Second stage: Increase modularity
 We wanted the robots to switch roles when they make the tag. Also even though we were at the beginning of the project, the code ‘smelled’ bad. We decided to start over with a new control system with an emphasis on modularity. 
