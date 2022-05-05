@@ -98,6 +98,7 @@
   * [Using Rviz Markers](faq/rviz-markers.md)
   * [Adjust Camera Pitch](faq/camera_pitch.md)
   * [Spawn Object to Gazebo via Terminal ROS Service Call](faq/spawn_model_terminal.md)
+  * [Object Detection using YOLO](faq/object_detection_yolo_setup.md)
   * [Teleport Model Within Gazebo Simulation](faq/model_teleportation.md)
   * [GPS Research and Information](faq/GPS-knowledge.md)
   * [Astra Pro Depth Camera Setup](faq/astra_pro_depth_camera_setup.md)
