@@ -54,7 +54,7 @@ To receive information from the darknet_ros topics, we need to subscribes to the
 ```python
 from darknet_ros_msgs.msg import BoundingBoxes, BoundingBox
 
-class ObjectRegonizer
+class ObjectRecognizer
 
     def __init__(self):
         self.boxes = []
