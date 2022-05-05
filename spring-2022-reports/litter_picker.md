@@ -74,14 +74,14 @@ The vision node has several methods and callback functions to process the messag
 
 ### **darknet_ros**
 
-![image info](darknet_ros.png)
+![darknet_ros](https://user-images.githubusercontent.com/72238100/167044774-ed4fc0d1-ea7e-466b-b465-7e52411b3fb4.png)
 Image 1: Display of the darknet_ros putting a bounded box around the identified object
 
 darknet_ros is the computer vision package that looks for the types of trash specified in the trash_class.py. We want to be able to find things like bottles, cups, forks, and spoons that are lying around. This package integrates darknet with ros for easier use. We then subscribe to the ```darknet_ros/bounding_boxes``` topic that it publishes to and use that to to determine where the trash is. 
 
 ### **Task interface and its children**
 
-![image info](task_class.png)
+![task_class](https://user-images.githubusercontent.com/72238100/167044819-6430da5a-3592-4815-80b5-a52f1da91584.png)
 
 Image 2: A diagram to show the setup of the Task interface and its children classes
 
@@ -157,7 +157,7 @@ When we started to test the depth camera on the actual robot in a more in depth 
 ### **plow system**
 There was a robotic arm in the original plan, however, due to the physical limitations of both the arm, the robot, and time constraints, we ended up deciding to use a snow plow system instead. We had several ideas of having a movable one, but they were too small for the objects that we wanted to collect so we created a stationary one out of cardboard and attached it to the front of the robot. It works quite well with holding the trash within its embrace. 
 
-![image info](alien_with_plow.jpg)
+![alien_with_plow](https://user-images.githubusercontent.com/72238100/167044835-b6b47d5d-6112-4452-af61-55b1e63ea0b9.jpg)
 Image 3: Alien with the Astra depth camera on top and the plow setup below posing for a photo
 
 ### **personal assessment**
