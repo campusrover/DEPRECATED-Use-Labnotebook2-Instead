@@ -1,3 +1,6 @@
+#Building a skill with Alexa Flask-ASK for ROS
+## Ben Soli
+
 Before you use this tutorial, consult with the Campus Rover Packages which outline setting up ngrok with flask and getting to the Alexa Developer Console. 
 
 The Flask Alexa Skills Kit module allows you to define advanced voice functionality with your robotic application.
@@ -49,7 +52,7 @@ There are a few different response types,
 ```elicit_slot(str: slot_name, str: response)``` which you can use to prompt the user for a specific type of information needed to fulfill the intent. </br>
 ```confirm_slot(str: slot_name, str: response)``` which you can use to confirm with the user that Alexa heard the slot correctly. </br>
 
-It is important to note, that to use ```elicit_slot `` and ```confirm_slot``` you must have a Dialog Model enabled on the Alexa Developer Console.
+It is important to note, that to use ```elicit_slot``` and ```confirm_slot``` you must have a Dialog Model enabled on the Alexa Developer Console.
 The easiest way I have to found to enable this is to create an intent on the console that requires confirmation. To avoid this intent being activated,
 set its activation phrase to gibberish like 'asdlkfjaslfh'. You can check a switch marking that this intent requires confirmation.
 
@@ -72,9 +75,7 @@ if 'value' not in slots['items'].keys()
   return elicit_slot('items', 'what do you want me to bring?)
 ``` 
 This will check that there is an item, and if there is not, prompt the user for some items.
-The string 'value' is a key in the dictionary if and only if the user has provided the information for this slot, so this is the best way to check.
-
-
+The string ```python 'value' ``` is a key in the dictionary if and only if the user has provided the information for this slot, so this is the best way to check.
 
 Let's assume that our robot has a carrying capacity of 15 pounds and has been asked to carry some items that weigh more than 15 pounds. 
 Once we've checked that the items are too heavy for the robot, you can elicit the slot again with a different response 
