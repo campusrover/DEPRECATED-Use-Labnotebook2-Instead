@@ -75,6 +75,7 @@ The vision node has several methods and callback functions to process the messag
 ### **darknet_ros**
 
 ![darknet_ros](https://user-images.githubusercontent.com/72238100/167044774-ed4fc0d1-ea7e-466b-b465-7e52411b3fb4.png)
+
 Image 1: Display of the darknet_ros putting a bounded box around the identified object
 
 darknet_ros is the computer vision package that looks for the types of trash specified in the trash_class.py. We want to be able to find things like bottles, cups, forks, and spoons that are lying around. This package integrates darknet with ros for easier use. We then subscribe to the ```darknet_ros/bounding_boxes``` topic that it publishes to and use that to to determine where the trash is. 
