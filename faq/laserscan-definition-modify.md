@@ -10,7 +10,6 @@ Turtlebot’s LaserScan message is specified by the ld08_driver.cpp file from th
 ```cd catkin_ws/src/ld08_driver/src```
 ## Step 3: enter nano editor
 ```nano ld08_driver.cpp```
-You will enter a editor 
 ## Step 4: go to line 63 and fine 
 ```scan.range_min = 0.0;```
 ## Step 5: modify the value as you see fit
