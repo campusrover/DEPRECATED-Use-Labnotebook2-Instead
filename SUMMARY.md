@@ -106,6 +106,7 @@
   * [Tkinter w/ ROS](faq/tkinter-ROS.md)
   * [Multiple robots on one roscore](faq/multi-robot-one-core.md)
   * [ROS and AWS Integration](faq/ros_and_aws_integration.md)
+  * [Modify LaserScan Message Definition](faq/laserscan-definition-modify.md)
 * [Project Reports](gen4-reports/README.md)
   * [Robot Arm](gen4-reports/robot-arm.md)
   * [Behavior Trees](gen4-reports/behavior-trees.md)
