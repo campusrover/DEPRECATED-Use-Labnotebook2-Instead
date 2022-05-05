@@ -2,12 +2,14 @@
 by Veronika Belkina
 
 This is a guide to installing the Astra Pro Depth Camera onto a robot and the various problems and workarounds that were experienced along the way. 
+
 ---
 ## Setup
 To start, try to follow the instructions given on the [Astra github].
 
 If this goes well, then you're pretty much all set and should skip down to the **usb_cam** section.
 If this doesn't go well, then keep reading to see if any of the errors that you received can be resolved here. 
+
 ---
 ## Possible errors and ways to solve them
 - make sure to run ```sudo apt update``` on the robot 
@@ -46,6 +48,7 @@ cd ./opencr_update
 At this point, hopefully, all the errors have been resolved and you are all set with the main astra_camera package installation. 
 
 There is one more step that needs to be done. 
+
 ---
 ## usb_cam
 The Astra Pro camera doesn't have an RGB camera that's integrated with OpenNI2. Instead, it has a regular Video4Linux webcam. This means that from ROS's point of view, there are two completely separate devices.To resolve this, you can install another package onto the robot called usb_cam following these [instructions]:
