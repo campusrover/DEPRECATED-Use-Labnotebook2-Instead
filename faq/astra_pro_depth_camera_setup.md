@@ -2,14 +2,12 @@
 by Veronika Belkina
 
 This is a guide to installing the Astra Pro Depth Camera onto a robot and the various problems and workarounds that were experienced along the way. 
-
 ---
 ## Setup
 To start, try to follow the instructions given on the [Astra github].
 
 If this goes well, then you're pretty much all set and should skip down to the **usb_cam** section.
 If this doesn't go well, then keep reading to see if any of the errors that you received can be resolved here. 
-
 ---
 ## Possible errors and ways to solve them
 - make sure to run ```sudo apt update``` on the robot 
@@ -48,12 +46,9 @@ cd ./opencr_update
 At this point, hopefully, all the errors have been resolved and you are all set with the main astra_camera package installation. 
 
 There is one more step that needs to be done. 
-
 ---
 ## usb_cam
-After some research onto why the depth camera was not publishing anything to the rgb topic, it was determined that that was because ROS was seeing the camera as two separate devices, thanks to this [post]:  “The Astra Pro camera doesn't have an RGB camera that's integrated with OpenNI2. Instead, it has a regular Video4Linux webcam. This means that from ROS's point of view, there are two completely separate devices.” 
-
-To resolve this, you can install another package onto the robot called usb_cam following these [instructions]:
+The Astra Pro camera doesn't have an RGB camera that's integrated with OpenNI2. Instead, it has a regular Video4Linux webcam. This means that from ROS's point of view, there are two completely separate devices.To resolve this, you can install another package onto the robot called usb_cam following these [instructions]:
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/bosch-ros-pkg/usb_cam.git
@@ -76,7 +71,6 @@ If this is something that you will be needing often, then it might be worth it t
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    [TB3_image]: <https://github.com/campusrover/TB3_image> 
    [Astra github]: <https://github.com/orbbec/ros_astra_camera>
-   [post]: <https://answers.ros.org/question/246595/astra_launch-and-astra_camera-packages-problems-with-rgb/>
    [instructions]: <https://answers.ros.org/question/197651/how-to-install-a-driver-like-usb_cam/?answer=197656#post-id-197656>
 
    [PlDb]: <https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md>
