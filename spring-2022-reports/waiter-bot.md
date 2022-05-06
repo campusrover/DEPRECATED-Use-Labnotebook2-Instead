@@ -26,8 +26,8 @@ In terms of overall behavior, the WaiterBot alternates between wandering around 
 This has 2 benefits – it makes the navigation interruptible by new user order and allows WaiterBot to end its navigation once it’s within a certain tuneable range of its destination. We noticed during our experimentation that while having ```SimpleActionClient``` send ```MoveBaseGoal``` works really well in gazebo simulation, it always results in WaiterBot hyper-correcting itself continuously when it arrives at its destination. This resulted in long wait times which greatly hampers the efficiency of WaiterBot’s service. Therefore, we set it up so that the robot cancels its ```MoveBaseGoal``` using ```client.cancel_goal()``` once it is within a certain radius of its goal coordinates. 
 When a user uses the wake phrase “Alexa, tell WaiterBot (to do something)” in the proximity of the WaiterBot, the robot will interrupt its wandering and record an order. Once the order has been published as an ```Order``` message to the ```/orders``` topic, the robot will initiate an ```order_cb``` function, store the order on an order_log, and start processing the first order. Before it looks up a coordinate for the item, it will get an Odometry message from /odom topic It looks at ```Order``` message’s data fields food and drink, 
 ###### How to Use the Code:
-```git clone  https://github.com/campusrover/waiter_bot.git``` </li>
- ```cm``` 
+```git clone  https://github.com/campusrover/waiter_bot.git``` </br>
+ ```cm``` </br>
 Download ngrok and authorize ngrok token </br>
 ```pip3 install flask-ask``` and ```sudo apt-install ros-noetic-navigation``` </br>
 Have waiterbot skill on an Alexa device </br>
