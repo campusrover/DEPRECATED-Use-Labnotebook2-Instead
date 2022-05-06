@@ -1,0 +1,91 @@
+# Robot Waiter
+
+#### Team: Ben Soli (bsoli@brandeis.edu) and Harry Zhuh (zhuh@brandeis.edu)
+
+#### Date: 5/5/2022
+
+#### Github repo: https://github.com/campusrover/waiter_bot
+
+##### Introduction </br>
+For this project, we wanted to create an automated catering experience. More and more, customer service jobs are being performed by chatbots and voicebots, so why not bring this level of automation to a more physical setting. We figured the perfect domain for this would be social events. Waiter bot serves as a voice activated full-service catering experience. The goal was to create a general purpose waiter robot, where all the robot needs is a map of a catering location, a menu, and coordinates of where to pick-up food and or drinks. 
+###### Original Objectives: </br>
+<li> Capable of speech to text transcription and intent understanding. </li>
+<li> Has conversational AI. </li>
+<li> Can switch between 3 states – Wander, Take_Order, and Execute – to achieve waiter-like behavior. </li>
+<li> Able to localize itself and navigate to given locations on a map. <li>
+Relevant literature: </br>
+[The Alexa Skills Kit SDK for Python (https://github.com/alexa/alexa-skills-kit-sdk-for-python.git) ]</br>
+[actionlib SimpleActionClient class](http://docs.ros.org/en/diamondback/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient.html#a4bce20a02332f8f96a5f087c87fae851) </br>
+
+####### Core Functionality: 
+This application was implemented as two primary nodes. One node serves as the user-interface, which is a flask implementation of an Alexa skill. This node is integrated with a ngrok subdomain. This node processes the speech and sends a voice response to Alexa while publishing necessary information for navigation. We created a custom message type called Order, which consists of three std_msg/String messages. This stores the food for the order, the drink for the order, and the name of the  On the backend, a navigation node processes these orders, and looks up the coordinates for where the food and drink items are located. We created a map of the space using SLAM with AMCL. The robot uses this map along with move-base to navigate to its goal and retrieve this item. While Alexa works great for taking orders, one of its flaws is that it cannot be programmed to speak unprompted. When the robot arrives to retrieve the item, the navigation node supplies the alexa-flask node with the item the robot needs. A worker can ask Alexa what the robot needs, and Alexa tells the worker what is needed. The user then tells Alexa that the robot has the item, and it proceeds to its next stop. Once the robot has collected all of the items, it returns to the location where it originally received the voice request. The navigation node then supplies the alexa-flask node with a message for the order it is delivering. The user can then ask Alexa if that is their order, and Alexa will read back the order to the user. After this, the order is deleted from the node, allowing the robot to take more orders. 
+
+Due to the physical size constraints of the robot, it can only carry at most three orders at a time. The benefit of using the flask-ask module, is that the Alexa voice response can take this into account. If the robot has too many orders, it can tell the user to come back later. If the robot is currently in motion, and the user begins to make a user, a String message is sent from the alexa-flask node to the navigation node telling the robot to stop. Once Alexa has finished processing the order, the alexa-node sends another String message to the navigation node telling the robot to continue moving. If the robot has no orders to fulfill, it will roam around, making itself available to users. 
+
+In terms of overall behavior, the WaiterBot alternates between wandering around the environment, taking orders and executing the orders. After initialization, it starts wandering around its environment while its order_log remains empty or while it’s not stopped by users. It randomly chooses from a list of coordinates from wander_location_list.py, turns it into a MoveBaseGoal message and has actionlib’s SimpleActionClient send it using client.send_goal(). And instead of calling client.wait_for_result() to wait till the navigation finishes, we enter a while loop with client.get_result() == None as its condition. 
+This has 2 benefits – it makes the navigation interruptible by new user order and allows WaiterBot to end its navigation once it’s within a certain tuneable range of its destination. We noticed during our experimentation that while having SimpleActionClient send MoveBaseGoal works really well in gazebo simulation, it always results in WaiterBot hyper-correcting itself continuously when it arrives at its destination. This resulted in long wait times which greatly hampers the efficiency of WaiterBot’s service. Therefore, we set it up so that the robot cancels its MoveBaseGoal using client.cancel_goal() once it is within a certain radius of its goal coordinates. 
+When a user uses the wake phrase “Alexa, tell WaiterBot (to do something)” in the proximity of the WaiterBot, the robot will interrupt its wandering and record an order. Once the order has been published as an Order message to the /orders topic, the robot will initiate an order_cb function, store the order on an order_log, and start processing the first order. Before it looks up a coordinate for the item, it will get an Odometry message from /odom topic It looks at Order message’s data fields food and drink, 
+How to Use the Code:
+Git clone  https://github.com/campusrover/waiter_bot.git
+cm 
+Download ngrok and authorize ngrok token
+pip3 install flask-ask and sudo apt-install ros-noetic-navigation
+Have waiterbot skill on an Alexa device
+Ssh into your robot
+In waiter_bot/src bash ngrok_launch.sh
+roslaunch waiter_bot waiter_bot.launch 
+Tables and Descriptions of nodes, files, and external packages:
+Table of ROS nodes
+waiterbot.py
+Master node. Has 3 functions Wander, Take_Order and Execute, which serve as states. 
+alexa_hook.py
+
+
+
+
+Table of Files:
+bm.pgm 
+An image file of the lab basement created using SLAM of the gmapping package
+bm.yaml 
+Contains map information such as origin, threshold, etc. related to bm.pgm
+menu_constants.py
+Contains food_menu, a list of available food items, and drink_menu, a list of available drinks.
+loc_dictionary.py
+Contains a dictionary which has “food-table” and “drink-table” as keys and their respective coordinates as values 
+wander_location_list.py
+Contains a list of coordinates for the robot’s wandering behavior
+Order.msg
+A custom message containing three data fields: food, drink and name
+
+
+Table of External Packages:
+Flask …..
+
+
+Ngrok 
+
+
+
+
+Story of the Project:
+Our original project intended to have at least two robots, one working as a robot waiter, the other working as a robot kitchen assistant. Initially, we planned to create our NLP system to handle speech and natural language understanding. This quickly became a problem, as we could only find a single dataset that contained food orders and its quality was questionable. At the same time, we attempted to use the Google Speech API to handle out speech-to-text and text-to-speech. We found a ROS package for this integration, but some dependencies were out of data and incompatible. Along with this, the firewalls the lab uses, made integration with this unlikely. We then attempted to use PocketSphinx which is an off-the-shelf automated speech recognition package which can run offline. Initial tests of this showed an incredibly high word-error-rate and sentence-error-rate, so we abandoned this quickly. Previous projects had success integrating Alexa with ROS nodes, so we decided to go in that direction. 
+
+Building off of previous work using Flask and ngrok for Alexa integration was fairly simple and straightforward thanks to previous documentation in the lab notebook. Building a custom Alexa skill for our specific purpose was accomplished quickly using the Alexa Developer Console. However, previous methods did not allow a feature that we needed for our project, so we had to find a new approach to working with Alexa. At first, we tried to change the endpoint for the skill from an ngrok endpoint to a lambda.py provided by Amazon, but this was difficult to integrate with an ROS node. We returned to an approach that the previous projects had used, but this did not allow us to build Alexa responses that involved considering the robots state and asking the user for more information in a way that makes sense. For example, due to the physical size of the robot, it can probably never handle more than three orders. An order consists of a food, a drink, and name to uniquely identify the order. From the Alexa Developer Console, we could prompt the user for this information, then tell the user if the robot already had too many orders to take another one, but this felt like bad user-interface design. We needed a way to let the user know that the robot was too busy before Alexa went through the trouble of getting all this information. Then we found a module called Flask-ASK, which seamlessly integrated flask into the backend of an Alexa Skill. This module is perfect for Alexa ROS integration. On the Alexa Developer Console, all you need to do is define your intents and what phrases activate them. Then within your ROS, you can treat those intents like functions. Within those functions you can define voice responses based on the robot’s current state and also publish messages to other nodes, making the voice integration robust and seamless. 
+
+Behavior-wise, we started with the most basic unit, which is navigating from point A to B. We looked into wanderbot works and learnt to use actionlib’s simpleActionClient to send movebasegoal. 
+
+Problem with client.wait_for_result()
+
+Maps and AMCL  
+
+Problem with maps. We started with small map, 
+
+At one point, we ended up making a map of half the basement since we wanted to incorporate WaiterBot into the demo day itself: WaiterBot would move freely among the guests as people chat and look at other robots and take orders if requested. The large map turned out to be a problem, however, since the majority of the space on the map is featureless. This affects two things: the amcl algorithm and the local map. To localize a robot with a map, AMCL starts with generating a normally distributed initalpose, which is a list of candidate poses. As the robot moves around, AMCL updates the probabilities of these candidate poses based on LaserScan messages and the map
+
+keep track of a list of candidate poses of the robot and update their likelihood 
+Problem with small map
+Problem with big map 
+
+Self Assessment 
+Overall, we find this project a success. We are constantly communicating with one another and have weekly meet-ups to discuss challenges and new ideas.
+
