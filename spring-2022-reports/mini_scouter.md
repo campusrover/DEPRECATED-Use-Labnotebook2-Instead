@@ -55,7 +55,7 @@ The controller use an infrared light based stereoscopic camera. It illuminates t
 
 The Leap Motion Controller maps the position and orientation of the hand and fingers onto a virtual skeletal model. The user can access data on all of the fingers and its bones. Some examples of bone data that can be accessed is shown below.
 
-![00308_psisdg9946_99460p_page_7_1.jpg](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/00308_psisdg9946_99460p_page_7_1.jpg)
+![Imgur](https://i.imgur.com/ymu6Am3.jpg)
 
 Alongside hand and finger detection, the Leap Motion Controller can additionally track hand gestures. The Leap Software Development Kit (SDK) offers support for four basic gestures:
 
@@ -64,7 +64,7 @@ Alongside hand and finger detection, the Leap Motion Controller can additionally
 - Key tap: a tapping movement by a finger as if tapping a keyboard key
 - Screen tap: a tapping movement by the finger as if tapping a vertical computer screen
 
-![00308_psisdg9946_99460p_page_8_1.jpg](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/00308_psisdg9946_99460p_page_8_1.jpg)
+![Imgur](https://i.imgur.com/7mcQvsy.jpg)
 
 The controller also offers other data that can be used to manipulate elements:
 
@@ -87,13 +87,13 @@ A widely known IOT home device, Amazon Alexa is Amazon’s cloud-based voice ser
 
 When a phrase is said to Alexa, it’s first processed through the Alexa service, which uses natural language processing to interpret the users “intent” and then the “skill logic” (as noted down below) handles any further steps once the phrase has been interpreted.
 
-![Untitled](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Untitled%201.png)
+![Imgur](https://i.imgur.com/xI92Ofd.png)
 
 We created an Alexa skill for this project as a bridge between the user and the robot for voice commands. The Alexa skill also utilizes AWS Lambda, a serverless, event-driven computing platform, for it’s intent handling. The Lambda function sends messages to the AWS SQS Queue that we used for Alexa-specific motion commands. 
 
 For example, if a user makes a request, saying “**Alexa, ask mini scout to move forward”**, the Alexa service identifies the user intent as “MoveForward”. Once identified, the lambda function is activated, and it uses a “handler” specific to the command to send a dictionary message to the queue.
 
-![Screen Shot 2022-05-04 at 5.13.26 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_5.13.26_PM.png)
+![Imgur](https://i.imgur.com/RADjPW2.png)
 
 ### AWS Simple Queue Service
 
@@ -129,16 +129,16 @@ One of the first and most important design choices we had to consider on this pr
 
 Another aspect we had to take into consideration when creating the algorithm was how much to tune the values we used to detect the gestures. For example, with the gesture to move forward and backward, we had to decide on a pitch value that was not so sensitive that other gestures would trigger the robot to move forward/backward but sensitive enough that the algorithm would know to move the robot forward/backwards. We ran the algorithm many times with a variety of different values to determine which would result in the greatest accuracy across all gestures. Even with these considerations, the algorithm sometimes was still not the most accurate, with the robot receiving the wrong command from time to time. 
 
-![Screen Shot 2022-05-04 at 11.40.51 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_11.40.51_PM.png)
+![Imgur](https://i.imgur.com/dbANp9c.png)
 
 We implemented this algorithm on the local side. Within the code, we created a Leap Motion Listener object to listen to commands from the Leap Motion Controller. The Leap Listener takes in data such as number of hands, hand position in an x, y, z plane, hand direction, grab strength, etc. This data is then used to calculate what gestures are being made. This information then makes a request to the queue, pushing a message that looks like the following when invoked:
 
 ```jsx
 sqs_message = {
-							"Current Time":current_time.strftime("%H:%M:%S"),
-							"Motion Input": "Leap", 
-							"Motion": motion
-							}
+		"Current Time":current_time.strftime("%H:%M:%S"),
+		"Motion Input": "Leap", 
+		"Motion": motion
+		}
 ```
 
 On the VNC side, the motion is received from the SQS queue and turned back into a dictionary from a string. The VNC makes use of a dictionary to map motions to a vector containing the linear x velocity and angular z velocity for twist. For example, if the motion is “Move forward,” the vector would be [1,0] to indicate a linear x velocity of 1 and an angular z velocity of 0. A command is published to cmd_vel to move the robot. The current time ensures that all of the messages are received by the queue as messages with the same data cannot be received more than once. 
@@ -157,16 +157,16 @@ In terms of implementing the skill, we had to consider the best way handle inten
 
 In order for these ‘intents’ to work with our robot, we also had to add what the user might say so that the Alexa service could properly understand the intent the user had. This meant adding in several different “utterances”, as well as variations of those utterances to ensure that the user would be understood. This was very important because each of our intents had similar utterances. MoveForward had “move forward”, MoveBackward has “move backwards”, and if the Alexa natural language processor only has a few utterances to learn from it could easily confuse the results meant for one intent for a different intent. 
 
-![Screen Shot 2022-05-04 at 8.38.23 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_8.38.23_PM.png)
+![Imgur](https://i.imgur.com/dEtd3TK.png)
 
 Once the intent was received, the Lambda function gets to work. Each handler is a class of it’s own. This means that if the intent the Alexa service derives is “RotateRight”, it invokes only the “RotateRightHandler” class. This class makes a request to the queue, pushing a message that looks like the following when invoked. 
 
 ```python
 sqs_message = {
-							"Motion Input": "Alexa", 
-							"Intent": intent_name, 
-							"Current Time":current_time.strftime("%H:%M:%S")
-							}
+		"Motion Input": "Alexa", 
+		"Intent": intent_name, 
+		"Current Time":current_time.strftime("%H:%M:%S")
+		}
 ```
 
 Once this reaches VNC, the ‘intent_name’ - which would be a string like ‘MoveForward’ - is interpreted by converting the string into a dictionary, just like the Leap messages. We had to add the current time as well, because when queue messages are identical they are grouped together, making it difficult to pop them off the queue when the newest one arrives. If a user requested the robot to turn right twice, the second turn right message would not make it to the queue in the same way as the first one since those message are identical. Adding the time makes each message to the queue unique - ensuring it reaches the robot without issue.
@@ -211,21 +211,21 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
         
     2. Once installed, open the Leap Motion application to ensure correct installation. 
         
-        ![Screen Shot 2022-04-08 at 2.31.07 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-04-08_at_2.31.07_PM.png)
+        ![Imgur](https://i.imgur.com/WfrcbmN.png)
         
         A window will pop up with controller settings, and make sure the leap motion icon is present at the top of your screen.
         
     3. Plug your leap motion controller into your controller via a USB port.
         
-        ![Screen Shot 2022-04-08 at 2.32.57 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-04-08_at_2.32.57_PM.png)
+        ![Imgur](https://i.imgur.com/7aKaFAL.png)
         
     4. From the icon dropdown menu, select visualizer. 
         
-        ![Screen Shot 2022-04-08 at 2.36.23 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-04-08_at_2.36.23_PM.png)
+         ![Imgur](https://i.imgur.com/ZKnLImE.png)
         
         The window below should appear.
-        
-        ![Screen Shot 2022-04-08 at 2.36.52 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-04-08_at_2.36.52_PM.png)
+      
+	 ![Imgur](https://i.imgur.com/XW60vjn.png)
         
     5. Note: If your MacOS software is an older version than Monterey, skip this step. Your visualizer should display the controller’s cameras on it’s own. 
         
@@ -245,7 +245,7 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
         
         The window below should look like this when holding your hands over the Leap Motion Controller:
         
-        ![Untitled](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Untitled%202.png)
+        ![Imgur](https://i.imgur.com/0ZKc77a.png)
         
 
 1. **AWS Setup**
@@ -254,15 +254,15 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
         1. Search for “Simple Queue Service”
         2. Click “Create Queue”
             
-            ![Screen Shot 2022-04-08 at 2.51.39 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-04-08_at_2.51.39_PM.png)
+            ![Imgur](https://i.imgur.com/DMiuRRN.png)
             
         3. Give your queue a name, and select ‘FIFO’ as the type.
             
-            ![Screen Shot 2022-04-08 at 2.52.20 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-04-08_at_2.52.20_PM.png)
+            ![Imgur](https://i.imgur.com/cPeZ0bl.png)
             
         4. Change “Content-based deduplication” so that its on. There is no need to change any of the other settings under “Configuration”
             
-            ![Screen Shot 2022-05-04 at 9.14.14 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_9.14.14_PM.png)
+            ![Imgur](https://i.imgur.com/6NzGSSg.png)
             
         5. Click “Create Queue”. No further settings need to be changed for now.
             
@@ -272,12 +272,12 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
             1. Click “Edit”
             2. Under “Access Policy”, select advanced, and then select “Policy Generator”
                 
-                ![Screen Shot 2022-05-04 at 9.17.25 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_9.17.25_PM.png)
+                ![Imgur](https://i.imgur.com/zlaPKAu.png)
                 
             3.  This will take you to the AWS Policy Generator. The Access Policy you create will give your Leap software, Alexa Skill and robot access to the queue.
             4.  Add your account ID number, which can be found under your username back on the SQS page, and your queue ARN, which can also be found on the SQS page.
                 
-                ![Screen Shot 2022-05-04 at 9.25.41 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_9.25.41_PM.png)
+                ![Imgur](https://i.imgur.com/bOlwSAs.png)
                 
                 1. Select “Add Statement”, and then “Generate Policy” at the bottom. Copy this and paste it into the Access Policy box in your queue (should be in editing mode).
         7. Repeat step 1-5 once more, naming the queue separately for Alexa.
@@ -336,12 +336,12 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
         
     3. Click “Create Skill”
         
-        ![Screen Shot 2022-05-04 at 9.42.43 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_9.42.43_PM.png)
+        ![Imgur](https://i.imgur.com/FFQkJfT.png)
         
     4. Give your skill a **name**. Select **Custom Skill**. Select ‘Alexa-Hosted Python’ for the host.
     5. Once that builds, go to the ‘Code’ tab on the skill. Select **‘Import Code’,** and import the “VoiceControlAlexaSkill.zip” file from the repository, under the folder “**Alexa”**
         
-        ![Screen Shot 2022-05-04 at 9.44.54 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_9.44.54_PM.png)
+        ![Imgur](https://i.imgur.com/AdfMqCo.png)
         
     6. Import all files.
     7. In Credentials.py, fill in your credentials, ensuring you have the correct name for your queue. 
@@ -358,7 +358,7 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
         4. RotateLeft
         5. RotateRight
         
-        ![Screen Shot 2022-05-04 at 9.58.13 PM.png](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Screen_Shot_2022-05-04_at_9.58.13_PM.png)
+        ![Imgur](https://i.imgur.com/9s5j8tS.png)
         
     12. Edit each intent so that they have the same or similar “Utterances” as seen in the `intents.txt` file. Don’t forget to save!
     13. Your skill should be good to go! Test it in the Test tab with some of the commands, like “ask **mini scout** to move right”
