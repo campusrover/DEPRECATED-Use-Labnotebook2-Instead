@@ -9,11 +9,6 @@ COSI 119a Fall 2022, Brandeis University
 Date: May 4, 2022
 
 Github repo: [Mini Scouter](https://github.com/campusrover/mini_scouter)
-
----
-
-### Table of Contents
-
 ---
 
 # **Introduction**
