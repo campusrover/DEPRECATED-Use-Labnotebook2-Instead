@@ -120,6 +120,7 @@
 * [Spring 2022 Project Reports](spring-2022-reports/README.md)
   * [Sample Project](spring-2022-reports/sample_project_1.md)
   * [RoboTag Project](spring-2022-reports/RoboTag.md)
+  * [Mini Scouter](spring-2022-reports/mini_scouter.md)
   * [TurtleBot NASCAR](spring-2022-reports/NASCAR-style-turtlebot-racing.md)
   * [LitterPicker Project](spring-2022-reports/litter_picker.md)
   * [WaiterBot](spring-2022-reports/waiter-bot.md)
