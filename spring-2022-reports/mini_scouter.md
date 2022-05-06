@@ -45,13 +45,13 @@ We designed and created a voice and gesture controlled tele-operated robot. Voic
 
 The Leap Motion Controller
 
-![Untitled](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/Untitled.png)
+![Imgur](https://i.imgur.com/EFEI5aM.png)
 
 The Leap Motion Controller is an optical hand tracking module that captures hand movements and motions. It can track hands and fingers with a 3D interactive zone and identify up to 27 different components in a hand. The controller can be used for desktop based applications (as this project does) or in virtual reality (VR) applications.
 
 The controller use an infrared light based stereoscopic camera. It illuminates the space near it and captures the user’s hands and fingers. The controller then uses a tracking algorithm to estimate the position and orientation of the hand and fingers. The range of detection is about 150° by 120° wide and has a preferred depth of between 10cm and 60cm, but can go up to about 80cm maximum, with the accuracy dropping as the distance from the controller increases. 
 
-![00308_psisdg9946_99460p_page_6_1.jpg](Final%20Deliverable%2024e6a76061d34cb68f3866852d07deb9/00308_psisdg9946_99460p_page_6_1.jpg)
+![Imgur](https://i.imgur.com/vjjx8yf.jpg)
 
 The Leap Motion Controller maps the position and orientation of the hand and fingers onto a virtual skeletal model. The user can access data on all of the fingers and its bones. Some examples of bone data that can be accessed is shown below.
 
