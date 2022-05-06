@@ -122,7 +122,7 @@
   * [RoboTag Project](spring-2022-reports/RoboTag.md)
   * [TurtleBot NASCAR](spring-2022-reports/NASCAR-style-turtlebot-racing.md)
   * [LitterPicker Project](spring-2022-reports/litter_picker.md)
-  * [WaiterBot](spring-2022-reports/waiter_bot.md
+  * [WaiterBot](spring-2022-reports/waiter_bot.md)
 * [Pupper](pupper/README.md)
   * [Introduction](pupper/introduction.md)
   * [Hardware](pupper/hardware.md)
