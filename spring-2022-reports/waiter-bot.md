@@ -16,9 +16,7 @@ For this project, we wanted to create an automated catering experience. More and
 
 Relevant literature:
 * [The Alexa Skills Kit SDK for Python](https://github.com/alexa/alexa-skills-kit-sdk-for-python.git)
-* [actionlib SimpleActionClient class](http://docs.ros.org/en/diamondback/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient).
-
-html#a4bce20a02332f8f96a5f087c87fae851)
+* [actionlib SimpleActionClient class](http://docs.ros.org/en/diamondback/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient.html#a4bce20a02332f8f96a5f087c87fae851)
 
 ###### Core Functionality: 
 This application was implemented as two primary nodes. One node serves as the user-interface, which is a flask implementation of an Alexa skill. This node is integrated with a ngrok subdomain. This node processes the speech and sends a voice response to Alexa while publishing necessary information for navigation. 
