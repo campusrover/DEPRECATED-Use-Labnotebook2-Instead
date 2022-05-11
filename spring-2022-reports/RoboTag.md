@@ -7,10 +7,10 @@ Eyal Cohen(eyalcohen@brandeis.edu)
 * Github repo: https://github.com/campusrover/RoboTag
 `
 ## Introduction
-We wanted to create a dynamic project involving multiple robots. Since this project would be presented to people with a wide range of robotics knowledge, we wanted to create an intuitive project. We decided to recreate the game of tag using robots as most people have played the game.
+We wanted to create a dynamic project involving multiple robots. Since this project would be presented to people with a wide range of robotics knowledge, we wanted to create an intuitive project. We decided to recreate the game of tag using robots as most spectators know the rules, and so that each robot affects the other’s behavior.
  
-The robots have one of two roles, cop and robber. The robbers roam around until a cop approaches them. When a cop is inside a certain distance, the rubber starts running away from the cop. The cop always chances after the nearest rubber. When the cop catches the rubber, then the roles switch, and the rubber gets 5 seconds to run away. 
- 
+The robots have one of two roles, cop and robber. The robbers flee from cops while avoiding obstacles, as the cops are in hot pursuit of them. When a cop is within a certain distance, and the cop catches the robber, their roles switch, and the new robber gets a 10-second head start to run away. If a spectating human feels left out of the fun, they can press a button to take control of their robot and chase the robber as the cop, or chase the cop as the robber.
+
  
 ### Problem Statement including original objectives
 
@@ -61,25 +61,25 @@ Every robot needs its own computer to run.
   AMCL
   
 ### problems that were solved, pivots that had to be taken
-We faced a lot of difficulties and had to make many changes throughout the project. We spent lots of time on not only problem solving but also designing. We had multiple hours-long talks in person and on Zoom discussing how to design our project. In these talks, we made decisions to move from one stage to another, start over from scratch for modularity, and rather use move_base or TF. 
+After the ideation period of Robotag, we faced a lot of difficulties and had to make many pivots throughout the project. We spent lots of time on not only development but also designing new methods to overcome obstacles. We had multiple sleepless nights in the lab, and hours-long Zoom meetings to discuss how we design our project. In these talks, we made decisions to move from one stage to another, start over from scratch for modularity, and strategize navigational methods such as move_base, TF, or our ultimate homebrewed algorithms. 
  
-First stage: one node on each robot.
-We tried to let robots directly talk to each other. We used TF to move robots around. The biggest problem was that robots could not switch roles between robber and cop. Also, each node had too many subscribers and publishers that send and receive information on coordinates and roles. 
+First stage: Broadcast/Listener Pair Using TF.
+We tried to let robots directly communicate with each other by using TF's broadcast/listener method. We initially turned to TF as it is a simple way to implement following between robots. However, this solution was overly-predictable and uninteresting. Solely relying on TF would limit our ability to avoid obstacles in crowded environments.
  
 Second stage: Increase modularity
-We wanted the robots to switch roles when they make the tag. Also even though we were at the beginning of the project, the code ‘smelled’ bad. We decided to start over with a new control system with an emphasis on modularity. 
-The new control system called ‘Control Tower’ is a node run on the computer that keeps a record of all robot’s roles and locations, then orders where each robot has to go. Also, each robot ran the same code, that operates according to given stages. With this system, we were able to switch roles freely and keep codes simple.  
+We decided to start over with a new control system with an emphasis on modularity. 
+The new control system called ‘Control Tower’ is a node run on the computer that keeps a record of all robot’s roles and locations, then, orders where each robot has to go. Also, each robot ran the same code, that operates according to given stages. With this system, we would be able to switch roles freely and keep codes simple. 
  
 Third stage: move_base
-First, we were struggling with a method to send and receive coordinates between the control tower and robot. We had to either use one subscriber and publisher pair for each robot, or we had to use custom messages. While we were working on the control tower system, we made a change to how we are going to move robots around. For easier maneuvering around the map with obstacles, we decided to use move_base. We successfully implemented this feature. We made a map of the second floor of our lab because it was smaller, allowing easier localizing. Using this map, we could use move_base and move the robot where ever we wanted to. 
- 
-Fourth stage: back to TF
-Implementing the move_base on one robot was done, but implementing it on multiple robots was a completely different issue. Until a week before the due date, we could not figure out how to run move_base on two robots. In the last week, we decided to go back to TF. We had the basics implemented, and communication between each robot was hard as we previously had a taste of it at the first stage. 
+Although the Control Tower could properly listen to each robot, publishing commands to each robot was a grueling experience. For optimized maneuvering around a map with obstacles, we decided to use move_base. We successfully implemented this feature on one robot. Given coordinates, a robot could easily utilize move_base to reach that location. We were planning for this to be a cop’s method of tracking down the robber. We SLAMed a map of the second floor of our lab because it was mostly enclosed and has defining features allowing easier localizing. Using this map and AMCL, we could use move_base and move the robot wherever we wanted to. However, when it came time to run move_base on several robots, each robot’s AMCL cost map and move_base algorithm confused the opposing bot. Although in theory, this solution was the most favorable–due to its obstacle avoidance and accurate navigation–in practice, we were unable to figure out how to get move_base to work with multiple robots and needed to give up on AMCL and move_base sooner than we did.
  
  
-Fifth stage: TF + node on each computer
-The solution we found is to run a node on a computer that deals with the coordinates, while the node on the robot focuses on moving around. This could solve the problem we encountered in the first stage. We also added more playability. The user can take over the control of either cop or rubber, and control the robot with Teleop. Or the user can also yield the control back to the computer. 
+Fourth stage: Using Odom
+After move_base and AMCL failed us, we used the most primitive method of localization, Odometry. We started each robot from the same exact position and watched as one robot would go roughly in the direction of the other. After a minute, each robot’s idea of the coordinate plane was completely different and it was clear that we could not move forward with using odometry as our method of localization. Due to the limitation of each robot needing to run the program from the same location, and its glaring inaccuracies, we looked elsewhere for our localization needs.
  
+Fifth stage: Better Localization
+We missed the accuracy of AMCL. AMCL has fantastic localization capabilities combining both lidar and Odom and allows us to place a robot in any location on the map and know its present location, but we didn’t have time to wrestle with conflicting cost maps again, so we elected to run each robot on a separate computer. This would also allow future users to download our code and join the game with their robots as well! Once we had each robot running on its own computer, we created a strategy for robots to communicate between a UDP Socket, such that each one can receive messages about the others’ coordinates. This was an impromptu topic across multiple roscores!
  
+From then on, our localization of each robot was fantastic and allowed us to focus on improving the cops’ tracking and the robber’s running away algorithm while effectively swapping their states according to their coordinate locations in their respective AMCLs.
 
 
