@@ -200,6 +200,7 @@ The `MiniScoutLeapTeleop` class takes the dictionary that is received from the S
 1. **Clone the Mini Scout repository (Be sure to switch to the correct branch based on your system)**
     1. [https://github.com/campusrover/mini_scouter](https://github.com/campusrover/mini_scouter.git)
 2. **Install the Leap Motion Tracking SDK**
+	***Note: Software installation is only needed on one 'local' device. If your laptop runs on MacOS, clone the MacOS branch and follow the MacOS instructions. If your laptop runs on Windows, clone the Windows branch and follow the Windows instructions ***
     1. Mac (V2): [https://developer-archive.leapmotion.com/v2](https://developer-archive.leapmotion.com/v2)
     2. Windows (Orion, SDK included): [https://developer.leapmotion.com/tracking-software-download](https://developer.leapmotion.com/tracking-software-download)
     
