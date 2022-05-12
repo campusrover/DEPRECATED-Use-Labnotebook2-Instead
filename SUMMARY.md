@@ -78,6 +78,7 @@
   * [Joint controllers](ros-tips/joint-controllers.md)
   * [Create Gazebo Maps](ros-tips/create-gazebo-map/README.md)
     * [Tutorial](ros-tips/create-gazebo-map/tutorial.md)
+  * [Creating launch files to launch multiple nodes](ros-tips/create_execute_launch)
   * [Working with Fiducials](ros-tips/fiducial_follows.md)
   * [DIY Gazebo World](faq/diy-gazebo-world.md)
   * [BLDC Motor Guide](faq/bldc-motor-guide.md)
