@@ -4,7 +4,7 @@ Cloud Desktop cluster is managed by Kubernetes. Specifically, it is a distro of 
 
 ## Management
 
-For cluster management, see [Cluster Management](operating/management.md).
+For cluster management, see [Cluster Management](operating/cluster.md).
 
 ## Configurations
 
