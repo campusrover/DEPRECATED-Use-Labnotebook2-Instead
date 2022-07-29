@@ -68,6 +68,7 @@
   * [AWS RoboMaker](miscellaneous/aws-robomaker.md)
   * [Quaternions](miscellaneous/quaternions.md)
 * [FAQ and Tips](faq/README.md)
+  * [Issues with Lidar placement and callibration](ros-tips/lidar_placement_and_drift.md)
   * [Add SDF in ROS](ros-tips/how-to-add-sdf-in-ros.md)
   * [Add Textures to SDF](ros-tips/how-to-add-texture-to-sdf.md)
   * [Adjust Camera Pitch](faq/camera_pitch.md)
