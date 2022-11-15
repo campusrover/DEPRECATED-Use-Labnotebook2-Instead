@@ -2,9 +2,10 @@
 
 * [Introduction](README.md)
 * [Linorobot](linorobot/README.md)
-  * [Base Stack](linorobot/intro.md)
+  * [Base Stack](linorobot/stack.md)
+  * [Validating](linorobot/validating.md)
 * [Brandeis Robotics Utilities](bru/README.md)
-  * [Concepts](bru/intro.md)
+  * [Concepts](bru/concepts.md)
 * [MiniRover](minirover/README.md)
   * [Build](minirover/mrbuild.md)
   * [Setup](minirover/mrsetup.md)
