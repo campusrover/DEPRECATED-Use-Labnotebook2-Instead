@@ -11,4 +11,9 @@ Examine [Linorobot](www.linorobot.org)  again. You will see very detailed instru
 
 ### SBC
 
-The SBC is running Ubuntu 20.04 and ROS 1.0. It is a standard install which we get from the 
+The SBC is running Ubuntu 20.04 and ROS 1.0. It is a standard install which we get from the Linorobot
+
+### Microcontroller
+
+The Teensy code is provided by Linorobot. We have tweaked it in small ways. When tweaking it you need to re-load it, as follows:
+
