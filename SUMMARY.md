@@ -6,6 +6,7 @@
   * [Validating](linorobot/validating.md)
 * [Brandeis Robotics Utilities](bru/README.md)
   * [Concepts](bru/concepts.md)
+  * [Script](bru/script.md)
 * [MiniRover](minirover/README.md)
   * [Build](minirover/mrbuild.md)
   * [Setup](minirover/mrsetup.md)
