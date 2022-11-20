@@ -4,6 +4,8 @@
 * [Linorobot](linorobot/README.md)
   * [Base Stack](linorobot/stack.md)
   * [Validating](linorobot/validating.md)
+  * [How To](linorobot/howto.md)
+  * [Troubleshooting](linorobot/troubleshooting.md)
 * [Brandeis Robotics Utilities](bru/README.md)
   * [Concepts](bru/concepts.md)
   * [Script](bru/script.md)
