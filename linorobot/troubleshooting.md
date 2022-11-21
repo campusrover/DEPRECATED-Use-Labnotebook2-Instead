@@ -12,7 +12,7 @@ There are numberous variables in this file. The key ones for now are:
 
 #define MOTOR2_IN_A 6
 #define MOTOR2_IN_B 8
-#define MOTOR2_PWM 5
+#define MOTOR2_ PWM 5
 ```
 
 and
