@@ -9,6 +9,7 @@
 * [Brandeis Robotics Utilities](bru/README.md)
   * [Concepts](bru/concepts.md)
   * [Script](bru/script.md)
+  * [Commands](bru/commands.md)
 * [MiniRover](minirover/README.md)
   * [Build](minirover/mrbuild.md)
   * [Setup](minirover/mrsetup.md)
