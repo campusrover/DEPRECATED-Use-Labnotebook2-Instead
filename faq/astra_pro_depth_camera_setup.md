@@ -71,6 +71,27 @@ rosrun usb_cam usb_cam_node
 
 If this is something that you will be needing often, then it might be worth it to add the usb_cam node into the astra launch file as you do need to ssh onto the robot for each instruction. The usb_cam_node publishes to the topic ```/usb_cam/image_raw```. You can check ```rostopic list``` to see which one suits your needs. 
 
+If you want to just explore the depth camera part of the camera, then just run the astra.launch file. 
+
+Then there will be a view topics that the camera publishes: 
+
+```jsx
+/camera/depth/camera_info
+/camera/depth/image_raw
+/camera/depth/points
+/camera/depth_registered/points
+/camera/extrinsic/depth_to_color
+/camera/ir/camera_info
+/camera/ir/image_raw
+/camera/reset_device
+```
+
+If you open rviz, click add, go to the by topic tab and open the PointCloud2 topic under /camera/depth/points.
+
+If you’re working with just the camera, you might need to fix the frame and can just pick any random one for now other than map. A point cloud of what’s in front of you should appear.
+
+From there, you could use colour detection, object detection, or whatever other detector you want to get the pixels of your object and connect them with the pixels in the point cloud. It should output a distance from the camera to the object. However, I can’t speak for how reliable it is. It can’t see objects right in front of it - for example when I tried to wave my hand in front of it, it wouldn’t detect it until it was around 40 or so cm away.
+
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    [TB3_image]: <https://github.com/campusrover/TB3_image> 
    [Astra github]: <https://github.com/orbbec/ros_astra_camera>
