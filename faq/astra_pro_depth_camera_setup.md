@@ -86,9 +86,19 @@ Then there will be a view topics that the camera publishes:
 /camera/reset_device
 ```
 
-If you open rviz, click add, go to the by topic tab and open the PointCloud2 topic under /camera/depth/points.
+If you open rviz, click add, go to the by topic tab and open the PointCloud2 topic under /camera/depth/points: 
 
-If you’re working with just the camera, you might need to fix the frame and can just pick any random one for now other than map. A point cloud of what’s in front of you should appear.
+![image](https://user-images.githubusercontent.com/72238100/206863676-13025ab6-ee4b-4cc2-a4b1-73c6caa2ef5c.png)
+
+
+If you’re working with just the camera, you might need to fix the frame and can just pick any random one for now other than map. A point cloud of what’s in front of you should appear: 
+
+![image](https://user-images.githubusercontent.com/72238100/206863696-29f3c418-b8c7-4742-a44d-aa7b232c6e9b.png)
+
+If you're looking through rqt, then you might see something like this: 
+
+![image](https://user-images.githubusercontent.com/72238100/206863725-499e6bdc-5f7c-4786-94e6-a72a7d501d7d.png)
+
 
 From there, you could use colour detection, object detection, or whatever other detector you want to get the pixels of your object and connect them with the pixels in the point cloud. It should output a distance from the camera to the object. However, I can’t speak for how reliable it is. It can’t see objects right in front of it - for example when I tried to wave my hand in front of it, it wouldn’t detect it until it was around 40 or so cm away.
 
