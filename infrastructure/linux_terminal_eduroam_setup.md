@@ -40,3 +40,9 @@ Next you will run the following commands to connect your machine to eduroam.
 - `nmcli connection up eduroam --ask`
 
 You may then be prompted to enter in the wifi username and password, however the fields should already be filled in and you will just need to press enter.
+
+### Troubleshooting
+
+1. If you are trying to connect a robot and it is failing, sometimes it's good to try it on the wired network. It should just work. Brandeis networking requires that the MAC address of special devices (like raspberry Pis) be recorded. This is only for the wired network. To do this use this link: : https://www.brandeis.edu/its/services/network-connectivity/netreg.html . It is extremely slow so be patient. When you click the netreg button it is very very slow (minutes) but eventually it allows you to add a mac adress to the list.
+
+1. Sometimes despite checking everything, the wireless (eduroam) network refuses to connect. One important detail that has caused problems is the system time on the Rasberry Pi. It has to be correct or close to it. Apparently that's part of the authentication. I think the command is `date -s "19 APR 2012 11:14:00"` and that sets the UTC time. 
