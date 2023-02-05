@@ -92,7 +92,7 @@
   * [Create Gazebo Maps: Tutorial](faq/create-gazebo-map/tutorial.md)
   * [Create Gazebo Maps](faq/create-gazebo-map/README.md)
   * [Creating a gazebo world](faq/gazebo_world.md)
-  * [Creating launch files to launch multiple nodes](faq/create_execute_launch)
+  * [Creating launch files to launch multiple nodes](faq/create_execute_launch.md)
   * [DIY Gazebo World](faq/diy-gazebo-world.md)
   * [GPS Research and Information](faq/GPS-knowledge.md)
   * [Handy Commands](faq/handy-commands.md)
