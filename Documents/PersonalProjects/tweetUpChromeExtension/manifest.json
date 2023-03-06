@@ -1,0 +1,20 @@
+{
+  "name": "Twitter Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Interact with Twitter",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://*.twitter.com/*"
+      ],
+      "js": ["content_script.js"]
+    }
+  ]
+}
