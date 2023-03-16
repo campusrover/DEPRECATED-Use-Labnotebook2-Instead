@@ -93,6 +93,7 @@
   * [Creating a gazebo world](faq/gazebo_world.md)
   * [Creating launch files to launch multiple nodes](faq/create_execute_launch.md)
   * [Connect to Robot](/faq/connect_to_robot.md)
+  * [Copy MicroSD Card](/faq/copy_microsd.md)
   * [DIY Gazebo World](faq/diy-gazebo-world.md)
   * [GPS Research and Information](faq/GPS-knowledge.md)
   * [Handy Commands](faq/handy-commands.md)

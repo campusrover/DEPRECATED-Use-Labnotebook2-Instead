@@ -42,6 +42,7 @@ Then to copy the image, run the following command:
 
 `sudo gdd of=/dev/rdisk4 if=sd_backup.dmg status=progress bs=16M`
 
+
 Tip: you can experiment with different numbers for the block size by replacing bs=16M with larger or smaller numbers to see if it makes a difference to the speed. I’ve found 16M the best for my hardware.
 
 You should see some progress feedback telling you the transfer speed. If you’d like to experiment with different block sizes, just type ctrl + c to cancel the command, then you can run it again.
