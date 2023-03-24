@@ -10,6 +10,7 @@
   * [Concepts](bru/concepts.md)
   * [Script](bru/script.md)
   * [Commands](bru/commands.md)
+  * [Connect to Robot](bru/connect-to-robot.md)
 * [MiniRover](minirover/README.md)
   * [Build](minirover/mrbuild.md)
   * [Setup](minirover/mrsetup.md)
