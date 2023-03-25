@@ -30,5 +30,5 @@ $(bru mode real)
 $(bru name roba -m 100.86.78.102)
 ```
 4. Run the command `sb` in the terminal. You should see your command prompt change to something that looks like this: `[real:roba]`
-5. If the robot is already on, run the command `sshrobot` in your terminal in your VNC. You might be asked to add a new ssh fingerprint, if so simply type `Y` in the prompt and continue. You will be asked the password of the robot, which is going to be `ROSlab134` for all of the lab robots.
+5. If the robot is already on, run the command `sshrobot` in your terminal in your VNC. You might be asked to add a new ssh fingerprint, if so simply type `yes` in the prompt and continue. You will be asked the password of the robot, which is going to be `ROSlab134` for all of the lab robots.
 6. Once you see that your terminal prompt looks like `[onboard:roba]` you are connected to the robot. The final step is to type `bringup` in the robot's terminal. This will run the bringup script so it is crucial that you do not close the terminal where this is running.
