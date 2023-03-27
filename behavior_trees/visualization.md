@@ -12,4 +12,4 @@ Since the image is updated in real time, you will be able to get feedback on whi
 
 You can run `rviz` to open up the program and add the `/btree` topic as an image to visualize the tree.
 
-<img src="images/tree_visual.png" width=800>
+<img src="images/tree_visual.png" width=100%>
