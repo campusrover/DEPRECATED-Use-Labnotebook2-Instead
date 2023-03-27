@@ -2,7 +2,7 @@
 
 To create a custom action node, you must define your node class by inheriting from the superclass that defines a generic action node.
 
-You also must include the `execute` function as the "main" function that performs the actions of the node.
+You also must include the `execute` function as the "tick" function that performs the actions of the node.
 
 Here is an example of a custom action node:
 

@@ -2,7 +2,7 @@
 
 To create a custom update node, you must define your node class by inheriting from the superclass that defines a generic update node.
 
-You also must include the `update_blackboard` function as the "main" function that updates the blackboard with relevant information.
+You also must include the `update_blackboard` function as the "tick" function that updates the blackboard with relevant information.
 
 Here is an example of a custom update node:
 

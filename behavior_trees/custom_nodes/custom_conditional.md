@@ -2,7 +2,7 @@
 
 To create a custom conditional node, you must define your node class by inheriting from the superclass that defines a generic conditional node.
 
-You also must include the `condition` function as the "main" function that returns a `bool` type depending on the state of the relavent blackboard
+You also must include the `condition` function as the "tick" function that returns a `bool` type depending on the state of the relavent blackboard
 
 Here is an example of a custom conditional node:
 

@@ -14,7 +14,7 @@ For example, if you want to create a node called `MyNewNode`, the file that it e
 
 ## Required function
 
-Each different type of node will have a required "main" function, but the naming is different depending on the type of node you are creating. Regardless of what the "main"  of function is called, it must return one of three string type values: `"success"`, `"failure"`, or `"running"`.
+Each different type of node will have a required "tick" function, but the naming is different depending on the type of node you are creating. Regardless of what the "main"  of function is called, it always returns one of three string type values: `"success"`, `"failure"`, or `"running"`.
 
 
 For further details on how to create custom nodes of each type, see the following sections.
