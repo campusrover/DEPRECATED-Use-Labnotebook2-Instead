@@ -1,9 +1,25 @@
-# Behavior Tree Framework for Lab Robots
+# Behavior Tree Framework for Lab Robots 
+Github repo for mr_bt: https://github.com/campusrover/mr_bt
 
 The goal behind the MRBT project was to create a efficient, modular, and user-friendly solution for programming complex behaviors into the Turtlebot3 robot stack. Our
 solution came in the form of a popular method in the videogaming industry for programming behaviors into NPCs (Non-Playable Characters in videogames; think enemies in HALO or Bioshock).
 With the use of behavior trees, we are now able to program complex behaviors using a simple tree definition in a JSON file, and we can partition a behavior into multiple different
 subtrees which can then be used elsewhere or standalone.
+
+
+## Installation
+
+- Requires ROS Noetic, Ubuntu 20.04, and a catkin workspace
+- `cd` into your `catkin_ws/src` directory
+- Run `git clone https://github.com/campusrover/mr_bt.git`
+- Run `cd ../ && catkin_make`
+
+## Usage
+
+- To run one of the example behavior trees you must use a Turtlebot3 robot connected to ROS.
+- Run the example `roslaunch mr_bt btree.launch tree:=move_to_position`
+- If you want to run any example in the folder `mr_bt/src/tree_jsons/`, pass in the name of the example folder containing a `root.json` as the `tree` argument for the launch script.
+
 
 ## Key Components of the Behavior Tree
 
