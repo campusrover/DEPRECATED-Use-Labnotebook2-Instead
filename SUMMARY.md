@@ -24,7 +24,6 @@
     * [Defining Nodes](behavior_trees/build/defining_nodes.md)
     * [Defining References](behavior_trees/build/defining_references.md)
     * [Defining the Blackboard](behavior_trees/build/defining_blackboard.md)
-    * [Included Nodes](behavior_trees/build/included_nodes.md)
   * [Custom Tree Nodes](behavior_trees/custom_nodes/README.md)
     * [Custom Action](behavior_trees/custom_nodes/custom_action.md)
     * [Custom Update](behavior_trees/custom_nodes/custom_update.md)
