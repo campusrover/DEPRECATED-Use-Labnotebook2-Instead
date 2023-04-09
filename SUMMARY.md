@@ -30,6 +30,7 @@
   * [Copy MicroSD Card](/faq/copy_microsd.md)
   * [DIY Gazebo World](faq/diy-gazebo-world.md)
   * [Fiducial Tips](faq/fiducial-tips.md)
+  * [Fiducials](faq/fiducial_follows.md)
   * [GPS Research and Information](faq/GPS-knowledge.md)
   * [Handy Commands](faq/handy-commands.md)
   * [Hand Gesture Recognition](faq/gesture-recognition/README.md)
@@ -62,8 +63,6 @@
   * [Tkinter w/ ROS](faq/tkinter-ROS.md)
   * [Using Conditionals in ROS Launch Files](faq/using-conditionals-in-roslaunch.md)
   * [Using Rviz Markers](faq/rviz-markers.md)
-  * [Working with Fiducials](faq/fiducial_follows.md)
-
 * [Infrastructure](infrastructure/README.md)
   * [Turtlebot3 OS](infrastructure/Turtlebot3s.md)
   * [Connect to Eduroam via Ubuntu Terminal](infrastructure/linux_terminal_eduroam_setup.md)
@@ -76,8 +75,6 @@
   * [ROS Melodic](infrastructure/ros-melodic.md)
   * [Ubuntu Brandeis Tips](infrastructure/ubuntubrandeis.md)
   * [SSH First-Time Setup](infrastructure/ssh-guide.md)
-
-
 * [Linorobot](linorobot/README.md)
   * [Base Stack](linorobot/stack.md)
   * [Validating](linorobot/validating.md)
