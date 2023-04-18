@@ -1,6 +1,5 @@
 # Notes on Camera Performance
-*Author: Pito Salas*
-*Date: April 2023*
+*Author: Pito Salas*, *Date: April 2023*
 
 I posted a question to the world about improving camera performance. For posterity I am saving the rought answers here. Over time I will edit these intomore specific, tested instructions.
 
@@ -8,7 +7,8 @@ I posted a question to the world about improving camera performance. For posteri
 
 My robot has:
 
-* ROS1 Notetic Rasberry Pi 4 Raspberry
+* ROS1 Notetic 
+* Rasberry Pi 4 Raspberry
 * Pi Camera V2 Running raspicam node (https://github.com/UbiquityRobotics/r...)
 * My "remote" computer is running
 * Ubuntu 20.04 on a cluster which is located in my lab
