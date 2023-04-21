@@ -12,38 +12,10 @@
 # Each line is displayed with an indentation followed by a star and a space. The indentation starts at zero and goes up by four each level of the directory
 require 'yaml'
 
-# Refactor this code to make it more readable
-
-# def process_directory(path, indent = 0)
-#   Dir.entries(path).each do |entry|
-#     next if entry == '.' || entry == '..' || entry == 'images' || entry == 'docs' || entry == '.git'
-
-#     current_path = File.join(path, entry)
-#     if File.directory?(current_path)
-#       title = entry
-#       info_file = File.join(current_path, 'info.yml')
-#       if File.exist?(info_file)
-#         info = YAML.load_file(info_file)
-#         title = info['title'] if info['title']
-#       end
-#       puts "#{' ' * indent}* [#{title}](#{current_path}/README.md)"
-#       process_directory(current_path, indent + 4)
-#     elsif entry.end_with?('.md') && entry != 'SUMMARY.md' && entry != 'README.md'
-#       md_title = File.basename(entry, '.md')
-#       md_content = YAML.load_file(current_path)
-#       md_title = md_content['title'] if md_content['title']
-#       puts "#{' ' * indent}* [#{md_title}](#{current_path})"
-#     end
-#   end
-# end
-
-# process_directory('.')
-
-
 require 'yaml'
 
 def process_directory(path, indent = 0)
-  Dir.entries(path).each do |entry|
+  Dir.entries(path).sort.each do |entry|
     next if skip_entry?(entry)
 
     current_path = File.join(path, entry)
@@ -59,7 +31,7 @@ def process_directory(path, indent = 0)
 end
 
 def skip_entry?(entry)
-  %w[. .. images docs .git].include?(entry)
+  %w[. .. images docs .git .gitbook .vscode].include?(entry)
 end
 
 def valid_markdown_file?(entry)
