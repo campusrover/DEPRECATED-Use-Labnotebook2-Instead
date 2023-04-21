@@ -1,5 +1,5 @@
 def list_directories(path, level = 0)
-  indentation = ' ' * level + '*'
+  indentation = ' ' * 4* level + '*'
   Dir.glob("#{path}/*").sort.each do |entry|
     if File.directory?(entry)
       dir_name = File.basename(entry)
