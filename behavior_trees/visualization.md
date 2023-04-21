@@ -13,3 +13,15 @@ Since the image is updated in real time, you will be able to get feedback on whi
 You can run `rviz` to open up the program and add the `/btree` topic as an image to visualize the tree.
 
 <img src="images/tree_visual.png" width=100%>
+
+## Logging the Blackboard
+
+You can log the values in the blackboard by using the `log` argument when running the mr_bt launch file:
+`roslaunch mr_bt btree.launch tree:=my_tree log:=true`
+
+The blackboard will then be printed in the terminal where you run the launch file in the ROS log.
+
+Because some blackboard variables will be two large to print, not all of the variables will show up in the output.
+Strings, floats, ints, and booleans will be printed, as well as the first 5 elements of any lists or arrays.
+If the full value of a variable is not printed, its data type will be printed instead.
+
