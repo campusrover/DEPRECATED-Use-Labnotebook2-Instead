@@ -4,7 +4,7 @@ def list_directories(path, level = 0)
     if File.directory?(entry)
       dir_name = File.basename(entry)
       readme_path = "#{entry}/README.md"
-      puts "#{indentation} [#{dir_name}] (#{readme_path})"
+      puts "#{indentation} [#{dir_name}](#{readme_path})"
       list_directories(entry, level + 1)
     end
   end
