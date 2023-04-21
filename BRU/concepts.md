@@ -1,4 +1,7 @@
-# BRU oncepts
+---
+title: BRU Concepts
+---
+# BRU Concepts
 
 ## Types of robots
 

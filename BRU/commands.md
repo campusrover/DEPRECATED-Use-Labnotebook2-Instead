@@ -1,5 +1,5 @@
 ---
-title: XXX
+title: Commands
 ---
 # BRU commands
 

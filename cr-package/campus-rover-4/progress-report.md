@@ -4,11 +4,11 @@ Due to novel Coronavirus COVID-19, the efforts of the CR4 team in spring 2020 wa
 
 ## What Was Done
 
-* The biggest endeavor of this project was to use the `Diff_Drive_Controller` to produce stable and reliable motor movement (in tandem with a PID loop on the Tivac board) and odometry.
-* the embedded ROS node on Tivac publishes IMU and Sonar topics, but their data is unreliable.
-* a basic urdf was constructed
-* basic launch files created for robot bringup
-* depth camera and lidar fusion as a point cloud
+1. The biggest endeavor of this project was to use the `Diff_Drive_Controller` to produce stable and reliable motor movement (in tandem with a PID loop on the Tivac board) and odometry.
+1. the embedded ROS node on Tivac publishes IMU and Sonar topics, but their data is unreliable.
+1. a basic urdf was constructed
+1. basic launch files created for robot bringup
+1. depth camera and lidar fusion as a point cloud
 
 ## WHat needs to be completed
 

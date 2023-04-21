@@ -1,3 +1,7 @@
+---
+title: Working with TIVAC
+---
+
 # Working with the low-level of "chefbot"
 
 The campus rover 4 prototype is based off of the "chefbot" from the textbook "Learning Robotics Using Python" by Lentin Joseph. Rather than using an OpenCR board like a turtlebot3, it uses a Tiva C Launchpad. To write code for the Tiva C, we need two things:

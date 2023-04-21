@@ -18,9 +18,9 @@ This has the advantage of providing a standard way for any web client to interfa
 
 There is an apparent obstacle to implementing ROS within Flask, though. It seems to involve the way Flask serves an app and the way ROS nodes need to be initialized. More specifically, the issue might arise from initializing a ROS node in a thread _other than_ the main thread, which seems to be the case for some of the ways Flask apps can be run/served. Others in the ROS community seem to have encountered this issue:
 
-* [Example 1](https://answers.ros.org/question/234418/easiest-way-to-implement-http-server-that-can-send-ros-messages/)
-* [Example 2](https://amp.reddit.com/r/ROS/comments/42w04t/running_a_web_server_in_ros/)
-* [Example 3](http://ros-users.122217.n3.nabble.com/Discourse-ros-org-ROS-Projects-Flask-ask-ros-a-ROS-node-inside-an-Amazon-Alexa-web-service-td4027381.html)
+1. [Example 1](https://answers.ros.org/question/234418/easiest-way-to-implement-http-server-that-can-send-ros-messages/)
+1. [Example 2](https://amp.reddit.com/r/ROS/comments/42w04t/running_a_web_server_in_ros/)
+1. [Example 3](http://ros-users.122217.n3.nabble.com/Discourse-ros-org-ROS-Projects-Flask-ask-ros-a-ROS-node-inside-an-Amazon-Alexa-web-service-td4027381.html)
 
 Note that the 3rd example proposes a solution; their Flask app's main thread initializes and starts a new thread in which a ROS node is initialized:
 
