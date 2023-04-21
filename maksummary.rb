@@ -81,17 +81,19 @@ def extract_title_from_markdown(entry, current_path)
   begin
     md_content = YAML.load_file(current_path)
   rescue Exception => e
-    puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
+#    puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
     result = md_title
     md_content = nil
   end
   begin
     if md_content.nil? || md_content['title'].nil?
-      puts "() #{result} >>> #{md_title} #{md_content.class}}"
+  #    puts "() #{result} >>> #{md_title} #{md_content.class}}"
       result = md_title
+    else 
+      result = md_content['title']
     end
   rescue Exception => e
-    puts "**RESCUE** #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
+# puts "**RESCUE** #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
   end
   result
 end
