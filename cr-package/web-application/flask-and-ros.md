@@ -1,3 +1,6 @@
+---
+title: Integrating using Flask and ROS
+---
 # Integrating with ROS
 
 Our objective is to initialize ROS nodes _within_ a Flask app, enabling publishing and subscribing to ROS topics via API calls or UI interactions.
