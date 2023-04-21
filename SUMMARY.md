@@ -1,5 +1,3 @@
-* [README.md](./README.md)
-* [SUMMARY.md](./SUMMARY.md)
 * [bru](./bru/README.md)
     * [README.md](./bru/README.md)
     * [commands.md](./bru/commands.md)
@@ -70,7 +68,6 @@
         * [flask-and-ros.md](./cr-package/web-application/flask-and-ros.md)
         * [flask.md](./cr-package/web-application/flask.md)
         * [livemap.md](./cr-package/web-application/livemap.md)
-* [docs](./docs/README.md)
 * [faq](./faq/README.md)
     * [GPS-knowledge.md](./faq/GPS-knowledge.md)
     * [InterbotixPincherX100.md](./faq/InterbotixPincherX100.md)
