@@ -1,73 +1,82 @@
-# Write a ruby script which generates text output as follows:
-# Go through the current directory, recursively
-# Each directory contains a file called contains a YAML file called info.yml
-# The info.yml file contains a key called "title" which contains the title of the directory
-# If the file is not present then the directory name is used
-# md files are also yaml files and will contain a title key which would be the title of the file. 
-# if the title key is not present then the filename is used.
-# Directories are shown with their title in square brackets, followed directly by a parenthesis, the current path followed by the "README.md" and a closed parenthesis
-# Files with a `.md` extension are shown with their names in square brackets and their full paths in parentheses.
-# Directories named "images" or “docs” or ".git" are skipped.
-# Files named SUMMARY.md and README.md are skipped
-# Each line is displayed with an indentation followed by a star and a space. The indentation starts at zero and goes up by four each level of the directory
-require 'yaml'
+require "yaml"
 
-require 'yaml'
+class MakeSummary
+  def process_directory(path, indent = 0)
+    entries = []
+    Dir.entries(path).sort.each do |entry|
+      next if skip_entry?(entry)
 
-def process_directory(path, indent = 0)
-  Dir.entries(path).sort.each do |entry|
-    next if skip_entry?(entry)
-
-    current_path = File.join(path, entry)
-    if File.directory?(current_path)
-      title = extract_title(entry, current_path)
-      puts "#{' ' * indent}* [#{title}](#{current_path}/README.md)"
-      process_directory(current_path, indent + 4)
-    elsif valid_markdown_file?(entry)
-      md_title = extract_title_from_markdown(entry, current_path)
-      puts "#{' ' * indent}* [#{md_title}](#{current_path})"
+      current_path = File.join(path, entry)
+      if File.directory?(current_path)
+        title = extract_title(entry, current_path)
+        text_string = "#{" " * indent}* [#{title}](#{current_path}/README.md)"
+        entries << {text: text_string, indent: indent, title: title}
+        process_directory(current_path, indent + 4)
+      elsif valid_markdown_file?(entry)
+        md_title = extract_title_from_markdown(entry, current_path)
+        text_string = "#{" " * indent}* [#{md_title}](#{current_path})"
+        entries << {text: text_string, indent: indent, title: title}
+      end
     end
+    entries
   end
-end
 
-def skip_entry?(entry)
-  %w[. .. images docs .git .gitbook .vscode].include?(entry)
-end
-
-def valid_markdown_file?(entry)
-  entry.end_with?('.md') && entry != 'SUMMARY.md' && entry != 'README.md'
-end
-
-def extract_title(entry, current_path)
-  info_file = File.join(current_path, 'info.yml')
-  if File.exist?(info_file)
-    info = YAML.load_file(info_file)
-    return info['title'] if info['title']
+  def skip_entry?(entry)
+    %w[. .. images docs .git .gitbook .vscode].include?(entry)
   end
-  entry
-end
 
-def extract_title_from_markdown(entry, current_path)
-  md_title = File.basename(entry, '.md')
-  result = "xxx"
-  begin
-    md_content = YAML.load_file(current_path)
-  rescue Exception => e
-#    puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
-    result = md_title
-    md_content = nil
+  def valid_markdown_file?(entry)
+    entry.end_with?(".md") && entry != "SUMMARY.md" && entry != "README.md"
   end
-  begin
-    if md_content.nil? || md_content['title'].nil?
-  #    puts "() #{result} >>> #{md_title} #{md_content.class}}"
+
+  def extract_title(entry, current_path)
+    info_file = File.join(current_path, "info.yml")
+    if File.exist?(info_file)
+      info = YAML.load_file(info_file)
+      return info["title"] if info["title"]
+    end
+    entry
+  end
+
+  def extract_title_from_markdown(entry, current_path)
+    md_title = File.basename(entry, ".md")
+    result = "xxx"
+    begin
+      md_content = YAML.load_file(current_path)
+    rescue e
+      #    puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
       result = md_title
-    else 
-      result = md_content['title']
+      md_content = nil
     end
-  rescue Exception => e
-# puts "**RESCUE** #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
+    begin
+      result = if md_content.nil? || md_content["title"].nil?
+        #    puts "() #{result} >>> #{md_title} #{md_content.class}}"
+        md_title
+      else
+        md_content["title"]
+      end
+    rescue e
+      # puts "**RESCUE** #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
+    end
+    result
   end
-  result
+
+  # entries will look like this:
+  # [{:text=>"* [Introduction](./README.md)", :indent=>0, :title=>"Introduction", :lines
+  def run
+    @entries = []
+    Dir.entries(".").sort.each do |entry|
+      next if skip_entry?(entry)
+      current_path = File.join(".", entry)
+      title = extract_title(entry, current_path)
+      title_line = "* [#{title}](#{current_path}/README.md)"
+      lines = process_directory(entry, 1)
+      @entries << {text: title_line, indent: 0, title: title, lines: lines}
+    end
+    @entries.each do |entry|
+      puts entry[:text]
+    end
+  end
 end
 
-process_directory('.')
+MakeSummary.new.run
