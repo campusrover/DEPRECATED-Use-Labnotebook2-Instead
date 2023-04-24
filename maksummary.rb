@@ -5,24 +5,31 @@ class MakeSummary
     entries = []
     Dir.entries(path).sort.each do |entry|
       next if skip_entry?(entry)
-
       current_path = File.join(path, entry)
       if File.directory?(current_path)
-        title = extract_title(entry, current_path)
-        text_string = "#{" " * indent}* [#{title}](#{current_path}/README.md)"
-        entries << {text: text_string, indent: indent, title: title}
+        entries << extract_dir_info(entry, current_path, indent)
         process_directory(current_path, indent + 4)
       elsif valid_markdown_file?(entry)
-        md_title = extract_title_from_markdown(entry, current_path)
-        text_string = "#{" " * indent}* [#{md_title}](#{current_path})"
-        entries << {text: text_string, indent: indent, title: title}
+        entries << extract_file_info(entry, current_path, indent)
       end
     end
     entries
   end
 
+  def extract_dir_info(entry, path, indent)
+    title = extract_title(entry, path)
+    text_string = "#{" " * indent}* [#{title}](#{path}/README.md)"
+    {text: text_string, indent: indent, title: title}
+  end
+
+  def extract_file_info(entry, path, indent)
+    md_title = extract_title_from_markdown(entry, path)
+    text_string = "#{" " * indent}* [#{md_title}](#{path})"
+    {text: text_string, indent: indent, title: md_title}
+  end
+
   def skip_entry?(entry)
-    %w[. .. images docs .git .gitbook .vscode].include?(entry)
+    %w[. .. images README.md SUMMARY.md docs .git .gitbook .vscode .DS_Store .bookignore .gitbook.yaml].include?(entry)
   end
 
   def valid_markdown_file?(entry)
@@ -43,7 +50,7 @@ class MakeSummary
     result = "xxx"
     begin
       md_content = YAML.load_file(current_path)
-    rescue e
+    rescue StandardError => e
       #    puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
       result = md_title
       md_content = nil
@@ -55,23 +62,21 @@ class MakeSummary
       else
         md_content["title"]
       end
-    rescue e
+    rescue StandardError => e
       # puts "**RESCUE** #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
     end
     result
   end
 
-  # entries will look like this:
-  # [{:text=>"* [Introduction](./README.md)", :indent=>0, :title=>"Introduction", :lines
   def run
     @entries = []
     Dir.entries(".").sort.each do |entry|
       next if skip_entry?(entry)
       current_path = File.join(".", entry)
-      title = extract_title(entry, current_path)
-      title_line = "* [#{title}](#{current_path}/README.md)"
+      next if !File.directory?(current_path)
+      dir_info = extract_dir_info(entry, current_path, 0)
       lines = process_directory(entry, 1)
-      @entries << {text: title_line, indent: 0, title: title, lines: lines}
+      @entries << dir_info.merge!(lines: lines)
     end
     @entries.each do |entry|
       puts entry[:text]
