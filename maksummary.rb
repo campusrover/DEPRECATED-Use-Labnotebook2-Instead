@@ -50,8 +50,8 @@ class MakeSummary
     result = "xxx"
     begin
       md_content = YAML.load_file(current_path)
-    rescue StandardError => e
-      #    puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
+    rescue Psych::SyntaxError => e
+#     puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
       result = md_title
       md_content = nil
     end
@@ -71,9 +71,13 @@ class MakeSummary
   def run
     @entries = []
     Dir.entries(".").sort.each do |entry|
+      # Skip based on list
       next if skip_entry?(entry)
       current_path = File.join(".", entry)
+
+      # Top level only, skip if not a directory
       next if !File.directory?(current_path)
+
       dir_info = extract_dir_info(entry, current_path, 0)
       lines = process_directory(entry, 1)
       @entries << dir_info.merge!(lines: lines)

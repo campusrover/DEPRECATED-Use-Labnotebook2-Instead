@@ -1,4 +1,4 @@
-# bru.py - the script
+# ROSUTILS - Standard directory
 
 ## Intro
 
@@ -13,9 +13,9 @@ All the key scripts for bru are in a standard github repo, [rosutils](https://gi
 
 Note that in general we set up a new robot by copying the MicroSD from a similar robot. This is here for completeness. Here are the steps:
 
-1. Follow the Robot vendor instructions to set it up and set up ROS. All libraries, environment variables and so on should be set up in a standard way
-1. Clone [rosutils](https://github.com/campusrover/rosutils) to ~ on the robot
-1. Clone [gpg_bran4](https://github.com/campusrover/gpg_bran4) to ~/catkin_ws/src
-1. Create a symbolic link from ~/rosutils/bru.py to ~/bin and chmod +x that file (details may be different.)
+* Follow the Robot vendor instructions to set it up and set up ROS. All libraries, environment variables and so on should be set up in a standard way
+* Clone [rosutils](https://github.com/campusrover/rosutils) to ~ on the robot
+* Clone [gpg_bran4](https://github.com/campusrover/gpg_bran4) to ~/catkin_ws/src
+* Create a symbolic link from ~/rosutils/bru.py to ~/bin and chmod +x that file (details may be different.)
 
 
