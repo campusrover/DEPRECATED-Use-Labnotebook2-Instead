@@ -7,10 +7,11 @@ class MakeSummary
       next if skip_entry?(entry)
       current_path = File.join(path, entry)
       if File.directory?(current_path)
-        entries << extract_dir_info(entry, current_path, indent)
-        process_directory(current_path, indent + 4)
+        dir_info = extract_dir_info(entry, current_path, indent)
+        lines = process_directory(current_path, indent + 1)
+        @entries << dir_info.merge!(lines: lines)
       elsif valid_markdown_file?(entry)
-        entries << extract_file_info(entry, current_path, indent)
+        entries << generate_entry_for_file(entry, current_path, indent)
       end
     end
     entries
@@ -20,6 +21,14 @@ class MakeSummary
     title = extract_title(entry, path)
     text_string = "#{" " * indent}* [#{title}](#{path}/README.md)"
     {text: text_string, indent: indent, title: title}
+  end
+
+  def generate_entry_for_file(entry, path, indent)
+    file_keys = extract_keys_from_markdown(entry, path)
+    title = file_keys.fetch(:title, entry)
+    order = file_keys.fetch(:order, 0)
+    text_string = "#{" " * indent}* [#{title}](#{path})"
+    {text: text_string, indent: indent, title: title, order: order}
   end
 
   def extract_file_info(entry, path, indent)
@@ -33,7 +42,7 @@ class MakeSummary
   end
 
   def valid_markdown_file?(entry)
-    entry.end_with?(".md") && entry != "SUMMARY.md" && entry != "README.md"
+    entry.end_with?(".md")
   end
 
   def extract_title(entry, current_path)
@@ -45,26 +54,23 @@ class MakeSummary
     entry
   end
 
-  def extract_title_from_markdown(entry, current_path)
-    md_title = File.basename(entry, ".md")
-    result = "xxx"
+  def extract_keys_from_directory(entry, current_path)
+    result = {title: entry, order: 0}
+    info_file = File.join(current_path, "info.yml")
+    if File.exist?(info_file)
+      info = YAML.load_file(info_file)
+      result.merge!(info)
+    end
+    result
+  end
+
+  def extract_keys_from_markdown(entry, current_path)
+    result = {title: entry}
     begin
       md_content = YAML.load_file(current_path)
-    rescue Psych::SyntaxError => e
-#     puts "<RESCUE> #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
-      result = md_title
-      md_content = nil
+    rescue
     end
-    begin
-      result = if md_content.nil? || md_content["title"].nil?
-        #    puts "() #{result} >>> #{md_title} #{md_content.class}}"
-        md_title
-      else
-        md_content["title"]
-      end
-    rescue StandardError => e
-      # puts "**RESCUE** #{result} >>> #{md_title} >>> #{e.message} >> #{md_content.class}}"
-    end
+    result.merge!(md_content) unless md_content.nil? || !md_content.is_a?(Hash)
     result
   end
 
@@ -84,6 +90,7 @@ class MakeSummary
     end
     @entries.each do |entry|
       puts entry[:text]
+      puts entry[:lines].sort_by { |line| line[:order] }.map { |line| line[:text] }
     end
   end
 end
