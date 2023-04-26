@@ -149,6 +149,7 @@
     * [spawn_model_terminal](./faq/spawn_model_terminal.md)
     * [spawn_multiple_robots](./faq/spawn_multiple_robots.md)
     * [tkinter-ROS](./faq/tkinter-ROS.md)
+	* [usb-cam-setup](faq/usb-cam-setup.md)
     * [using-args-params-roslaunch](./faq/using-args-params-roslaunch.md)
     * [using-conditionals-in-roslaunch](./faq/using-conditionals-in-roslaunch.md)
 * [infrastructure](./infrastructure/README.md)
