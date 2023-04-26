@@ -1,5 +1,5 @@
 ---
-title: # Reinforcement Learning and its Applications
+title: Reinforcement Learning and its Applications
 ---
 # Reinforcement Learning and its Applications
 **Authors: Rachel Lese, Tiff Lyman**
