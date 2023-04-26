@@ -4,7 +4,7 @@
      * [connect-to-robot.md](BRU/connect-to-robot.md)
      * [rosutils.md](BRU/rosutils.md)
      * [script.md](BRU/script.md)
-* [Frequently Asked Questionsxx](./faq/README.md)
+* [Frequently Asked Questions](./faq/README.md)
      * [using-conditionals-in-roslaunch.md](faq/using-conditionals-in-roslaunch.md)
      * [InterbotixPincherX100.md](faq/InterbotixPincherX100.md)
      * [PID-guide.md](faq/PID-guide.md)
