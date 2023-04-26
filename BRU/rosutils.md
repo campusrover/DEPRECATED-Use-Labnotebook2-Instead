@@ -1,4 +1,4 @@
-# bru.py - the script
+# ROSUTILS - Standard directory
 
 ## Intro
 

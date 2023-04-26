@@ -9,7 +9,7 @@ class MakeSummary
       if File.directory?(current_path)
         dir_info = extract_dir_info(entry, current_path, indent)
         lines = process_directory(current_path, indent + 1)
-        @entries << dir_info.merge!(lines: lines)
+        @entries << dir_info.merge!(lines:)
       elsif valid_markdown_file?(entry)
         entries << generate_entry_for_file(entry, current_path, indent)
       end
@@ -18,23 +18,24 @@ class MakeSummary
   end
 
   def extract_dir_info(entry, path, indent)
-    title = extract_title(entry, path)
-    text_string = "#{" " * indent}* [#{title}](#{path}/README.md)"
-    {text: text_string, indent: indent, title: title}
+    dir_keys = extract_keys_from_directory(entry, path)
+    title = dir_keys.fetch("title", entry)
+    order = dir_keys.fetch("order", 100)
+    text_string = "#{'    ' * indent}* [#{title}](#{path}/README.md)"
+    {text: text_string, indent:, title:, order:}
   end
 
   def generate_entry_for_file(entry, path, indent)
     file_keys = extract_keys_from_markdown(entry, path)
-    title = file_keys.fetch(:title, entry)
-    order = file_keys.fetch(:order, 0)
-    text_string = "#{" " * indent}* [#{title}](#{path})"
-    {text: text_string, indent: indent, title: title, order: order}
+    title = file_keys.fetch("title", entry)
+    order = file_keys.fetch("order", 100)
+    text_string = " #{'    ' * indent}* [#{title}](#{path})"
+    {text: text_string, indent:, title:, order:}
   end
 
-  def extract_file_info(entry, path, indent)
+  def extract_file_info(_eßntry, path, indent)
     md_title = extract_title_from_markdown(entry, path)
-    text_string = "#{" " * indent}* [#{md_title}](#{path})"
-    {text: text_string, indent: indent, title: md_title}
+    {text: text_string, indent:, title: md_title}
   end
 
   def skip_entry?(entry)
@@ -55,11 +56,11 @@ class MakeSummary
   end
 
   def extract_keys_from_directory(entry, current_path)
-    result = {title: entry, order: 0}
+    result = {title: entry}
     info_file = File.join(current_path, "info.yml")
     if File.exist?(info_file)
       info = YAML.load_file(info_file)
-      result.merge!(info)
+      result.merge!(order: info["order"], title: info["title"])
     end
     result
   end
@@ -68,7 +69,7 @@ class MakeSummary
     result = {title: entry}
     begin
       md_content = YAML.load_file(current_path)
-    rescue
+    rescue StandardError
     end
     result.merge!(md_content) unless md_content.nil? || !md_content.is_a?(Hash)
     result
@@ -76,9 +77,11 @@ class MakeSummary
 
   def run
     @entries = []
-    Dir.entries(".").sort.each do |entry|
+    Dir.entries(".").each do |entry|
+      puts entry.inspect
       # Skip based on list
       next if skip_entry?(entry)
+
       current_path = File.join(".", entry)
 
       # Top level only, skip if not a directory
@@ -86,11 +89,13 @@ class MakeSummary
 
       dir_info = extract_dir_info(entry, current_path, 0)
       lines = process_directory(entry, 1)
-      @entries << dir_info.merge!(lines: lines)
+      order = dir_info.fetch("order", 100)
+      @entries << {title: dir_info["title"], order:, lines:}
     end
+    puts @entries.size
     @entries.each do |entry|
-      puts entry[:text]
-      puts entry[:lines].sort_by { |line| line[:order] }.map { |line| line[:text] }
+      # puts entry[:text]
+      # puts(entry[:lines].sort_by { |line| line[:order] }.map { |line| line[:text] })
     end
   end
 end
