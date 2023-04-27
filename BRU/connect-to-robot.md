@@ -1,5 +1,5 @@
 ---
-title: Connecting to Robots from VNC
+title: Controlling Robots from VNC
 order: 3
 ---
 # Connecting to Turtlebot3 or Plaform Robots from VNC
