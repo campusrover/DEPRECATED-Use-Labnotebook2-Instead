@@ -63,6 +63,7 @@
      * [spawn_model_terminal.md](faq/spawn_model_terminal.md)
      * [spawn_multiple_robots.md](faq/spawn_multiple_robots.md)
      * [tkinter-ROS.md](faq/tkinter-ROS.md)
+     * [usb-cam-setup.md](faq/usb-cam-setup.md)
      * [using-args-params-roslaunch.md](faq/using-args-params-roslaunch.md)
      * [GPS-knowledge.md](faq/GPS-knowledge.md)
 * [Brandeis Lab Robots](./lab-robots/README.md)

@@ -13,6 +13,9 @@
   * b8:27:eb:8c:90:c5 - **donatello** - donatello.dyn.brandeis.edu
   * b8:27:eb:a4:d5:ec - **rafael** - rafael.dyn.brandeis.edju
   * 74:40:bb:d5:ea:2f - **alien** - alien.dyn.brandeis.edu
+  * dc:a6:32:20:ac:16 - **platform2** - platform1.dyn.brandeis.edu
+  * e4:5f:01:ab:b7:ff - **platform3** - platform3.dyn.brandeis.edu
+
 
   
 * Wifi connected Linux Notebook
