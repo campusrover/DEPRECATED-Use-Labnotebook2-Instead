@@ -1,22 +1,6 @@
 require "yaml"
 
 class MakeSummary
-  def process_directory(path, indent = 0)
-    entries = []
-    Dir.entries(path).sort.each do |entry|
-      next if skip_entry?(entry)
-      current_path = File.join(path, entry)
-      if File.directory?(current_path)
-        dir_info = extract_dir_info(entry, current_path, indent)
-        lines = process_directory(current_path, indent + 1)
-        entries << dir_info.merge!(lines:)
-      elsif valid_markdown_file?(entry)
-        entries << generate_entry_for_file(entry, current_path, indent)
-      end
-    end
-    entries
-  end
-
   def extract_dir_info(entry, path, indent)
     dir_keys = extract_keys_from_directory(entry, path)
     title = dir_keys.fetch(:title, entry)
@@ -33,7 +17,7 @@ class MakeSummary
     {text: text_string, indent:, title:, order:}
   end
 
-  def extract_file_info(_eßntry, path, indent)
+  def extract_file_info(entry, path, indent)
     md_title = extract_title_from_markdown(entry, path)
     {text: text_string, indent:, title: md_title}
   end
@@ -77,29 +61,57 @@ class MakeSummary
     result
   end
 
-  def run
-    toplevel_entries = []
-    Dir.entries(".").each do |entry|
-      # Skip based on list
+  def process(current, depth)
+    all_entries = []
+    puts "processing #{current}"
+    Dir.entries(current).each do |entry|
       next if skip_entry?(entry)
-
       current_path = File.join(".", entry)
-
-      # Top level only, skip if not a directory
-      next if !File.directory?(current_path)
-
-      dir_info = extract_dir_info(entry, current_path, 0)
-      lines = process_directory(entry, 1)
-      order = dir_info.fetch(:order, 100)
-      title = dir_info.fetch(:title, "no title")
-      text = dir_info.fetch(:text, "no text")
-      toplevel_entries << {title:, order:, lines:, text:}
+      if File.directory?(current_path)
+        dir_info = extract_dir_info(entry, current_path, depth)
+        dir_entries = process_directory(current_path, depth + 1)
+        x = dir_info.merge!(lines: dir_entries)
+        all_entries << x
+      elsif valid_markdown_file?(entry)
+        x = generate_entry_for_file(entry, current_path, depth)
+        all_entries << x
+      end
     end
-    toplevel_entries = toplevel_entries.sort_by { |entry| entry[:order] }
-    toplevel_entries.each do |entry|
+    all_entries
+  end
+
+  def generate_output(all_entries)
+    all_entries.each do |entry|
       puts entry[:text]
-      puts(entry[:lines].sort_by { |line| line[:order] }.map { |line| line[:text] })
+      next unless entry[:lines]
+      entry[:lines].sort_by { |x| x[:order] }.each do |line|
+        puts line[:text]
+      end
     end
+  end
+
+  def run
+    current_path = File.join(".")
+    all_entries  = process(current_path, 0)
+    generate_output(all_entries)
+  end
+
+## DELETABLE
+
+  def process_directory(path, indent = 0)
+    entries = []
+    Dir.entries(path).sort.each do |entry|
+      next if skip_entry?(entry)
+      current_path = File.join(path, entry)
+      if File.directory?(current_path)
+        dir_info = extract_dir_info(entry, current_path, indent)
+        lines = process_directory(current_path, indent + 1)
+        entries << dir_info.merge!(lines:)
+      elsif valid_markdown_file?(entry)
+        entries << generate_entry_for_file(entry, current_path, indent)
+      end
+    end
+    entries
   end
 end
 
