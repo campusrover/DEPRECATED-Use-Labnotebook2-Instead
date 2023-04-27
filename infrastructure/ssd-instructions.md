@@ -1,4 +1,10 @@
+---
+title: Creating a bootable SSD
+status: old
+---
+
 # Bootable SSD Creation
+This procedure is very finicky. We used it before we had our Rover cluster. Avoid doing this if you can!
 
 ## Introduction
 

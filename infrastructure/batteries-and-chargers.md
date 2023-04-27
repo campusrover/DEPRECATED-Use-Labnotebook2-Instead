@@ -1,3 +1,7 @@
+---
+title:  Danger Signs with Batteries and Chargers
+status: current
+---
 # Batteries and Chargers
 
 ## Danger

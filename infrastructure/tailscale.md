@@ -1,6 +1,7 @@
 ---
 title: Tailscale VPN
 order: 1
+status: new
 ---
 # Tailscale VPN
 

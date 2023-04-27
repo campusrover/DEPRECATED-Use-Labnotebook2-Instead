@@ -1,4 +1,7 @@
-# Cloud Desktop
+---
+title: How to use the Rover Cluster
+---
+# How to use the Rover Cluster
 
 ![novnc](../.gitbook/assets/novnc.png)
 
