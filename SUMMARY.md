@@ -1,7 +1,7 @@
 * [Brandeis Robotics Utility](./BRU/README.md)
+     * [Connecting to Robots from VNC](BRU/connect-to-robot.md)
      * [Commands](BRU/commands.md)
      * [BRU Concepts](BRU/concepts.md)
-     * [connect-to-robot.md](BRU/connect-to-robot.md)
      * [rosutils.md](BRU/rosutils.md)
      * [script.md](BRU/script.md)
 * [Frequently Asked Questions](./faq/README.md)

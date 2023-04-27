@@ -1,3 +1,7 @@
+---
+title: Connecting to Robots from VNC
+order: 3
+---
 # Connecting to Turtlebot3 or Plaform Robots from VNC
 
 Before you get started, make sure you have the latest version of `rosutils` on your VNC
