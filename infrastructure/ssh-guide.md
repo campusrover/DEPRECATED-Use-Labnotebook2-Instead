@@ -2,7 +2,7 @@
 title: Setting up SSH on a new robot
 ---
 # Note
-All our lab robots, as of now, have SSH set up. THis is for new robots.
+All our lab robots, as of now, have SSH set up. This is for new robots.
 # setting up ssh on a new robot
 
 By default, ubuntu MATE comes with ssh *installed* but *disabled*. So there are a few steps to setup ssh to your raspberry pi.
