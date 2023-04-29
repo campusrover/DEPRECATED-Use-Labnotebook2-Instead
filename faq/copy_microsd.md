@@ -4,11 +4,13 @@ status: hot
 author: Pito Salas
 ---
 # Copy MicroSD
+
 * Current best resource on web: [The fastest way to clone an SD card on macOS](https://blog.jaimyn.dev/the-fastest-way-to-clone-sd-card-macos/)
 
 ## Identify your sd card
 You’ll need to find out which disk your SD card represents. You can run `diskutil list` and should see an output like below:
 ```
+$ diskutil list` 
 /dev/disk1 (synthesized):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      APFS Container Scheme -                      +500.0 GB   disk1
