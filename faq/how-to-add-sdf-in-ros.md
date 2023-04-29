@@ -1,3 +1,8 @@
+---
+title: How to add an SDF Model
+author: Shuo Shi
+---
+
 ## How to add SDF model in ROS
 Author: Shuo Shi
 ### Overview
