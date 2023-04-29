@@ -10,7 +10,8 @@ author: Pito Salas
 ## Identify your sd card
 You’ll need to find out which disk your SD card represents. You can run `diskutil list` and should see an output like below:
 ```
-$ diskutil list` 
+$ diskutil list
+
 /dev/disk1 (synthesized):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      APFS Container Scheme -                      +500.0 GB   disk1
@@ -43,7 +44,9 @@ Once the command has finished running, you’ll end up with a file in your home 
 
 ## Copy the disk image (dmg) to your SD card
 
-You’ll first need to unmount your SD card. Do not click the eject button in finder, but run this command, replacing 4 with whatever number you identified as your sd card sudo diskutil unmountDisk /dev/disk4.
+You’ll first need to unmount your SD card. Do not click the eject button in finder, but run this command, replacing 4 with whatever number you identified as your sd card 
+
+`sudo diskutil unmountDisk /dev/disk4`
 
 Then to copy the image, run the following command:
 
