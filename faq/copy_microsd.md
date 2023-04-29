@@ -1,3 +1,8 @@
+---
+title: How to Copy a MicroSD
+status: hot
+author: Pito Salas
+---
 # Copy MicroSD
 * Current best resource on web: [The fastest way to clone an SD card on macOS](https://blog.jaimyn.dev/the-fastest-way-to-clone-sd-card-macos/)
 

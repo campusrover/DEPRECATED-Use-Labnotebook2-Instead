@@ -1,3 +1,8 @@
+---
+title: Raspberry Pi Edge Detection
+category: hot
+status: current
+---
 # camera calibration
 
 Sometimes, you might want to use object detection or use certain algorithms that require a camera such as VSLAM. These algorithms usually require a very good calibration of the camera to work properly. The calibration fixes things like distortion by determining the camera’s true parameters such as focal length, format size, principal point, and lens distortion. If you see lines that are curved but are supposed to be straight, then you should probably calibrate your camera. 

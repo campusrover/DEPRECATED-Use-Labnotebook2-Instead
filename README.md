@@ -1,5 +1,6 @@
 ---
 title: Welcome
+status: current
 ---
 # Introduction
 

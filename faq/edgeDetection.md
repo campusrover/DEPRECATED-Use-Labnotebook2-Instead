@@ -1,3 +1,7 @@
+---
+title: Edge Detection
+author: Harris Ripp
+---
 # Detection of Edges 
 ### By Harris Ripp
 
