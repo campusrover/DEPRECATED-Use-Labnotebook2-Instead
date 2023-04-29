@@ -88,9 +88,7 @@ class MakeSummary
                .each do |entry|
       puts entry[:text]
       next unless entry[:lines]
-      entry[:lines].sort_by { |x| x[:order] }.each do |line|
-        puts line[:text]
-      end
+      generate_output(entry[:lines])
     end
   end
 
