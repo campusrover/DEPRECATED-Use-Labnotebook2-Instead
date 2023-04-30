@@ -3,7 +3,8 @@ title: Creating a bootable SSD
 status: old
 ---
 
-# Bootable SSD Creation
+# Creating a bootable SSD
+
 This procedure is very finicky. We used it before we had our Rover cluster. Avoid doing this if you can!
 
 ## Introduction
@@ -15,7 +16,7 @@ This procedure is very finicky. We used it before we had our Rover cluster. Avoi
 **Overview of the procedure** We are going to create a bootable SSD with these instructions. You will:
 
 * Download the right version of Ubuntu onto your computer
-* Plug in your USB stick \(which will be erased\)
+* Plug in your USB stick (which will be erased)
 * "Flash" the USB stick which will make it bootable
 * Boot using that USB stick
 * This brings up the Ubuntu installer. You will use it to just "try ubuntu"
@@ -27,17 +28,16 @@ This procedure is very finicky. We used it before we had our Rover cluster. Avoi
 In order to install Ubuntu onto an SSD, we need to first create a bootable USB Flash Drive. This drive will be used to boot Ubuntu and install it onto the SSD. The process can be completed as follows:
 
 1. **Plug the USB SSD drive into your computer**
-2. **Download the appropriate Ubuntu 18.04 desktop image for your machine**
+2.  **Download the appropriate Ubuntu 18.04 desktop image for your machine**
 
     [http://releases.ubuntu.com/18.04/](http://releases.ubuntu.com/18.04/)
-
 3. **Flash the Ubuntu image onto your USB stick.**
 
-How to flash Ubuntu with Mac: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos\#0](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0)
+How to flash Ubuntu with Mac: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos#0)
 
-How to flash Ubuntu with Windows: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows\#0](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0)
+How to flash Ubuntu with Windows: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0)
 
-How to flasg Ubuntu with Ubuntu: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu\#2](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
+How to flasg Ubuntu with Ubuntu: [https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu#2)
 
 With Ubuntu flashed onto your flash drive, it can now be booted and installed onto your SSD. If your SSD has anything on it, be sure to format it before moving on to the next step.
 
@@ -55,7 +55,7 @@ Restart your computer. While it is booting up, press the boot menu key. This is 
 
 **Continuing...**
 
-With Ubuntu running on your machine, plug in your external SSD \(while keeping the USB stick plugged in\) and select **“Try ubuntu without installing”** to begin the installation process.
+With Ubuntu running on your machine, plug in your external SSD (while keeping the USB stick plugged in) and select **“Try ubuntu without installing”** to begin the installation process.
 
 **NOTE:** If you are unable to use your mouse and keyboard on the Ubuntu desktop, a USB keyboard and mouse is required from this point on.
 
@@ -65,7 +65,7 @@ Now that you are on the Ubuntu desktop, it is time to install Ubuntu to the SSD.
 
 ### Partitioning your SSD
 
-You will use a program called **GParted** to partition your SSD for installation. From the applications menu in Ubuntu \(top left corner\), open up **GParted** and in the top right corner, select your SSD.
+You will use a program called **GParted** to partition your SSD for installation. From the applications menu in Ubuntu (top left corner), open up **GParted** and in the top right corner, select your SSD.
 
 Once the drive is selected, remove all the current partitions by selecting them and pressing the delete / backspace key. With these all removed, select the green check in the top menu to confirm the changes.
 
@@ -91,7 +91,7 @@ To complete the process, click the green checkmark from the top menu once again.
 
 With the SSD partitioned, we can now install Ubuntu. Click the **Install Ubuntu 18.04** icon from the side bar to begin the process. You will be prompted to go through a series of menus. Choose "minimal" install.
 
-```text
+```
 BE SURE TO CHECK THE BOX TO INSTALL THIRD PARTY SOFTWARE. Without this, you will be unable to connect to WiFi.
 ```
 
@@ -99,7 +99,7 @@ To set up wifi, you need to choose: and the eduroam account robotics@brandeis.ed
 
 You will eventually reach a screen which asks to you how to install, titled Installation Type.
 
-```text
+```
 DO NOT SELECT THE OPTION TO ERASE DISK AND INSTALL UBUNTU. THIS WILL ERASE YOUR CURRENT OS AND MEMORY. BE SURE TO SELECT "SOMETHING ELSE"
 ```
 
@@ -107,7 +107,7 @@ The **“Something else”** option allows us to assign mount points to the prev
 
 #### sdx2
 
-```text
+```
 Use as: ext4
 format: checked
 Mount point = /
@@ -115,7 +115,7 @@ Mount point = /
 
 #### sdx3
 
-```text
+```
 Use as: ext4
 format: checked
 Mount point = /home
@@ -137,11 +137,10 @@ To be sure that this process worked, the final command should return a message s
 
 The final step in the process is to install ROS. In order to install ROS, you will need access to the internet. If you are using Eduroam, the following settings will need to be used:
 
-![Eduroam settings](../.gitbook/assets/wifi.png)
+![Eduroam settings](<../.gitbook/assets/wifi (1).png>)
 
 Once you are connected to the internet, follow these instructions to install ROS:
 
-[http://emanual.robotis.com/docs/en/platform/turtlebot3/pc\_setup/](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_setup/)
+[http://emanual.robotis.com/docs/en/platform/turtlebot3/pc\_setup/](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc\_setup/)
 
 With this completed, your SSD is configured!
-
