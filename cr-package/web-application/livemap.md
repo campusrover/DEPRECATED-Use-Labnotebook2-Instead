@@ -1,4 +1,4 @@
-# Live Map
+# livemap.md
 
 ## Campus Rover Live Map
 
@@ -12,16 +12,16 @@ The objective is to implement a 2D map in the CR\_Web application that depicts:
 
 Our first implementation was based on a [tutorial](http://wiki.ros.org/ros2djs/Tutorials/VisualizingAMap) that relied on a websocket connection between the robot and web client, and had the following dependencies on 3rd party libraries:
 
-* [RosBridge](http://wiki.ros.org/rosbridge_suite)
+* [RosBridge](http://wiki.ros.org/rosbridge\_suite)
 * [2Djs](https://www.npmjs.com/package/2djs)
 * [RosLibJs](http://wiki.ros.org/roslibjs)
 * [EaselJs](https://www.createjs.com/easeljs)
 * [EventEmitter2](https://www.npmjs.com/package/eventemitter2)
 
-This initial implementation \([repo here](https://github.com/campusrover/Campus-Rover-Web-Tools/tree/master/CR%20Live%20Map)\) was successful, but presented several issues:
+This initial implementation ([repo here](https://github.com/campusrover/Campus-Rover-Web-Tools/tree/master/CR%20Live%20Map)) was successful, but presented several issues:
 
 * Building upon 3rd party dependencies risked future breaks and maintenance.
-* As discussed [here](https://github.com/campusrover/labnotebook/blob/master/Flask%20%26%20ROS.md), it entailed "ROS-like" programming in _JavaScript_ instead of Python.
+* As discussed [here](../../Flask%20&%20ROS.md), it entailed "ROS-like" programming in _JavaScript_ instead of Python.
 * The implementation described in the [tutorial](http://wiki.ros.org/ros2djs/Tutorials/VisualizingAMap) generates a 2D map image from an amcl occupancy grid. This is unecessary for our purposes, because Campus Rover uses a _pre-generated_ floorplan image; re-generating it is redundant and thus computationally wasteful.
 * Generating the map and loading the 4 JavaScript libraries mentioned above on every page load created noticeable performance issues, limiting any additional page content.
 
@@ -41,7 +41,7 @@ Support for:
 
 * Multiple floorplans/maps
 * Switching between different floorplans
-* Adjusting the size and scale of a map \(for zooming in/out, resizing, etc.\)
+* Adjusting the size and scale of a map (for zooming in/out, resizing, etc.)
 
 ## Follow-up Iteration
 
@@ -53,11 +53,11 @@ After several preceding iterations of "live" 2D maps, it became clear that a sin
 
 The `static` directory in `rover_app` now contains `map_files`, which contains the local files needed to generate a given map, including a JSON file with parameters specific to each map. For example:
 
---
+\--
 
 #### `all_maps.json`
 
-```text
+```
 "Gerstenzang Basement": {
     "files": {
         "path": "rover_app/static/map_files/basement/",
@@ -75,7 +75,7 @@ The `static` directory in `rover_app` now contains `map_files`, which contains t
 
 The JSON object for a map includes references to local files comprising the map's floorplan `.png` file, a JSON file of the map's waypoint data, and a copy of the yaml parameters used for amcl navigation of the `.png`-based map.
 
---
+\--
 
 #### `live_map.py`
 
@@ -87,7 +87,7 @@ Initializing a LiveMap object requires 2 parameters:
 
 For example, `live_map = LiveMap("Gerstenzang Basement", 2)` initializes a LiveMap object of the Gerstenzang Basement floorplan with a 2cm/pixel scale. The object maintains the following abstraction representing the state of the map, including the robot's current place within it and it's goal destination:
 
-```text
+```
     self.map_state = {
         "map_parameters": {
             "map_name": map_name_string,
@@ -128,6 +128,6 @@ Note that a nested dictionary of ROS subscribers continually updates the scaled 
 Implementing 2D mapping in this way aims to achieve two main advantages:
 
 1. The LiveMap class allows the initialization of multiple, differing maps, with custom scales in the web application. For instance, a small, "thumbnail" map could be implemented on one page, while large map could be displayed somewhere else. This also makes switching between maps is also possible.
-2. Representing a `map_state` as a Python dictionary \(shown above\) makes it easy to send the data needed to work with a live 2D map as JSON. For instance, a map route or endpoint could be implemented to return a `map_state` JSON object which could, in turn, be used to render or update a map in the UI.
+2. Representing a `map_state` as a Python dictionary (shown above) makes it easy to send the data needed to work with a live 2D map as JSON. For instance, a map route or endpoint could be implemented to return a `map_state` JSON object which could, in turn, be used to render or update a map in the UI.
 
 ## Brad Nesbitt & Huaigu Lin 11/10/2018
