@@ -4,6 +4,8 @@ order: 10
 status: top
 category: python
 description: How to use the TK Inter package for Ros Tools
+author: Brendon Lu
+---
 # Creating a Tkinter GUI and communicating w/ ROS nodes
 
 Brendon Lu
