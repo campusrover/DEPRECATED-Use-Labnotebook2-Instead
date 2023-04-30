@@ -23,7 +23,7 @@ class MakeSummary
   end
 
   def skip_entry?(entry)
-    %w[. .. images README.md SUMMARY.md docs .git .gitbook .vscode .DS_Store .bookignore .gitbook.yaml].include?(entry)
+    %w[. .. images SUMMARY.md docs .git .gitbook .vscode .DS_Store .bookignore .gitbook.yaml].include?(entry)
   end
 
   def valid_markdown_file?(entry)
