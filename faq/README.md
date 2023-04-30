@@ -22,7 +22,7 @@ order: where does this one appear in order
 status: obsolete|new|tophit
 ---
 ```
-as the first 3 lines of the file
+as the first few lines of the file
 5. Git add, commit and push your changes.
 
 ## Note
