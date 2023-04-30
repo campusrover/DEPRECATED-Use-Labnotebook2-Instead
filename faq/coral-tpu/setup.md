@@ -1,5 +1,7 @@
 ---
 title: Setting up to use Coral TPU
+description: Detailed steps for using the Coral TPU
+status: tophit
 ---
 ## Requirements
 

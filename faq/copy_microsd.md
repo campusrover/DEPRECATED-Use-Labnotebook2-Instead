@@ -1,7 +1,8 @@
 ---
 title: How to Copy a MicroSD
-status: hot
+status: tophit
 author: Pito Salas
+description: Very common requirement
 ---
 # Copy MicroSD!
 
