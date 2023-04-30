@@ -1,6 +1,7 @@
 ---
 title: FAQ
 author: Pito Salas
+description: All sorts of small topics are covered here
 ---
 # FAQ
 
