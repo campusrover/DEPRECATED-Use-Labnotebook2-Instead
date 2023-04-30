@@ -17,7 +17,11 @@ description: All sorts of small topics are covered here
 ---
 title: Gooder Title
 author: Pito Salas
+description: nicer subtitle
+order: where does this one appear in order
+status: obsolete|new|tophit
 ---
+```
 as the first 3 lines of the file
 5. Git add, commit and push your changes.
 
