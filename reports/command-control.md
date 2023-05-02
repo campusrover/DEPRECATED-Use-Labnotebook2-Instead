@@ -14,24 +14,66 @@ May 5, 2023
 
 ## Introduction
 
-### Problem Statement including original objectives
+### Overview
 
-### Relevant literature
+### Campus Rover
 
-## What was created
+### Dashboard
 
-### Technical Description, illustrations
+## Campus Rover Dashboard
 
-### Discussion of interesting algorithms, modules, techniques
+### Overview
 
-### Guide on how to use the code written
+### System Architecture
 
-### Clear description and tables of source files, nodes, messages, actions and so on
+### Web-Client
 
-## Story of the project.
+#### React.js
 
-### How it unfolded, how the team worked together
+#### roslibjs
 
-### problems that were solved, pivots that had to be taken
+### GPS
 
-### Your own assessment
+#### iPhone GPS Technology
+
+#### GPS2IP
+
+### ROS
+
+#### Nodes
+
+#### Topics
+
+## Walkthrough
+
+### GitHub
+
+#### Architecture
+
+#### Contribution Policy
+
+### Tutorial
+
+## Story of Project
+
+### Overview
+
+### Collection of Various Project Concepts
+
+### Team Structure
+
+#### Separation of Duties
+
+### Timeline
+
+#### Major Hurdles
+
+#### Major Milestones
+
+## Conclusion
+
+### Assessment of Project
+
+### Recommendations for Continued Work
+
+### Takeaways
