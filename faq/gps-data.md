@@ -19,8 +19,12 @@ The application is solely available on iOS. No research was conducted on applica
 #### Turn Off Auto-Lock
 Settings > Display & Brightness > Auto-Lock > Never
 
+### GPS2IP Configuration
 #### Enable GPS2IP
-Toggle On "Enable GPS2IP" Switch
+Open GPS2IP > Toggle On "Enable GPS2IP" Switch
+
+#### NMEA Message Type
+Open GPS2IP > Settings > NMEA Messages to Send > Only Toggle On "GLL" Switch
 
 ### Python Code
 ```
@@ -94,3 +98,5 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         gps_node.get_coords()
 ```
+
+
