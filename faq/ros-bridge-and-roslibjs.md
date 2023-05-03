@@ -10,9 +10,8 @@ This FAQ is deigned to provide an overview of ROSBridge and ROSLIBJS, two import
 * [What are ROSBridge and ROSLIBJS?](#what-are-rosbridge-and-roslibjs)
 * [How do ROSBridge and ROSLIBJS work together?](#how-do-rosbridge-and-roslibjs-work-together)
 * [How do I install and use ROSBridge and ROSLIBJS?](#how-do-i-install-and-use-rosbridge-and-roslibjs)
-* [What are some common use cases for ROSBridge and ROSLIBJS?](#what-are-some-common-use-cases-for-rosbridge-roslibjs)
 * [Are there any limitations or challenges when using ROSBridge and ROSLIBJS?](#challenges-limitations-of-rosbridge-and-roslibjs)
-
+#
 <a name="what-are-rosbridge-and-roslibjs"></a>
 
 ## What are ROSBridge and ROSLIBJS?
@@ -69,5 +68,72 @@ Next, create a new React component called `RosConnect`:
 
 **RosConnect.jsx**
 ```javascript
+import React, { Component } from 'react';
+import { Alert } from 'react-bootstrap';
 
+class ROSConnect extends Component {
+
+    constructor() {
+        super()
+        this.state = { connected: false, ros: null } 
+        
+    }
+    // run the function as soon as the page renders
+    componentDidMount() {
+        this.init_connection()
+    }
+
+    // a function to connect to the robot using ROSLIBJS
+    init_connection() {
+        this.state.ros = new window.ROSLIB.Ros()
+        this.state.ros.on("connection", () => {
+            this.setState({connected: true})
+        })
+
+        this.state.ros.on("close", () => {
+            this.setState({connected: false})
+            // try to reconnect to rosbridge every 3 seconds
+            setTimeout(() => {
+                try{
+                    // ip address of the rosbridge server and port
+                    this.state.ros.connect('ws://127.0.0.1:9090')
+                }catch (error) {
+                    console.log("connection error:", error);
+                }
+            // if the robot disconnects try to reconnect every 3 seconds (1000 ms = 1 second)
+            }, 3000); 
+        })
+
+        try{
+            // connect to rosbridge using websocket 
+            this.state.ros.connect('ws://127.0.0.1:9090')
+        }catch (error) {
+            console.log("connection error:", error);
+        }
+
+    }
+
+    render() { 
+        return (
+            // a Alert component from react-bootstrap showing if the robot is connected or not
+            <div>
+                <Alert className='text-center m-3' variant={this.state.connected ? "success" : "danger"}>
+                    {this.state.connected ? "Robot Connected" : "Robot Disconnected"}
+                </Alert>
+            </div>
+        );
+    }
+}
+ 
+export default ROSConnect;
 ```
+
+This component can be rendered to any page, for example it can be used in the App.js component which already comes with `creat-react-app`
+
+<a name="challenges-limitations-of-rosbridge-and-roslibjs"></a>
+
+### Challenges and Limitations of ROSBridge and ROSLIBJS
+
+Even though ROSBridge and ROSLIBJS is has a lot of use cases from being able to view camera feed from a robot to getting its GPS data display on a dashboard, it does have some prominent limitations. 
+
+While working on the [campus command control project](https://github.com/campusrover/command-control), one of the issues that was encountered was lag. ROSLIBJS uses web socket, which is built on top of `Transmission Control Protocol (TCP)`. While TCP is more reliable, it transfers data more slowly, which led to lag in robot controls and video feed. It is worth mentioning that ROSBridge does support `User Datagram Protocol (UDP)`, which comes at a cost of reliability for speed, but ROSLIBJS current implementation does not support UDP. 
