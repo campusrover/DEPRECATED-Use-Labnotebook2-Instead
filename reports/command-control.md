@@ -30,15 +30,15 @@ The command and control dashboard, otherwise known as the campus rover dashboard
 
 ### Web-Client
 
-#### React.js
+#### [React.js](https://react.dev/)
 The front-end and back-end of our web client is built with React.js. The app.js file is used to manage routes and some React-Bootstrap for the creation of certain components, such as buttons. The code structure is as follows: app.js contains the header, body, and footer components. The header component hosts the web client’s top-most part of the dashboard which includes the name of the application with links to the different pages. The footer component hosts the web-client’s bottom-most part of the dashboard which includes the name of each team member. The body component is the meat of the application which contains the routes that direct the users to the various pages. These routes are as follows: about, help, home, and settings. Each of these pages utilize components that are created and housed within the rosbridge folder. You can think of them as parts of the page such as the joystick or the video feed. The ros_congig file serves as the location for default values for the settings configurations. We use local storage to save these settings values and prioritize them over the default values if they exist. <br>
 
-#### roslibjs
+#### [rosbridge](http://wiki.ros.org/rosbridge_server) and [roslibjs](http://wiki.ros.org/roslibjs)
 
 ### GPS
 GPS, or Global Positioning System, is a widely-used technology that enables precise location tracking and navigation anywhere in the world through trilateration, a process which determines the receiver’s position by measuring the distance between it and several satellites. Though it has revolutionized the way we navigate and track objects, its accuracy can vary depending on a variety of factors that are beyond the scope of this paper. However, there are various companies which have embraced the challenge of a more accurate navigation system that incorporates other data points into the algorithm responsible for the determination of the receiver position. Apple is notorious for the pin-point accuracy available within their devices which incorporate other sources such as nearby Wi-Fi networks and cell towers to improve its accuracy and speed up location fixes. The utilization of a more sophisticated location technology is critical for this project to be able to navigate routes within our university campus. Therefore, we’ve chosen to leverage an iPhone 11 Pro placed on our robot with the iOS application GPS2IP open to leverage the technology available in Apple’s devices to track our robot’s movement. <br>
 
-#### GPS2IP
+#### [GPS2IP](http://www.capsicumdreams.com/gps2ip/)
 
 ### ROS
 
@@ -48,7 +48,7 @@ GPS, or Global Positioning System, is a widely-used technology that enables prec
 
 ## Walkthrough
 
-### GitHub
+### [GitHub](https://github.com/campusrover/command-control)
 
 #### Architecture
 
