@@ -27,7 +27,7 @@ Open GPS2IP > Toggle On "Enable GPS2IP" Switch
 Open GPS2IP > Settings > NMEA Messages to Send > Only Toggle On "GLL" Switch
 
 ### Python Code
-```
+```python
 #!/usr/bin/env python
 
 '''
