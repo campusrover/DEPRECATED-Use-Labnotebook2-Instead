@@ -2,7 +2,10 @@ Project Report
 Team members: Zihao Liu, Junhao Wang, Long Yi
 Github Repo: https://github.com/campusrover/autopilot
 Date: May 2023
+<h3>
 Introduction
+</h3>
+<p>
 The idea of the autopilot robot was simple – it’s a mobile robot augmented with computer vision, but it’s a fun project to work on for people wishing to learn and combine both robotics and machine learning techniques in one project. Evenmore, one can see our project as miniature of many real world robots or products: robot vacuum (using camera), delivery robot and of course, real autopilot cars; so this is also an educative project that can familiarize one with the techniques used, or at least gives a taste of the problems to be solved, for these robots/products.
 Problem statement (original objectives)
 Able to follow a route
@@ -10,9 +13,11 @@ Able to detect traffic signs
 Able to behave accordingly upon traffic signs
 Relevant literature
 https://www.diva-portal.org/smash/get/diva2:523372/fulltext01.pdf
+</p>
 
-
+<h3>
 What was created
+</h3>
 Technical descriptions, illustrations
 There are five types and two groups of traffic signs that our robot can detect and react to. Here are descriptions of each of them and the rules associated with them upon the robot’s detection.
 Traffic light (See Fig1)
