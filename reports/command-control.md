@@ -40,9 +40,6 @@ May 5, 2023
         * [Major Hurdles](#major-hurdles)
         * [Major Milestones](#major-milestones)
 5. [Conclusion](#conclusion)
-    * [Assessment of Project](#assessment-of-project)
-    * [Recommendation for Continued Work](#recommendations-for-continued-work)
-    * [Takeaways](#takeaways)
 #
 
 <a href="introduction"></a>
@@ -455,15 +452,4 @@ Dark mode, a seemingly small feature, turned out to be a monumental milestone in
 <a href="conclusion"></a>
 
 ## Conclusion
-
-<a href="assessment-of-project"></a>
-
-### Assessment of Project
-
-<a href="recommendations-for-continued-work"></a>
-
-### Recommendations for Continued Work
-
-<a href="takeaways"></a>
-
-### Takeaways
+We sought a deeper understanding of the inter-process communications model of ROS to be able to allow our web application to take advantage of this model and we’ve successfully developed this knowledge. Additionally, it allowed us to integrate our software development knowledge with ROS to create a complex system which will draw attention to our respective resumes. We are proud of the product created in this course and see it as a major improvement from the previous implementation of the dashboard. The only aspect in which we are not content is the lag present on the camera feed and joystick. However, there are areas for improvement in which we recommend to be addressed by the next team to tackle this project. The lag issue previously described is one of them as it decreases usability of the product. It would also be useful to create a map of the campus with way points in which the GPS can be utilized to create a path from one place to another. There are a variety of improvements to be made to this application to continue to shape campus rover into an implemented product. It’s up to the next generation of students to decide where to take it next. <br>
