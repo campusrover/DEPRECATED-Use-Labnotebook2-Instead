@@ -1,4 +1,6 @@
-<h2 align=”center”> 🤖 Guard Robot (by Liulu Yue, Rongzi Xie, and Karen Mai) </h2> 
+<img width="189129387" alt="Screen Shot 2023-05-05 at 2 04 40 AM" src="https://user-images.githubusercontent.com/89604161/236387225-d58a367c-4a97-4f7c-b819-a044ff157efd.png">
+
+<h1 align=”center”> 🤖🤖 Guard Robot (by Liulu Yue, Rongzi Xie, and Karen Mai) 🤖🤖🤖 </h1> 
 
 
 <h3 align="left-center ">
@@ -14,7 +16,7 @@ There were a lot of learnings throughout this project, and while even during the
 </p>
 
 
-
+◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾
 <h3 align="left-center ">
 Proposal Breakdown 
 </h3> 
@@ -22,7 +24,7 @@ Proposal Breakdown
 As we will be approaching this project with an agile scrum methodology, we decided to take the time in developing our user stories, so that at the end of the week during our sprint review we know if we are keeping us on track with our project. After taking a review of the assignment due dates for other assignments of the class, we thought that having our own group based deadlines on Friday allows us to make these assignments achievable on time. Below is a brief outline of our weekly goals.
 </p>
 
-Here is a timeline, we thought were were going to be able to follow:
+Here is a ⏰ timeline ⏳ , we thought were were going to be able to follow:
 - March 3: Finish the Movie Script That Explains Story of Waht we want to do and Proposal Submission
 - March 10: Figure out if tf can be done in gazebo
 - March 17: Run multiple real robots
@@ -35,7 +37,12 @@ Here is a timeline, we thought were were going to be able to follow:
 - May 3: Stop writing code and work on creating a poster
 - May 10 Continuing to prepare for the presentation
 
-Here is a timeline of what we actually did 
+<img width="866" alt="Screen Shot 2023-05-05 at 2 09 55 AM" src="https://user-images.githubusercontent.com/89604161/236387884-c02bf777-ca33-4b76-8e44-d82aee0286e1.png">
+
+
+
+
+Here is a timeline of what we actually did: 
 - March 3: Finished all Drafting and Proposal - Submitted to get Feedback and Confirmation That it is Good To Go (Karen, LiuLu, Rongzi)
 - March 10: Figure out if tf can be done in gazebo (Rongzi), Creating Github Repo (Karen), Drawing Diagrams (Liulu), Explore Gazebo Worlds - Get Assests and Understand Structure (Karen)
 - March 17: Run multiple real robots on Gazebo (Karen), Created multi robot gazebo launch files (Karen), Wrote Code on Patroling Line (Liulu), Create box world (Rongzi), Make Behavior Diagram (Karen)
@@ -47,9 +54,18 @@ Here is a timeline of what we actually did
 - April 28: Testing
 - May 3: Stop writing code and work on creating a poster
 - May 10 Continuing to prepare for the presentation
+<img width="876" alt="Screen Shot 2023-05-05 at 2 11 27 AM" src="https://user-images.githubusercontent.com/89604161/236388088-48d3e45f-4730-4905-a425-b9b0c724456b.png">
+
+
+
+
+
+
+◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾
+
 
 <h3 align="left-center ">
-Preliminary Questions Answered 
+Preliminary ❓ Questions ❓ Answered 
 </h3> 
 
 <p>
@@ -60,3 +76,24 @@ To address blockers, we had to start asking ourselves questions and addressing i
   3. What props (blocks, walls, lights) will it need? 
   4. What extra capabilities, sensors, will your robot need? How you have verified that this is possibler?
   5. And many other questions.
+
+
+
+<img width="869" alt="Screen Shot 2023-05-05 at 2 07 59 AM" src="https://user-images.githubusercontent.com/89604161/236387641-64ae5517-e94b-458e-96f5-45cf3b1a56e1.png">
+
+<img width="871" alt="Screen Shot 2023-05-05 at 2 08 23 AM" src="https://user-images.githubusercontent.com/89604161/236387687-3db63abd-7a1f-4b99-bf9b-e0eb7919179b.png">
+
+<img width="867" alt="Screen Shot 2023-05-05 at 2 08 38 AM" src="https://user-images.githubusercontent.com/89604161/236387702-5f45fd65-3292-486a-a432-63d087863e19.png">
+
+<img width="860" alt="Screen Shot 2023-05-05 at 2 08 55 AM" src="https://user-images.githubusercontent.com/89604161/236387738-02f57a87-d7fc-4e17-86da-de20153979b9.png">
+
+
+<img width="201" alt="Screen Shot 2023-05-05 at 1 59 55 AM" src="https://user-images.githubusercontent.com/89604161/236386699-5cd0786c-072b-4923-a3b7-9c81ec59f60d.png">
+
+<img width="201" alt="Screen Shot 2023-05-05 at 2 00 16 AM" src="https://user-images.githubusercontent.com/89604161/236386744-9d3376ba-ccf9-47d9-aa38-146439e3abc5.png">
+
+<img width="201" alt="Screen Shot 2023-05-05 at 2 01 08 AM" src="https://user-images.githubusercontent.com/89604161/236386843-1e1213ea-7d07-4572-9e42-21d70f66b5e5.png">
+
+<img width="201" alt="Screen Shot 2023-05-05 at 2 01 36 AM" src="https://user-images.githubusercontent.com/89604161/236386897-4cd7db0a-76ce-4aaf-807e-4d2b731fed24.png">
+
+👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻
