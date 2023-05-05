@@ -1,8 +1,8 @@
 # Robot Race
 
-Project Report for Robot Race
-Team: Sampada Pokharel (pokharelsampada@brandeis.edu) and Jalon Kimes (jkimes@brandeis.edu)
-Date: May 4, 2023
+Project Report for Robot Race <br>
+Team: Sampada Pokharel (pokharelsampada@brandeis.edu) and Jalon Kimes (jkimes@brandeis.edu) <br>
+Date: May 4, 2023<br>
 Github repo: https://github.com/campusrover/robot_race
 
 ## Introduction
@@ -25,7 +25,7 @@ We designed our code to have the robot recognize a line by its color and follow 
 
 The main package that drives our project is the opencv stack. This contains a collection of tools that allow us to use computer vision to analyze images from the camera on the robot. We used the CV bridge package to process the images. As the name suggests CV bridge allows us to convert the ROS messages into OpenCV messages. The camera onboard the robot publishes the images as ROS messages into different types of CV2 images. For our use case, we converted the images from the camera into color masks. To create the color masks we used the HSV color code to set upper and lower bounds for the range of colors we want the mask to isolate. For example, for red the lower bound was: HSV [0,100,100] and the upper bound was: HSV [10,255,255]. The mask will then block out any color values that are not in that range.
 
-![Centroid](https://drive.google.com/file/d/1d9fShqSfjUy2aaFpdEsArwGRrlRux-Lu/view?usp=sharing)
+![Centroid](../images/centroid.png)
 
 Figure 1
 
@@ -57,7 +57,7 @@ Follow_demo.launch - The main launch file for our project
 Nodes
 Follow.py - main programming node
 
-![Flow Chart](https://drive.google.com/file/d/1lQqlXCqv3CEOZxRi4leukEt1V_nJ8qGu/view?usp=sharing)
+![Flow Chart](../images/Flow.png)
 
 ## Story of the project
 
@@ -67,7 +67,7 @@ At the very beginning, we were dancing with the idea of working on two robots an
 
 We faced many problems throughout this project and pivoted numerous times. Although the project sounds simple, it was very difficult to get the basic algorithm started. One of our biggest challenges was finding a way for the robot to stay in between two lanes. We tried to use the HoughLines algorithm to detect the lines of our lanes, however, we found it extremely difficult to intricate our code as HoughLines detected odd lines outside of our track. When HoughLines didn’t work, we pivoted to using a contours-based approach. Contours allow you to recognize multiple objects in a mask and draw centroids on them. We used this to draw centroids on the two lines and calculated the midpoint in between two lines for the robot to follow. While we were successful in creating a centroid in between the lines for the robot to follow on the gazebo, when we tried to run the program on the actual robot, the robot did not stay in between the two lanes when it needed to turn a corner(Figure 2). At last, we pivoted and decided to replace the lanes with two different tapes, red and green, for the robots to follow.
 
-![Centroid using contour](https://drive.google.com/file/d/1AjFrtO1m-H3ciGIvLO71SRwal2SGE_tN/view?usp=sharing)
+![Contour](../images/contour.png)
 
 Figure 2
 
