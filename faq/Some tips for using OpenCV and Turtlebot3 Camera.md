@@ -1,4 +1,5 @@
 # Some tips for using OpenCV and Turtlebot3 Camera
+Junhao Wang
 ## Read CompressedImage type
 When using Turtlebot in the lab, it only publishs the CompressedImage from '/raspicam_node/image/compressed'. Here's how to read CompressedImage and Raw if you need.
 ~~~Python
