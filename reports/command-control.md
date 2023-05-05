@@ -277,9 +277,31 @@ web-client: The branch is for ongoing development of the new web client. It incl
   <li>Open a web browser and type in http://localhost:3000.</li>
   <li>Navigate to the settings page on the web client to set them according to your intentions.</li>
 </ol>
+
 ##### Web Client Settings
 
+<ul>
+  <li>The IP address of the ROSBridge server. It is the server that connects the web application to the ROS environment.</li>
+  <li>Port: The port number for the ROSBridge server.</li>
+  <li>Video Resolution Width: The width of the video resolution for the ROS camera feed.</li>
+  <li>Video Resolution Height: The height of the video resolution for the ROS camera feed.</li>
+  <li>Video Frame Width: The width of the video frame for the ROS camera feed.</li>
+  <li>Video Frame Height: The height of the video frame for the ROS camera feed.</li>
+  <li>Show Battery Status: A toggle to display the battery status in the web application.</li>
+  <li>Manual Input Teleoperation: A toggle to enable or disable the manual teleoperation control input to replace the joystick.</li>
+</ul>
+
 #### Run with ROS Robot
+
+<ol>
+  <li>SSH into the robot.</li>
+  <li>Open the GPS2IP iOS application. In the application settings, under “NMEA Messages to Send”, solely toggle “GLL”. Once set, toggle the “Enable GPS2IP” on the homepage of the application. Additionally, turn off the iOS auto-lock to prevent the application connection from being interrupted. Place the device on the robot. </li>
+  <li>Launch the necessary ROS launch file to run the vital nodes which include gps, img_res, and rostopiclist. You may use the sim.launch file for a simulation in Gazebo and real.launch for real world.</li>
+  <li>Run any other nodes that you desire.</li>
+  <li>Ensure the web client has the corred ROSBridge Server IP Address and Port set within the settings page. You can check this with the “current configurations” button.</li>
+  <li>If you want the camera to show up, make sure that the correct campera topic is set within the img_res node module. It can very dependent upon the hardware. The two options are listed within the file with one commented out and the other active. Select one and comment out the other.</li>
+  <li>Enjoy the web client!</li>
+</ol>
 
 ## Story of Project
 
