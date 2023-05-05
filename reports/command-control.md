@@ -323,9 +323,7 @@ During the beginning of the semester, my work started out as researching the old
 The contribution to this project on my behalf can be broken down into two different phases: team management and technical implementation. I was responsible for the project idea itself and the formation of the team members. I delegated the duties of the project amongst the team members and led the discussions within our weekly discussions outside of the classroom. I also set the deadlines for our team to stay on track throughout the semester. The technical contribution revolves around the GPS implementation in which I selected the GPS receiver, an iPhone with the GPS2IP iOS application. I was responsible for the Python code to receive the data from the GPS receiver over the internet. Lastly, I was responsible for the node that changes the resolution of the image that is displayed on the web client. <br>
 
 ### Timeline
-<div style="overflow: scroll;">
-  <img src="../images/cc-network.png" alt="GitHub Network Insight">
-</div>
+![GitHub Insights Network](../images/cc-network.png)
 
 #### Major Hurdles
 
