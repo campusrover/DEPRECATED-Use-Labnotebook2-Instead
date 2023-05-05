@@ -1,5 +1,5 @@
 # Project Report for Project Sample
-* Names: Isaac Goldings (isaacgoldings@brandeis.edu), Jeremy Huey (jhuey@brandeis.edu), David Pollack  
+* Names: Isaac Goldings (isaacgoldings@brandeis.edu), Jeremy Huey (jhuey@brandeis.edu), David Pollack (davidpollack@brandeis.edu)
 * Instructor: Pito Salas (rpsalas@brandeis.edu) 
 * Date: 05/03/2023
 * Github repo: https://github.com/campusrover/COSI119-final-objectSorter
@@ -25,6 +25,8 @@ Color detection robots and robotic arms are a large and known factor of industri
 
 Color Detection : http://wiki.ros.org/opencv_apps
 Aruco Fiducial Detection and explanation: https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html
+Home/Miniature Sorter: https://www.dexterindustries.com/projects/raspberry-pi-mm-color-sorter/
+Industrial Sorter: https://ieeexplore.ieee.org/document/8780461 
 
 ## What was created
 
@@ -52,8 +54,22 @@ Prod_v5.launch is our launch file, it starts the main_control node, the image re
 
 
 ## Story of the project.
+We wanted to do a project that had relatable potential and worked on core issues with robotics. Settling on this topic, we found that having to integrate two different camera algorithms provided a higher level of interest. In deciding to sort cans, we liked that these were recognizable objects. It was hoped that we could detect based on the plain color of the cans, Coke, Canada Dry Raspberry, Sprite, AW Root Beer. For simplicity, we did tape the tops of the green cans to give more consistency, but it was noted that the Sprite cans would work well still with some minor tweaking. 
+For motion control, using the direct error from the two detected objects provided reasonable levels of feedback. 
+We put the components into a state controller main node, and then wrapped all the camera outputs, nodes into a single launch node. The launch node also automatically starts aruco_detect. 
 
 ### How it unfolded, how the team worked together
+We worked collaboratively on different parts of the project together. We slowly got piece by piece working, then combined them together into a working roslaunch file. We focused on creating a working production launch file and continued to work on an in-progress one for new material. By breaking down the porject into separate parts, we were able to work separately asynchronously, while meeting up to collaborate on the design of the project. 
+It was a great time working with the other members. 
+
+Project in pieces: 
+Collecting aruco_detect, rqt_image_view, main_control, fiducial_recognition, contour_image_rec into one file. Controlling version for production. 
+Considering alternate control flows: behavior trees, finite state machines (not used). 
+Getting fiducial recognition to work, move and alternate between different fiducials. 
+Detecting and masking by HSV range, contouring the largest clump, bounding that with a rectangle, sending a centroid.  
+Grabbing cans with the claw (sending/recieving servo commands), using the width of the rectangle to time closing of the claw. 
+Developing a loop control between states. 
+Troubleshooting physical problems, such as the cans blocking the fiducial image. 
 
 ### problems that were solved, pivots that had to be taken
 1. Fidicial-based issues: 
@@ -63,9 +79,12 @@ Network traffic (more other robots/people) on the network would introduce signif
 
 Positions where the entirely of the fiducial is too close and gets cropped. Fiducial recognition requires the entire image to be on screen. This information can be processed however and saved, either as a location (which can be assessed via mapping) or as previous information of error. To combat this issue, we raised the positions of the fiducials so that they could be seen above the carried soda can and had the drop off point at 0.4m away from the fiducial. 
 
-2. Color-based issues: 
+2. Color-based issues: Different lighting conditions (during night vs day coming in from the window) affect color detection. Therefore it is best to get some colors that are very distinct and non-reflective (becomes white). Thus red and green. Another issue that would arise is if the robot approaches the cans from the side and the can remains on the side, then the width might not increase enough to close the claw. Some conditional code can be used to clode the claw with smaller width if the contour is in some part of the screen. 
 
 3. Other/Physical issues:
 The platform robot is a big chonker! It also has meaty claws. The robot being large causes it to take up more room and move farther. In the process it sometimes will knock over other features. To combat this, we added a reversing -0.05m to the turning motion when the robot begins to switch to seeking a dropoff fiducial. The meaty claws is one of the causes of requiring a larger robot with stronger motors. 
 
 ![image](https://github.com/campusrover/labnotebook/blob/master/images/lobster.jpg)
+
+### Reflections
+In sum, we had an enjoyable time working with our Platform Robot, and it was great to see it complete its task with only the press of a single button. The autonimity of the project was a great experience. 
