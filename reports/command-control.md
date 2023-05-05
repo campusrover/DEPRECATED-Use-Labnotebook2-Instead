@@ -12,6 +12,18 @@ May 5, 2023
 
 ### [GitHub Repository](https://github.com/campusrover/command-control)
 
+## Table of Contents
+1. [Introduction](#introduction) 
+2. [Campus Rover Dashboard](#campus-rover-dashboard)
+    * [Overview](#overview)
+    * [System Architecture](#system-architecture)
+    * [Web-Client](#web-client)
+    * [GPS](#gps)
+    * [ROS](#ros)
+        * [img_res](#img_res)
+3. [Walkthrough](#walkthrough)
+
+<a href="introduction"></a>
 ## Introduction
 “You can’t be an expert in everything. Nobody’s brain is big enough.” A quote that’s been stated by Pito at least twice this semester and once last semester in his software entrepreneurship course, but one that hadn’t truly sunk in until the time in which I, Brandon, sat down to write this report with my teammates, Naimul and Jimmy. I’ve greatly enjoyed the time spent on group projects within my professional experiences, but always aired on the side of caution with group work in college as there’s a much higher chance an individual won’t pull their weight. It’s that fear of lackluster performance from the other team members that has always driven me to want to work independently. I’d always ask myself, “What is there to lose when you work alone? You’ll grow your technical expertise horizontally and vertically in route to bolster your resume to land that job you’ve always wanted, nevermind the removal of all of those headaches that come from the incorporation of others. There is nothing to lose, right?” <br>
 
@@ -21,13 +33,21 @@ You lose out on the possibility that the individuals you could’ve partnered wi
 
 I know my brain certainly wasn’t big enough to accomplish this project on my own. I’m grateful these two men reached out to me with interest in this project. Collectively, we’ve set the foundation for future iterations of the development of campus rover and we think that’s pretty special considering the long term impact beyond the scope of this course. So, I guess Pito was right after all; one brain certainly isn’t big enough to carry a project, but multiple brains that each contribute different areas of expertise. Now that’s a recipe for success. <br>
 
+<a href="campus-rover-dashboard"></a>
+
 ## Campus Rover Dashboard
+
+<a href="overview"></a>
 
 ### Overview
 The command and control dashboard, otherwise known as the campus rover dashboard, is a critical component to the development of the campus rover project at Brandeis University as it’s the medium in which remote control will take place between the operator and the robot. It is the culmination of three components: a web client, robot, and GPS. Each component is a separate entity within the system which leverages the inter-process communications model of ROS to effectively transmit data in messages through various nodes. There are various directions in which the campus rover project can progress, whether it be a tour guide for prospective students or a package delivery service amongst faculty. The intention of our team was to allow the command and control dashboard to serve as the foundation for future development regardless of the direction enacted upon in the future. <br>
 
+<a href="system-architecture"></a>
+
 ### System Architecture
 ![Command Control Architecture](../images/cc-architecture.png)
+
+<a href="web-client"></a>
 
 ### Web-Client
 
@@ -44,11 +64,15 @@ ROSBridge is a package for the Robot Operating System (ROS) that provides a JSON
   <li>ROSLIBJS API processes the incoming JSON messages so it can be displayed/utilized to the web client</li>
 </ol>
 
+<a href="gps"></a>
+
 ### GPS
 GPS, or Global Positioning System, is a widely-used technology that enables precise location tracking and navigation anywhere in the world through trilateration, a process which determines the receiver’s position by measuring the distance between it and several satellites. Though it has revolutionized the way we navigate and track objects, its accuracy can vary depending on a variety of factors that are beyond the scope of this paper. However, there are various companies which have embraced the challenge of a more accurate navigation system that incorporates other data points into the algorithm responsible for the determination of the receiver position. Apple is notorious for the pin-point accuracy available within their devices which incorporate other sources such as nearby Wi-Fi networks and cell towers to improve its accuracy and speed up location fixes. The utilization of a more sophisticated location technology is critical for this project to be able to navigate routes within our university campus. Therefore, we’ve chosen to leverage an iPhone 11 Pro placed on our robot with the iOS application GPS2IP open to leverage the technology available in Apple’s devices to track our robot’s movement. <br>
 
 #### [GPS2IP](http://www.capsicumdreams.com/gps2ip/)
 GPS2IP is an iOS application that transforms an iPhone or iPad into a wireless GPS transmitter over the network. It possesses various features such as high configurability, background operation on the iPhone, and standard NMEA message protocols. There is a free lite version available for testing and system verification as well as a paid version with all available features. <br>
+
+<a href="ros"></a>
 
 ### ROS
 #### Nodes
@@ -131,6 +155,7 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         gps_node.get_coords()
 ```
+<a href="img_res"></a>
 
 ##### img_res
 The node’s purpose is to alter the quality of the image through a change in resolution. It’s done through the utilization of the OpenCV package, CV2, and cv_bridge in Python. The cv_bridge package, which contains the CvBridge() object, allows for seamless conversion from a ROS CompressedImage to a CV2 image and vice versa. There are two different camera topics that can be subscribed to depending upon the hardware configuration, /camera/rgb/image/compressed or /raspicam_node/image/compressed. Additionally, the /image_configs topic is subscribed to to receive the specifications for the resolution from the web client. A new camera topic is published with the altered image under the topic name /camera/rgb/image_res/compressed or /raspicam_node/image_res/compressed depending upon the hardware configuration. The web client subscribes to this topic for the camera feed. <br>
@@ -247,6 +272,7 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         pass
 ```
+<a href="walkthrough"></a>
 
 ## Walkthrough
 ### [GitHub](https://github.com/campusrover/command-control)
