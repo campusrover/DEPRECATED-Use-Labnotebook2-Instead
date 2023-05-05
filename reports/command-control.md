@@ -298,8 +298,8 @@ web-client: The branch is for ongoing development of the new web client. It incl
   <li>Open the GPS2IP iOS application. In the application settings, under “NMEA Messages to Send”, solely toggle “GLL”. Once set, toggle the “Enable GPS2IP” on the homepage of the application. Additionally, turn off the iOS auto-lock to prevent the application connection from being interrupted. Place the device on the robot. </li>
   <li>Launch the necessary ROS launch file to run the vital nodes which include gps, img_res, and rostopiclist. You may use the sim.launch file for a simulation in Gazebo and real.launch for real world.</li>
   <li>Run any other nodes that you desire.</li>
-  <li>Ensure the web client has the corred ROSBridge Server IP Address and Port set within the settings page. You can check this with the “current configurations” button.</li>
-  <li>If you want the camera to show up, make sure that the correct campera topic is set within the img_res node module. It can very dependent upon the hardware. The two options are listed within the file with one commented out and the other active. Select one and comment out the other.</li>
+  <li>Ensure the web client has the correct ROSBridge Server IP Address and Port set within the settings page. You can check this with the “current configurations” button.</li>
+  <li>If you want the camera to show up, make sure that the correct campera topic is set within the img_res node module. It can vary dependent upon the hardware. The two options are listed within the file with one commented out and the other active. Select one and comment out the other.</li>
   <li>Enjoy the web client!</li>
 </ol>
 
