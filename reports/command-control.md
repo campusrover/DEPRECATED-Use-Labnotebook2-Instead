@@ -342,6 +342,31 @@ In this section it will guide you through the process of contributing to a GitHu
     <li>Ensure you are on the main branch and pull down the new changes.</li>
     <li>Resolve any conflicts which may arise at this time.</li>
   </ol>
+  <li>Create a New Branch</li>
+  <ol>
+    <li>Create a new branch for the feature or issue and switch to it.</li>
+    <li>Verify the current branch is the correct branch before you begin work.</li>
+  </ol>
+  <li>Build Feature</li>
+  <ol>
+    <li>Develop the feature or fix the issue on the new branch.</li>
+  </ol>
+  <li>Check for Conflicts within the Main Branch</li>
+  <ol>
+    <li>Ensure there are no conflicts with the main branch prior to the creation of the pull request. Update the main branch and merge the changes into your feature branch.</li>
+  </ol>
+  <li>Create a Pull Request (PR)</li>
+  <ol>
+    <li>Push the changes to the remote repository and create a pull request on GitHub. Provide a clear and concise description of the purpose of the feature as well as how to test it. Ensure you mention any related issue numbers.</li>
+  </ol>
+  <li>Request a Review</li>
+  <ol>
+    <li>Ask another team member to review your pull request and run the code locally to ensure there are no errors or conflicts.</li>
+  </ol>
+  <li>Merge the Branch</li>
+  <ol>
+    <li>Once the review is complete and the changes are approved, the feature branch can be merged into the main branch through the pull request.</li>
+  </ol>
 </ol>
 
 <a href="tutorial"></a>
@@ -424,6 +449,8 @@ The contribution to this project on my behalf can be broken down into two differ
 <a href="major-milestones"></a>
 
 #### Major Milestones
+##### Dark Mode
+Dark mode, a seemingly small feature, turned out to be a monumental milestone in our project. Its implementation was far from smooth sailing, and it presented us with unexpected challenges along the way. Little did we know that this seemingly simple concept would revolutionize the entire user experience and become the most crucial component of our project. Initially, we underestimated the complexity of integrating dark mode into our dashboard. We had to navigate through a labyrinth of CSS styles, meticulously tweaking each element to ensure a seamless transition between light and dark themes. Countless hours were spent fine-tuning color schemes, adjusting contrasts, and experimenting with different shades to achieve the perfect balance between aesthetics and readability. The moment dark mode finally came to life, everything changed. It was as if a veil had been lifted, revealing a whole new dimension to our dashboard. The sleek, modern interface exuded an air of sophistication, captivating users and immersing them in a visually stunning environment. It breathed life into every element, enhancing the overall user experience. It quickly became apparent that dark mode was not just another feature; it was the heart and soul of our project. The dashboard transformed into an oasis of productivity and creativity, with users effortlessly gliding through its streamlined interface. Tasks that were once daunting became enjoyable, and the project as a whole gained a newfound momentum. In fact, we can boldly assert that without dark mode, our dashboard would be practically unusable. The blinding glare of the bright background would render the text illegible, and the stark contrast would induce eye strain within minutes. Users would be left squinting and frantically searching for a pair of sunglasses, rendering our carefully crafted functionalities utterly useless. Dark mode's significance cannot be overstated. It has redefined the essence of our project, elevating it to new heights. As we reflect on the struggles, the countless lines of code, and the sleepless nights spent perfecting this feature, we cannot help but celebrate the impact it has had. Dark mode, the unsung hero of our project, has left an indelible mark on our journey, forever changing the way we perceive and interact with our dashboard. <br>
 
 <a href="conclusion"></a>
 
