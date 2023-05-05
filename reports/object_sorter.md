@@ -10,7 +10,7 @@ The project runs via the ros environment on linux, requires some publically avai
 Our project is divided up into a main control node that also includes motion publishing, and two nodes involved with processing subscribed image messages and translating them into forward and angular error. These are then used as inputs to drive the robot in a certain direction. The claw is opened and closed when the color image of the soda can is a certain amount of pixel widths within the camera's image. 
 The project runs in a while loop, with different states using control from the two different image platforms at different states until it is finished with a finished parameter, in the current case, when all 6 cans are sorted after decrementing.  
 
-![image info](labnotebook/images/Platform_Robot.jpg)
+![image](https://github.com/campusrover/labnotebook/blob/master/images/Platform_Robot.jpg)
 
 ### Problem Statement including original objectives
 Our plan for this project is to build a robot that will identify and sort colored objects in an arena.
@@ -70,5 +70,5 @@ Aruco Fiducial Detection and explanation: https://docs.opencv.org/3.1.0/d5/dae/t
 	3. Other/Physical issues:
 		The platform robot is a big chonker! It also has meaty claws. The robot being large causes it to take up more room and move farther. In the process it sometimes will knock over other features. To combat this, we added a reversing -0.05m to the turning motion when the robot begins to switch to seeking a dropoff fiducial. The meaty claws is one of the causes of requiring a larger robot with stronger motors. 
 
-![image info](labnotebook/images/lobster.jpg)
+![image](https://github.com/campusrover/labnotebook/blob/master/images/lobster.jpg)
 ### Your own assessment
