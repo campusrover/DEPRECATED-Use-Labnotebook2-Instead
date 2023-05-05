@@ -52,15 +52,162 @@ GPS2IP is an iOS application that transforms an iPhone or iPad into a wireless G
 ### ROS
 #### Nodes
 ##### /gps
+The node’s purpose is to listen to GPS2IP through a socket and publish the data as a gps topic. The GPS2IP iOS application provides the functionality of a portable, highly sophisticated, GPS receiver that provides a very accurate location when the iPhone is placed on the robot. The GPS data is sent as a GLL NMEA message from a given IP address and corresponding port number. The /gps node leverages the socked package in Python to listen to the messages published at that previously emphasized IP address and port number. Through this connection, a stream of GLL messages can be received, parsed, and transformed into the correct format to be interpreted by the web client. The main transformation is for the latitude and longitude from decimal and minutes to decimal degrees format. The node will publish continuously until the connection through the socket is disturbed. The topic has a data type of type String, which is a serialized version of JSON through the utilization of the json package to dump the Python dictionary. <br>
 
-###### /gps
+###### Code
+```python
+#!/usr/bin/env python
 
-##### /img_res
+'''
+A module with a GPS node.
+
+GPS2IP: http://www.capsicumdreams.com/gps2ip/
+'''
+
+import json
+import re
+import rospy
+import socket
+
+from std_msgs.msg import String
+
+class GPS:
+    '''A node which listens to GPS2IP Lite through a socket and publishes a GPS topic.'''
+    def __init__(self):
+        '''Initialize the publisher and instance variables.'''
+        # Instance Variables
+        self.HOST = rospy.get_param('~HOST', '172.20.38.175')
+        self.PORT = rospy.get_param('~PORT', 11123)
+
+        # Publisher
+        self.publisher = rospy.Publisher('/gps', String, queue_size=1)
+
+    def ddm_to_dd(self, degrees_minutes):
+        degrees, minutes = divmod(degrees_minutes, 100)
+        decimal_degrees = degrees + minutes / 60
+        return decimal_degrees
+
+    def get_coords(self):
+        '''A method to receive the GPS coordinates from GPS2IP Lite.'''
+        # Instantiate a client object
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.connect((self.HOST, self.PORT))
+            # The data is received in the RMC data format
+            gps_data = s.recv(1024)
+
+        # Transform data into dictionary
+        gps_keys = ['message_id', 'latitude', 'ns_indicator', 'longitude', 'ew_indicator']
+        gps_values = re.split(',|\*', gps_data.decode())[:5]
+        gps_dict = dict(zip(gps_keys, gps_values))
+
+        # Cleanse the coordinate data
+        for key in ['latitude', 'longitude']:
+            # Identify the presence of a negative number indicator
+            neg_num = False
+
+            # The GPS2IP application transmits a negative coordinate with a zero prepended
+            if gps_dict[key][0] == '0':
+                neg_num = True
+
+            # Transform the longitude and latitude into decimal degrees
+            gps_dict[key] = self.ddm_to_dd(float(gps_dict[key]))
+
+            # Apply the negative if the clause was triggered
+            if neg_num:
+                gps_dict[key] = -1 * gps_dict[key]
+
+        # Publish the decoded GPS data
+        self.publisher.publish(json.dumps(gps_dict))
+
+if __name__ == '__main__':
+    # Initialize a ROS node named GPS
+    rospy.init_node("gps")
+
+    # Initialize a GPS instance with the HOST and PORT
+    gps_node = GPS()
+
+    # Continuously publish coordinated until shut down
+    while not rospy.is_shutdown():
+        gps_node.get_coords()
+```
+
+##### img_res
+The node’s purpose is to alter the quality of the image through a change in resolution. It’s done through the utilization of the OpenCV package, CV2, and cv_bridge in Python. The cv_bridge package, which contains the CvBridge() object, allows for seamless conversion from a ROS CompressedImage to a CV2 image and vice versa. There are two different camera topics that can be subscribed to depending upon the hardware configuration, /camera/rgb/image/compressed or /raspicam_node/image/compressed. Additionally, the /image_configs topic is subscribed to to receive the specifications for the resolution from the web client. A new camera topic is published with the altered image under the topic name /camera/rgb/image_res/compressed or /raspicam_node/image_res/compressed depending upon the hardware configuration. The web client subscribes to this topic for the camera feed. <br>
+
+###### Code
+```python
+#!/usr/bin/env python
+
+'''
+A module for a node that alters the quality of the image.
+'''
+
+import cv2
+import numpy as np
+import re
+import rospy
+
+from cv_bridge import CvBridge
+from sensor_msgs.msg import CompressedImage
+from std_msgs.msg import String
+
+
+class Compressor:
+    ''''''
+    def __init__(self):
+        '''Initialize necessary publishers and subscribers.'''
+        # Instance Variables
+        # Initialize an object that converts OpenCV Images and ROS Image Messages
+        self.cv_bridge = CvBridge()
+        # Image Resolution
+        self.img_res = {
+            'height': 1080,
+            'width': 1920
+        }
+
+        # Publisher - https://answers.ros.org/question/66325/publishing-compressed-images/
+        # self.publisher = rospy.Publisher('/camera/rgb/image_res/compressed', CompressedImage, queue_size=1)
+        self.publisher = rospy.Publisher('/raspicam_node/image_res/compressed', CompressedImage, queue_size=1)
+        
+        # Subscribers
+        # self.subscriber_cam = rospy.Subscriber('/camera/rgb/image_raw/compressed', CompressedImage, self.callback_cam, queue_size=1)
+        self.subscriber_cam = rospy.Subscriber('/raspicam_node/image/compressed', CompressedImage, self.callback_cam, queue_size=1)
+        self.subscriber_set = rospy.Subscriber('/image_configs', String, self.callback_set, queue_size=1)
+
+
+    def callback_cam(self, msg):
+        '''A callback that resizes the image in line with the specified resolution.'''
+        # Convert CompressedImage to OpenCV
+        img = self.cv_bridge.compressed_imgmsg_to_cv2(msg)
+
+        # Apply New Resolution
+        img = cv2.resize(img, (self.img_res['height'], self.img_res['width']))
+
+        # Convert OpenCV to CompressedImage
+        msg_new = self.cv_bridge.cv2_to_compressed_imgmsg(img)
+
+        # Publish
+        self.publisher.publish(msg_new)
+
+    def callback_set(self, msg):
+        '''A callback to retrieve the specified resolution from the web client.'''
+        img_set = re.split(',', msg.data)
+
+        self.img_res['height'] = int(img_set[0])
+        self.img_res['width'] = int(img_set[1])
+
+
+if __name__ == "__main__":
+    rospy.init_node("img_comp")
+    comp = Compressor()
+    rospy.spin()
+```
 
 ###### /raspicam_node/image_res/compressed
 
 ##### /rostopiclist
-The node’s purpose is to retrieve the output generated by the terminal command “rostopic list” to receive a list of currently published topics. It performs this functionality through the use of the subprocess package in Python, which will create a new terminal to execute the command. The output is then cleaned to be published over the topic “/rostopic_list”. The topic has a data type of type String. It is subscribed too by the web client and parse the data based upon the comma delimiter. The content is used to create a scrollable menu that displays all of the available rostopics. 
+The node’s purpose is to retrieve the output generated by the terminal command “rostopic list” to receive a list of currently published topics. It performs this functionality through the use of the subprocess package in Python, which will create a new terminal to execute the command. The output is then cleaned to be published over the topic “/rostopic_list”. The topic has a data type of type String. It is subscribed too by the web client and parse the data based upon the comma delimiter. The content is used to create a scrollable menu that displays all of the available rostopics. <br>
+
 ###### Code
 ```python
 #!/usr/bin/env python
