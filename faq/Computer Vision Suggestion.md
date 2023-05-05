@@ -1,4 +1,6 @@
-How to Approach Computer Vision
+By Long Yi
+
+## How to Approach Computer Vision
 
 Using machine learning models for object detection/ classification) might be harder than you expect, from our own groups’ experience, as machine learning models are usually uninterpretable and yield stochastic results. 
 Therefore, if you don’t have a solid understanding of how to build/train a model or if you’re not confident that you know what to do when the model JUST doesn’t work as expected, I recommend you to start from more interpretable and stable computer vision techniques to avoid confusion/frustration, and also try to simplify the object you want to detect/classify – try to make them easily differentiable with other background objects from color and shape. 
