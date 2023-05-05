@@ -12,7 +12,8 @@ Using this piece of code:
 ![Screenshot 2023-05-05 at 7 38 05 PM](https://user-images.githubusercontent.com/59838570/236585107-8e69b398-36c1-4977-8116-ad4ff33f6aba.jpg)
 You can detect the contour of the arrow
 ![Screenshot 2023-05-05 at 7 38 59 PM](https://user-images.githubusercontent.com/59838570/236585145-c92799a8-d5ae-4da9-9db8-935fe0263750.jpg)
+
 After which you can find the tip of the arrow, and then determine the direction of the arrow
 ![Screenshot 2023-05-05 at 7 40 25 PM](https://user-images.githubusercontent.com/59838570/236585224-9bb3d2d1-0daf-4bfa-b313-0c4551323ece.jpg)
 
-The algorithm of finding the tip might be a little complicated to understand (it uses the convexity defects to do it). But the point I'm making here is that with these few lines of pretty simple code, you can achieve probably more than you expected. So do start with these "seamingly easy" techniques first before you use something more powerful but confusing.
+The algorithm of finding the tip might be a little complicated to understand (it uses the "convexity defects" of the "hull"). But the point I'm making here is that with these few lines of code, you can achieve probably more than you expected. So do start with these "seamingly easy" techniques first before you use something more powerful but confusing.
