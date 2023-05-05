@@ -1,8 +1,8 @@
 ---
 title: Using the Pincer Attachment
 author: Matthew Merovitz
-description: How to use pincer attachment on platform2/
-status: obsolete|new|tophit
+description: How to use pincer attachment on platform2
+status: new
 ---
 ## Using platform2 pincer attachment
 
