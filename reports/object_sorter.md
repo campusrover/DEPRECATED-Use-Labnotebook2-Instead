@@ -10,7 +10,7 @@ The project runs via the ros environment on linux, requires some publically avai
 Our project is divided up into a main control node that also includes motion publishing, and two nodes involved with processing subscribed image messages and translating them into forward and angular error. These are then used as inputs to drive the robot in a certain direction. The claw is opened and closed when the color image of the soda can is a certain amount of pixel widths within the camera's image. 
 The project runs in a while loop, with different states using control from the two different image platforms at different states until it is finished with a finished parameter, in the current case, when all 6 cans are sorted after decrementing.  
 
-![image](https://github.com/campusrover/labnotebook/blob/master/images/Platform_Robot.jpg)
+![image](../images/Platform_Robot.jpg)
 
 ### Problem Statement including original objectives
 Our plan for this project is to build a robot that will identify and sort colored objects in an arena.
@@ -38,13 +38,24 @@ We found some limitations with the project, such as network traffic limiting the
 
 1. The first vision algorithm is to detect fiducials, which look like qr codes. The fiducials are printed to a known dimension so that the transformation of the image to what is recognized can be used to determine distance and pose-differential. The aruco_detect package subscribes to the robot's camera image. It then processes this image and returns an array of transforms/distances to each fiducial. The package can recognize the distinctness between fiducials and searches for the correct one neede in each state. The transform is then used to determine the amount of error between then robot and it. Then the robot will drive ion that direction, while the error is constantly updated with new processed images. (See Section: Problems that were Solved for issues that arose.)
 
+![image](../images/fiducial_color.jpeg)
+
 2. The second vision algorithm is to detect color within the bounds of the camera image. The camera returns a color image, and the image is filtered via HSV values to seek a certain color (red or green). A new image is created with non-filtered pixels (all labelled one color) and the rest is masked black. A contour is drawn around the largest located area. Once the width of that contour is a large enough size in the image, the claw shuts. The processing thus can detect different objects, and the robot will go towards the object that is the clsoest due to its pixel count. (See Section: Problems that were Solved for issues that arose.)
+
+![image](../images/all_image_rec.jpg)
+The above picture shows (starting with the upper most left picture and going clockwise): 
+
+1. A centroid (light blue dot) that is in the middle of the colored can of which is used as a target for the robot to move towards. The centroid is calcuated using the second vision algorithm by calculating the middle of the contour that is drawn around the largest located area.
+2. The contour that is drawn around the largest located error.
+3. The image that is created with one color isolated and all other colored pixels masked in black.
 
 ## Technical Description
 
 Our project is to get a platform robot with a claw mount to sort soda cans into two different areas based on color. The test area is set up with two fiducials on one side and one fiducial on the other, approximately 2 meters apart. The two fiducials are designated as the red and green drop-off points, and the one is the pickup point. Six cans are arranged in front of the pickup point with the only requirements being enough spacing so the robot can reverse out without knocking them over, and a direct path to a can of the color the robot is targeting (e.x. so it doesn’t have to drive through a red can to get to a green one). The robot starts in the middle of the area facing the pickup point. 
 
 The robot’s behavior is defined by three states, “find item,” “deliver item,” and “return to start.” For “find item” the robot uses computer vision to identify the closest can of the target color, and drive towards it until it is in the claw. Then it closes the claw and switches state to “deliver item.” For this state, the robot will rotate in place until it finds the fiducial corresponding to the color of can it is holding, then drive towards that fiducial until it is 0.4 meters away. At that distance, the robot will release the can, and switch to “return to start.” For this last state, the robot will rotate until it finds the pickup fiducial, then drive towards it until it is 1 meter away, then switch back to “find item.” The robot will loop through these three states until it has picked up and delivered all the cans, which is tracked using a decrementing variable. 
+
+![image](../images/robot_done_sorting.png)
 
 ## Guide to Codebase and algorithms
 This project consists of three main nodes, each with their own file, main_control.py, contour_image_rec.py, and fiducial_recognition.py. contour_image_rec.py uses the raspicam feed to calculate the biggest object of the target color within the field of view, and publishes the angle necessary to turn to drive to that object. It does this by removing all pixels that aren’t the target color, then drawing a contour around the remaining shapes. It then selects the largest contour, and draws a rectangle around it. After that it calculates the middle of the rectangle and sends uses the difference between that and the center of the camera to calculate the twist message to publish.
@@ -84,7 +95,7 @@ Positions where the entirely of the fiducial is too close and gets cropped. Fidu
 3. Other/Physical issues:
 The platform robot is a big chonker! It also has meaty claws. The robot being large causes it to take up more room and move farther. In the process it sometimes will knock over other features. To combat this, we added a reversing -0.05m to the turning motion when the robot begins to switch to seeking a dropoff fiducial. The meaty claws is one of the causes of requiring a larger robot with stronger motors. 
 
-![image](https://github.com/campusrover/labnotebook/blob/master/images/lobster.jpg)
+![image](../images/lobster.jpg)
 
 ### Reflections
 In sum, we had an enjoyable time working with our Platform Robot, and it was great to see it complete its task with only the press of a single button. The autonimity of the project was a great experience. 
