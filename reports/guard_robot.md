@@ -45,9 +45,9 @@ Here is a ⏰ timeline ⏳ , we thought were were going to be able to follow:
 Here is a timeline of what we actually did: 
 - March 3: Finished all Drafting and Proposal - Submitted to get Feedback and Confirmation That it is Good To Go (Karen, LiuLu, Rongzi)
 - March 10: Figure out if tf can be done in gazebo (Rongzi), Creating Github Repo (Karen), Drawing Diagrams (Liulu), Explore Gazebo Worlds - Get Assests and Understand Structure (Karen)
-- March 17: Run multiple real robots on Gazebo (Karen), Created multi robot gazebo launch files (Karen), Wrote Code on Patroling Line (Liulu), Create box world (Rongzi), Make Behavior Diagram (Karen)
+- March 17: Run multiple real robots on Gazebo (Karen), Created multi robot gazebo launch files (Karen), Explored different approaches for patrolling: circle around object, Fiducials, line following; decided to use line following as basic approach (whole team), Wrote Code on Patroling Line (Liulu), Create box world (Rongzi), Make Behavior Diagram (Karen)
 - March 24: Continue to write code on patroling the line for multirobot (Liulu), Explored fiducials to integrate (Karen), Made better Gazebo world (Rongzi)
-- March 31: Aligning to be protecting it - circle or square like formation
+- March 31: Designed DFA for project (Liulu), Decide to let each robot patrolling along one line segment, Aligning to be protecting it - circle or square like formation
 - April 7: Detecting if something is coming at it
 - April 14: Making the robot move to protect at the direction that the person is coming at it from 
 - April 21: Testing
