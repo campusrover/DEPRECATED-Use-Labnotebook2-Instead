@@ -2,8 +2,6 @@
 
 <h1 align=”center”> 🤖🤖 Guard Robot (by Liulu Yue, Rongzi Xie, and Karen Mai) 🤖🤖🤖 </h1> 
 
-
-
 <img width="301923" alt="Screen Shot 2023-05-05 at 9 08 15 AM" src="https://user-images.githubusercontent.com/89604161/236465896-5bd5f586-b3f5-465c-9f20-6f35d838da74.png">
 
 <p>
@@ -13,6 +11,9 @@ In the end, we decided to work on a robot that guards an object and stop an intr
 
 There were a lot of learnings throughout this project, and while even during the last days we were working to deploy code and continue to test as there is so much that we want to add.  
 </p>
+
+
+Video demo: https://drive.google.com/drive/folders/1FiVtw_fQFKpZq-bJSLRGotYXPQ-ROGjI?usp=sharing
 
 <img width="1234546576" alt="Screen Shot 2023-05-05 at 9 10 19 AM" src="https://user-images.githubusercontent.com/89604161/236466349-af0ddfdf-cf64-44f7-a5fe-d863c0cf6812.png">
 
@@ -51,7 +52,7 @@ Before            |  After
 :-------------------------:|:-------------------------:
 <img width="866" alt="Screen Shot 2023-05-05 at 2 09 55 AM" src="https://user-images.githubusercontent.com/89604161/236387884-c02bf777-ca33-4b76-8e44-d82aee0286e1.png"> | <img width="876" alt="Screen Shot 2023-05-05 at 2 11 27 AM" src="https://user-images.githubusercontent.com/89604161/236388088-48d3e45f-4730-4905-a425-b9b0c724456b.png">
 
-Here is another breakdown of the timeline: 
+Here is another breakdown of the timeline that we actually followed: 
 ![7131683301088_ pic](https://user-images.githubusercontent.com/89604161/236645060-07185b9e-8c21-450b-be6f-c79ff4f87719.jpg)
 
 
@@ -83,20 +84,86 @@ Blocking the intruder when one robot detects it           |  Notifies robot to g
 :-------------------------:|:-------------------------:
 <img width="867" alt="Screen Shot 2023-05-05 at 2 08 38 AM" src="https://user-images.githubusercontent.com/89604161/236387702-5f45fd65-3292-486a-a432-63d087863e19.png"> | <img width="860" alt="Screen Shot 2023-05-05 at 2 08 55 AM" src="https://user-images.githubusercontent.com/89604161/236387738-02f57a87-d7fc-4e17-86da-de20153979b9.png">
 
-Though things do not often go to plan as we did not realize that step 2 to step 3 was going to be so much harder as there was all these edge cases and blockers that we discovered (concurrency, network latency, camera specs). This is why we did more of this instead: 
-
-
-
+Though things do not often go to plan as we did not realize that step 2 to step 3 was going to be so much harder as there was all these edge cases and blockers that we discovered (concurrency, network latency, camera specs). We ended up really only focusing on the patrolling and block stages. 
 
 
 <img width="14325490" alt="Screen Shot 2023-05-05 at 9 13 14 AM" src="https://user-images.githubusercontent.com/89604161/236467016-b3e1da86-f765-4b75-abd1-05ae222b173a.png">
 
 There are many states to our project. There is even states withhin states that need to be broken down. Whenever we were off to coding, we had to make sure that we were going back to this table to check off all the marks about control of logic. We were more interested in getting all the states working, and so we did not use any of the packages of state management. Another reason why we did not proceed with using those state pacakges was because we needed to have multiple files as one python file represented one node so we were not able to be running multiple robot through one file. 
 
+Here are the states that we were planning to have. 
+<img width="23435" alt="Screen Shot 2023-05-06 at 4 38 57 PM" src="https://user-images.githubusercontent.com/89604161/236645734-4a008c68-3fe7-4316-8e93-ed145562813f.png">
+
+Finding State: Trigger:
+Lidar detection/Fiducial Detection/Opencv: Recognizing the target object, consider sticking a fiducial to the target object, and that will help the robot find the target object. The state is entered when Lidar finds nothing but the target object with a fiducial.
+
+Patrolling State: Trigger: 
+Lidar detection: When there is nothing detected in the right and left side of the robot, the robot will keep patrolling and receive callbacks from the subscriber.
+
+Signal State: Trigger: 
+Lidar detection: Finding intruders, which means the lidar detect something around and will recognize it as the intruder
+New topic: If_intruder: Contain an array that formed by four boolean values corresponds to each robot’s publisher of this topic or the position of another robot. The robot will publish to a specific index of this array with the boolean value of the result of their lidar detection. If there is nothing, the robot will send False, and if it can get into the Signal State, it will send it’s position and wait for the other robot’s reaction. 
+
+Form Line State: 
+Trigger: The message from topic  if_intruder:
+When a robot receives a position message, it will start to go in that direction by recognizing the index of the position message in the array, and they’ll go to that corresponding colored line.
+Behavior Tree: A behavior will be created that can help the robot realign in a colored line.
+
+Blocking State: 
+Trigger: tf transformation:All the robots have the information that there is an intruder.
+All the robot will go to the direction where the intruder is and realign and try to block the intruder
+
+Notify State: 
+Trigger: Lidar Detection: If the lidar keeps detecting the intruder and the intruder doesn’t want to leave for a long time, the robot will keep blocking the intruder without leaving.
+If the intruder leaves at some time, the robot will get back to the blocking state and use lidar to detect and make sure there is no intruder here and turn back to the finding state
+
+In the end, these were the only states that we actually tackled:
+
+<img width="324567" alt="Screen Shot 2023-05-06 at 4 39 34 PM" src="https://user-images.githubusercontent.com/89604161/236645754-55c52bb0-bd7e-4759-940f-7db62529cef5.png">
+
+
+
+
 <img width="891283" alt="Screen Shot 2023-05-05 at 9 14 15 AM" src="https://user-images.githubusercontent.com/89604161/236467210-25347e43-1d0e-406f-afaa-81e3bd5d835e.png">
 
 
+Get correct color for line following in the lab
+Line follower may work well and easy to be done in gazebo because the color is preset and you don't need to consider real life effect. However, if you ever try this in the lab, you'll find that many factors will influence the result of your color.
+
+Real Life Influencer:
+1. Light: the color of the tage can reflect in different angles and rate at different time of a day depend on the weather condition at that day. 
+2. Shadow: The shadow on the tape can cause error of color recognization
+3. type of the tape: The paper tage is very unstable for line following, the color of such tape will not be recognized correctly. The duct tape can solve most problem since the color that be recognized by the camera will not be influenced much by the light and weather that day. Also it is tougher and easy to clean compare to other tape.
+4. color in other object: In the real life, there are not only the lines you put on the floor but also other objects. Sometimes robots will love the color on the floor since it is kind of a bright white color and is easy to be included in the range. The size of range of color is a trade off. If the range is too small, then the color recognization will not be that stable, but if it is too big, robot will recognize other color too.
+if you are running multiple robots, it might be a good idea to use electric tape to cover the red wire in the battery and robot to avoid recognizing robot as red line.
+
+OpenCV and HSV color:
+Opencv use hsv to recognize color, but it use different scale than normal.
+Here is a comparison of scale:
+normal use  H: 0-360, S: 0-100, V: 0-100
+Opencv use  H: 0-179, S: 0-255, V: 0-255
+
+So if we use color pick we find online, we may need to rescale it to opencv's scale.
+
+Here is a chart that talks about how we run the real robots live with those commands. On the right most column that is where we have all of the colors for each line that the robot home base should be: 
+<img width="2345" alt="Screen Shot 2023-05-06 at 4 50 52 PM" src="https://user-images.githubusercontent.com/89604161/236646131-69a00729-192c-40c0-8c67-39302d8ea4a7.png">
+
 <img width="234546" alt="Screen Shot 2023-05-05 at 9 14 42 AM" src="https://user-images.githubusercontent.com/89604161/236467313-4e6ecde6-ea64-45af-92e0-b5d12fba5a1d.png">
+
+These 3 files are needed to run multiple robots on Gazebo. In the object.launch that is what you will be running roslaunch. Within the robots you need to spawn multiple one_robot and give the position and naming of it. 
+<img width="190" alt="Screen Shot 2023-05-06 at 4 55 10 PM" src="https://user-images.githubusercontent.com/89604161/236646236-c7dd85ab-3c2b-4901-b6a6-58fdc1937613.png">
+
+Within the object.launch of line 5, it spawns an empty world. Then when you have launched it you want to throw in the guard_world which is the one with the multiple different colors and an object to project in the middle. Then you want to include the file of robots.launch because that is going to be spawning the robots. 
+<img width="575" alt="Screen Shot 2023-05-06 at 4 55 45 PM" src="https://user-images.githubusercontent.com/89604161/236646252-7c480a02-de15-4329-925f-4496ce140233.png">
+
+
+For each robot, tell it to spawn. We need to say that it takes in a robot name and the init_pose. And then we would specify what node that it uses.
+<img width="628" alt="Screen Shot 2023-05-06 at 4 56 08 PM" src="https://user-images.githubusercontent.com/89604161/236646266-d71ddf41-e15e-4b14-94af-cab2416c06e1.png">
+
+
+Within the robots.launch, we are going to have it spawn with specified position and name. 
+<img width="576" alt="Screen Shot 2023-05-06 at 4 56 43 PM" src="https://user-images.githubusercontent.com/89604161/236646283-87e8b496-dd4c-4199-93e5-c729a0fe95ff.png">
+
 <img width="201" alt="Screen Shot 2023-05-05 at 1 59 55 AM" src="https://user-images.githubusercontent.com/89604161/236386699-5cd0786c-072b-4923-a3b7-9c81ec59f60d.png">
 
 <img width="201" alt="Screen Shot 2023-05-05 at 2 00 16 AM" src="https://user-images.githubusercontent.com/89604161/236386744-9d3376ba-ccf9-47d9-aa38-146439e3abc5.png">
