@@ -3,9 +3,9 @@
 ## About
 
 ### Team
-Naimul Hasan (naimulhasan@brandeis.edu)<br>
-Jimmy Kong (jameskong@brandeis.com)<br>
-Brandon J. Lacy (blacy@brandeis.edu)
+Naimul Hasan (naimulhasan@brandeis.edu | <a href="https://www.linkedin.com/in/naimul-hasan/">LinkedIn</a>)<br>
+Jimmy Kong (jameskong@brandeis.edu | <a href="https://www.linkedin.com/in/jamesdemingkong/">LinkedIn</a>)<br>
+Brandon J. Lacy (blacy@brandeis.edu | <a href="https://www.linkedin.com/in/lacybrandonj/">LinkedIn</a>)
 
 ### Submission Date
 May 5, 2023
