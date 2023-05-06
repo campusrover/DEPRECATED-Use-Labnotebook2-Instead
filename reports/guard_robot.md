@@ -86,13 +86,8 @@ Blocking the intruder when one robot detects it           |  Notifies robot to g
 Though things do not often go to plan as we did not realize that step 2 to step 3 was going to be so much harder as there was all these edge cases and blockers that we discovered (concurrency, network latency, camera specs). This is why we did more of this instead: 
 
 
-<img width="201" alt="Screen Shot 2023-05-05 at 1 59 55 AM" src="https://user-images.githubusercontent.com/89604161/236386699-5cd0786c-072b-4923-a3b7-9c81ec59f60d.png">
 
-<img width="201" alt="Screen Shot 2023-05-05 at 2 00 16 AM" src="https://user-images.githubusercontent.com/89604161/236386744-9d3376ba-ccf9-47d9-aa38-146439e3abc5.png">
 
-<img width="201" alt="Screen Shot 2023-05-05 at 2 01 08 AM" src="https://user-images.githubusercontent.com/89604161/236386843-1e1213ea-7d07-4572-9e42-21d70f66b5e5.png">
-
-<img width="201" alt="Screen Shot 2023-05-05 at 2 01 36 AM" src="https://user-images.githubusercontent.com/89604161/236386897-4cd7db0a-76ce-4aaf-807e-4d2b731fed24.png">
 
 <img width="14325490" alt="Screen Shot 2023-05-05 at 9 13 14 AM" src="https://user-images.githubusercontent.com/89604161/236467016-b3e1da86-f765-4b75-abd1-05ae222b173a.png">
 
@@ -102,6 +97,13 @@ There are many states to our project. There is even states withhin states that n
 
 
 <img width="234546" alt="Screen Shot 2023-05-05 at 9 14 42 AM" src="https://user-images.githubusercontent.com/89604161/236467313-4e6ecde6-ea64-45af-92e0-b5d12fba5a1d.png">
+<img width="201" alt="Screen Shot 2023-05-05 at 1 59 55 AM" src="https://user-images.githubusercontent.com/89604161/236386699-5cd0786c-072b-4923-a3b7-9c81ec59f60d.png">
+
+<img width="201" alt="Screen Shot 2023-05-05 at 2 00 16 AM" src="https://user-images.githubusercontent.com/89604161/236386744-9d3376ba-ccf9-47d9-aa38-146439e3abc5.png">
+
+<img width="201" alt="Screen Shot 2023-05-05 at 2 01 08 AM" src="https://user-images.githubusercontent.com/89604161/236386843-1e1213ea-7d07-4572-9e42-21d70f66b5e5.png">
+
+<img width="201" alt="Screen Shot 2023-05-05 at 2 01 36 AM" src="https://user-images.githubusercontent.com/89604161/236386897-4cd7db0a-76ce-4aaf-807e-4d2b731fed24.png">
 
 
 <img width="2465735" alt="Screen Shot 2023-05-05 at 9 15 16 AM" src="https://user-images.githubusercontent.com/89604161/236467419-9112d8db-08a1-473c-903f-05a96d491371.png">
