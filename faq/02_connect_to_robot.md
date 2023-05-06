@@ -18,6 +18,7 @@ title: Connecting to the robot
 
 5. You can then ssh into the robot, `ssh ubuntu@100.117.252.97` (enter your robot’s IP) and enter the password that is in the lab. 
 6. Once onboard the robot, enter the command `bringup` which starts roscore and the Turtlebot’s basic functionalities. 
+For the Platform robots, run this: `roslaunch platform full_bringup.launch`
 7. After that, open a new terminal (you’ll be in real mode again) and run your program!
 8. To go back to simulation mode, go back to .bashrc and uncomment the settings for simulation mode and comment out the settings for a physical robot. Or type the command `sim` in the terminal. You will need to do this in every terminal that you open then. To switch to real mode, type command `real`.
  

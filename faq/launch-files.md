@@ -2,6 +2,9 @@
 
 This page will serve as a one stop shop for understanding the onboard and offboard launch files used for campus rover mark 3: 'Mutant' and 'Alien'. Along the way, it will also serve as a launch file tutorial in general.
 
+This is a simple walkthrough of how to create a launch file: 
+labnotebook/faq/launch_file_create.md
+
 ## On-board launch file
 
 On-board is a short and rather simple launch file. Generally, a node should be run on-board if it meets one of two criteria:

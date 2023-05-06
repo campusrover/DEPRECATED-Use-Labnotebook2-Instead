@@ -1,5 +1,6 @@
 # Creating and Executing Launch Files
 by Helen Lin
+edited by Jeremy Huey
 
 ## Introduction
 
@@ -30,11 +31,18 @@ Add the following code and fill in the parameters within the double quotes.
 
 Here is an example of what the node will look like filled in, using code from the Mini Scouter project:
 
-```
+```xml
 <launch>
   <node name="MiniScoutMain" pkg="mini_scouter" type="MiniScoutMain.py" output="screen"></node>
   <node name="laser_scan" pkg="mini_scouter" type="scan_arouund.py" output="screen"></node>
 </launch>
+```
+The pkg name can be found in the package.xml. Eg. 
+```xml
+<?xml version="1.0"?>
+<package format="2">
+  <name>object_sorter</name>
+  <version>0.0.0</version>
 ```
 
 ## Step 4
@@ -58,3 +66,15 @@ For example, to run the Mini Scouter launch file:
 ```roslaunch mini_scouter teleop.launch```
 
 All of the nodes you specified in the launch file should now be running.
+
+### Optional, launch process in new window
+To have a node launch and open in a new window, such as to run things like key_publisher.py, you can modify the line to include this: 
+```<node pkg="object_sorter" type="key_publisher.py" name="key" output="screen" launch-prefix="xterm -e"/>```
+You must then run in terminal: 
+```bash
+sudo apt-get install xterm
+```
+
+### More info on launch files
+To continue to get more information on launch files, go to here: 
+labnotebook/faq/launch-files.md
