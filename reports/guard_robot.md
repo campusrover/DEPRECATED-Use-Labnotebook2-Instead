@@ -121,9 +121,6 @@ In the end, these were the only states that we actually tackled:
 
 <img width="324567" alt="Screen Shot 2023-05-06 at 4 39 34 PM" src="https://user-images.githubusercontent.com/89604161/236645754-55c52bb0-bd7e-4759-940f-7db62529cef5.png">
 
-
-
-
 <img width="891283" alt="Screen Shot 2023-05-05 at 9 14 15 AM" src="https://user-images.githubusercontent.com/89604161/236467210-25347e43-1d0e-406f-afaa-81e3bd5d835e.png">
 
 
@@ -146,34 +143,44 @@ Opencv use  H: 0-179, S: 0-255, V: 0-255
 So if we use color pick we find online, we may need to rescale it to opencv's scale.
 
 Here is a chart that talks about how we run the real robots live with those commands. On the right most column that is where we have all of the colors for each line that the robot home base should be: 
+
 <img width="2345" alt="Screen Shot 2023-05-06 at 4 50 52 PM" src="https://user-images.githubusercontent.com/89604161/236646131-69a00729-192c-40c0-8c67-39302d8ea4a7.png">
 
 <img width="234546" alt="Screen Shot 2023-05-05 at 9 14 42 AM" src="https://user-images.githubusercontent.com/89604161/236467313-4e6ecde6-ea64-45af-92e0-b5d12fba5a1d.png">
 
+If you are interested in launching on the real turtlebot3, you are going to have to ssh into it and then once you have that ssh then you will be able to all bringup on it. There is more detail about this in other FAQs that can be searched up. When you are running multirobots, be aware that it can be a quite bit slow because of concurrency issues. 
+
 These 3 files are needed to run multiple robots on Gazebo. In the object.launch that is what you will be running roslaunch. Within the robots you need to spawn multiple one_robot and give the position and naming of it. 
+
 <img width="190" alt="Screen Shot 2023-05-06 at 4 55 10 PM" src="https://user-images.githubusercontent.com/89604161/236646236-c7dd85ab-3c2b-4901-b6a6-58fdc1937613.png">
 
 Within the object.launch of line 5, it spawns an empty world. Then when you have launched it you want to throw in the guard_world which is the one with the multiple different colors and an object to project in the middle. Then you want to include the file of robots.launch because that is going to be spawning the robots. 
+
 <img width="575" alt="Screen Shot 2023-05-06 at 4 55 45 PM" src="https://user-images.githubusercontent.com/89604161/236646252-7c480a02-de15-4329-925f-4496ce140233.png">
 
 
 For each robot, tell it to spawn. We need to say that it takes in a robot name and the init_pose. And then we would specify what node that it uses.
+
 <img width="628" alt="Screen Shot 2023-05-06 at 4 56 08 PM" src="https://user-images.githubusercontent.com/89604161/236646266-d71ddf41-e15e-4b14-94af-cab2416c06e1.png">
 
 
 Within the robots.launch, we are going to have it spawn with specified position and name. 
 <img width="576" alt="Screen Shot 2023-05-06 at 4 56 43 PM" src="https://user-images.githubusercontent.com/89604161/236646283-87e8b496-dd4c-4199-93e5-c729a0fe95ff.png">
 
-<img width="201" alt="Screen Shot 2023-05-05 at 1 59 55 AM" src="https://user-images.githubusercontent.com/89604161/236386699-5cd0786c-072b-4923-a3b7-9c81ec59f60d.png">
-
-<img width="201" alt="Screen Shot 2023-05-05 at 2 00 16 AM" src="https://user-images.githubusercontent.com/89604161/236386744-9d3376ba-ccf9-47d9-aa38-146439e3abc5.png">
-
-<img width="201" alt="Screen Shot 2023-05-05 at 2 01 08 AM" src="https://user-images.githubusercontent.com/89604161/236386843-1e1213ea-7d07-4572-9e42-21d70f66b5e5.png">
-
-<img width="201" alt="Screen Shot 2023-05-05 at 2 01 36 AM" src="https://user-images.githubusercontent.com/89604161/236386897-4cd7db0a-76ce-4aaf-807e-4d2b731fed24.png">
 
 
 <img width="2465735" alt="Screen Shot 2023-05-05 at 9 15 16 AM" src="https://user-images.githubusercontent.com/89604161/236467419-9112d8db-08a1-473c-903f-05a96d491371.png">
+
+
+We had it run for more than one minute and it started sensing each other as the object and trying to stay away from it, so it was not exactly ideal. It would start going further and further say from each other. The perimeter started getting bigger and better which is a problem as we do not know when the intruder will come. |  Pros of this approach is that it will not hit the object. It is good enough in which it stays within the perimeter. It may become a problem if multiple run this because we would need to find a way to edit the auro detect so that all four runs that. 
+:-------------------------:|:-------------------------:
+<img width="12313" alt="Screen Shot 2023-05-06 at 5 06 33 PM" src="https://user-images.githubusercontent.com/89604161/236646577-a2169b96-8778-4191-954a-80eeb6f3e5f8.png"> | <img width="123123" alt="Screen Shot 2023-05-05 at 2 00 16 AM" src="https://user-images.githubusercontent.com/89604161/236386744-9d3376ba-ccf9-47d9-aa38-146439e3abc5.png">
+
+Line follower is the best algorithm we found to deal with patrolling around the object after tried out different strategies and compare the performance. It allows stable protection of the object: the robot strictly follows the designed path indicated by line and would not run away from the object.   |  The simulation of patrolling environment in gazebo should work better than real world environment since the color can be set to pure green, yellow, red and blue and there is no shadow or reflection that can cause error on color recognition 
+:-------------------------:|:-------------------------:
+<img width="123123" alt="Screen Shot 2023-05-05 at 2 01 36 AM" src="https://user-images.githubusercontent.com/89604161/236386897-4cd7db0a-76ce-4aaf-807e-4d2b731fed24.png"> | <img width="123123" alt="Screen Shot 2023-05-05 at 2 01 08 AM" src="https://user-images.githubusercontent.com/89604161/236386843-1e1213ea-7d07-4572-9e42-21d70f66b5e5.png">
+
+
 
 <img width="235465" alt="Screen Shot 2023-05-05 at 9 15 51 AM" src="https://user-images.githubusercontent.com/89604161/236467533-66784370-ce6c-409d-b3ca-cbd7d5053dd6.png">
 Basic Idea:
@@ -201,8 +208,34 @@ A new message is created for our robots to communicate about intruder detection.
 
 The CMakeLists.txt and package.xml are also modified to recognize this newly created message.
 
+We had to watch a lot of videos to figure out how to do this. We made an msg file which stored the type of data that we will hold which are boolean values on if the robot sees an intruder. We had to edit the cmake file and then had to edit the xml because we need to say that there is this new created message that the robots may communicate with and then have these structure look through the folder to see how it is created. 
+
+We need our own messades and tonics for the rohots
+to communicate. Here are the new messages:
+
+- see intruder: the message contains four
+std msgs/Boolean, each associated with a
+specific robot. When an intruder is detected by
+one robot. its' associated Boolean will be set to
+True. Only one robot can be true.
+
+- stop order: the message contains a list of
+std_msgs/String which would record the name of
+the robots in the stop order, and an std msas/Int8
+which would record
+the current index of the list
+for the next stop or move.
+
+Here is a chart talking about what we are interested in:
+![7111683298265_ pic](https://user-images.githubusercontent.com/89604161/236646495-bc620be7-23f8-46ce-b37d-9dc20f7437bd.jpg)
+
+Here are the links that we used quite a lot:
+https://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv 
+https://www.theconstructsim.com/solve-error-importerror-no-module-named-xxxx-msg-2/ 
 
 <img width="2463547" alt="Screen Shot 2023-05-05 at 9 16 50 AM" src="https://user-images.githubusercontent.com/89604161/236467763-ea3e7515-7f1e-4810-a378-e259e5067946.png">
+
+This project does not end here, there is a lot more that we can add. For an example here are a couple of other features that cam be added: - 
 
 <img width="23546" alt="Screen Shot 2023-05-05 at 9 17 26 AM" src="https://user-images.githubusercontent.com/89604161/236467866-d5f71598-5fda-4141-a3c3-5e1d50989107.png">
 
