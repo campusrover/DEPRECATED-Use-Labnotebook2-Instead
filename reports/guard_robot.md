@@ -111,6 +111,10 @@ There are many states to our project. There is even states withhin states that n
 <img width="235465" alt="Screen Shot 2023-05-05 at 9 15 51 AM" src="https://user-images.githubusercontent.com/89604161/236467533-66784370-ce6c-409d-b3ca-cbd7d5053dd6.png">
 
 <img width="1245" alt="Screen Shot 2023-05-05 at 9 20 33 AM" src="https://user-images.githubusercontent.com/89604161/236468664-10761f2c-95e1-4046-827b-c442a57fad98.png">
+A new message is created for our robots to communicate about intruder detection. The message contains four boolean values each associated with one of our guardbot. When a guardbot detects the intruder, a new message will be created with that associated boolean value set to True, and the new message will be published to a topic called see_intruder. Each robot also has a subscriber that subscribes to this topic and a callback function that will check the passed-in message and get the information about which robot is seeing the intruder.  
+
+The CMakeLists.txt and package.xml are also modified to recognize this newly created message.
+
 
 <img width="2463547" alt="Screen Shot 2023-05-05 at 9 16 50 AM" src="https://user-images.githubusercontent.com/89604161/236467763-ea3e7515-7f1e-4810-a378-e259e5067946.png">
 
