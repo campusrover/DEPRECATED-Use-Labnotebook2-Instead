@@ -12,6 +12,8 @@ May 5, 2023
 
 ### [GitHub Repository](https://github.com/campusrover/command-control)
 
+### [Demo Video](https://drive.google.com/file/d/1rHtsc1CRaTcZBSHshnaT67a7QopKqpH5/view?usp=share_link)
+
 ## Table of Contents
 1. [Introduction](#introduction) 
 2. [Campus Rover Dashboard](#campus-rover-dashboard)
