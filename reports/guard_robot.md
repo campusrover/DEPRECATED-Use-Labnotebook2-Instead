@@ -51,7 +51,8 @@ Before            |  After
 :-------------------------:|:-------------------------:
 <img width="866" alt="Screen Shot 2023-05-05 at 2 09 55 AM" src="https://user-images.githubusercontent.com/89604161/236387884-c02bf777-ca33-4b76-8e44-d82aee0286e1.png"> | <img width="876" alt="Screen Shot 2023-05-05 at 2 11 27 AM" src="https://user-images.githubusercontent.com/89604161/236388088-48d3e45f-4730-4905-a425-b9b0c724456b.png">
 
-
+Here is another breakdown of the timeline: 
+![7131683301088_ pic](https://user-images.githubusercontent.com/89604161/236645060-07185b9e-8c21-450b-be6f-c79ff4f87719.jpg)
 
 
 
@@ -95,6 +96,7 @@ Though things do not often go to plan as we did not realize that step 2 to step 
 
 <img width="14325490" alt="Screen Shot 2023-05-05 at 9 13 14 AM" src="https://user-images.githubusercontent.com/89604161/236467016-b3e1da86-f765-4b75-abd1-05ae222b173a.png">
 
+There are many states to our project. There is even states withhin states that need to be broken down. Whenever we were off to coding, we had to make sure that we were going back to this table to check off all the marks about control of logic. We were more interested in getting all the states working, and so we did not use any of the packages of state management. Another reason why we did not proceed with using those state pacakges was because we needed to have multiple files as one python file represented one node so we were not able to be running multiple robot through one file. 
 
 <img width="891283" alt="Screen Shot 2023-05-05 at 9 14 15 AM" src="https://user-images.githubusercontent.com/89604161/236467210-25347e43-1d0e-406f-afaa-81e3bd5d835e.png">
 
