@@ -11,8 +11,32 @@ This is a quick guide to finding the HSV values for any color that you may need 
 
 ## Basic Steps
 
-- Connect your robot. You can find the guide <a href = "https://campus-rover.gitbook.io/lab-notebook/bru/connect-to-robot"> here </a>
-- Once your robot is connected, open vnc and run cvexample.py file in the terminal. It should be in prrexamples folder(prrexample/src/cvexample.py).
-- In a seperate terminal, run rqt. This should bring up sliders for the hsv values and you can change the vlues to find the hsv values for you desired color.
+1. Connect your robot. You can find the guide <a href = "https://campus-rover.gitbook.io/lab-notebook/bru/connect-to-robot"> here </a>
+2. Once your robot is connected, open vnc and run cvexample.py file in the terminal.
 
-Here is what it should look like.
+```bash
+rosrun prrexamples cvexample.py
+```
+
+3. In a seperate terminal, run rqt.
+
+```bash
+rqt
+```
+
+![RQT](../images/rqt.png)
+
+4. In rqt window, click Plugning -> Dynamic Reconfigure
+
+5. Click cvexample and the hsv slides should pop up.
+
+6. Adjust the sliders to find the hsv values for your desired colors.
+
+<br>
+In a seperate terminal, run rqt_image_view to get a larger frame of the camera image. This is optional.
+
+```bash
+rqt_image_view
+```
+
+![RQT](../images/rqt_image_view.png)
