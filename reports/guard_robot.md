@@ -176,6 +176,25 @@ Within the robots.launch, we are going to have it spawn with specified position 
 <img width="2465735" alt="Screen Shot 2023-05-05 at 9 15 16 AM" src="https://user-images.githubusercontent.com/89604161/236467419-9112d8db-08a1-473c-903f-05a96d491371.png">
 
 <img width="235465" alt="Screen Shot 2023-05-05 at 9 15 51 AM" src="https://user-images.githubusercontent.com/89604161/236467533-66784370-ce6c-409d-b3ca-cbd7d5053dd6.png">
+Basic Idea:
+
+Guard object has a Twist() which will control the velocity of the robot. It also has a subscriber that subscribe to scan topic to receive LaserScan message and process the message in scan_cb() which is the callback function of the scan topic. The ranges field of the LaserScan message gives us an array with 360 elements each indicating the distance from the robot to obstacle at that specific angle. The callback function takes the ranges field of the LaserScan message, split into seven regions unevenly as shown below：
+
+
+The minimum data of each region is stored in a dictionary. Then change_state function is called inside the scan_cb, which will check the region dictionary and update the intruder state as needed.
+
+
+Work with real robot:
+
+- Dealing with signal noise
+
+The laser scan on real robot is not always stable. Noisy data is highly likely to occur which can influence our intruder detection a lot. To avoid the influence of scan noise, we processed the raw ranges data to get a new ranges list which each element is the average of itself and 4 nearby elements in original ranges data. This data smoothing step can help us get a more reliable sensor data.
+
+- Sensor on real robot
+
+The sensor of each robot is build differently. In gazebo, if nothing is scanned at that angle, inf is shown for the corresponding element in the ranges. However, some real-life robot have different LaserScan data. Nothing detected within the scan range will give a 0 in ranges data. To make our code work correctly on both Gazebo and real robot, please follow our comment in the code. There are only two lines of code that need to be changed. 
+
+Also, the laserScan data for Rafael has different number of elements. So the region division based on index is a little different for Rafael. We have different Python file for each robot, so this part is taken care of in line_F4.py which is only for Rafael.
 
 <img width="1245" alt="Screen Shot 2023-05-05 at 9 20 33 AM" src="https://user-images.githubusercontent.com/89604161/236468664-10761f2c-95e1-4046-827b-c442a57fad98.png">
 A new message is created for our robots to communicate about intruder detection. The message contains four boolean values each associated with one of our guardbot. When a guardbot detects the intruder, a new message will be created with that associated boolean value set to True, and the new message will be published to a topic called see_intruder. Each robot also has a subscriber that subscribes to this topic and a callback function that will check the passed-in message and get the information about which robot is seeing the intruder.  
