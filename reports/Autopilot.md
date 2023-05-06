@@ -46,37 +46,17 @@ Turn signs (**See Fig2**)
 * All turns are 90 degrees. The robot must go straight and stay in the lane if not signaled to turn.
 
 
-    
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
-
+![Screenshot 2023-05-05 at 7 59 42 PM](https://user-images.githubusercontent.com/59838570/236586656-b4029994-56bf-413c-abac-3ab3e5c1f63d.jpg)
 
     **Fig 1. Traffic light examples**
 
 
-    
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
-
+  ![Screenshot 2023-05-05 at 7 59 59 PM](https://user-images.githubusercontent.com/59838570/236586678-4429edc3-21a0-4e2c-b61d-67260f675b20.jpg)
 
     **Fig 2a. Initial turn sign examples**
 
-
-    
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.jpg "image_tooltip")
-
+![Screenshot 2023-05-05 at 8 00 13 PM](https://user-images.githubusercontent.com/59838570/236586703-2e710d8a-2018-4a4a-a8fd-9d353ddab318.jpg)
 
 
     **Fig 2b. Revised turn sign examples**
