@@ -235,10 +235,15 @@ https://www.theconstructsim.com/solve-error-importerror-no-module-named-xxxx-msg
 
 <img width="2463547" alt="Screen Shot 2023-05-05 at 9 16 50 AM" src="https://user-images.githubusercontent.com/89604161/236467763-ea3e7515-7f1e-4810-a378-e259e5067946.png">
 
-This project does not end here, there is a lot more that we can add. For an example here are a couple of other features that cam be added: - 
+This project does not end here, there is a lot more that we can add. For an example here are a couple of other features that cam be added: 
+- Having more sides so that there is faster converage
+- Making it run faster and still be as accurate with its patrolling 
+- Finding a better system so that it does not need the order ahead of time if possible 
+- Try to make it so that the robots all patrolling around instead of it being on a single like
+- Adding extra technologies where robots are connecting to like an Alexa can tell them to stop 
+- Add a way to have it be stopped by human input and have it overrided
 
 <img width="23546" alt="Screen Shot 2023-05-05 at 9 17 26 AM" src="https://user-images.githubusercontent.com/89604161/236467866-d5f71598-5fda-4141-a3c3-5e1d50989107.png">
+We feel like as a team we suceeded a lot in this project. We had great communication and determination that makes us such good teammates. We did not know each other before doing this project and at the beginning of the week we were a bit hesitant. We 
 
-
-
-👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻
+👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻👩‍💻
