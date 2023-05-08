@@ -1,3 +1,9 @@
+---
+title: Basic  Trouble Shooting
+author: Jeremy Huey
+date: 05/04/2023
+---
+
 # Basic Start Guide 
 Created by Jeremy Huey 05/04/2023
 

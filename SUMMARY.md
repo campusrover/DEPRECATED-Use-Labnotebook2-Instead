@@ -33,7 +33,7 @@
     * [GPS-knowledge.md](./faq/GPS-knowledge.md)
     * [spawn_model_terminal.md](./faq/spawn_model_terminal.md)
     * [How to connect to multiple robots](./faq/connect-multiple-robots.md)
-    * [01_basics_start_n_troubleshooting.md](./faq/01_basics_start_n_troubleshooting.md)
+    * [Basic  Trouble Shooting](./faq/01_basics_start_n_troubleshooting.md)
     * [rviz-markers.md](./faq/rviz-markers.md)
     * [Claw Movement](./faq/claw_movement.md)
     * [Running Multi Robot in Gazebo and Real Robot](./faq/multi_robot_gazebo_real.md)
