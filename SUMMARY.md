@@ -80,7 +80,7 @@
     * [model_teleportation.md](./faq/model_teleportation.md)
     * [Connecting to the robot](./faq/02_connect_to_robot.md)
     * [joint-controllers.md](./faq/joint-controllers.md)
-    * [moving-files.md](./faq/moving-files.md)
+    * [How do I move a file from my vnc and back?](./faq/moving-files.md)
     * [handy-commands.md](./faq/handy-commands.md)
     * [hsv_values_finder.md](./faq/hsv_values_finder.md)
     * [ros_and_aws_integration.md](./faq/ros_and_aws_integration.md)

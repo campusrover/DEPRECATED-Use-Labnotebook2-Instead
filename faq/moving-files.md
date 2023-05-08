@@ -1,4 +1,8 @@
-# Download a file from code.[yourname].ros.campusrover.org to your actual computer
+---
+title: How do I move a file from my vnc and back?
+---
+
+# How do I Download a file from code.[yourname].ros.campusrover.org to your actual computer
 
 If you're having trouble getting a file from your code virtual machine onto your actual computer to submit it onto Gradescope, never fear, an easy solution is here:
 
