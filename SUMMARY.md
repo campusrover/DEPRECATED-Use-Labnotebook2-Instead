@@ -159,7 +159,7 @@
     * [stalkerbot.md](./reports/stalkerbot.md)
     * [rlraver.md](./reports/rlraver.md)
     * [pathplanning.md](./reports/pathplanning.md)
-    * [speech_recognition_report.md](./reports/speech_recognition_report.md)
+    * [Speech Recognition Report](./reports/speech_recognition_report.md)
     * [BowlingBot.md](./reports/BowlingBot.md)
     * [robot_race.md](./reports/robot_race.md)
     * [sample_project_1.md](./reports/sample_project_1.md)
