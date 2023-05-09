@@ -81,7 +81,6 @@ Once the tranformation preset, reduce_glare, blur, and kernel have been selected
 | keyboard_preset | "temp_preset.json" | In calibration mode, save the keyboard to this file. Load this keyboard file if calibrate=False. |
 | chatgpt | "Generate random text, but not lorem ipsum" | Text input to chatgpt |
 | img_width | 0 | MUST SET THIS VALUE DURING CALIBRATION: Set to the the real world width of the image in meters |
-| img_height | img_width*aspect ratio | Set this to the real world height of the image if necessary |
 | arm_offset | 0 | Set this to the distance from the bottom edge of the image to the middle of the base of the arm |
 | image_file | False | Input the path to the image file you would like to use if not using the camera |
 | reduce_glare | False | Set to True to apply glare-reduction to the image |
