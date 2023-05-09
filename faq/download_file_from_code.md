@@ -11,4 +11,4 @@ Right click the desired file and select 'Download' from the menu. The file will 
 
 <img width="666" alt="Screen Shot 2023-05-08 at 5 12 50 PM" src="https://user-images.githubusercontent.com/55816618/236938440-91ced3bf-620a-4ffd-bbca-6e8d5aeb0b2d.png">
 
-You will be able to now access the files from your local system and submit them to Gradescope. To submit packages like this, you can set up a Gut repository and push the files there, or you can individually download each file in the package using this method, arrange them properly, and submit it on Gradescope.
+You will be able to now access the files from your local system and submit them to Gradescope. To submit packages like this, you can set up a Git repository and push the files there, or you can individually download each file in the package using this method, arrange them properly, and submit it on Gradescope.
