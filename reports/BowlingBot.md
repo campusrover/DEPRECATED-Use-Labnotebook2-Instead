@@ -24,7 +24,7 @@ The BowlingBot project utilized several algorithms to achieve its objectives. Th
 
 3. Pincer Attachment: The BowlingBot utilized a pincer attachment to pick up the ball and roll it towards the pins. 
 
-## Description of the code:
+## Description of the Code:
 
 The code is centered around a logic node that controls the logic of the entire bowling game. It relies on classes in fiducialbowl.py, pincer.py, bowlingmotion.py. 
 
@@ -35,14 +35,14 @@ Pincer.py: Controls the opening and closing of the pincer attachment on the plat
 Bowlingmotion.py: This node turns until the yellow line is seen, centers the robot along the line, and then performs the quick motion of moving forwards and releasing the ball. 
 
 
-## Blockers and Roadblocks
+## Blockers and Roadblocks:
 During our time developing the BowlingBot, we encountered several obstacles and challenges that we were forced to overcome and adjust for. Initially, the crowded lab hours slowed down our camera and sensors, peaking at about a minute delay between the camera feed and what was happening in real time. We decided collectively to instead come during office hours when it was less crowded in order to avoid the severe network traffic, which allowed us to test the camera properly. 
 
 Another roadblock was finding an appropriate ball, which held up our testing of the bowling motion. We knew we needed a ball that was heavy enough to knock over pins, but small enough to fit inside the pincer. We initially bought a lacrosse ball to test with, but it was too grippy and ended up catching on the ground and rolling under the robot, forcing us to pivot to using a field hockey ball, which was the same size and weight but crucially was free from the grippiness of the lacrosse ball.
 
 Another challenge we had to adapt to was the actual bowling motion. We initially proposed that the robot should implement concepts from the line follower so that it could adjust its course while rolling down the alley. However, we discovered that the robot’s bowling motion was too quick for it to reliably adjust itself in such a short time. To resolve this, we pivoted away from adjusting in-motion and instead implemented aligning itself as best as possible before it moves forward at all.
 
-## Story of the project:
+## Story of the Project:
 The BowlingBot project was inspired by the team's love for robotics and bowling. The team was intrigued by the idea of creating a robot that could mimic the game of bowling and we spent lots of time researching and developing the project.
 
 The project was challenging and required us to utilize several complex algorithms and techniques to achieve our objectives. We faced several obstacles, including issues with ball detection and alignment, and had to continuously iterate and refine our design to overcome these challenges.
