@@ -1,9 +1,9 @@
 ---
 title: How to Define and Use Your Own Message Types?
 author: Liulu Yue
-description: This FAQ documents specific instructions to define a new Message, as well as solutions to some issues you might encounter in your message defining process.
+description: This FAQ documents specific instructions to define a new Message, as well as solutions to some issues you might encounter in your message defining process
+date: May-2023
 ---
-
 ## How to create a new message type?
 After created a ROS package, our package is constructed by a src folder, a CMakeLists.txt file, and a package.xml file. We need to create a msg folder to hold all of our new msg file. Then in your msg folder, create a new file <new_message>.msg, which contains fields you needed for this message type. <br />
 For each fields in your msg file, define the name of the field and the type of the field (usually use std_msgs/<Type> or geometry_msgs/<Type>). <br \>

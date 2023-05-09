@@ -1,15 +1,24 @@
+---
+author: Aiden Dumas
+description: 
+date: may-2023
+---
 # Simplifying Lidar
 ## Author: Aiden Dumas
 
-Using Lidar is fundamental for a robot’s understanding of its environment. It is the basis of many critical mapping and navigation tools such as SLAM and AMCL, but when not using a premade algorithm or just using Lidar for more simple tasks, some preprocessing can make Lidar readings much more understandable for us as programmers. Here I share a preprocessing simplification I use to make Lidar intuitive to work with for my own algorithms. 
+Using Lidar is fundamental for a robot’s understanding of its environment. It is the basis of many critical mapping and navigation tools such as SLAM and AMCL, but when not using a premade algorithm or just using Lidar for more simple tasks, some preprocessing can make Lidar readings much more understandable for us as programmers. Here I share a preprocessing simplification I use to make Lidar intuitive to work with for my own algorithms.
+
 It essentially boils down to bundling subranges of the Lidar readings into regions. The idea for this can be found from: 
 [Article](https://github.com/ssscassio/ros-wall-follower-2-wheeled-robot/blob/master/report/Wall-following-algorithm-for-reactive%20autonomous-mobile-robot-with-laser-scanner-sensor.pdf “On Github”)
 	The simple preprocessing takes the 360 values of Lidar’s range method (360 distance measurements for 360 degrees around the robot) and gives you a much smaller number of values representing more intuitive concepts such as “forward”, “left”, “behind”. The processing is done by creating your subscriber for the Lidar message:
 scan_sub = rospy.Subscriber(‘scan’, LaserScan, scan_cb)
+
 Our callback function (named scan_cb as specified above), will receive the message as such:
 def scan_cb(msg):
+
 And depending on how often we want to preprocess a message, we can pass the 360 degree values to our preprocessing function:
 ranges = preprocessor(msg.ranges)
+
 In my practice, calling this preprocessing step as often as the message was received by the subscriber didn’t have any slowdown effect on my programs. The processor function itself is defined as follows:
 ```Python
 def preprocessor(all_ranges):
