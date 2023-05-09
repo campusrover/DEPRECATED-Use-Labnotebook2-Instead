@@ -1,3 +1,10 @@
+---
+title: Tips for using OpenCV and Cameras
+author: Junhao Wang
+date: may-2023
+description: 
+status: new
+---
 # Some tips for using OpenCV and Turtlebot3 Camera
 Junhao Wang
 ## Read CompressedImage type
