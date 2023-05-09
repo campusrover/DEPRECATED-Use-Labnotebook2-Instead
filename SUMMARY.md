@@ -75,7 +75,7 @@
     * [gazebo_world.md](./faq/gazebo_world.md)
     * [gazebo_tf.md](./faq/gazebo_tf.md)
     * [ROSBridge and ROSLIBJS](./faq/ros-bridge-and-roslibjs.md)
-    * [Using the Pincer Attachment](./faq/pincer_use.md)
+    * [Pincer Attachment](./faq/pincer_use.md)
     * [Some tips for using OpenCV and Turtlebot3 Camera.md](./faq/Some tips for using OpenCV and Turtlebot3 Camera.md)
     * [Reinforcement Learning and its Applications](./faq/Reinforcement_Learning.md)
     * [model_teleportation.md](./faq/model_teleportation.md)

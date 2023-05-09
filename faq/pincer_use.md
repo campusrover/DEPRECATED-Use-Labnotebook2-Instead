@@ -1,8 +1,9 @@
 ---
-title: Using the Pincer Attachment
+title: Pincer Attachment
 author: Matthew Merovitz
 description: How to use pincer attachment on platform2
 status: new
+date: may-2023
 ---
 ## Using platform2 pincer attachment
 
