@@ -1,7 +1,8 @@
 ---
 title: Claw Movement
 author: David Pollack
-description: How to use the claw 
+description: How to use the claw
+date: May-2023
 ---
 
 # FAQ: Using the Claw

@@ -2,10 +2,8 @@
 title: Recognizing Objects Based on Color and Size using OpenCV
 author: Isaac Goldings
 description: This file shows how to use the openCV library to recognize the largest object of a particular color within the cameras view.
+date: may-2025
 ---
-
-
-
 # Masking and Image Preparation
 
 To start off, you need to process the image by removing all the sections that don't contain your target color. To do this we use opencv's inRange() function.

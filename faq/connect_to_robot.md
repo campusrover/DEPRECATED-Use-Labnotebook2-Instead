@@ -1,7 +1,9 @@
 ---
 title: Connecting to the robot
+author: Jeremy Huey
+date: May-2023
 ---
-# connect to robot
+# Connecting to the robot
 1. plug in battery and turn on robot with the power switch, give it a moment and wait for the lidar to start spinning. 
 2. run `tailscale status | grep <name>` to find the robot’s IP address. Replace <name> with the name of the robot you are trying to connect to. 
   
