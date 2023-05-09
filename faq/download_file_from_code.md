@@ -1,8 +1,16 @@
+---
+title: Download File From vscode
+description: Very handy command in vscode that makes this really easy!
+date: may-2023
+status: new
+author: Michael Jiang
+---
+
 # How to Download Files from your online VSCode to your computer
+
 ### Author: Michael Jiang
 
 <i>How do I download files from my online VSCode to my local computer?</i>
-
 
 
 While the online VSCode does not offer a way to download entire folders and their contents with one click, there is a non-obvious functionality that allows you to download individual files directly from VSCode.
