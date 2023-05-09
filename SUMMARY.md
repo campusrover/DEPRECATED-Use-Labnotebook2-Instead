@@ -7,6 +7,7 @@
     * [ROS and TkInter](./faq/tkinter-ROS.md)
     * [Spawning_Animated_Human.md](./faq/Spawning_Animated_Human.md)
     * [using-args-params-roslaunch.md](./faq/using-args-params-roslaunch.md)
+    * [download_file_from_code.md](./faq/download_file_from_code.md)
     * [How to Copy a MicroSD](./faq/copy_microsd.md)
     * [How to add an SDF Model](./faq/how-to-add-sdf-in-ros.md)
     * [bluetooth.md](./faq/bluetooth.md)
