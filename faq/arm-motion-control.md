@@ -19,10 +19,11 @@ Since the arm can move out/back and up/down to specific points without conversio
 
 The arm can be moved to the desired point using set_ee_cartesian_trajectory. In this method, the extension and motion up/down is relative so the current extension and vertical position of the arm must be known as current_r and current_z.
 
-
-    bot = InterbotixManipulatorXS("px100", "arm", "gripper")
-    theta = math.atan(x/y)
-    dr = y / (math.cos(theta)) - current_r
-    dz = z - current_z
-    bot.arm.set_single_joint_position("waist", theta)
-    bot.arm.set_ee_cartesian_trajectory(r = dr, z = dz)
+```
+bot = InterbotixManipulatorXS("px100", "arm", "gripper")
+theta = math.atan(x/y)
+dr = y / (math.cos(theta)) - current_r
+dz = z - current_z
+bot.arm.set_single_joint_position("waist", theta)
+bot.arm.set_ee_cartesian_trajectory(r = dr, z = dz)
+```
