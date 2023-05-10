@@ -32,6 +32,7 @@
     * [arm-motion-control.md](./faq/arm-motion-control.md)
     * [GPS-knowledge.md](./faq/GPS-knowledge.md)
     * [spawn_model_terminal.md](./faq/spawn_model_terminal.md)
+    * [how_to_get_correct_color_for_line_following.md](./faq/how_to_get_correct_color_for_line_following.md)
     * [How to connect to multiple robots](./faq/connect-multiple-robots.md)
     * [Basic  Trouble Shooting](./faq/01_basics_start_n_troubleshooting.md)
     * [rviz-markers.md](./faq/rviz-markers.md)
