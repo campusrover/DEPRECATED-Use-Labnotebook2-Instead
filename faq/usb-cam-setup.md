@@ -1,3 +1,9 @@
+---
+title: USB Camera Setup
+author: Ken Kirio
+date: may-2023
+status: new
+---
 # USB Camera Setup
 
 ### Author: Ken Kirio
