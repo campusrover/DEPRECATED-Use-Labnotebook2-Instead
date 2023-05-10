@@ -1,3 +1,9 @@
+---
+title: Computer Vision With Yolo8a
+date: may-2023
+status: new
+author: Zihao Liu
+---
 # Computer vision with pretrained model Yolo8
 
 Yolo8 is a cutting-edge, state-of-the-art (SOTA) model that builds upon the success of previous YOLO versions and introduces new features and improvements to further boost performance and flexibility. YOLOv8 is designed to be fast, accurate, and easy to use, making it an excellent choice for a wide range of object detection and tracking, instance segmentation, image classification and pose estimation tasks. It is a powerful model that can be used to detect multiple objects in an image. 

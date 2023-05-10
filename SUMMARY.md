@@ -61,7 +61,7 @@
         * [README.md](./faq/computer-vision/README.md)
     * [multi-robot-one-core.md](./faq/multi-robot-one-core.md)
     * [logging.md](./faq/logging.md)
-    * [Computer_vision_with_model Yolo8.md](./faq/Computer_vision_with_model Yolo8.md)
+    * [Computer Vision With Yolo8a](./faq/Computer_vision_with_model Yolo8.md)
     * [Recognizing Objects Based on Color and Size using OpenCV](./faq/object_recognition_based_on_color_and_size.md)
     * [smart_rotation.md](./faq/smart_rotation.md)
     * [how-to-add-texture-to-sdf.md](./faq/how-to-add-texture-to-sdf.md)
