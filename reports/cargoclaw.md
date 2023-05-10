@@ -12,7 +12,8 @@ Vibhu Singh vibhusingh@brandeis.edu
 
 The project coordinates a stationary arm robot and a mobile transportation robot to load and unload cargo autonomously. We imagine a similar algorithm being used for loading trucks at ports or in factory assembly lines.
 
-**Demonstration**  
+**Demonstration**
+[Watch the demo](https://drive.google.com/file/d/1pIHoIOvNj1FLkFAyZMQcKKy8nnaWH4aA/view?usp=share_link)  
 There are three phases: mapping, localization, and delivery.  
 First, the robot drives around and makes a map. Once the map is made, a person will manually drive the robot to a delivery destination and press a button to indicate its location to the robot. Then the person will manually have to drive the robot back to the loading point and mark that location as well. With this setup, the robot can start working as the delivery robot and transporting cubes from the loading zone to the arm.  
 In the delivery phase, a person loads a piece of cargo - we used a 3D printed cube - onto the robot and then presses a button to tell the robot that it has a delivery to make. Once there, computer vision is used to detect the cargo and calculate its position relative to the arm. Once the arm receives the coordinates, it determines what command would be necessary to reach that position and whether that command is physically possible. If the coordinates aren’t valid, the transportation robot attempts to reposition itself so that it is close enough for the arm. If the coordinates are valid, the arm will then grab the cube off the loading plate on the robot and place it in a specified go. Finally, the transportation robot will go back to the initial home zone, allowing the process to repeat.
@@ -28,9 +29,13 @@ In the delivery phase, a person loads a piece of cargo - we used a 3D printed cu
 - Robotic arm
   - Coordinate commands on a robot that does not run ROS natively
 
+### Literature
+
+[ROS Navigation Tuning](https://kaiyuzheng.me/documents/navguide.pdf)
+
 ## What Was Created
 
-<IMAGE OF FLOWCHART>
+![flowchart](../images/cargoclaw/cargoclaw_flowchart.png)
 A flowchart of message passing that must occur between the three main components of this project.
 
 ## Algorithms & Techniques
@@ -49,7 +54,7 @@ Since commands to the arm are sent in polar coordinates, the cartesian coordinat
 
 ### Setup
 
-<IMAGE OF SETUP>
+![setup](../images/cargoclaw/cargoclaw_setup.jpg)
 
 1. Arm robot  
 The arm robot needs to be elevated so that it can pick up the cube. Ensure that the setup is stable even when the arm changes positions, using tape as necessary. Determine the z-command required to send the arm from the "home" position (see [Veronika's guide to manually controlling the arm](https://campus-rover.gitbook.io/lab-notebook/brandeis-robotics-utilities/connect-to-robo)) to the height of the cargo when it is loaded on the transportation robot. This will be one parameter of the launch file.
@@ -57,25 +62,24 @@ The arm robot needs to be elevated so that it can pick up the cube. Ensure that 
 2. Camera  
 The camera should be set in a fixed position above the loading zone, where the lens is parallel to the ground. The lab has a tripod for such purposes. Record the resolution of the image (default 640x480) and the physical distance that the camera captures at the height of the cargo when placed on the transportation robot. These will also be parameters for the launch file.
 
-3. Cargo  
-The cargo is detected via color filtering, so the color of the cargo should be consistent. Determine the hsv values of the cargo, which will also be a parameter for the launch file.
-
 ### Execution
 
 Run `roslaunch cargoclaw transport_command.launch`. Separately, run `roslaunch cargoclaw arm_command.launch` with the following parameters:  
 - arm_z: z-command from the arm's position to pick up the cargo from the transportation robot (Setup #1)
 - width_pixels/height_pixels: Image resolution (Setup #2)
 - width_phys/height_phys: Physical dimensions captured in the image at the height of the cargo (Setup #2)
-- cargo_hsv: HSV value of cargo (Setup #3)
  
 **Mode 1: Mapping**
+![mapping mode gui](../images/cargoclaw/cargoclaw_mapping.jpg)
 Use teleop to drive the robot between the loading and unloading zones. Watch rviz to ensure adequate data is being collected.
 
 **Mode 2: Localizing**
+![localization mode gui](../images/cargoclaw/cargoclaw_localization.jpg)
 Use teleop to drive the robot between the loading and unloading zones. Watch rviz to ensure localization is accurate. Press the "Set Home" button when the robot is at the location where cargo will be loaded. Press the "Set Goal" button when the robot is at the location of the arm.
 
 **Mode 3: Running**
-When the cargo is loaded, press "GOAL". This will send the robot to the loading zone where the loading/unloading will be done autonomously. The robot will then return to the home position for you to add more cargo. Press "GOAL" and repeat the cycle.
+![localization mode gui](../images/cargoclaw/cargoclaw_driving.jpg)
+When the cargo is loaded, press "Go Goal". This will send the robot to the loading zone where the loading/unloading will be done autonomously. The robot will then return to the home position for you to add more cargo. Press "Go Goal" and repeat the cycle. The "Go Home" button can be used if the navigation is not working, but should not be necessary.
 
 ## Summary of Nodes, Messages, and External Packages
 
@@ -143,6 +147,6 @@ With the arm working, we then began working on the image processing to detect th
 
 Simultaneously, we coded the transportation robot's autonomous navigation. We realized our initial plan to combine LIDAR and fiducial data to improve localization would not work, as `move_base` required a cost map to calculate a trajectory while `fiducial_slam` saved the coordinates of each detected fiducial but did not produce a cost map. We decided to move forward by using `slam_gmapping`, which utilized lidar data and did produce a cost map. This allowed us to use `move_base` to reach the approximate location of the arm, and fine-tune the robot's position using fiducial detection as necessary. However, upon testing, we realized `move_base` navigation was already very accurate, and trading control between the `move_base` and a fiducial-following algorithm resulted in unexpected behavior, so we decided to just use `move_base` alone.
 
-Finally, we attempted to combine each of these components. Although `move_base` allowed for good navigation, we found even slight differences in the orientation of the robot in the delivery zone resulted in differences in the coordinates necessary to grab the cargo. We decided to make the image processing component more robust by relaying not only the centroid of the cargo but also its orientation, which was done by comparing the corners of the contour calculated during masking. We also pivoted to using polar rather than cartesian coordinates when calculating the commands to send to the arm, as .
+Finally, we attempted to combine each of these components. Although `move_base` allowed for good navigation, we found even slight differences in the orientation of the robot in the delivery zone resulted in differences in the coordinates necessary to grab the cargo. We decided to make the image processing component more robust by pivoted to using polar rather than cartesian coordinates when calculating the commands to send to the arm, as the arm's x- and y-coordinates correspond to its radius and angle. We then used different approaches for transforming the x- and y-coordinates into commands. The arm had very limited range of motion along its x-axis, making it practical to measure the cargo's location at each position and pick the x-command which most closely corresponded to the cargo's location. However, the robot had a much greater range along its y-axis, leading us to take measurements and perform a cubic regression to get an equation of the command for a given y-coordinate. In addition, we added further tuning after this step, as the cargo's orientation required that the arm move increasingly along its y-axis to pick up a piece of cargo that is angled compared to the arm's gripper.
 
 Working as a team was very beneficial for this project. Although we all planned the structure of the project and overcame obstacles as a team, each person was able to specialize in a different area of the project. We had one person work on the arm, another on image processing, and another on the transportation robot.
