@@ -35,11 +35,12 @@ The goal of this project is to demonstrate the capability of the robotic arm in 
 
 The project works by having a central coordinating node connect arm motion, image recognition, keyboard input, and text input. All of these functionalities are achieved through ROS actions except for the connection to the keyboard input, which is done through a simple function call (coordinator --> keys_to_type_action_client). Our goal with designing the project in this way was to keep it as modular as possible. For example, the chatgpt_connection node could be replaced by another node that publishes some other text output to the <code>generated_text</code> ROS topic. A different arm_control node could be a server for the arm_control action if a different robotic arm requiring different code was used. Any of the nodes connected with actions or topics could be substituted, and we often used this to our advantage for debugging.
 
-<b>Arm Motion</b>
-
-<img width="366" alt="Screen Shot 2023-05-05 at 9 22 23 PM" src="https://user-images.githubusercontent.com/62267188/236590646-f3e0d91f-3ffa-45a7-b622-5871449c2e01.png"><i>Arm motion diagram</i>
+<b>Arm Motion</b><br>
+<img width="379" alt="Screen Shot 2023-05-06 at 12 06 11 PM" src="https://user-images.githubusercontent.com/62267188/236634794-cc26cb01-714c-4067-9bdd-f2b5fe42ef1e.png"><i>Arm motion diagram</i>
 
 As shown above, the arm moves with rotation and extension to hover above different keys. To achieve this movement from a flat image with (x,y) coordinates, we converted the coordinates of each key into polar coordinates. From (x,y) coordinates in meters, the desired angle of the arm is determined by $θ=atan(x/y)$. The desired extension from the base of the arm is found by $dist=y/cos(θ)$. We calculate this relative to the current extension of the arm so $Δdist=dist-currentDistance$.
+
+It was found that the arm does not accurately move in this way. As the angle increases, the arm does not adjust its extension by a large enough distance. This can be corrected for, but an exact correction was not found. One correction that works to an acceptable degree of accuracy for angles less than 45 degrees is: $((delta)/math.cos(delta)) - delta$, with $delta$ being some value between 0.07 and 0.09 (the optimized value was not determined and it seems as if the right value changes based on how far the arm is currently extended and to which side the arm is turned). This correction is then added to $dist$.
 
 <b>Keyboard Recognition</b>
 
@@ -81,11 +82,13 @@ Once the tranformation preset, reduce_glare, blur, and kernel have been selected
 | keyboard_preset | "temp_preset.json" | In calibration mode, save the keyboard to this file. Load this keyboard file if calibrate=False. |
 | chatgpt | "Generate random text, but not lorem ipsum" | Text input to chatgpt |
 | img_width | 0 | MUST SET THIS VALUE DURING CALIBRATION: Set to the the real world width of the image in meters |
+| img_height | img_width*aspect ratio | Set this to the real world height of the image if necessary |
 | arm_offset | 0 | Set this to the distance from the bottom edge of the image to the middle of the base of the arm |
 | image_file | False | Input the path to the image file you would like to use if not using the camera |
 | reduce_glare | False | Set to True to apply glare-reduction to the image |
 | blur | 1 | Apply blur to the image before finding contours. 1 results in no blur. |
 | kernel | 1 | Apply a dilation kernel to the image. 1 has no effect (1 pixel kernel) |
+| thresh_preset | 1 | Apply this threshold preset to the image. |
 
 The arm will press each key it detects and save its position! It will then type the output from ChatGPT! You can open a file you want it to type into, even while calibrating.
 
@@ -191,7 +194,7 @@ After reexamining letter detection with machine learning, we decided that it was
 
 We encountered many difficulties when putting our pieces of the project together and running it on the real arm. As can be expected, a few small quirks with ROS and a few small bugs caused us a lot of difficulty. For example, when we first ran the project as a whole, it started but nothing happened. We eventually found that our text publishing node had a global variable declared in the wrong place and was returning <code>None</code> instead of the letters it received from ChatGPT.
 
-One major issue we encountered is that the arm motor turns itself off any time it thinks it is in one position but is actually in a different position. This usually only happened after around 10 key presses, so to fix it we have the arm return to its sleep position every 6 keystrokes. Another major issue is that the arm holds down on the keys for too long. We solved this problem by turning off key repeats in the accessibility settings of the computer controlling the arm. We found that the arm has some limitations with its accuracy which affects its typing accuracy, since the keys are such small targets.
+One major issue we encountered is that the arm motor turns itself off any time it thinks it is in one position but is actually in a different position. This usually only happened after around 10 key presses, so to fix it we have the arm return to its sleep position every 6 keystrokes. Another major issue is that the arm holds down on the keys for too long. We solved this problem by turning off key repeats in the accessibility settings of the computer controlling the arm. We found that the arm has some limitations with its accuracy which affects its typing accuracy, since the keys are such small targets. It also does not seem to accurately go to specific positions. It always goes to the same positions at a given angle, but its extension and retraction varies based on its current position. It was challenging, but we were able to find a function of the angle of the arm that offsets this error fairly accurately for angles less than 45 degrees, which is what we needed. If we were starting from scratch, we would place a fiducial on the arm and track its motion to try to get better accuracy.
 
 ### Our assessment
 
