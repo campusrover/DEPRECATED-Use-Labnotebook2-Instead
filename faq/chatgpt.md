@@ -1,3 +1,10 @@
+---
+title: Basic Chatgpt ROS interface
+desc: This is a quick guide to connecting to ChatGPT and getting it to generate a message that you can publish to a topic for use in other nodes. <br/>
+date: feb-2023
+status: new
+---
+
 # Basic ChatGPT Connection and Publishing the Output to a Topic
 by Kirsten Tapalla - Spring 2023 <br/><br/>
 This is a quick guide to connecting to ChatGPT and getting it to generate a message that you can publish to a topic for use in other nodes. <br/>

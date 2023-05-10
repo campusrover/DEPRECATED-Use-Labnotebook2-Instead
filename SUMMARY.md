@@ -41,7 +41,7 @@
     * [FAQ](./faq/README.md)
     * [Building a skill with Alexa Flask-ASK for ROS](./faq/alexa-flask-ask.md)
     * [fiducial-tips.md](./faq/fiducial-tips.md)
-    * [chatgpt.md](./faq/chatgpt.md)
+    * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
     * [fiducial_follows.md](./faq/fiducial_follows.md)
     * [communicate-with-rosserial.md](./faq/communicate-with-rosserial.md)
     * [customize_tb3.md](./faq/customize_tb3.md)
