@@ -1,3 +1,10 @@
+---
+title: Arm Motion Control
+desc: Converting Arm Coordinates
+date: may-2023
+status: new
+author: Elliot Siegal
+---
 # Arm Motion Control
 
 ## Problem
