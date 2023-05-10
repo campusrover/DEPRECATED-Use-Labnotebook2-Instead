@@ -2,6 +2,8 @@
 title: ROSBridge and ROSLIBJS
 author: Naimul Hasan
 description: An overview of how ROSBridge and ROSLIBJS works/utilized for command control
+status: new
+date: may-2023
 ---
 # Overview of ROSBridge and ROSLIBJS
 This FAQ is deigned to provide an overview of ROSBridge and ROSLIBJS, two important tools for integrating web applications, such as the command control dashboard, with the Robot Operating System (ROS).
