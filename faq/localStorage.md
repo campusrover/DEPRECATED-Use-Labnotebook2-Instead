@@ -1,3 +1,10 @@
+---
+title: Working with localStorage in React for web clients
+date: may-2023
+status: new
+author: James Kong
+---
+
 # Working with localStorage in React for web clients
 
 **Author:** James Kong  

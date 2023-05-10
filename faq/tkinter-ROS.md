@@ -1,7 +1,7 @@
 ---
 title: ROS and TkInter
-order: 10
-status: tophit
+order: 999
+status: obsolete
 category: python
 description: How to use the TK Inter package for Ros Tools
 author: Brendon Lu
