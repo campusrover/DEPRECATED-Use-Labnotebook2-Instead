@@ -1,3 +1,9 @@
+---
+title: Finding HSV values for any color
+date: may-2023
+author: Sampada Pokharel
+status: new
+---
 # Finding the HSV Values for any Color
 
 by Sampada Pokharel

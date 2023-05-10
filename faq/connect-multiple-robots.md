@@ -1,10 +1,13 @@
 ---
 title: How to connect to multiple robots
 author: Jalon Kimes
+status: new
+date: may 2023
 ---
 
 Step 1: switch the .bashrc to be running in sim mode. 
   Step 1.1: Go into .bashrc file and uncomment the simulation mode as shown below:
+
   # Setting for simulation mode
   # $(bru mode sim)
   # $(bru name roba -m $(myvpnip))
@@ -23,7 +26,6 @@ Step 3: Now in the terminal do these steps
   Step 3.4: type"multibringup" in each robot terminal
 
 Step 4: Repeat step 3 in a second tab for the other robot(s)
-
 
 
 

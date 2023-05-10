@@ -2,6 +2,8 @@
 title: GPS Data with iPhone (GPS2IP)
 author: Brandon J. Lacy
 description: An overview of the utilization of the iPhone for more accurate GPS data
+status: new
+date: may-2023
 ---
 
 # GPS Data with iPhone (GPS2IP)

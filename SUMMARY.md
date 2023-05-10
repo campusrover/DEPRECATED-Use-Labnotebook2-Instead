@@ -84,7 +84,7 @@
     * [joint-controllers.md](./faq/joint-controllers.md)
     * [How do I move a file from my vnc and back?](./faq/moving-files.md)
     * [handy-commands.md](./faq/handy-commands.md)
-    * [hsv_values_finder.md](./faq/hsv_values_finder.md)
+    * [Finding HSV values for any color](./faq/hsv_values_finder.md)
     * [ros_and_aws_integration.md](./faq/ros_and_aws_integration.md)
     * [bldc-motor-guide.md](./faq/bldc-motor-guide.md)
     * [apriltags_setup.md](./faq/apriltags_setup.md)
