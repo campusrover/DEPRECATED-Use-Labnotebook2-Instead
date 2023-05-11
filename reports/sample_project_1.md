@@ -1,3 +1,11 @@
+---
+title: your title
+date: month-year
+status: new
+type: report
+authors: Pito Salas, Charlie Squires
+---
+
 # Project Report for Project Sample
 * Team: Pito Salas (rpsalas@brandeis.edu) and Charlie Squires (charliesquires@gmail.com)
 * Date: xxx

@@ -114,7 +114,7 @@
         * [reinforcement-learning-racer.md](./reports/2020/reinforcement-learning-racer.md)
         * [FiducialSLAM.md](./reports/2020/FiducialSLAM.md)
         * [cvmaze.md](./reports/2020/cvmaze.md)
-    * [sample_project_1.md](./reports/sample_project_1.md)
+    * [your title](./reports/sample_project_1.md)
     * [2022](./reports/2022/README.md)
         * [litter_picker.md](./reports/2022/litter_picker.md)
         * [not-play-catch.md](./reports/2022/not-play-catch.md)
