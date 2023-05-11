@@ -28,7 +28,6 @@ git clone https://github.com/vbelkina/whisper_4.git
 pip install -r requirements.txt
 sudo apt install ros-noetic-rosbridge-server
 ```
-## **Files**
 
 *core:*
 
