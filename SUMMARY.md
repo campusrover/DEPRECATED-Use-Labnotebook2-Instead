@@ -109,7 +109,6 @@
         * [mrsetup.md](./lab-robots/minirover/mrsetup.md)
         * [mrtroubleshooting.md](./lab-robots/minirover/mrtroubleshooting.md)
     * [platform.md](./lab-robots/platform.md)
-    * [platform](./lab-robots/platform/README.md)
     * [Our Lab Robots](./lab-robots/README.md)
     * [linorobot](./lab-robots/linorobot/README.md)
         * [Platform Hardware Specs](./lab-robots/linorobot/platform_hardware.md)
