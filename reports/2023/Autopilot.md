@@ -1,32 +1,33 @@
 ---
-title: 2023 Project Report
+title: Autopilot
 author: Zihao Liu, Junhao Wang, Long Yi
 date: may-2023
 status: new
 type: report
 ---
 
-**Project Report**
+## **Project Report**
 
-**Team members: **Zihao Liu, Junhao Wang, Long Yi
+### **Team members: **Zihao Liu, Junhao Wang, Long Yi**
 
-**Github Repo**: [https://github.com/campusrover/autopilot](https://github.com/campusrover/autopilot)
+### **Github Repo**: [https://github.com/campusrover/autopilot](https://github.com/campusrover/autopilot)
 
-**Date**: May 2023
+### **Date**: May 2023
 
-**<span style="text-decoration:underline;">Introduction</span>**
+## **<span style="text-decoration:underline;">Introduction</span>**
 
 The idea of the autopilot robot was simple – it’s a mobile robot augmented with computer vision, but it’s a fun project to work on for people wishing to learn and combine both robotics and machine learning techniques in one project. Evenmore, one can see our project as miniature of many real world robots or products: robot vacuum (using camera), delivery robot and of course, real autopilot cars; so this is also an educative project that can familiarize one with the techniques used, or at least gives a taste of the problems to be solved, for these robots/products.
 
 
 
-1. **Problem statement (original objectives)**
+### **Problem statement (original objectives)**
 * Able to follow a route
 * Able to detect traffic signs
 * Able to behave accordingly upon traffic signs
-2. **Relevant literature**
 
-    https://www.diva-portal.org/smash/get/diva2:523372/fulltext01.pdf
+### **Relevant literature**
+
+[Thesis Traffic and Road Sign Recognition](ahttps://www.diva-portal.org/smash/get/diva2:523372/fulltext01.pdf)
 
 
 **<span style="text-decoration:underline;">What was created</span>**

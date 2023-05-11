@@ -154,7 +154,7 @@
         * [lifecycle.md](./VNC-cluster/operation-guide/lifecycle.md)
 * [Cosi119 Final Reports](./reports/README.md)
     * [2023](./reports/2023/README.md)
-        * [2023 Project Report](./reports/2023/Autopilot.md)
+        * [Autopilot](./reports/2023/Autopilot.md)
     * [gestures.md](./reports/gestures.md)
     * [litter_picker.md](./reports/litter_picker.md)
     * [not-play-catch.md](./reports/not-play-catch.md)
