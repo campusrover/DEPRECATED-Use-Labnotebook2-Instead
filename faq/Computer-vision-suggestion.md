@@ -1,4 +1,9 @@
-By Long Yi
+---
+title: How to approach computer vision
+date: feb-2023
+author: By Long Yi
+status: new
+---
 
 ## How to Approach Computer Vision
 

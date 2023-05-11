@@ -75,7 +75,7 @@
         * [README.md](./faq/create-gazebo-map/README.md)
         * [tutorial.md](./faq/create-gazebo-map/tutorial.md)
     * [Creating and Executing Launch Files](./faq/launch_file_create.md)
-    * [Computer Vision Suggestion.md](./faq/Computer Vision Suggestion.md)
+    * [How to approach computer vision](./faq/Computer-vision-suggestion.md)
     * [sdf_to_urdf.md](./faq/sdf_to_urdf.md)
     * [aws-robomaker.md](./faq/aws-robomaker.md)
     * [gazebo_world.md](./faq/gazebo_world.md)
