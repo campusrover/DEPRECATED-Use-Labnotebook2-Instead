@@ -20,6 +20,7 @@ Vibhu Singh vibhusingh@brandeis.edu
 The project coordinates a stationary arm robot and a mobile transportation robot to load and unload cargo autonomously. We imagine a similar algorithm being used for loading trucks at ports or in factory assembly lines.
 
 **Demonstration**
+
 [Watch the demo](https://drive.google.com/file/d/1pIHoIOvNj1FLkFAyZMQcKKy8nnaWH4aA/view?usp=share_link)  
 There are three phases: mapping, localization, and delivery.  
 First, the robot drives around and makes a map. Once the map is made, a person will manually drive the robot to a delivery destination and press a button to indicate its location to the robot. Then the person will manually have to drive the robot back to the loading point and mark that location as well. With this setup, the robot can start working as the delivery robot and transporting cubes from the loading zone to the arm.  
