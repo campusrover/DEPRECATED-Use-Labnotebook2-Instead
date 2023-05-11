@@ -74,7 +74,7 @@ At the very beginning, we were dancing with the idea of working on two robots an
 
 We faced many problems throughout this project and pivoted numerous times. Although the project sounds simple, it was very difficult to get the basic algorithm started. One of our biggest challenges was finding a way for the robot to stay in between two lanes. We tried to use the HoughLines algorithm to detect the lines of our lanes, however, we found it extremely difficult to intricate our code as HoughLines detected odd lines outside of our track. When HoughLines didn’t work, we pivoted to using a contours-based approach. Contours allow you to recognize multiple objects in a mask and draw centroids on them. We used this to draw centroids on the two lines and calculated the midpoint in between two lines for the robot to follow. While we were successful in creating a centroid in between the lines for the robot to follow on the gazebo, when we tried to run the program on the actual robot, the robot did not stay in between the two lanes when it needed to turn a corner(Figure 2). At last, we pivoted and decided to replace the lanes with two different tapes, red and green, for the robots to follow.
 
-![Contour](../images/contour.png)
+![Contour](../../images/contour.png)
 
 Figure 2
 
