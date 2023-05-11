@@ -78,10 +78,11 @@ The camera should be set in a fixed position above the loading zone, where the l
 
 ### Execution
 
-Run `roslaunch cargoclaw transport_command.launch`. Separately, run `roslaunch cargoclaw arm_command.launch` with the following parameters:  
-- arm_z: z-command from the arm's position to pick up the cargo from the transportation robot (Setup #1)
-- width_pixels/height_pixels: Image resolution (Setup #2)
-- width_phys/height_phys: Physical dimensions captured in the image at the height of the cargo (Setup #2)
+Run `roslaunch cargoclaw transport_command.launch`. Separately, run `roslaunch cargoclaw arm_command.launch` with the following parameters:
+  
+* arm_z: z-command from the arm's position to pick up the cargo from the transportation robot (Setup #1)
+* width_pixels/height_pixels: Image resolution (Setup #2)
+* width_phys/height_phys: Physical dimensions captured in the image at the height of the cargo (Setup #2)
  
 **Mode 1: Mapping**
 ![mapping mode gui](../images/cargoclaw/cargoclaw_mapping.jpg)
