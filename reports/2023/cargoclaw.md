@@ -19,14 +19,18 @@ Vibhu Singh vibhusingh@brandeis.edu
 
 The project coordinates a stationary arm robot and a mobile transportation robot to load and unload cargo autonomously. We imagine a similar algorithm being used for loading trucks at ports or in factory assembly lines.
 
-**Demonstration**
+### Demonstration
 
 [Watch the demo](https://drive.google.com/file/d/1pIHoIOvNj1FLkFAyZMQcKKy8nnaWH4aA/view?usp=share_link)  
+
 There are three phases: mapping, localization, and delivery.  
+
 First, the robot drives around and makes a map. Once the map is made, a person will manually drive the robot to a delivery destination and press a button to indicate its location to the robot. Then the person will manually have to drive the robot back to the loading point and mark that location as well. With this setup, the robot can start working as the delivery robot and transporting cubes from the loading zone to the arm.  
+
 In the delivery phase, a person loads a piece of cargo - we used a 3D printed cube - onto the robot and then presses a button to tell the robot that it has a delivery to make. Once there, computer vision is used to detect the cargo and calculate its position relative to the arm. Once the arm receives the coordinates, it determines what command would be necessary to reach that position and whether that command is physically possible. If the coordinates aren’t valid, the transportation robot attempts to reposition itself so that it is close enough for the arm. If the coordinates are valid, the arm will then grab the cube off the loading plate on the robot and place it in a specified go. Finally, the transportation robot will go back to the initial home zone, allowing the process to repeat.
 
-**Learning Objectives**
+### Learning Objectives
+
 - Mapping
   - Create a map
   - Localize on a premade map
@@ -39,7 +43,7 @@ In the delivery phase, a person loads a piece of cargo - we used a 3D printed cu
 
 ### Literature
 
-[ROS Navigation Tuning](https://kaiyuzheng.me/documents/navguide.pdf)
+* [ROS Navigation Tuning](https://kaiyuzheng.me/documents/navguide.pdf)
 
 ## What Was Created
 
@@ -65,9 +69,11 @@ Since commands to the arm are sent in polar coordinates, the cartesian coordinat
 ![setup](../images/cargoclaw/cargoclaw_setup.jpg)
 
 1. Arm robot  
+
 The arm robot needs to be elevated so that it can pick up the cube. Ensure that the setup is stable even when the arm changes positions, using tape as necessary. Determine the z-command required to send the arm from the "home" position (see [Veronika's guide to manually controlling the arm](https://campus-rover.gitbook.io/lab-notebook/brandeis-robotics-utilities/connect-to-robo)) to the height of the cargo when it is loaded on the transportation robot. This will be one parameter of the launch file.
 
 2. Camera  
+
 The camera should be set in a fixed position above the loading zone, where the lens is parallel to the ground. The lab has a tripod for such purposes. Record the resolution of the image (default 640x480) and the physical distance that the camera captures at the height of the cargo when placed on the transportation robot. These will also be parameters for the launch file.
 
 ### Execution

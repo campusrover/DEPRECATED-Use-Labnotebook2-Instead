@@ -13,6 +13,14 @@ authors: Pito Salas, Charlie Squires
 `
 ## Introduction
 
+Use this template as a starting point. You can add sections if you need to by preceding them with the double pound sign,
+
+1. You can make a numbered list
+1. By doing this
+
+* And a bulletted list like
+* This by putting in asterisks
+
 ### Problem Statement including original objectives
 
 ### Relevant literature
