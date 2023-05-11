@@ -32,7 +32,7 @@ We designed our code to have the robot recognize a line by its color and follow 
 
 The main package that drives our project is the opencv stack. This contains a collection of tools that allow us to use computer vision to analyze images from the camera on the robot. We used the CV bridge package to process the images. As the name suggests CV bridge allows us to convert the ROS messages into OpenCV messages. The camera onboard the robot publishes the images as ROS messages into different types of CV2 images. For our use case, we converted the images from the camera into color masks. To create the color masks we used the HSV color code to set upper and lower bounds for the range of colors we want the mask to isolate. For example, for red the lower bound was: HSV [0,100,100] and the upper bound was: HSV [10,255,255]. The mask will then block out any color values that are not in that range.
 
-![Centroid](../images/centroid.png)
+![Centroid](../../images/centroid.png)
 
 Figure 1
 
@@ -64,7 +64,7 @@ Follow_demo.launch - The main launch file for our project
 Nodes
 Follow.py - main programming node
 
-![Flow Chart](../images/Flow.png)
+![Flow Chart](../../images/Flow.png)
 
 ## Story of the project
 
