@@ -1,3 +1,11 @@
+---
+title: Typenator
+type: report
+status: new
+author: Elliot Siegel, Kirsten Tapalla
+date: may-2023
+---
+
 # Typinator.md
 ## Cosi 119A - Autonomous Robotics
 ### Team: Elliot Siegel (elliotsiegel@brandeis.edu) and Kirsten Tapalla (ktapalla@brandeis.edu)
@@ -11,11 +19,12 @@ What is a better use of a robot than to do your homework for you? With the surgi
 <b>Original Problem Statement</b>
 > Demonstrate the robotic arm by having it type its own code. The arm will hold an object to press keys with. The robot will hopefully write code quickly enough so that people can watch it write in real time. The robot could also type input to chatgpt, and have a separate program read the output to the robot. It will then cmd+tab into a document and type the answer. Both of these demonstrations will show the arm “doing homework,” which I think is a silly butchallenging way to demonstrate the robot’s capabilities.
 
-<b>Learning Objective</b><br>
+## Learning Objective
 
 The goal of this project is to demonstrate the capability of the robotic arm in conjunction with computer vision. While the end result of the project is not actually useful in a real world setting, the techniques used to produce the end result have a wide variety of applications. Some of the challenges we overcame in computer vision include detecting contours on images with a lot of undesired lines and glare, reducing noise in contoured images, and transforming image coordinates to real world coordinates. Some of the challenges we overcame in using a robotic arm include moving to very specific positions and translating cartesian coordinates to polar coordinates since the arm moves by rotating. We also worked extensively with ROS.
 
-<b>Original Goals</b>
+## Original Goals
+
 - Text Publishing
   - Publish large chunks of text with ROS
   - Clean text into individual characters that can be typed
@@ -28,6 +37,7 @@ The goal of this project is to demonstrate the capability of the robotic arm in 
   - Move the arm to specific positions with high accuracy
 
 ## What was created
+
 ### Technical Description
 <b>Project Structure</b>
 ![Project structure diagram](https://user-images.githubusercontent.com/62267188/236589001-e161beb5-63ed-4a94-a648-fa01d3452393.png "Project structure diagram")
