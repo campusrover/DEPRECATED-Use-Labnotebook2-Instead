@@ -1,3 +1,10 @@
+---
+title: Guard Robot
+author: Liulu Yue, Rongzi Xie, and Karen Mai
+date: may-2023
+status: new
+type: report
+---
 <img width="189129387" alt="Screen Shot 2023-05-05 at 2 04 40 AM" src="https://user-images.githubusercontent.com/89604161/236387225-d58a367c-4a97-4f7c-b819-a044ff157efd.png">
 
 <h1 align=”center”> 🤖🤖 Guard Robot (by Liulu Yue, Rongzi Xie, and Karen Mai) 🤖🤖🤖 </h1> 

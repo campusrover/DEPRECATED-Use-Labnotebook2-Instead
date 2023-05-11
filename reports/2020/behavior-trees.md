@@ -1,3 +1,9 @@
+---
+title: Behavior Trees Investigatoin
+author: Chris Tam
+date: may-2000
+type: report
+---
 # Behavior Trees (in progress)
 
 ## Author: Chris Tam
