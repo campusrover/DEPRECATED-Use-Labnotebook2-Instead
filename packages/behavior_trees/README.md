@@ -1,4 +1,12 @@
-# Behavior Tree Framework for Lab Robots 
+---
+title: Behavior Tree Framework
+author: Adam Ring
+type: documentation
+status: new
+date: may-2023
+---
+# Behavior Tree Framework for Lab Robots
+
 Github repo for mr_bt: https://github.com/campusrover/mr_bt
 
 The goal behind the MRBT project was to create a efficient, modular, and user-friendly solution for programming complex behaviors into the Turtlebot3 robot stack. Our

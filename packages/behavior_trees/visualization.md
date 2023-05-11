@@ -1,3 +1,7 @@
+---
+title: Visualization of the behavior Tree
+---
+
 # Visualization of the Behavior Tree
 
 Each tree that you build will be able to be visualized as a ROS Image topic under the topic name `/btree`
