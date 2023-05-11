@@ -1,3 +1,10 @@
+---
+title: Cargo Claw
+type: report
+date: may-2023
+author: Benjamin Blinder, Ken Kirio, Vibhu Singh
+status: new
+--- 
 # Cargo Claw
 
 Benjamin Blinder benjaminblinder@brandeis.edu  

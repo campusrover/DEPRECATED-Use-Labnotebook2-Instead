@@ -1,3 +1,10 @@
+---
+title: Bowling Bot
+author: Michael Jiang, Matthew Merovitz
+status: new
+date: may-2023
+type: report
+---
 # BowlingBot (Spring 2023)
 
 Team Members: Michael Jiang (michaeljiang@brandeis.edu) & Matthew Merovitz (mmerovitz@brandeis.edu)

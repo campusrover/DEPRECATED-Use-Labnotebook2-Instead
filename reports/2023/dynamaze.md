@@ -1,3 +1,10 @@
+---
+title: Dynamaze
+author: Aiden Dumas, Muthhukumar Malaiiyyappan
+type: report
+status: new
+date: may-2023
+---
 # Dynamaze.md
 ## Spring 2023, Aiden Dumas and Muthhukumar Malaiiyyappan
 ### Github: https://github.com/campusrover/dynamaze
