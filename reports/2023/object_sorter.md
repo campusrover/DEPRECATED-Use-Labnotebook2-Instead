@@ -1,3 +1,10 @@
+---
+title: Object Sorter
+author: Isaac Goldings, Jeremy Huey, David Pollack
+date: may-2023
+type: report
+status: new
+---
 # Project Report for Project Sample
 * Names: Isaac Goldings (isaacgoldings@brandeis.edu), Jeremy Huey (jhuey@brandeis.edu), David Pollack (davidpollack@brandeis.edu)
 * Instructor: Pito Salas (rpsalas@brandeis.edu) 

@@ -88,8 +88,6 @@ Therefore we decided to pivot to another more straightforward approach: we repla
 
 Two more things worth mentioning on lane following:
 
-
-
 1. Our robot follows a route encompassed by two lines (one green and one red) instead of following one single line. Normally the robot uses contour detection to see the two lines and then computes the midpoint of them. But the problem comes when the robot turns – in this case, the robot can only see one colored line. The technique we use is to only follow that line and add an offset so that the robot turns back the the middle of the route (the direction of the offset is based on the color of that line)
 2. How we achieve turning when line following is constantly looking for a midpoint of a route. What we did is that we published three topics that are named “/detect/lane/right_midpoint”, “/detect/lane/midpoint”, “/detect/lane/left_midpoint”. In this case there are multiple routes (upon an intersection), the robot will choose to turn based on one of midpoint position, based on the presence turning sign. By default, the robot will move according to the “/detect/lane/midpoint” topic.
 3. **Guide on how to use the code written**
