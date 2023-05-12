@@ -21,6 +21,7 @@
     * [using-conditionals-in-roslaunch.md](./faq/using-conditionals-in-roslaunch.md)
     * [modular_teleop.md](./faq/modular_teleop.md)
     * [bouncy-objects.md](./faq/bouncy-objects.md)
+    * [robot multitasking](./faq/robot-multitasking.md)
     * [past-gen-letters.md](./faq/past-gen-letters.md)
     * [laserscan-definition-modify.md](./faq/laserscan-definition-modify.md)
     * [object_detection_yolo_setup.md](./faq/object_detection_yolo_setup.md)
