@@ -1,25 +1,32 @@
+---
+title: Interbotix Pincher X100 Arm
+date: mar-2023
+author: 
+type: faq
+status: new
+---
 # arm setup
 
-**Links:** 
+## Links
 
-- [Arm Details](https://www.trossenrobotics.com/pincherx-100-robot-arm.aspx)
-- [Quickstart Guide](https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_interface/quickstart.html)
-- [Hardware setup](https://www.youtube.com/watch?v=tkDbmWAyHYw)
+* [Arm Details](https://www.trossenrobotics.com/pincherx-100-robot-arm.aspx)
+* [Quickstart Guide](https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_interface/quickstart.html)
+* [Hardware setup](https://www.youtube.com/watch?v=tkDbmWAyHYw)
     - only needed to install the grippers
         - the screws would not go through initially - had to go from the other side with the screw first to ensure that the holes were completely open and the screw could be secured and then installed the grippers as the instructions said
     - plug in power supply first and then plug usb into computer and then plug microUSB into arm
-- [ROS Installation Guide](https://www.youtube.com/watch?v=kZx2tNVfQAQ)
-- [Troubleshooting](https://www.trossenrobotics.com/docs/interbotix_xsarms/troubleshooting/index.html)
-- [DYNAMIXEL Software](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
-    - after installing software and plugging arm in, scan for the arm in the dynamixel software to check that everything is working properly:
-        - in [options](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/#scan-dynamixel), select baudrates 57600 and 1000000
-            - if any link is in 57600, then change to 1000000
-    - make sure to disconnect before running ros
-    - NOTE: you may not actually need to do this, but it may be good to do the first time you try to connect the arm to your computer to make sure everything is running correctly. 
-- [Arm Control](https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_control.html)
-    - contains command line configs for launch file
-- [Python-ROS Interface](https://www.trossenrobotics.com/docs/interbotix_xsarms/python_ros_interface/index.html)
-    - contains details on methods that control the arm using their methods - can find basic overview at the bottom of this file. 
+* [ROS Installation Guide](https://www.youtube.com/watch?v=kZx2tNVfQAQ)
+* [Troubleshooting](https://www.trossenrobotics.com/docs/interbotix_xsarms/troubleshooting/index.html)
+* [DYNAMIXEL Software](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/)
+    * after installing software and plugging arm in, scan for the arm in the dynamixel software to check that everything is working properly:
+        * in [options](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/#scan-dynamixel), select baudrates 57600 and 1000000
+        * if any link is in 57600, then change to 1000000
+    * make sure to disconnect before running ros
+    * NOTE: you may not actually need to do this, but it may be good to do the first time you try to connect the arm to your computer to make sure everything is running correctly. 
+* [Arm Control](https://www.trossenrobotics.com/docs/interbotix_xsarms/ros_packages/arm_control.html)
+    * contains command line configs for launch file
+* [Python-ROS Interface](https://www.trossenrobotics.com/docs/interbotix_xsarms/python_ros_interface/index.html)
+    * contains details on methods that control the arm using their methods - can find basic overview at the bottom of this file. 
 
 ****************************Installation:**************************** 
 

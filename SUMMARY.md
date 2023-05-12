@@ -26,7 +26,7 @@
     * [object_detection_yolo_setup.md](./faq/object_detection_yolo_setup.md)
     * [rosbridge.md](./faq/rosbridge.md)
     * [Raspberry Pi Edge Detection](./faq/camera_calibration.md)
-    * [InterbotixPincherX100.md](./faq/InterbotixPincherX100.md)
+    * [Interbotix Pincher X100 Arm](./faq/InterbotixPincherX100.md)
     * [Working with localStorage in React for web clients](./faq/localStorage.md)
     * [launch-files.md](./faq/launch-files.md)
     * [Arm Motion Control](./faq/arm-motion-control.md)
