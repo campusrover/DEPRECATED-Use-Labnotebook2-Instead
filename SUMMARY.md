@@ -151,7 +151,7 @@
         * [robot-arm.md](./reports/2019/robot-arm.md)
     * [gestures.md](./reports/gestures.md)
     * [Sample Project Template](./reports/sample_project_1.md)
-    * [gesture-recognition](./reports/gesture-recognition/README.md)
+    * [Gesture Recognition](./reports/gesture-recognition/README.md)
         * [leap-motion-.-reports-gesture-recognition-leap-motion-readme.md](./reports/gesture-recognition/leap-motion-.-reports-gesture-recognition-leap-motion-readme.md/README.md)
             * [leap_motion.md-.-reports-gesture-recognition-leap-motion-leap_motion.md.md](./reports/gesture-recognition/leap-motion-.-reports-gesture-recognition-leap-motion-readme.md/leap_motion.md-.-reports-gesture-recognition-leap-motion-leap_motion.md.md)
         * [demo.md](./reports/gesture-recognition/demo.md)
