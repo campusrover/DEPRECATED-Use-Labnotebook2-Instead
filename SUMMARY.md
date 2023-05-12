@@ -132,7 +132,7 @@
         * [Autopilot](./reports/2023/Autopilot.md)
         * [Command and Control Dashboard](./reports/2023/command-control.md)
         * [Typenator](./reports/2023/typinator.md)
-    * [202](./reports/2022/README.md)
+    * [2022](./reports/2022/README.md)
         * [litter_picker.md](./reports/2022/litter_picker.md)
         * [not-play-catch.md](./reports/2022/not-play-catch.md)
         * [NASCAR-style-turtlebot-racing.md](./reports/2022/NASCAR-style-turtlebot-racing.md)
