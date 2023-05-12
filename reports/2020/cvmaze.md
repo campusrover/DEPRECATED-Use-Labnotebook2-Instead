@@ -1,3 +1,9 @@
+---
+title: Computer Vision Maze Solver
+date: may-2023
+author: Zekai Wang & Zhidong Liu
+type: report
+---
 # Computer Vision Maze Solver
 
 ## Author: Zekai Wang & Zhidong Liu
