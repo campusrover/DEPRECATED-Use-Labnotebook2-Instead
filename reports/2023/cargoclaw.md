@@ -7,11 +7,11 @@ status: new
 --- 
 # Cargo Claw
 
-Benjamin Blinder benjaminblinder@brandeis.edu  
-Ken Kirio kenkirio@brandeis.edu  
-Vibhu Singh vibhusingh@brandeis.edu  
+* Benjamin Blinder benjaminblinder@brandeis.edu  
+* Ken Kirio kenkirio@brandeis.edu  
+* Vibhu Singh vibhusingh@brandeis.edu  
 
-**Github Repository: https://github.com/campusrover/cargoclaw**
+* [Github Repository](https://github.com/campusrover/cargoclaw**)
 
 ## Introduction
 

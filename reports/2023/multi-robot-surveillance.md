@@ -23,7 +23,7 @@ status: new
 
 ## Problem Statement
 
-![home](../images/home.png)
+![home](../../images/home.png)
 
 - The home above is divided into four security zones.
 - We can think of them as a sequence, ordered by their importance: [A, B, C, D].
@@ -84,10 +84,10 @@ status: new
   - works similarly to real_main.launch except it uses a map of stage_4 and sim_robots.launch to run gazebo models of the robots via tailored urdf files.
 
 ## TF Tree
-![TF Tree](../images/tf-tree.png)
+![TF Tree](../../images/tf-tree.png)
 
 ## RViz Interface
-![RViz Interface](../images/rviz.png)
+![RViz Interface](../../images/rviz.png)
 
 ## Leader Election Algorithm
 
