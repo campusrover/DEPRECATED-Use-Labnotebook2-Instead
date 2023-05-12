@@ -1,4 +1,5 @@
 ---
+title: Project Reports
 description: A folder containing all the project reports
 ---
 
