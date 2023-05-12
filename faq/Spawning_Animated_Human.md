@@ -1,3 +1,6 @@
+---
+title: Spawning and Animated Humans
+---
 #### Nathan Cai
 
 This FAQ section assumes understanding of creating a basic Gazebo world and how to manipulate a XML file. This tutorial relies on the assets native to the Gazebo ecosystem.
