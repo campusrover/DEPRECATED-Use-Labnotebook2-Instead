@@ -104,7 +104,7 @@
         * [Command and Control Dashboard](./reports/2023/command-control.md)
         * [Dynamaze](./reports/2023/dynamaze.md)
         * [Guard Robot](./reports/2023/guard_robot.md)
-        * [Multi Robot Home Surveilance](./reports/2023/multi-robot-surveillance.md)
+        * [Multi Robot Surveilance](./reports/2023/multi-robot-surveillance.md)
         * [Object Sorter](./reports/2023/object_sorter.md)
         * [Robot Race](./reports/2023/robot_race.md)
         * [Typenator](./reports/2023/typinator.md)
