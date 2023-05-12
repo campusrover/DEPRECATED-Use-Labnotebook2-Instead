@@ -21,11 +21,22 @@ Use this template as a starting point. You can add sections if you need to by pr
 * And a bulletted list like
 * This by putting in asterisks
 
-### Problem Statement including original objectives
+### Problem Statement
+
+1. Write a useful summary for the future
+1. Show off your work
+
+### learning Objectives
+
+* Learn a little bit about markdown
+* Learn the importance of spelling, grammar and editing
+* Look at the result in the browser to make sure it looks right
 
 ### Relevant literature
 
 ## What was created
+
+We created a single markdown file explaining our product.
 
 ### Technical Description, illustrations
 
