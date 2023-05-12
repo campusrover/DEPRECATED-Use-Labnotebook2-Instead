@@ -12,47 +12,53 @@ date: may-2023
 ### Date: May 2023
 ### Github repo: https://github.com/campusrover/typinator2023
 ## Introduction
+
 What is a better use of a robot than to do your homework for you? With the surging use of ChatGPT among struggling, immoral college students, we decided to make cheating on homework assignments even easier. Typinator is a robot that uses computer vision and control of a robotic arm to recognize a keyboard, input a prompt to ChatGPT, and type out the response.
 
-### Problem Statement
+### Original Problem Statement
 
-<b>Original Problem Statement</b>
-> Demonstrate the robotic arm by having it type its own code. The arm will hold an object to press keys with. The robot will hopefully write code quickly enough so that people can watch it write in real time. The robot could also type input to chatgpt, and have a separate program read the output to the robot. It will then cmd+tab into a document and type the answer. Both of these demonstrations will show the arm “doing homework,” which I think is a silly butchallenging way to demonstrate the robot’s capabilities.
+Demonstrate the robotic arm by having it type its own code. The arm will hold an object to press keys with. The robot will hopefully write code quickly enough so that people can watch it write in real time. The robot could also type input to chatgpt, and have a separate program read the output to the robot. It will then cmd+tab into a document and type the answer. Both of these demonstrations will show the arm “doing homework,” which I think is a silly butchallenging way to demonstrate the robot’s capabilities.
 
 ## Learning Objective
 
-The goal of this project is to demonstrate the capability of the robotic arm in conjunction with computer vision. While the end result of the project is not actually useful in a real world setting, the techniques used to produce the end result have a wide variety of applications. Some of the challenges we overcame in computer vision include detecting contours on images with a lot of undesired lines and glare, reducing noise in contoured images, and transforming image coordinates to real world coordinates. Some of the challenges we overcame in using a robotic arm include moving to very specific positions and translating cartesian coordinates to polar coordinates since the arm moves by rotating. We also worked extensively with ROS.
+The goal of this project is to demonstrate the capability of the robotic arm in conjunction with computer vision. 
+
+While the end result of the project is not actually useful in a real world setting, the techniques used to produce the end result have a wide variety of applications. Some of the challenges we overcame in computer vision include detecting contours on images with a lot of undesired lines and glare, reducing noise in contoured images, and transforming image coordinates to real world coordinates. 
+
+Some of the challenges we overcame in using a robotic arm include moving to very specific positions and translating cartesian coordinates to polar coordinates since the arm moves by rotating. We also worked extensively with ROS.
 
 ## Original Goals
 
-- Text Publishing
-  - Publish large chunks of text with ROS
-  - Clean text into individual characters that can be typed
-  - Send and receive data from ChatGPT
-- Computer Vision
-  - Recognize keys on a keyboard
-  - Detect letters on a keyboard (this was not used in the final project due to inconsistency)
-  - Transform image coordinates to real world coordinates
-- Arm Control
-  - Move the arm to specific positions with high accuracy
+* Text Publishing
+  * Publish large chunks of text with ROS
+  * Clean text into individual characters that can be typed
+  * Send and receive data from ChatGPT
+* Computer Vision
+  * Recognize keys on a keyboard
+  * Detect letters on a keyboard (this was not used in the final project due to inconsistency)
+  * Transform image coordinates to real world coordinates
+* Arm Control
+  * Move the arm to specific positions with high accuracy
 
 ## What was created
 
 ### Technical Description
-<b>Project Structure</b>
+
 ![Project structure diagram](https://user-images.githubusercontent.com/62267188/236589001-e161beb5-63ed-4a94-a648-fa01d3452393.png "Project structure diagram")
-<i>Project structure diagram</i>
+
+#### Project structure diagram
 
 The project works by having a central coordinating node connect arm motion, image recognition, keyboard input, and text input. All of these functionalities are achieved through ROS actions except for the connection to the keyboard input, which is done through a simple function call (coordinator --> keys_to_type_action_client). Our goal with designing the project in this way was to keep it as modular as possible. For example, the chatgpt_connection node could be replaced by another node that publishes some other text output to the <code>generated_text</code> ROS topic. A different arm_control node could be a server for the arm_control action if a different robotic arm requiring different code was used. Any of the nodes connected with actions or topics could be substituted, and we often used this to our advantage for debugging.
 
-<b>Arm Motion</b><br>
+#### Arm Motion
+
 <img width="379" alt="Screen Shot 2023-05-06 at 12 06 11 PM" src="https://user-images.githubusercontent.com/62267188/236634794-cc26cb01-714c-4067-9bdd-f2b5fe42ef1e.png"><i>Arm motion diagram</i>
 
 As shown above, the arm moves with rotation and extension to hover above different keys. To achieve this movement from a flat image with (x,y) coordinates, we converted the coordinates of each key into polar coordinates. From (x,y) coordinates in meters, the desired angle of the arm is determined by $θ=atan(x/y)$. The desired extension from the base of the arm is found by $dist=y/cos(θ)$. We calculate this relative to the current extension of the arm so $Δdist=dist-currentDistance$.
 
 It was found that the arm does not accurately move in this way. As the angle increases, the arm does not adjust its extension by a large enough distance. This can be corrected for, but an exact correction was not found. One correction that works to an acceptable degree of accuracy for angles less than 45 degrees is: $((delta)/math.cos(delta)) - delta$, with $delta$ being some value between 0.07 and 0.09 (the optimized value was not determined and it seems as if the right value changes based on how far the arm is currently extended and to which side the arm is turned). This correction is then added to $dist$.
 
-<b>Keyboard Recognition</b>
+#### Keyboard Recognition
 
 ![keyboard_img](https://user-images.githubusercontent.com/62267188/236589023-4044c059-9794-4980-80c2-0cb8967b3a74.png "Keyboard contouring example 1")<i>Keyboard contouring example 1</i> ![keyboard_img 2](https://user-images.githubusercontent.com/62267188/236589021-a9bdbf8b-21b8-473c-926e-7eda8a39d767.png "Keyboard contouring example 2")<i>Keyboard contouring example 2, with a more difficult keyboard to detect</i>
 
@@ -68,7 +74,7 @@ Before running the project, connect the arm and a usb webcam to a computer with 
 
 Launch the arm: <code>roslaunch interbotix_xsarm_control xsarm_control.launch robot_model:=px100 use_sim:=false</code>
 
-<b>Calibration</b><br>
+#### Calibration
 
 Follow these instructions if the keyboard you are using has not already been calibrated.
 
