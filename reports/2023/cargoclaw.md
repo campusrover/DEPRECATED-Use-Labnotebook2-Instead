@@ -47,7 +47,7 @@ In the delivery phase, a person loads a piece of cargo - we used a 3D printed cu
 
 ## What Was Created
 
-![flowchart](../images/cargoclaw/cargoclaw_flowchart.png)
+![flowchart](../../images/cargoclaw/cargoclaw_flowchart.png)
 A flowchart of message passing that must occur between the three main components of this project.
 
 ## Algorithms & Techniques
