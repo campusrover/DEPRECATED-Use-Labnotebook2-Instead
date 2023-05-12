@@ -84,7 +84,7 @@ class MakeSummary
   end
 
   def generate_output(all_entries)
-    all_entries.sort_by { |x| x[:order], x[:title] }
+    all_entries.sort_by { |x| [x[:order], x[:title] }
                .each do |entry|
       puts entry[:text]
       next unless entry[:lines]
