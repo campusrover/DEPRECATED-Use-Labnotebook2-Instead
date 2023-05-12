@@ -66,7 +66,7 @@ Since commands to the arm are sent in polar coordinates, the cartesian coordinat
 
 ### Setup
 
-![setup](../images/cargoclaw/cargoclaw_setup.jpg)
+![setup](../../images/cargoclaw/cargoclaw_setup.jpg)
 
 1. Arm robot  
 
@@ -85,15 +85,15 @@ Run `roslaunch cargoclaw transport_command.launch`. Separately, run `roslaunch c
 * width_phys/height_phys: Physical dimensions captured in the image at the height of the cargo (Setup #2)
  
 **Mode 1: Mapping**
-![mapping mode gui](../images/cargoclaw/cargoclaw_mapping.jpg)
+![mapping mode gui](../../images/cargoclaw/cargoclaw_mapping.jpg)
 Use teleop to drive the robot between the loading and unloading zones. Watch rviz to ensure adequate data is being collected.
 
 **Mode 2: Localizing**
-![localization mode gui](../images/cargoclaw/cargoclaw_localization.jpg)
+![localization mode gui](../../images/cargoclaw/cargoclaw_localization.jpg)
 Use teleop to drive the robot between the loading and unloading zones. Watch rviz to ensure localization is accurate. Press the "Set Home" button when the robot is at the location where cargo will be loaded. Press the "Set Goal" button when the robot is at the location of the arm.
 
 **Mode 3: Running**
-![localization mode gui](../images/cargoclaw/cargoclaw_driving.jpg)
+![localization mode gui](../../images/cargoclaw/cargoclaw_driving.jpg)
 When the cargo is loaded, press "Go Goal". This will send the robot to the loading zone where the loading/unloading will be done autonomously. The robot will then return to the home position for you to add more cargo. Press "Go Goal" and repeat the cycle. The "Go Home" button can be used if the navigation is not working, but should not be necessary.
 
 ## Summary of Nodes, Messages, and External Packages
