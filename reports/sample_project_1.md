@@ -1,5 +1,5 @@
 ---
-title: your title
+title: Sample Project Template
 date: month-year
 status: new
 type: report
