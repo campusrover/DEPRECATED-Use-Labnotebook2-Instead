@@ -1,3 +1,10 @@
+---
+title: Command and Control Dashboard
+date: may-2023
+author: Naimul Hasan, Jimmy Kong, Brandon J. Lacy
+status: new
+type: report
+---
 # Command and Control Dashboard
 
 ## About

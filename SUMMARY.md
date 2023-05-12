@@ -105,7 +105,7 @@
         * [Multi Robot Home Surveilance](./reports/2023/multi-robot-surveillance.md)
         * [Guard Robot](./reports/2023/guard_robot.md)
         * [Autopilot](./reports/2023/Autopilot.md)
-        * [command-control.md](./reports/2023/command-control.md)
+        * [Command and Control Dashboard](./reports/2023/command-control.md)
         * [Typenator](./reports/2023/typinator.md)
     * [202](./reports/2022/README.md)
         * [litter_picker.md](./reports/2022/litter_picker.md)
