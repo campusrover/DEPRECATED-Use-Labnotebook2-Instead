@@ -5,8 +5,6 @@ description: All sorts of small topics are covered here
 ---
 # FAQ
 
-*How-to's, tutorials, explanations, concepts that might be helpful for others*
-
 ## Steps for contributing to this section
 
 1. Git clone this repository to your computer: [campusrover/labnotebook](https://github.com/campusrover/labnotebook)
@@ -20,6 +18,7 @@ author: Pito Salas
 description: nicer subtitle
 order: where does this one appear in order
 status: obsolete|new|tophit
+date: month-year
 ---
 ```
 as the first few lines of the file
