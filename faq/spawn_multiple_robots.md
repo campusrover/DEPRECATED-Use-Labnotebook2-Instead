@@ -1,3 +1,10 @@
+---
+title: Spawning Multiple Robots
+author: Belle Scott
+date: may-2023
+type: faq
+status: ok
+---
 # Spawning Multiple Robots 
 ## Author: Belle Scott
 
