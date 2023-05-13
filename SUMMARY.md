@@ -33,7 +33,7 @@
     * [Robot Arm Transforms](./faq/determine-arm-transforms-using-a-real-coordinate-system.md)
     * [Running Multi Robot in Gazebo and Real Robot](./faq/multi_robot_gazebo_real.md)
     * [Simplifying_Lidar.md](./faq/Simplifying_Lidar.md)
-    * [Some tips for using OpenCV and Turtlebot3 Camera.md](./faq/Some tips for using OpenCV and Turtlebot3 Camera.md)
+    * [Some tips for using OpenCV and Turtlebot3 Camera](./faq/Some tips for using OpenCV and Turtlebot3 Camera.md)
     * [Spawning and Animated Humans](./faq/Spawning_Animated_Human.md)
     * [Tips for using OpenCV and Cameras](./faq/tb3-camera-cv2-tips.md)
     * [UDP-socket.md](./faq/UDP-socket.md)
