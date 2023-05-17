@@ -1,3 +1,10 @@
+---
+title: How do I attach a Bluetooth headset?
+description: About roubles that you may run into if you are trying to connect to bluetooth using linux or raspberry pi
+author: Veronika Belinka
+status: new
+type: faq
+---
 # Bluetooth Headset
 
 ## The linux bluetooth struggle
