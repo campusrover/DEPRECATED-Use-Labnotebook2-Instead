@@ -16,8 +16,9 @@ class MakeSummary
     order = file_keys.fetch(:order, 100)
     type = file_keys.fetch(:type, "unspecified")
     clazz = file_keys.fetch(:class, "unspecified")
+    status = file_keys.fetch(:status, "unspecified")
     text_string = "#{'    ' * indent}* [#{title}](#{path})"
-    {text: text_string, indent:, title:, order:, clazz:, type:}
+    {text: text_string, indent:, title:, order:, clazz:, type:, status:, path:}
   end
 
   def skip_entry?(entry)
@@ -73,11 +74,20 @@ class MakeSummary
   end
 
   def generate_special_sections(all_entries)
+    puts "## Special Sections"
+    puts "* New Entries"
+    generate_special_section(all_entries, "new")
+    puts "* Needs Review"
+    generate_special_section(all_entries, "needs review")
+  end
+
+  def generate_special_section(all_entries, status_val)
     all_entries.each do |entry|
-      next unless entry[:status] == "new"
-      puts entry[:text]
+      if entry[:status] == status_val
+        puts "   * [#{entry[:title]}(#{entry[:path]})"
+      end
       next unless entry[:lines]
-      generate_output(entry[:lines])
+      generate_special_section(entry[:lines], status_val)
     end
   end
 
