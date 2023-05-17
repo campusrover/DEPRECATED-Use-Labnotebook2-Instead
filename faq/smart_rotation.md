@@ -1,3 +1,12 @@
+---
+title: How can I calculate a better way to rotate?
+description: 
+author: Eyal Cohen
+date: may-2022
+status: new
+type: faq
+---
+
 # Smart Rotation for Navigation
 ### Author - Eyal Cohen
 
