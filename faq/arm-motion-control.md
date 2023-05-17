@@ -1,9 +1,10 @@
 ---
-title: Arm Motion Control
+title: How do I control the Arm
 desc: Converting Arm Coordinates
 date: may-2023
 status: new
 author: Elliot Siegal
+type: faq
 ---
 # Arm Motion Control
 

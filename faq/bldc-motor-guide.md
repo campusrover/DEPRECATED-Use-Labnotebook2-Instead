@@ -1,3 +1,10 @@
+---
+title: How do I read a BDLC motor spec sheet
+author: Julian Ho, Cass Wang
+date: may-2021
+status: needs review
+type: faq
+---
 # BLDC motor guide
 
 {% hint style="info" %}

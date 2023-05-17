@@ -1,3 +1,10 @@
+---
+title: How do I set up AprilTags
+description: Apriiltags are al alternative to Aruco Tags
+status: needs review
+type: faq
+---
+
 # setting up apriltags
 
 Setting up apriltags to work with your program is pretty simple. 

@@ -1,3 +1,10 @@
+---
+title: How do I control AWS RoboMaker?
+author: Nate Dimmick
+type: FAQ
+status: needs updating
+date: may-2021
+---
 # AWS RoboMaker
 
 ## Introduction

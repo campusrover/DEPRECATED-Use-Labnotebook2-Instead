@@ -1,3 +1,11 @@
+---
+title: How do I set up the Astra Pro Depth Camera?
+author: Veronika Belkina
+description: A guide to installing the Astra Pro Depth Camera onto a robot
+date: may-2023
+type: FAQ
+status: new
+---
 # Astra Pro Depth Camera Setup
 by Veronika Belkina
 
