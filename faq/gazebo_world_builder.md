@@ -1,7 +1,10 @@
 ---
-title: Creating Gazebo World
+title: How do I creating a gazebo world
 author: Muthhukumar Malaiiyyappan (Malai)
 date: may-2023
+type: faq
+description: Another tutorial for creating gazebo worlds
+status: new
 ---
 # Creating Gazebo world from scratch
 
