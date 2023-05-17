@@ -5,21 +5,19 @@ class MakeSummary
     dir_keys = extract_keys_from_directory(entry, path)
     title = dir_keys.fetch(:title, entry)
     order = dir_keys.fetch(:order, 100)
+    clazz = "directory"
     text_string = "#{'    ' * indent}* [#{title}](#{path}/README.md)"
-    {text: text_string, indent:, title:, order:}
+    {text: text_string, indent:, title:, order:, clazz:}
   end
 
   def generate_entry_for_file(entry, path, indent)
     file_keys = extract_keys_from_markdown(entry, path)
     title = file_keys.fetch(:title, entry)
     order = file_keys.fetch(:order, 100)
+    type = file_keys.fetch(:type, "unspecified")
+    clazz = file_keys.fetch(:class, "unspecified")
     text_string = "#{'    ' * indent}* [#{title}](#{path})"
-    {text: text_string, indent:, title:, order:}
-  end
-
-  def extract_file_info(entry, path, indent)
-    md_title = extract_title_from_markdown(entry, path)
-    {text: text_string, indent:, title: md_title}
+    {text: text_string, indent:, title:, order:, clazz:, type:}
   end
 
   def skip_entry?(entry)
@@ -28,16 +26,6 @@ class MakeSummary
 
   def valid_markdown_file?(entry)
     entry.end_with?(".md")
-  end
-
-  def extract_title(entry, current_path)
-    info_file = File.join(current_path, "info.yml")
-    if File.exist?(info_file)
-      info = YAML.load_file(info_file)
-      info.transform_keys!(&:to_sym)
-      return info[:title] if info[:title]
-    end
-    entry
   end
 
   def extract_keys_from_directory(entry, current_path)
@@ -49,7 +37,8 @@ class MakeSummary
 
       title = info.fetch(:title, entry)
       order = info.fetch(:order, 100)
-      result.merge!(order:, title:)
+      clazz = "directory"
+      result.merge!(order:, title:, clazz:)
     end
     result
   end
@@ -83,7 +72,17 @@ class MakeSummary
     all_entries
   end
 
+  def generate_special_sections(_all_entries)
+    all_entries.each do |entry|
+      next unless entry[:status] == "new"
+      puts entry[:text]
+      next unless entry[:lines]
+      generate_output(entry[:lines])
+    end
+  end
+
   def generate_output(all_entries)
+    generate_special_sections(all_entries)
     all_entries.sort_by { |x| [x[:order], x[:title]] }
                .each do |entry|
       puts entry[:text]
