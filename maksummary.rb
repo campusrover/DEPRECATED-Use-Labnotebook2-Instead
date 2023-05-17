@@ -103,8 +103,8 @@ class MakeSummary
   def run
     current_path = File.join(".")
     all_entries  = process(current_path, 0)
-    generate_output(all_entries)
     generate_special_sections(all_entries)
+    generate_output(all_entries)
   end
 end
 
