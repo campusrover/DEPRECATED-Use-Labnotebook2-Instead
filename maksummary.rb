@@ -72,7 +72,7 @@ class MakeSummary
     all_entries
   end
 
-  def generate_special_sections(_all_entries)
+  def generate_special_sections(all_entries)
     all_entries.each do |entry|
       next unless entry[:status] == "new"
       puts entry[:text]
