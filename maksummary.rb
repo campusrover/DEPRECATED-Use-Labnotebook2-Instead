@@ -11,6 +11,8 @@ class MakeSummary
   end
 
   def generate_entry_for_file(entry, path, indent)
+    stat = File::Stat.new(path)
+    mdate = stat.mtime
     file_keys = extract_keys_from_markdown(entry, path)
     title = file_keys.fetch(:title, entry)
     order = file_keys.fetch(:order, 100)
@@ -18,7 +20,7 @@ class MakeSummary
     clazz = file_keys.fetch(:class, "unspecified")
     status = file_keys.fetch(:status, "unspecified")
     text_string = "#{'    ' * indent}* [#{title}](#{path})"
-    {text: text_string, indent:, title:, order:, clazz:, type:, status:, path:}
+    {text: text_string, indent:, title:, order:, clazz:, type:, status:, path:, mdate:}
   end
 
   def skip_entry?(entry)
@@ -103,9 +105,9 @@ class MakeSummary
   def run
     current_path = File.join(".")
     all_entries  = process(current_path, 0)
-    generate_special_sections(all_entries)
     puts "## CampusRover Lab Notebook"
     generate_output(all_entries)
+    generate_special_sections(all_entries)
   end
 end
 
