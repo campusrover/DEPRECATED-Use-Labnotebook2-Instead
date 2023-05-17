@@ -1,8 +1,15 @@
 ---
-title: Setting up to use Coral TPU
+title: How do I setup to Coral TPU
 description: Detailed steps for using the Coral TPU
-status: tophit
+status: bestbet
+type: faq
+date: may-2022
+author:
 ---
+# Detailed steps for using the Coral TPU
+
+The Google Coral TPU is a USB machine learning accelerator which can plugged into a computer to increase machine learning performance on Tensorflow Lite models. The following documentation will detail how to install the relevant libraries and use the provided PyCoral library in Python to make use of the Coral TPU.
+
 ## Requirements
 
 - Linux Debian 10, or a derivative thereof (such as Ubuntu 18.04)
@@ -35,6 +42,16 @@ Follow the following steps in order to get your environment configured for runni
 4. Install the PyCoral Python library with the following command:
     - `sudo apt-get install python3-pycoral`
 
-
 You are now ready to begin using the PyCoral TPU to run Tensorflow Lite models.
+
+## Running a pretrained TFLite model
+
+The following section will detail how to download and execute a TFLite model that has been compiled for the Edge TPU
+
+## Downloading a model
+
+Pretrained TFLite models that have been precompiled for the Coral TPU can be found on the [models section of the Coral website](https://coral.ai/models/).
+
+- Once you have downloaded your model, place it into a folder within your workspace.
+
     
