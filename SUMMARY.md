@@ -17,7 +17,7 @@
     * [How do I control the Arm](./faq/arm-motion-control.md)
     * [How do I convert Imagenet to Darknet](./faq/convert-imagenet-to-darknet.md)
     * [How do I create a Gazebo world](./faq/create-gazebo.world.md)
-    * [How do I deploying a pretrained Pytorch model into a Rover cluster node](./faq/pretrained-model-deployment.md)
+    * [How do I deploy a Pytorch model our cluster?](./faq/pretrained-model-deployment.md)
     * [How do I move a file from my vnc and back?](./faq/moving-files.md)
     * [How do I read a BDLC motor spec sheet](./faq/bldc-motor-guide.md)
     * [How do I set up AprilTags](./faq/apriltags_setup.md)

@@ -1,5 +1,5 @@
 ---
-title: How do I deploying a pretrained Pytorch model into a Rover cluster node
+title: How do I deploy a Pytorch model our cluster?
 description: 
 author: Adam Ring
 date: may-2023
