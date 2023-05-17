@@ -84,7 +84,7 @@ class MakeSummary
   def generate_special_section(all_entries, status_val)
     all_entries.each do |entry|
       if entry[:status] == status_val
-        puts "   * [#{entry[:title]}](#{entry[:path]})"
+        puts "    * [#{entry[:title]}](#{entry[:path]})"
       end
       next unless entry[:lines]
       generate_special_section(entry[:lines], status_val)
