@@ -1,83 +1,4 @@
-## Special Sections
-* New Entries
-   * [Basic Chatgpt ROS interface(./faq/chatgpt.md)
-   * [GPS Data with iPhone (GPS2IP)(./faq/gps-data.md)
-   * [Download File From vscode(./faq/download_file_from_code.md)
-   * [How do I attach a Bluetooth headset?(./faq/bluetooth.md)
-   * [Robot Arm Transforms(./faq/determine-arm-transforms-using-a-real-coordinate-system.md)
-   * [robot multitasking(./faq/robot-multitasking.md)
-   * [Interbotix Pincher X100 Arm(./faq/InterbotixPincherX100.md)
-   * [Working with localStorage in React for web clients(./faq/localStorage.md)
-   * [How do I control the Arm(./faq/arm-motion-control.md)
-   * [How to connect to multiple robots(./faq/connect-multiple-robots.md)
-   * [How do I deploy a Pytorch model our cluster?(./faq/pretrained-model-deployment.md)
-   * [Running Multi Robot in Gazebo and Real Robot(./faq/multi_robot_gazebo_real.md)
-   * [How do I creating a gazebo world(./faq/gazebo_world_builder.md)
-   * [USB Camera Setup(./faq/usb-cam-setup.md)
-   * [Computer Vision With Yolo8a(./faq/Computer-vision-with-model-Yolo8.md)
-   * [How can I calculate a better way to rotate?(./faq/smart_rotation.md)
-   * [How do I set up the Astra Pro Depth Camera?(./faq/astra_pro_depth_camera_setup.md)
-   * [Finding correct color for line following(./faq/color-for-line-following.md)
-   * [How to define and Use your own message types(./faq/Self-Defined-Message.md)
-   * [Tips for using OpenCV and Cameras(./faq/tb3-camera-cv2-tips.md)
-   * [How to approach computer vision(./faq/Computer-vision-suggestion.md)
-   * [ROSBridge and ROSLIBJS(./faq/ros-bridge-and-roslibjs.md)
-   * [Pincer Attachment(./faq/pincer_use.md)
-   * [Finding HSV values for any color(./faq/hsv_values_finder.md)
-   * [Some tips for using OpenCV and Turtlebot3 Camera(./faq/using-opencv-with-tb3.md)
-   * [Speech Recognition Report(./packages/speech_recognition_report.md)
-   * [Tailscale VPN(./infrastructure/tailscale.md)
-   * [Typenator(./reports/2023/typinator.md)
-   * [Bowling Bot(./reports/2023/BowlingBot.md)
-   * [Robot Race(./reports/2023/robot_race.md)
-   * [Dynamaze(./reports/2023/dynamaze.md)
-   * [Object Sorter(./reports/2023/object_sorter.md)
-   * [Multi Robot Surveilance(./reports/2023/multi-robot-surveillance.md)
-   * [Guard Robot(./reports/2023/guard_robot.md)
-   * [Autopilot(./reports/2023/Autopilot.md)
-   * [Command and Control Dashboard(./reports/2023/command-control.md)
-   * [Cargo Claw(./reports/2023/cargoclaw.md)
-   * [Sample Project Template(./reports/sample_project_1.md)
-* Needs Review
-   * [What are some Computer Vision Tips(./faq/computer_vision_tips.md)
-   * [How do I create a Gazebo world(./faq/create-gazebo.world.md)
-   * [How do I convert Imagenet to Darknet(./faq/convert-imagenet-to-darknet.md)
-   * [How do I read a BDLC motor spec sheet(./faq/bldc-motor-guide.md)
-   * [How do I set up AprilTags(./faq/apriltags_setup.md)
 * [Frequently Asked Questions](./faq/README.md)
-## Special Sections
-* New Entries
-   * [Basic Chatgpt ROS interface(./faq/chatgpt.md)
-   * [GPS Data with iPhone (GPS2IP)(./faq/gps-data.md)
-   * [Download File From vscode(./faq/download_file_from_code.md)
-   * [How do I attach a Bluetooth headset?(./faq/bluetooth.md)
-   * [Robot Arm Transforms(./faq/determine-arm-transforms-using-a-real-coordinate-system.md)
-   * [robot multitasking(./faq/robot-multitasking.md)
-   * [Interbotix Pincher X100 Arm(./faq/InterbotixPincherX100.md)
-   * [Working with localStorage in React for web clients(./faq/localStorage.md)
-   * [How do I control the Arm(./faq/arm-motion-control.md)
-   * [How to connect to multiple robots(./faq/connect-multiple-robots.md)
-   * [How do I deploy a Pytorch model our cluster?(./faq/pretrained-model-deployment.md)
-   * [Running Multi Robot in Gazebo and Real Robot(./faq/multi_robot_gazebo_real.md)
-   * [How do I creating a gazebo world(./faq/gazebo_world_builder.md)
-   * [USB Camera Setup(./faq/usb-cam-setup.md)
-   * [Computer Vision With Yolo8a(./faq/Computer-vision-with-model-Yolo8.md)
-   * [How can I calculate a better way to rotate?(./faq/smart_rotation.md)
-   * [How do I set up the Astra Pro Depth Camera?(./faq/astra_pro_depth_camera_setup.md)
-   * [Finding correct color for line following(./faq/color-for-line-following.md)
-   * [How to define and Use your own message types(./faq/Self-Defined-Message.md)
-   * [Tips for using OpenCV and Cameras(./faq/tb3-camera-cv2-tips.md)
-   * [How to approach computer vision(./faq/Computer-vision-suggestion.md)
-   * [ROSBridge and ROSLIBJS(./faq/ros-bridge-and-roslibjs.md)
-   * [Pincer Attachment(./faq/pincer_use.md)
-   * [Finding HSV values for any color(./faq/hsv_values_finder.md)
-   * [Some tips for using OpenCV and Turtlebot3 Camera(./faq/using-opencv-with-tb3.md)
-* Needs Review
-   * [What are some Computer Vision Tips(./faq/computer_vision_tips.md)
-   * [How do I create a Gazebo world(./faq/create-gazebo.world.md)
-   * [How do I convert Imagenet to Darknet(./faq/convert-imagenet-to-darknet.md)
-   * [How do I read a BDLC motor spec sheet(./faq/bldc-motor-guide.md)
-   * [How do I set up AprilTags(./faq/apriltags_setup.md)
     * [Improved ROS and TkInter](./faq/tkinter-ROS-improved.md)
     * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
     * [Claw Movement](./faq/claw_movement.md)
@@ -167,43 +88,13 @@
     * [using-conditionals-in-roslaunch.md](./faq/using-conditionals-in-roslaunch.md)
     * [ROS and TkInter](./faq/tkinter-ROS.md)
 * [Brandeis Robotics Utility](./BRU/README.md)
-## Special Sections
-* New Entries
-* Needs Review
     * [Controlling Robots from VNC](./BRU/connect-to-robot.md)
     * [BRU Concepts](./BRU/concepts.md)
     * [Commands](./BRU/commands.md)
     * [Standard ROSUTILS directory everywhere](./BRU/rosutils.md)
     * [script.md](./BRU/script.md)
 * [Cosi119 Final Reports](./reports/README.md)
-## Special Sections
-* New Entries
-   * [Typenator(./reports/2023/typinator.md)
-   * [Bowling Bot(./reports/2023/BowlingBot.md)
-   * [Robot Race(./reports/2023/robot_race.md)
-   * [Dynamaze(./reports/2023/dynamaze.md)
-   * [Object Sorter(./reports/2023/object_sorter.md)
-   * [Multi Robot Surveilance(./reports/2023/multi-robot-surveillance.md)
-   * [Guard Robot(./reports/2023/guard_robot.md)
-   * [Autopilot(./reports/2023/Autopilot.md)
-   * [Command and Control Dashboard(./reports/2023/command-control.md)
-   * [Cargo Claw(./reports/2023/cargoclaw.md)
-   * [Sample Project Template(./reports/sample_project_1.md)
-* Needs Review
     * [2023](./reports/2023/README.md)
-## Special Sections
-* New Entries
-   * [Typenator(./reports/2023/typinator.md)
-   * [Bowling Bot(./reports/2023/BowlingBot.md)
-   * [Robot Race(./reports/2023/robot_race.md)
-   * [Dynamaze(./reports/2023/dynamaze.md)
-   * [Object Sorter(./reports/2023/object_sorter.md)
-   * [Multi Robot Surveilance(./reports/2023/multi-robot-surveillance.md)
-   * [Guard Robot(./reports/2023/guard_robot.md)
-   * [Autopilot(./reports/2023/Autopilot.md)
-   * [Command and Control Dashboard(./reports/2023/command-control.md)
-   * [Cargo Claw(./reports/2023/cargoclaw.md)
-* Needs Review
         * [Autopilot](./reports/2023/Autopilot.md)
         * [Bowling Bot](./reports/2023/BowlingBot.md)
         * [Cargo Claw](./reports/2023/cargoclaw.md)
@@ -215,9 +106,6 @@
         * [Robot Race](./reports/2023/robot_race.md)
         * [Typenator](./reports/2023/typinator.md)
     * [2022](./reports/2022/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [NASCAR-style-turtlebot-racing.md](./reports/2022/NASCAR-style-turtlebot-racing.md)
         * [RoboTag.md](./reports/2022/RoboTag.md)
         * [litter_picker.md](./reports/2022/litter_picker.md)
@@ -225,16 +113,10 @@
         * [not-play-catch.md](./reports/2022/not-play-catch.md)
         * [waiter-bot.md](./reports/2022/waiter-bot.md)
     * [2020](./reports/2020/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [Behavior Trees Investigatoin](./reports/2020/behavior-trees.md)
         * [Computer Vision Maze Solver](./reports/2020/cvmaze.md)
         * [FiducialSLAM.md](./reports/2020/FiducialSLAM.md)
         * [Gesture Recognition](./reports/2020/gesture-recognition/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [color.md](./reports/2020/gesture-recognition/color.md)
             * [demo.md](./reports/2020/gesture-recognition/demo.md)
             * [gestures.md](./reports/2020/gesture-recognition/gestures.md)
@@ -249,54 +131,30 @@
         * [reinforcement-learning-racer.md](./reports/2020/reinforcement-learning-racer.md)
         * [stalkerbot.md](./reports/2020/stalkerbot.md)
     * [2019](./reports/2019/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [robot-arm.md](./reports/2019/robot-arm.md)
     * [Sample Project Template](./reports/sample_project_1.md)
     * [past-gen-letters.md](./reports/past-gen-letters.md)
 * [Brandeis Rover Cluster](./VNC-cluster/README.md)
-## Special Sections
-* New Entries
-* Needs Review
     * [intro.md](./VNC-cluster/intro.md)
     * [operation-guide](./VNC-cluster/operation-guide/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [architecture.md](./VNC-cluster/operation-guide/architecture.md)
         * [cluster.md](./VNC-cluster/operation-guide/cluster.md)
         * [faq.md](./VNC-cluster/operation-guide/faq.md)
         * [graphs](./VNC-cluster/operation-guide/graphs/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [graphs.md](./VNC-cluster/operation-guide/graphs.md)
         * [image.md](./VNC-cluster/operation-guide/image.md)
         * [lifecycle.md](./VNC-cluster/operation-guide/lifecycle.md)
         * [nodes.md](./VNC-cluster/operation-guide/nodes.md)
         * [operating](./VNC-cluster/operation-guide/operating/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [cluster.md](./VNC-cluster/operation-guide/operating/cluster.md)
             * [users.md](./VNC-cluster/operation-guide/operating/users.md)
         * [sources.md](./VNC-cluster/operation-guide/sources.md)
     * [user-guide](./VNC-cluster/user-guide/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [code-editor.md](./VNC-cluster/user-guide/code-editor.md)
         * [desktop-ui.md](./VNC-cluster/user-guide/desktop-ui.md)
         * [getting-started.md](./VNC-cluster/user-guide/getting-started.md)
 * [Robots in our Lab](./lab-robots/README.md)
-## Special Sections
-* New Entries
-* Needs Review
     * [linorobot](./lab-robots/linorobot/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [Platform Hardware Specs](./lab-robots/linorobot/platform_hardware.md)
         * [connections.md](./lab-robots/linorobot/connections.md)
         * [howto.md](./lab-robots/linorobot/howto.md)
@@ -304,18 +162,12 @@
         * [troubleshooting.md](./lab-robots/linorobot/troubleshooting.md)
         * [validating.md](./lab-robots/linorobot/validating.md)
     * [minirover](./lab-robots/minirover/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [mrbuild.md](./lab-robots/minirover/mrbuild.md)
         * [mrsetup.md](./lab-robots/minirover/mrsetup.md)
         * [mrtroubleshooting.md](./lab-robots/minirover/mrtroubleshooting.md)
         * [mruse.md](./lab-robots/minirover/mruse.md)
     * [platform.md](./lab-robots/platform.md)
     * [pupper](./lab-robots/pupper/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [boundary-generation.md](./lab-robots/pupper/boundary-generation.md)
         * [controls.md](./lab-robots/pupper/controls.md)
         * [fiducial-detection.md](./lab-robots/pupper/fiducial-detection.md)
@@ -326,39 +178,21 @@
         * [software-setup.md](./lab-robots/pupper/software-setup.md)
         * [testing.md](./lab-robots/pupper/testing.md)
 * [Campus Rover Packages](./cr-package/README.md)
-## Special Sections
-* New Entries
-* Needs Review
     * [C3 Architecture Notes](./cr-package/architecture.md)
     * [Campus Rover V 3](./cr-package/cr-3-project.md)
     * [campus-rover-4](./cr-package/campus-rover-4/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [Working with TIVAC](./cr-package/campus-rover-4/tivac-setup.md)
         * [progress-report.md](./cr-package/campus-rover-4/progress-report.md)
     * [demos](./cr-package/demos/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [demo-script-fall-2018.md](./cr-package/demos/demo-script-fall-2018.md)
         * [gen2-demo-instructions.md](./cr-package/demos/gen2-demo-instructions.md)
     * [mutant](./cr-package/mutant/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [Description of Mutant](./cr-package/mutant/mutant-description.md)
         * [mutant-usage.md](./cr-package/mutant/mutant-usage.md)
         * [mutantsetup.md](./cr-package/mutant/mutantsetup.md)
         * [raspicam.md](./cr-package/mutant/raspicam.md)
     * [navigation](./cr-package/navigation/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [costmap-clearing](./cr-package/navigation/costmap-clearing/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [costmap-clearing-part-1.md](./cr-package/navigation/costmap-clearing/costmap-clearing-part-1.md)
             * [costmap-clearing-part-2.md](./cr-package/navigation/costmap-clearing/costmap-clearing-part-2.md)
         * [cpu-usage-and-errors-in-navigation.md](./cr-package/navigation/cpu-usage-and-errors-in-navigation.md)
@@ -367,30 +201,17 @@
         * [lost-and-found.md](./cr-package/navigation/lost-and-found.md)
     * [nodes.md](./cr-package/nodes.md)
     * [package-delivery](./cr-package/package-delivery/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [talker-node.md](./cr-package/package-delivery/talker-node.md)
     * [state-management-services.md](./cr-package/state-management-services.md)
     * [voice](./cr-package/voice/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [voice integration.md](./cr-package/voice/voice integration.md)
         * [voice-integration.md-.-cr-package-voice-voice-integration.md.md](./cr-package/voice/voice-integration.md-.-cr-package-voice-voice-integration.md.md)
         * [voice.md](./cr-package/voice/voice.md)
     * [web-application](./cr-package/web-application/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [Integrating using Flask and ROS](./cr-package/web-application/flask-and-ros.md)
         * [flask.md](./cr-package/web-application/flask.md)
         * [livemap.md](./cr-package/web-application/livemap.md)
 * [Lab Infrastructure](./infrastructure/README.md)
-## Special Sections
-* New Entries
-   * [Tailscale VPN(./infrastructure/tailscale.md)
-* Needs Review
     * [Tailscale VPN](./infrastructure/tailscale.md)
     * [Creating a bootable SSD](./infrastructure/ssd-instructions.md)
     * [Danger Signs with Batteries and Chargers](./infrastructure/batteries-and-chargers.md)
@@ -399,9 +220,6 @@
     * [Turtlebot3s.md](./infrastructure/Turtlebot3s.md)
     * [copying-robot-sd-cards.md](./infrastructure/copying-robot-sd-cards.md)
     * [external-ssd-instructions](./infrastructure/external-ssd-instructions/README.md)
-## Special Sections
-* New Entries
-* Needs Review
     * [external-ssd-instructions.md](./infrastructure/external-ssd-instructions.md)
     * [linux_terminal_eduroam_setup.md](./infrastructure/linux_terminal_eduroam_setup.md)
     * [multi-robot-infrastructure.md](./infrastructure/multi-robot-infrastructure.md)
@@ -412,44 +230,71 @@
     * [setup-hints.md](./infrastructure/setup-hints.md)
     * [ubuntubrandeis.md](./infrastructure/ubuntubrandeis.md)
 * [Our ROS Packages](./packages/README.md)
-## Special Sections
-* New Entries
-   * [Speech Recognition Report(./packages/speech_recognition_report.md)
-* Needs Review
     * [Behavior Trees](./packages/behavior_trees/README.md)
-## Special Sections
-* New Entries
-* Needs Review
         * [Nodes](./packages/behavior_trees/nodes.md)
         * [Visualization of the behavior Tree](./packages/behavior_trees/visualization.md)
         * [basic_movement.md](./packages/behavior_trees/basic_movement.md)
         * [build](./packages/behavior_trees/build/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [defining_blackboard.md](./packages/behavior_trees/build/defining_blackboard.md)
             * [defining_nodes.md](./packages/behavior_trees/build/defining_nodes.md)
             * [defining_references.md](./packages/behavior_trees/build/defining_references.md)
         * [custom_nodes](./packages/behavior_trees/custom_nodes/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [custom_action.md](./packages/behavior_trees/custom_nodes/custom_action.md)
             * [custom_conditional.md](./packages/behavior_trees/custom_nodes/custom_conditional.md)
             * [custom_update.md](./packages/behavior_trees/custom_nodes/custom_update.md)
         * [included_nodes](./packages/behavior_trees/included_nodes/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [action_nodes.md](./packages/behavior_trees/included_nodes/action_nodes.md)
             * [conditional_nodes.md](./packages/behavior_trees/included_nodes/conditional_nodes.md)
             * [included_nodes.md](./packages/behavior_trees/included_nodes/included_nodes.md)
             * [parent_nodes.md](./packages/behavior_trees/included_nodes/parent_nodes.md)
             * [update_nodes.md](./packages/behavior_trees/included_nodes/update_nodes.md)
         * [nodes](./packages/behavior_trees/nodes/README.md)
-## Special Sections
-* New Entries
-* Needs Review
             * [leaf_nodes.md](./packages/behavior_trees/nodes/leaf_nodes.md)
             * [parent_nodes.md](./packages/behavior_trees/nodes/parent_nodes.md)
     * [Speech Recognition Report](./packages/speech_recognition_report.md)
+## Special Sections
+* New Entries
+   * [Basic Chatgpt ROS interface(./faq/chatgpt.md)
+   * [GPS Data with iPhone (GPS2IP)(./faq/gps-data.md)
+   * [Download File From vscode(./faq/download_file_from_code.md)
+   * [How do I attach a Bluetooth headset?(./faq/bluetooth.md)
+   * [Robot Arm Transforms(./faq/determine-arm-transforms-using-a-real-coordinate-system.md)
+   * [robot multitasking(./faq/robot-multitasking.md)
+   * [Interbotix Pincher X100 Arm(./faq/InterbotixPincherX100.md)
+   * [Working with localStorage in React for web clients(./faq/localStorage.md)
+   * [How do I control the Arm(./faq/arm-motion-control.md)
+   * [How to connect to multiple robots(./faq/connect-multiple-robots.md)
+   * [How do I deploy a Pytorch model our cluster?(./faq/pretrained-model-deployment.md)
+   * [Running Multi Robot in Gazebo and Real Robot(./faq/multi_robot_gazebo_real.md)
+   * [How do I creating a gazebo world(./faq/gazebo_world_builder.md)
+   * [USB Camera Setup(./faq/usb-cam-setup.md)
+   * [Computer Vision With Yolo8a(./faq/Computer-vision-with-model-Yolo8.md)
+   * [How can I calculate a better way to rotate?(./faq/smart_rotation.md)
+   * [How do I set up the Astra Pro Depth Camera?(./faq/astra_pro_depth_camera_setup.md)
+   * [Finding correct color for line following(./faq/color-for-line-following.md)
+   * [How to define and Use your own message types(./faq/Self-Defined-Message.md)
+   * [Tips for using OpenCV and Cameras(./faq/tb3-camera-cv2-tips.md)
+   * [How to approach computer vision(./faq/Computer-vision-suggestion.md)
+   * [ROSBridge and ROSLIBJS(./faq/ros-bridge-and-roslibjs.md)
+   * [Pincer Attachment(./faq/pincer_use.md)
+   * [Finding HSV values for any color(./faq/hsv_values_finder.md)
+   * [Some tips for using OpenCV and Turtlebot3 Camera(./faq/using-opencv-with-tb3.md)
+   * [Speech Recognition Report(./packages/speech_recognition_report.md)
+   * [Tailscale VPN(./infrastructure/tailscale.md)
+   * [Typenator(./reports/2023/typinator.md)
+   * [Bowling Bot(./reports/2023/BowlingBot.md)
+   * [Robot Race(./reports/2023/robot_race.md)
+   * [Dynamaze(./reports/2023/dynamaze.md)
+   * [Object Sorter(./reports/2023/object_sorter.md)
+   * [Multi Robot Surveilance(./reports/2023/multi-robot-surveillance.md)
+   * [Guard Robot(./reports/2023/guard_robot.md)
+   * [Autopilot(./reports/2023/Autopilot.md)
+   * [Command and Control Dashboard(./reports/2023/command-control.md)
+   * [Cargo Claw(./reports/2023/cargoclaw.md)
+   * [Sample Project Template(./reports/sample_project_1.md)
+* Needs Review
+   * [What are some Computer Vision Tips(./faq/computer_vision_tips.md)
+   * [How do I create a Gazebo world(./faq/create-gazebo.world.md)
+   * [How do I convert Imagenet to Darknet(./faq/convert-imagenet-to-darknet.md)
+   * [How do I read a BDLC motor spec sheet(./faq/bldc-motor-guide.md)
+   * [How do I set up AprilTags(./faq/apriltags_setup.md)

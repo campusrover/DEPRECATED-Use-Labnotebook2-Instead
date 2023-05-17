@@ -92,7 +92,6 @@ class MakeSummary
   end
 
   def generate_output(all_entries)
-    generate_special_sections(all_entries)
     all_entries.sort_by { |x| [x[:order], x[:title]] }
                .each do |entry|
       puts entry[:text]
@@ -105,6 +104,7 @@ class MakeSummary
     current_path = File.join(".")
     all_entries  = process(current_path, 0)
     generate_output(all_entries)
+    generate_special_sections(all_entries)
   end
 end
 
