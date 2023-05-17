@@ -1,4 +1,13 @@
+---
+title: How do I deploying a pretrained Pytorch model into a Rover cluster node
+description: 
+author: Adam Ring
+date: may-2023
+type: faq
+status: new
+---
 # Deploying a Pretrained Pytorch Model in Ubuntu 18.04 Virtual Environment
+
 By Adam Ring
 
 Using a pre-trained deep learning model from a framework such as Pytorch has myriad applications in robotics, from computer vision to speech recognition, and many places inbetween.
@@ -86,7 +95,9 @@ All you need to do to load a traced model for deployment in Pytorch is use the f
 
 Keep in mind that the traced version of your model will only work for torch tensors, and will not mimic the behavior of any conditional statements that you may have in
 your model.
+# Data Annotation
 
+Please see the full tutorial in the repo: [https://github.com/campusrover/Robotics\_Computer\_Vision/tree/master/utils/labelImg](https://github.com/campusrover/Robotics_Computer_Vision/tree/master/utils/labelImg)
 
 
 

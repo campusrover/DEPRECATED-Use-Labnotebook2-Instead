@@ -1,3 +1,11 @@
+---
+title: What are some Computer Vision Tips
+description:
+author:
+date: may-2023
+status: needs review
+type: faq
+---
 # Computer Vision
 
 ## Attention

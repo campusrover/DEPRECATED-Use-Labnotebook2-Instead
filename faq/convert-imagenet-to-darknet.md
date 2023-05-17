@@ -1,3 +1,11 @@
+---
+title: How do I convert Imagenet to Darknet
+description:
+author: 
+date: may-2021
+type: faq
+status: needs review
+---
 # Annotation Format Conversion
 
 ImageNet file xml format to [Darknet](https://github.com/pjreddie/darknet) text format.
