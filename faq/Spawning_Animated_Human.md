@@ -1,5 +1,9 @@
 ---
-title: Spawning and Animated Humans
+title: How do I spawn an animated Human?
+author: Nathan Cai
+type: faq
+status: ok
+date: may-2021
 ---
 #### Nathan Cai
 

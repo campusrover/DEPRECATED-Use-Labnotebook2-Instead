@@ -1,6 +1,5 @@
 ---
 title: How do I create a ROS UI with TkInter?
-order: 10
 status: tophit
 category: python
 description: How to use the TKInter package for Ros Tools
