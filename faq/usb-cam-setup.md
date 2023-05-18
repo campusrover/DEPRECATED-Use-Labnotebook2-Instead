@@ -1,8 +1,9 @@
 ---
-title: USB Camera Setup
+title: How do I set up a USB camera?
 author: Ken Kirio
 date: may-2023
 status: new
+type: faq
 ---
 # USB Camera Setup
 

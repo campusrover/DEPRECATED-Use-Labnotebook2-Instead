@@ -1,3 +1,10 @@
+---
+title: How do you use UDP to communicate between computers?
+description: Do you need to give information to your roscore that you can't transport with rosnodes? 
+date: may-2021
+status: ok
+type: faq
+---
 # UDP- Sockets 
 
 ## Author: Lucian Fairbrother

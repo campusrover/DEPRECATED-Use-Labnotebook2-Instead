@@ -1,3 +1,12 @@
+---
+title: How do I use Parameters and Arguments in ROS?
+author: Evalyn Berleant, Kelly Duan
+description: Arguments and parameters are important tags for roslaunch files that are similar, but not quite the same.
+
+date: may-2021
+status: OK
+type: FAQ
+---
 #### Evalyn Berleant, Kelly Duan
 
 Arguments and parameters are important tags for roslaunch files that are similar, but not quite the same.

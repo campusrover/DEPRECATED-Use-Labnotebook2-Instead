@@ -1,5 +1,5 @@
 ---
-title: Some tips for using OpenCV and Turtlebot3 Camera
+title: How do I use OpenCV and Turtlebot3 Camera
 description: 
 author: Junhao Wang
 date: may-2023
