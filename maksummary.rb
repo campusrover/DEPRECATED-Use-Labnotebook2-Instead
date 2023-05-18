@@ -20,7 +20,7 @@ class MakeSummary
     type = file_keys.fetch(:type, "unspecified")
     status = file_keys.fetch(:status, "unspecified")
     text_string = "#{'    ' * indent}* [#{title}](#{path})"
-    {text: text_string, indent:, title:, order:, type:, type:, status:, path:, mdate:}
+    {text: text_string, indent:, title:, order:, type:, status:, path:, mdate:}
   end
 
   def skip_entry?(entry)
