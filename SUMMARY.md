@@ -1,5 +1,6 @@
 ## CampusRover Lab Notebook
 * [Frequently Asked Questions](./faq/README.md)
+    * [Advanced: Help me troubleshoot weird build problems](./faq/advanced-fixing-build-problems.md)
     * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
     * [Claw Movement](./faq/claw_movement.md)
     * [Computer Vision With Yolo8a](./faq/Computer-vision-with-model-Yolo8.md)
@@ -279,6 +280,7 @@
     * [How to approach computer vision](./faq/Computer-vision-suggestion.md)
     * [ROSBridge and ROSLIBJS](./faq/ros-bridge-and-roslibjs.md)
     * [Pincer Attachment](./faq/pincer_use.md)
+    * [Advanced: Help me troubleshoot weird build problems](./faq/advanced-fixing-build-problems.md)
     * [Finding HSV values for any color](./faq/hsv_values_finder.md)
     * [How do I use OpenCV and Turtlebot3 Camera](./faq/using-opencv-with-tb3.md)
     * [Speech Recognition Report](./packages/speech_recognition_report.md)
