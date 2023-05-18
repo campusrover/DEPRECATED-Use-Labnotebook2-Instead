@@ -5,9 +5,9 @@ class MakeSummary
     dir_keys = extract_keys_from_directory(entry, path)
     title = dir_keys.fetch(:title, entry)
     order = dir_keys.fetch(:order, 100)
-    clazz = "directory"
+    type = "directory"
     text_string = "#{'    ' * indent}* [#{title}](#{path}/README.md)"
-    {text: text_string, indent:, title:, order:, clazz:}
+    {text: text_string, indent:, title:, order:, type:}
   end
 
   def generate_entry_for_file(entry, path, indent)
@@ -17,10 +17,10 @@ class MakeSummary
     title = file_keys.fetch(:title, entry)
     order = file_keys.fetch(:order, 100)
     type = file_keys.fetch(:type, "unspecified")
-    clazz = file_keys.fetch(:class, "unspecified")
+    type = file_keys.fetch(:type, "unspecified")
     status = file_keys.fetch(:status, "unspecified")
     text_string = "#{'    ' * indent}* [#{title}](#{path})"
-    {text: text_string, indent:, title:, order:, clazz:, type:, status:, path:, mdate:}
+    {text: text_string, indent:, title:, order:, type:, type:, status:, path:, mdate:}
   end
 
   def skip_entry?(entry)
@@ -40,8 +40,8 @@ class MakeSummary
 
       title = info.fetch(:title, entry)
       order = info.fetch(:order, 100)
-      clazz = "directory"
-      result.merge!(order:, title:, clazz:)
+      type = "directory"
+      result.merge!(order:, title:, type:)
     end
     result
   end

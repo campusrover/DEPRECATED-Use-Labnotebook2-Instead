@@ -1,7 +1,9 @@
 ---
 title: Why is my robot not moving?
 author: Jeremy Huey
-date: 05/04/2023
+date: may-2023
+status: new
+type: FAQ
 ---
 
 # Basic Start Guide 
