@@ -1,3 +1,11 @@
+---
+title: How does GPS work?
+author: August Soderberg
+date: may-2022
+type: faq
+status: new
+description: Collection current knowledge we found in our GPS research
+---
 # GPS Knowledge
 ## August Soderberg / 2021 - 2022
 ### This is a collection all current knowledge I have found in my GPS research. Some sections take a very high level approach and others are quite technical. Please read prior sections if any sections are difficult to understand.
