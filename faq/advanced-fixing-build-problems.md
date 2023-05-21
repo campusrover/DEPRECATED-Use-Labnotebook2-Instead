@@ -23,3 +23,10 @@ rm -rf build/ devel/
 catkin_make
 source devel/setup.bash
 ```
+
+## Another way
+
+* First: lean your build by running "catkin_make clean" in the root of your workspace.
+* Second: remake your project with "catkin_make"
+* Third: re-source the devel/setup.bash in your workspace.
+
