@@ -255,7 +255,6 @@
             * [leaf_nodes.md](./packages/behavior_trees/nodes/leaf_nodes.md)
             * [parent_nodes.md](./packages/behavior_trees/nodes/parent_nodes.md)
     * [Speech Recognition Report](./packages/speech_recognition_report.md)
-## Special Sections
 * New Entries
     * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
     * [GPS Data with iPhone (GPS2IP)](./faq/gps-data.md)
