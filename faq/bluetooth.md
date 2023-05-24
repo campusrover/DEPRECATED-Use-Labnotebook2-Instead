@@ -4,6 +4,7 @@ description: About roubles that you may run into if you are trying to connect to
 author: Veronika Belinka
 status: new
 type: faq
+date: may-2023
 ---
 # Bluetooth Headset
 
