@@ -255,7 +255,7 @@
             * [leaf_nodes.md](./packages/behavior_trees/nodes/leaf_nodes.md)
             * [parent_nodes.md](./packages/behavior_trees/nodes/parent_nodes.md)
     * [Speech Recognition Report](./packages/speech_recognition_report.md)
-* New Entries
+* [YYY](./packages/README.md)
     * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
     * [GPS Data with iPhone (GPS2IP)](./faq/gps-data.md)
     * [Download File From vscode](./faq/download_file_from_code.md)
@@ -298,7 +298,7 @@
     * [Command and Control Dashboard](./reports/2023/command-control.md)
     * [Cargo Claw](./reports/2023/cargoclaw.md)
     * [Sample Project Template](./reports/sample_project_1.md)
-* Needs Review
+* [XXX](./packages/README.md)
     * [What are some Computer Vision Tips](./faq/computer_vision_tips.md)
     * [How do I create a Gazebo world](./faq/create-gazebo.world.md)
     * [How do I convert Imagenet to Darknet](./faq/convert-imagenet-to-darknet.md)
