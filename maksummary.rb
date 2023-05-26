@@ -107,7 +107,7 @@ class MakeSummary
     all_entries  = process(current_path, 0)
     puts "## CampusRover Lab Notebook"
     generate_output(all_entries)
-    generate_special_sections(all_entries)
+    # generate_special_sections(all_entries)
   end
 end
 
