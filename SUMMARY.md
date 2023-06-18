@@ -1,6 +1,7 @@
 ## CampusRover Lab Notebook
 * [Frequently Asked Questions](./faq/README.md)
     * [Advanced: Help me troubleshoot weird build problems](./faq/advanced-fixing-build-problems.md)
+    * [Advanced: Help me troubleshoot weird camera problems](./faq/advanced-fixing-camera-problems.md)
     * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
     * [Claw Movement](./faq/claw_movement.md)
     * [Computer Vision With Yolo8a](./faq/Computer-vision-with-model-Yolo8.md)
