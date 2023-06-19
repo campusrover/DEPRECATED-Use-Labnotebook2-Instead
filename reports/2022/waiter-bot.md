@@ -1,3 +1,11 @@
+---
+title: Waiterbot
+order: 999
+status: standard
+category: project
+description: Project report for Waiterbot, an automated catering experience
+author: Ben Soli (bsoli@brandeis.edu) and Harry Zhuh (zhuh@brandeis.edu)
+---
 # waiter-bot.md
 
 #### Team: Ben Soli (bsoli@brandeis.edu) and Harry Zhuh (zhuh@brandeis.edu)
