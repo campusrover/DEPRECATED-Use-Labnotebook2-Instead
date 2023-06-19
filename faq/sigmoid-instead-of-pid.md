@@ -1,5 +1,5 @@
 ---
-title: How do use a sigmoid function instead of a PID
+title: How do I use a sigmoid function instead of a PID
 description: An alternative function that is sometimes suggested as an alternative to pid
 status: new
 type: faq
