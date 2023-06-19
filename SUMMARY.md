@@ -32,6 +32,7 @@
     * [How do I use OpenCV and Turtlebot3 Camera](./faq/using-opencv-with-tb3.md)
     * [How do I use Parameters and Arguments in ROS?](./faq/using-args-params-roslaunch.md)
     * [How do I visualize the contents of a bag](./faq/advanced-visualization.md)
+    * [How do use a sigmoid function instead of a PID](./faq/sigmoid-instead-of-pid.md)
     * [How do you use UDP to communicate between computers?](./faq/UDP-socket.md)
     * [How does GPS work?](./faq/GPS-knowledge.md)
     * [How to Copy a MicroSD](./faq/copy_microsd.md)
