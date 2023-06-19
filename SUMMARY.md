@@ -116,7 +116,7 @@
         * [litter_picker.md](./reports/2022/litter_picker.md)
         * [mini_scouter.md](./reports/2022/mini_scouter.md)
         * [not-play-catch.md](./reports/2022/not-play-catch.md)
-        * [waiter-bot.md](./reports/2022/waiter-bot.md)
+        * [Waiterbot](./reports/2022/waiter-bot.md)
     * [2020](./reports/2020/README.md)
         * [Behavior Trees Investigatoin](./reports/2020/behavior-trees.md)
         * [Computer Vision Maze Solver](./reports/2020/cvmaze.md)
