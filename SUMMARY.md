@@ -43,6 +43,7 @@
     * [Interbotix Pincher X100 Arm](./faq/InterbotixPincherX100.md)
     * [PID-guide.md](./faq/PID-guide.md)
     * [Pincer Attachment](./faq/pincer_use.md)
+    * [ROS Message Types](./faq/message_types_cheatsheet.md)
     * [ROSBridge and ROSLIBJS](./faq/ros-bridge-and-roslibjs.md)
     * [Raspberry Pi Edge Detection](./faq/camera_calibration.md)
     * [Recognizing Objects Based on Color and Size using OpenCV](./faq/object_recognition_based_on_color_and_size.md)
