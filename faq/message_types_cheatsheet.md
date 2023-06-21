@@ -35,7 +35,6 @@ type: faq
 * time stamp
 * string frame_id
 
-
 ## geometry_msgs/Vector3.msg
 * float64 x
 * float64 y
