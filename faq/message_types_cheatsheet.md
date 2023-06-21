@@ -1,5 +1,5 @@
 ---
-title: "ROS Message Types"
+title: "What are the ROS Message Types"
 description: A cheatsheet of the important message types (structures)
 author: Pito Salas
 date: may-2023
