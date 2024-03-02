@@ -93,7 +93,7 @@ the material there is outdated or misleading.
 [Here's a video](https://www.youtube.com/watch?v=UxhOWRjkkbM) of what a
 successful calibration process might look like.
 
-## OpenCV [Written by Anonymous]
+## OpenCV
 
 Sometimes, you might want to use object detection or use certain
 algorithms that require a camera such as VSLAM. These algorithms
