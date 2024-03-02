@@ -1,8 +1,7 @@
 ---
 title: Camera Calibration 
 author: James Lee & anonymous
-description: How to calibrate a camera before using computer vision
-algorithms (e.g. fiducial detection or VSLAM)
+description: How to calibrate a camera before using computer vision algorithms (e.g. fiducial detection or VSLAM)
 status: updated
 date: march-2024
 ---
