@@ -17,8 +17,8 @@ calibration, and how can I do it?
 Camera calibration is the act of determining the _intrinsic parameters_
 of your camera. Roughly speaking, the intrinsic parameters of your
 camera are constants that, in a mathematical model of your camera,
-describe how your camera, via its interior mechanisms, converts a 3D
-point in the world coordinate frame to a 2D point on the image plane.
+describe how your camera (via its interior mechanisms) converts a 3D
+point in the world coordinate frame to a 2D point on its image plane.
 
 Intrinsic parameters are distinct from _extrinsic parameters_, which
 describe where your camera is in the world frame.
