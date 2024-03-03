@@ -65,7 +65,7 @@ Docker version 25.0.3, build 4debf41
 
 if you installed Docker correctly.
 
-### Running ROS2 on Docker
+## Running ROS2 on Docker
 
 It's possible to develop your ROS2 package entirely via the
 [minimalistic Docker
