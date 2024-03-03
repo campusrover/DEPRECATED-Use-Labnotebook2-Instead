@@ -91,8 +91,15 @@ just run:
 docker run -p 6080:80 --security-opt seccomp=unconfined --shm-size=512m tiryoh/ros2-desktop-vnc:iron
 ```
 
-It will take a while for the command to run. If afterwards you want to
-remove the docker image (since it's quite large) enter
+It will take a while for the command to run. After it does, keep the
+terminal window open, and visit the address `http://127.0.0.1:6080/` on
+your browser, and click "Connect" on the VNC window. This should take
+you to an Ubuntu Desktop, where you can use the Terminator application
+to go through [ROS2's official
+tutorial](https://docs.ros.org/en/iron/Tutorials.html).
+
+If afterwards you want to remove the docker image (since it's quite
+large) enter
 
 ```bash
 docker ps -a
