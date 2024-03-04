@@ -1,6 +1,6 @@
 ---
 title: Using ROS2 with Docker 
-author: James Lee & anonymous
+author: James Lee
 description: How to use ROS2 via Docker 
 status: new 
 date: march-2024
@@ -38,7 +38,7 @@ Engine for Ubuntu.
 
 Even if you don't use Ubuntu, just go to the page mentioned, and find
 your distribution on the Table of Contents you find at the left bar of
-the website. Just don't expect to find help on the Docker Engine
+the website. Don't expect to find help on the Docker Engine
 Overview page: they'll just start pushing you towards Docker Desktop
 again. 
 
@@ -74,7 +74,7 @@ the ROS2 community recommends. In fact, this seems to be a, if not the,
 common practice in the ROS2 community.
 
 **But** the learning curve for this is probably, for most software
-engineers, very, very steep. From what I gather, you'll need an
+engineers, very, very steep. From what I learned, you'll need an
 excellent grasp of Docker, networking, and the Linux kernel to pull it
 off successfully.
 
