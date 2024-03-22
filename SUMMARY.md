@@ -1,18 +1,20 @@
 ## CampusRover Lab Notebook!!
 
 ### XXX!
-* [Frequently Asked Questions](./faq/README.md)
-#### YYY!
+* [Frequently Asked XQuestions](./faq/README.md)
+
+### YYY!
 * [Advanced: Help me troubleshoot weird build problems](./faq/advanced-fixing-build-problems.md)
 * [Advanced: Help me troubleshoot weird camera problems](./faq/advanced-fixing-camera-problems.md)
-#### ZZZ!
+
+### ZZZ!
 * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
 * [Camera Calibration](./faq/camera_calibration.md)
 * [Claw Movement](./faq/claw_movement.md)
 * [Computer Vision With Yolo8a](./faq/Computer-vision-with-model-Yolo8.md)
 * [Connecting to the robot](./faq/connect_to_robot.md)
 * [Creating and Executing Launch Files](./faq/launch_file_create.md)
-#### FIIVA
+### FIIVA
 * [Download File From vscode](./faq/download_file_from_code.md)
 * [Edge Detection](./faq/edgeDetection.md)
 * [Finding HSV values for any color](./faq/hsv_values_finder.md)
