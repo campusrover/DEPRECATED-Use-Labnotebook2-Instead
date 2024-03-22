@@ -1,4 +1,5 @@
 ## CampusRover Lab Notebook
+### Frequently Asked Questions
 * [Frequently Asked Questions](./faq/README.md)
     * [Advanced: Help me troubleshoot weird build problems](./faq/advanced-fixing-build-problems.md)
     * [Advanced: Help me troubleshoot weird camera problems](./faq/advanced-fixing-camera-problems.md)
