@@ -109,7 +109,7 @@
     * [Commands](./BRU/commands.md)
     * [Standard ROSUTILS directory everywhere](./BRU/rosutils.md)
     * [script.md](./BRU/script.md)
-* [Cosi119 Final Reports](./reports/README.md)
+* [Cosi119 Final Reports!](./reports/README.md)
     * [2023](./reports/2023/README.md)
         * [Autopilot](./reports/2023/Autopilot.md)
         * [Bowling Bot](./reports/2023/BowlingBot.md)
