@@ -1,12 +1,11 @@
 ## CampusRover Lab Notebook!!
 
-### XXX
+### XXX!
 * [Frequently Asked Questions](./faq/README.md)
-#### YYY
+#### YYY!
 * [Advanced: Help me troubleshoot weird build problems](./faq/advanced-fixing-build-problems.md)
 * [Advanced: Help me troubleshoot weird camera problems](./faq/advanced-fixing-camera-problems.md)
-#### ZZZ
-*
+#### ZZZ!
 * [Basic Chatgpt ROS interface](./faq/chatgpt.md)
 * [Camera Calibration](./faq/camera_calibration.md)
 * [Claw Movement](./faq/claw_movement.md)
